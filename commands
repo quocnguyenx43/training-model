@@ -53,4 +53,6 @@ TASK 2: ####################################
 
 
 TASK 3: ####################################
-+ vinai/phobert-base / 200
++ VietAI/vit5-base
+    + python run_train_task_3_fine_tune.py --model_name "VietAI/vit5-base" --source_len 512 --target_len 256 --batch_size 16 --learning_rate 0.001 --epochs 2
+    # + python run_eval_task_3_fine_tune.py --model_name "VietAI/vit5-base" --source_len 512 --target_len 256 --batch_size 16 --learning_rate 0.001 --epochs 2

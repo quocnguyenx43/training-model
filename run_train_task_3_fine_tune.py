@@ -89,6 +89,6 @@ func.train(
     generation_model, optimizer, tokenizer,
     epochs=epochs,
     train_dataloader=train_dataloader,
-    saving_path=saving_path,
+    saving_path=None,
     device=device
 )

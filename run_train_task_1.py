@@ -83,6 +83,7 @@ print(f'Learning rate: {learning_rate}')
 print(f'Epochs: {epochs}')
 print(f'Do fine tune on pretrained model: {fine_tune}')
 print(f'Saving on path: {saving_path}')
+print()
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(cls_model.parameters(), lr=learning_rate)

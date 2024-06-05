@@ -16,8 +16,11 @@ import functions as func
 
 import argparse as arg
 
+from rich.console import Console
+
 import warnings
 warnings.filterwarnings('ignore')
+
 
 #####################
 

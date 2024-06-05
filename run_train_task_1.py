@@ -13,10 +13,13 @@ import functions as func
 
 import argparse as arg
 
+from rich.console import Console
+
 import warnings
 warnings.filterwarnings('ignore')
 
 #####################
+console = Console(record=True)
 
 
 try:
@@ -73,16 +76,16 @@ elif model_type == 'cnn':
 
 
 ### Training
-print(f"Using device: {device}")
-print(f'Model type: {model_type}')
-print(f'Pretrained model using: {pretrained_model_name}')
-print(f'Padding length: {padding_len}')
-print(f'Task running: task-1')
-print(f'Batch size: {batch_size}')
-print(f'Learning rate: {learning_rate}')
-print(f'Epochs: {epochs}')
-print(f'Do fine tune on pretrained model: {fine_tune}')
-print(f'Saving on path: {saving_path}')
+console.log(f"Using device: {device}")
+console.log(f'Model type: {model_type}')
+console.log(f'Pretrained model using: {pretrained_model_name}')
+console.log(f'Padding length: {padding_len}')
+console.log(f'Task running: task-1')
+console.log(f'Batch size: {batch_size}')
+console.log(f'Learning rate: {learning_rate}')
+console.log(f'Epochs: {epochs}')
+console.log(f'Do fine tune on pretrained model: {fine_tune}')
+console.log(f'Saving on path: {saving_path}')
 print()
 
 criterion = nn.CrossEntropyLoss()

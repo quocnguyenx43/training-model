@@ -7,9 +7,11 @@ import torch.optim as optim
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
 import datasets as dst
 import models as md
-import functions as func
+import functions_train_task_3 as func
 
 import argparse as arg
 
@@ -57,42 +59,35 @@ test_df = pd.read_csv('./data/small/test_preprocessed.csv')
 ### Dataset & Dataloader
 train_dataset = dst.RecruitmentDataset(train_df, tokenizer_name=model_name, padding_len=source_len, target_len=target_len, task='task-3')
 dev_dataset = dst.RecruitmentDataset(dev_df, tokenizer_name=model_name, padding_len=source_len, target_len=target_len, task='task-3')
-test_dataset = dst.RecruitmentDataset(test_df, tokenizer_name=model_name, source_len=source_len, target_len=target_len, task='task-3')
+test_dataset = dst.RecruitmentDataset(test_df, tokenizer_name=model_name, padding_len=source_len, target_len=target_len, task='task-3')
 
 train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 dev_dataloader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
 test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 
-# ### Model
-# if model_type == 'simple':
-#     cls_model = md.SimpleCLSModel(num_classes=3, pretrained_model_name=pretrained_model_name).to(device)
-# elif model_type == 'lstm':
-#     pass
-# elif model_type == 'cnn':
-#     pass
+### Model
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+generation_model = AutoModelForSeq2SeqLM.from_pretrained(model_name).to(device)
 
 
-# ### Training
-# print(f"Using device: {device}")
-# print(f'Model type: {model_type}')
-# print(f'Pretrained model using: {pretrained_model_name}')
-# print(f'Padding length: {padding_len}')
-# print(f'Task running: task-1')
-# print(f'Batch size: {batch_size}')
-# print(f'Learning rate: {learning_rate}')
-# print(f'Epochs: {epochs}')
-# print(f'Do fine tune on pretrained model: {fine_tune}')
-# print(f'Saving on path: {saving_path}')
+### Training
+print(f"Using device: {device}")
+print(f'Model name: {model_name}')
+print(f'Source len: {source_len}')
+print(f'Target len: {target_len}')
+print(f'Task running: task-3')
+print(f'Batch size: {batch_size}')
+print(f'Learning rate: {learning_rate}')
+print(f'Epochs: {epochs}')
+print(f'Saving on path: {saving_path}')
 
-# criterion = nn.CrossEntropyLoss()
-# optimizer = optim.Adam(cls_model.parameters(), lr=learning_rate)
 
-# func.train(
-#     cls_model, criterion, optimizer,
-#     epochs=epochs,
-#     train_dataloader=train_dataloader, dev_dataloader=dev_dataloader,
-#     saving_path=saving_path,
-#     task_running='task-1',
-#     device=device
-# )
+optimizer = optim.Adam(generation_model.parameters(), lr=learning_rate)
+func.train(
+    generation_model, optimizer, tokenizer,
+    epochs=epochs,
+    train_dataloader=train_dataloader,
+    saving_path=saving_path,
+    device=device
+)

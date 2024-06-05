@@ -21,3 +21,6 @@ try:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 except RuntimeError as e:
     device = 'cpu'
+
+print(torch.cuda.is_available())
+print(device)

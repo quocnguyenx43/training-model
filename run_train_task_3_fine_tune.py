@@ -49,6 +49,8 @@ learning_rate = args.learning_rate
 epochs = args.epochs
 saving_path = f'./models/task_3/{model_name}'
 
+print(source_len)
+
 
 ### Read data
 train_df = pd.read_csv('./data/small/train_preprocessed.csv')

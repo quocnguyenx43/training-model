@@ -49,8 +49,6 @@ learning_rate = args.learning_rate
 epochs = args.epochs
 saving_path = f'./models/task_3/{model_name}'
 
-print(source_len)
-
 
 ### Read data
 train_df = pd.read_csv('./data/small/train_preprocessed.csv')
@@ -88,7 +86,7 @@ print(f'Saving on path: {saving_path}')
 optimizer = optim.Adam(generation_model.parameters(), lr=learning_rate)
 func.train(
     generation_model, optimizer, tokenizer,
-    epochs=epochs,
+    epochs=10,
     train_dataloader=train_dataloader,
     saving_path=saving_path,
     device=device

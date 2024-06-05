@@ -52,8 +52,8 @@ model_weight_path = f'./models/task_1/{model_type}_{pretrained_model_name_2}_{la
 
 
 ### Read data
-dev_df = pd.read_csv('./data/preprocesseed/dev_preprocessed.csv')
-test_df = pd.read_csv('./data/preprocesseed/test_preprocessed.csv')
+dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
 
 ### Dataset & Dataloader
 dev_dataset = dst.RecruitmentDataset(dev_df, tokenizer_name=pretrained_model_name, padding_len=padding_len, task='task-1')

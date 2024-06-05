@@ -3,15 +3,16 @@ from tqdm import tqdm
 
 
 def train(model, optimizer, tokenizer, train_dataloader, saving_path=None, device='cpu'):
-
-    for epoch in range(5):
+    epochs = 5
+    for epoch in range(epochs):
         model.train()
         running_loss = 0.0
         
 
-        with tqdm(train_dataloader, desc=f"Epoch {epoch + 1}/{5}") as tqdm_loader:
+        with tqdm(train_dataloader, desc=f"Epoch {epoch + 1}/{epochs}") as tqdm_loader:
             for batch_idx, batch in enumerate(tqdm_loader):
-                print('batch', batch)
+                tqdm_loader.set_description(f"Epoch {epoch + 1}/{epochs}, Batch {batch_idx + 1}/{len(train_dataloader)}")
+
                 ids = batch['input']['input_ids'].to(device, dtype=torch.long)
                 mask = batch['input']['attention_mask'].to(device, dtype=torch.long)
 
@@ -28,5 +29,9 @@ def train(model, optimizer, tokenizer, train_dataloader, saving_path=None, devic
                 loss.backward()
                 optimizer.step()
 
+        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}, ')
+
         if saving_path:
-            pass
+            path = saving_path + "_" + str(epoch) + '.pth'
+            torch.save(model.state_dict(), path)
+            print('Saved Model in ' +  path)

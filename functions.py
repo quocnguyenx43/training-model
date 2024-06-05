@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 import utils
 
 
-def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=False, last_epoch=False):
+def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=False, last_epoch=False, device='cpu'):
     if task_running == 'task-1':
         dimesion = 1
     elif task_running == 'task-2':
@@ -24,8 +24,8 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
             for batch_idx, batch in enumerate(tqdm_loader):
                 tqdm_loader.set_description(f"Evaluation, Batch {batch_idx + 1}/{len(dataloader)}")
 
-                inputs = batch['input']
-                label = batch['label']
+                inputs = batch['input'].to(device)
+                label = batch['label'].to(device)
 
                 outputs = model(inputs)
                 loss = criterion(outputs, label)
@@ -52,7 +52,7 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
             show_cm_cr_task_2(true_labels, predictions)
 
 
-def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader, saving_path=None, task_running='task-1'):
+def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader, saving_path=None, task_running='task-1', device='cpu'):
     if task_running == 'task-1':
         dimesion = 1
     elif task_running == 'task-2':
@@ -70,8 +70,8 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
             for batch_idx, batch in enumerate(tqdm_loader):
                 tqdm_loader.set_description(f"Epoch {epoch + 1}/{epochs}, Batch {batch_idx + 1}/{len(train_dataloader)}")
 
-                inputs = batch['input']
-                label = batch['label']
+                inputs = batch['input'].to(device)
+                label = batch['label'].to(device)
 
                 optimizer.zero_grad()
                 outputs = model(inputs)

@@ -53,8 +53,8 @@ model_weight_path = f'./models/task_2/{model_type}_{pretrained_model_name_2}_{la
 
 
 ### Read data
-dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
+dev_df = pd.read_csv('./data/small/dev_preprocessed.csv')
+test_df = pd.read_csv('./data/small/test_preprocessed.csv')
 
 ### Dataset & Dataloader
 dev_dataset = dst.RecruitmentDataset(dev_df, tokenizer_name=pretrained_model_name, padding_len=padding_len, task='task-2')
@@ -66,7 +66,7 @@ test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 ### Model
 if model_type == 'simple':
-    aspect_model = md.SimpleAspectModel(pretrained_model_name=pretrained_model_name, fine_tune=True)
+    aspect_model = md.SimpleAspectModel(pretrained_model_name=pretrained_model_name, fine_tune=True).to(device)
 elif model_type == 'lstm':
     pass
 elif model_type == 'cnn':
@@ -94,14 +94,16 @@ func.evaluate(
     aspect_model, criterion,
     dataloader=dev_dataloader, 
     task_running='task-2',
-    cm=True, cr=True, last_epoch=True
+    cm=True, cr=True, last_epoch=True,
+    device=device
 )
 
-print('Evaluation on test test')
 ### Evaluating on Test set
+print('Evaluation on test test')
 func.evaluate(
     aspect_model, criterion,
     dataloader=dev_dataloader, 
     task_running='task-2',
-    cm=True, cr=True, last_epoch=True
+    cm=True, cr=True, last_epoch=True,
+    device=device
 )

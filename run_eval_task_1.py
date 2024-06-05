@@ -52,8 +52,8 @@ model_weight_path = f'./models/task_1/{model_type}_{pretrained_model_name_2}_{la
 
 
 ### Read data
-dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
+dev_df = pd.read_csv('./data/small/dev_preprocessed.csv')
+test_df = pd.read_csv('./data/small/test_preprocessed.csv')
 
 ### Dataset & Dataloader
 dev_dataset = dst.RecruitmentDataset(dev_df, tokenizer_name=pretrained_model_name, padding_len=padding_len, task='task-1')
@@ -65,7 +65,7 @@ test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 ### Model
 if model_type == 'simple':
-    cls_model = md.SimpleCLSModel(pretrained_model_name=pretrained_model_name, num_classes=3)
+    cls_model = md.SimpleCLSModel(pretrained_model_name=pretrained_model_name, num_classes=3).to(device)
 elif model_type == 'lstm':
     pass
 elif model_type == 'cnn':
@@ -93,14 +93,16 @@ func.evaluate(
     cls_model, criterion,
     dataloader=dev_dataloader, 
     task_running='task-1',
-    cm=True, cr=True, last_epoch=True
+    cm=True, cr=True, last_epoch=True,
+    device=device,
 )
 
-print('Evaluation on test test')
 ### Evaluating on Test set
+print('Evaluation on test test')
 func.evaluate(
     cls_model, criterion,
     dataloader=dev_dataloader, 
     task_running='task-1',
-    cm=True, cr=True, last_epoch=True
+    cm=True, cr=True, last_epoch=True,
+    device=device,
 )

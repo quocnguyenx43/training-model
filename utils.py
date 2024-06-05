@@ -37,3 +37,29 @@ def my_f1_score(y_true, y_pred):
             continue
         temp+= (2*sum(np.logical_and(y_true[i], y_pred[i])))/ (sum(y_true[i])+sum(y_pred[i]))
     return temp/ y_true.shape[0]
+
+
+def vit5_encode(source_text, target_text, source_len, target_len, tokenizer):
+    source_encoded = tokenizer.batch_encode_plus(
+        source_text,
+        max_length= source_len,
+        pad_to_max_length=True,
+        truncation=True,
+        padding="max_length",
+        return_tensors='pt'
+    )
+    source_encoded['input_ids'] = source_encoded['input_ids'].squeeze()
+    source_encoded['attention_mask'] = source_encoded['attention_mask'].squeeze()
+
+    target_encoded = tokenizer.batch_encode_plus(
+        target_text,
+        max_length= target_len,
+        pad_to_max_length=True,
+        truncation=True,
+        padding="max_length",
+        return_tensors='pt'
+    )
+    target_encoded['input_ids'] = target_encoded['input_ids'].squeeze()
+    target_encoded['attention_mask'] = target_encoded['attention_mask'].squeeze()
+
+    return source_encoded, target_encoded

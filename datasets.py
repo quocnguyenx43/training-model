@@ -3,17 +3,19 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset
 from transformers import AutoTokenizer
+import utils
 
-
+    
 
 class RecruitmentDataset(Dataset):
 
-    def __init__(self, df, tokenizer_name, padding_len, task='task-1'):
+    def __init__(self, df, tokenizer_name, padding_len, task='task-1', target_len=None):
         self.df = df
 
-        self.tokenizer_name = tokenizer_name 
+        self.tokenizer_name = tokenizer_name
         self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
         self.padding_len = padding_len
+        self.target_len = target_len
         self.task = task
 
         self.data_x = self.create_X()
@@ -22,27 +24,6 @@ class RecruitmentDataset(Dataset):
 
     def __len__(self):
         return len(self.df)
-
-
-    def __getitem__(self, index):
-        item = {}
-        x = self.data_x[index]
-        y = self.data_y[index]
-
-        if self.task != 'task-3':
-            x = x.replace('[CLS]', '').replace('[SEP]', '</s>')
-            x = self.tokenizer(x, return_tensors='pt', max_length=self.padding_len, truncation=True, padding='max_length')
-            x['input_ids'] = x['input_ids'].squeeze()
-            x['attention_mask'] = x['attention_mask'].squeeze()
-            if len(x) == 3:
-                x['token_type_ids'] = x['token_type_ids'].squeeze()
-        else:
-            pass
-
-        item.update({'input': x})
-        item.update({'label': y.float()})
-
-        return item
 
 
     def create_X(self):
@@ -75,12 +56,38 @@ class RecruitmentDataset(Dataset):
     def create_y(self):
         if self.task == 'task-1':
             label = torch.tensor(self.df['label'])
-            label = F.one_hot(label, num_classes=3)
+            label = F.one_hot(label, num_classes=3).float()
         elif self.task =='task-2':
             label = self.df[['title_aspect', 'desc_aspect', 'company_aspect', 'other_aspect']].to_numpy()
             label = np.eye(4)[label]
-            label = torch.from_numpy(label)
+            label = torch.from_numpy(label).float()
         else:
             label = self.df['explanation'].to_numpy()
 
-        return label
+        return list(label)
+
+
+    def __getitem__(self, index):
+        item = {}
+        x = self.data_x[index]
+        y = self.data_y[index]
+
+        # transform to a list
+        if isinstance(index, int):
+            x = [x]
+            y = [y]
+
+        if self.task != 'task-3':
+            x = x.replace('[CLS]', '').replace('[SEP]', '</s>')
+            x = self.tokenizer(x, return_tensors='pt', max_length=self.padding_len, truncation=True, padding='max_length')
+            x['input_ids'] = x['input_ids'].squeeze()
+            x['attention_mask'] = x['attention_mask'].squeeze()
+            if len(x) == 3:
+                x['token_type_ids'] = x['token_type_ids'].squeeze()
+        else:
+            x, y = utils.vit5_encode(x, y, self.padding_len, self.target_len, self.tokenizer)
+
+        item.update({'input': x})
+        item.update({'label': y})
+
+        return item

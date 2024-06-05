@@ -16,4 +16,8 @@ import argparse as arg
 import warnings
 warnings.filterwarnings('ignore')
 
-print('a')
+
+try:
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+except RuntimeError as e:
+    device = 'cpu'

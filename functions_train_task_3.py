@@ -2,8 +2,7 @@ import torch
 from tqdm import tqdm
 
 
-def train(model, optimizer, tokenizer, train_dataloader, saving_path=None, device='cpu'):
-    epochs = 5
+def train(model, optimizer, tokenizer, epochs, train_dataloader, saving_path=None, device='cpu'):
     for epoch in range(epochs):
         model.train()
         running_loss = 0.0

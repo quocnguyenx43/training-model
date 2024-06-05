@@ -81,11 +81,13 @@ console.log(f'Batch size: {batch_size}')
 console.log(f'Learning rate: {learning_rate}')
 console.log(f'Epochs: {epochs}')
 console.log(f'Saving on path: {saving_path}')
+print()
+print('Training ...')
 
 optimizer = optim.Adam(generation_model.parameters(), lr=learning_rate)
 func.train(
     generation_model, optimizer, tokenizer,
-    # epochs=10,
+    epochs=epochs,
     train_dataloader=train_dataloader,
     saving_path=saving_path,
     device=device

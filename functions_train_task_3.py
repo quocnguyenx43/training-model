@@ -7,8 +7,11 @@ def train(model, optimizer, tokenizer, train_dataloader, saving_path=None, devic
     for epoch in range(5):
         model.train()
         running_loss = 0.0
+
+        print('epoch', epoch)
         
         for _, batch in enumerate(train_dataloader, 0):
+            print('batch', batch)
             ids = batch['input']['input_ids'].to(device, dtype=torch.long)
             mask = batch['input']['attention_mask'].to(device, dtype=torch.long)
 

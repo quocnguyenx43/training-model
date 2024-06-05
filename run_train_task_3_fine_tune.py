@@ -72,16 +72,15 @@ generation_model = AutoModelForSeq2SeqLM.from_pretrained(model_name).to(device)
 
 
 ### Training
-print(f"Using device: {device}")
-print(f'Model name: {model_name}')
-print(f'Source len: {source_len}')
-print(f'Target len: {target_len}')
-print(f'Task running: task-3')
-print(f'Batch size: {batch_size}')
-print(f'Learning rate: {learning_rate}')
-print(f'Epochs: {epochs}')
-print(f'Saving on path: {saving_path}')
-
+console.log(f"Using device: {device}")
+console.log(f'Model name: {model_name}')
+console.log(f'Source len: {source_len}')
+console.log(f'Target len: {target_len}')
+console.log(f'Task running: task-3')
+console.log(f'Batch size: {batch_size}')
+console.log(f'Learning rate: {learning_rate}')
+console.log(f'Epochs: {epochs}')
+console.log(f'Saving on path: {saving_path}')
 
 optimizer = optim.Adam(generation_model.parameters(), lr=learning_rate)
 func.train(

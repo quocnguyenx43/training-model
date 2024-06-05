@@ -20,6 +20,8 @@ warnings.filterwarnings('ignore')
 
 #####################
 
+console = Console(record=True)
+
 
 try:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

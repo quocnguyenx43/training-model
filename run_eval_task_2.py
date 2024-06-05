@@ -21,6 +21,7 @@ warnings.filterwarnings('ignore')
 
 
 #####################
+console = Console(record=True)
 
 
 try:
@@ -76,19 +77,19 @@ elif model_type == 'cnn':
 
 
 ### Print params
-print(f"Using device: {device}")
-print(f'Model type: {model_type}')
-print(f'Pretrained model using: {pretrained_model_name}')
-print(f'Padding length: {padding_len}')
-print(f'Task running: task-2')
-print(f'Batch size: {batch_size}')
-print(f'Model path: {model_weight_path}')
+console.log(f"Using device: {device}")
+console.log(f'Model type: {model_type}')
+console.log(f'Pretrained model using: {pretrained_model_name}')
+console.log(f'Padding length: {padding_len}')
+console.log(f'Task running: task-2')
+console.log(f'Batch size: {batch_size}')
+console.log(f'Model path: {model_weight_path}')
 
 
 ### Loading weights
 aspect_model.load_state_dict(torch.load(model_weight_path))
 criterion = nn.CrossEntropyLoss()
-print('Loading model weights successfully!\n')
+console.log('Loading model weights successfully!\n')
 
 ### Evaluating on Dev set
 print('Evaluation on dev test')

@@ -18,9 +18,12 @@ warnings.filterwarnings('ignore')
 
 
 try:
+    # Attempt to use GPU for training if available
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 except RuntimeError as e:
+    # Handle potential errors (e.g., no compatible GPU found)
+    print(f"Error: {e}")
+    print("Using CPU for training.")
     device = 'cpu'
 
-print(torch.cuda.is_available())
-print(device)
+print(f"Using device: {device}")

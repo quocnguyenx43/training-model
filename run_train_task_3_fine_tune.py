@@ -86,7 +86,7 @@ print(f'Saving on path: {saving_path}')
 optimizer = optim.Adam(generation_model.parameters(), lr=learning_rate)
 func.train(
     generation_model, optimizer, tokenizer,
-    epochs=10,
+    # epochs=10,
     train_dataloader=train_dataloader,
     saving_path=saving_path,
     device=device

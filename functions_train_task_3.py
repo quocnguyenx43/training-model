@@ -2,9 +2,9 @@ import torch
 
 
 
-def train(model, epochs, optimizer, tokenizer, train_dataloader, saving_path=None, device='cpu'):
+def train(model, optimizer, tokenizer, train_dataloader, saving_path=None, device='cpu'):
 
-    for epoch in range(epochs):
+    for epoch in range(5):
         model.train()
         running_loss = 0.0
         

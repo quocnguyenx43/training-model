@@ -4,3 +4,4 @@ scikit_learn==1.4.2
 torch==2.2.0
 tqdm==4.66.4
 transformers==4.37.2
+torchvision

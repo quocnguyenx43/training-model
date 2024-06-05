@@ -72,10 +72,6 @@ class RecruitmentDataset(Dataset):
         x = self.data_x[index]
         y = self.data_y[index]
 
-        # transform to a list
-        if isinstance(index, int):
-            x = [x]
-            y = [y]
 
         if self.task != 'task-3':
             x = x.replace('[CLS]', '').replace('[SEP]', '</s>')
@@ -85,6 +81,9 @@ class RecruitmentDataset(Dataset):
             if len(x) == 3:
                 x['token_type_ids'] = x['token_type_ids'].squeeze()
         else:
+            # transform to a list
+            if isinstance(index, int):
+                x, y  = [x], [y]
             x, y = utils.vit5_encode(x, y, self.padding_len, self.target_len, self.tokenizer)
 
         item.update({'input': x})

@@ -23,6 +23,8 @@ def train(model, optimizer, tokenizer, epochs, train_dataloader, saving_path=Non
                 outputs = model(input_ids=ids, attention_mask=mask, decoder_input_ids=y_ids, labels=lm_labels)
                 loss = outputs[0]
                 running_loss += loss
+
+                print('aaaaaaaaa')
                 
                 optimizer.zero_grad()
                 loss.backward()

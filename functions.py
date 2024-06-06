@@ -27,6 +27,8 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
                 inputs = batch['input'].to(device)
                 label = batch['label'].to(device)
 
+                print('here')
+
                 outputs = model(inputs)
                 loss = criterion(outputs, label)
 

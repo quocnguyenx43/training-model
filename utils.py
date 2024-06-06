@@ -74,8 +74,7 @@ def create_X(df, task):
 
 def create_y(df, task):
     if task == 'task-1':
-        label = torch.tensor(df.label)
-        print(label)
+        label = torch.tensor(np.array(df['label']))
         label = F.one_hot(label, num_classes=3).float()
     elif task =='task-2':
         label = df[['title_aspect', 'desc_aspect', 'company_aspect', 'other_aspect']].to_numpy()

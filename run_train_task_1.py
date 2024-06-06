@@ -6,6 +6,9 @@ import models as md
 import functions as func
 import my_import as imp
 
+import warnings
+warnings.filterwarnings('ignore')
+
 
 ###### Model
 if imp.args['model_type'] == 'simple':

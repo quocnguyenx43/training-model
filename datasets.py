@@ -23,7 +23,7 @@ class RecruitmentDataset(Dataset):
 
 
     def __len__(self):
-        return len(self.df)
+        return len(self.data_x)
 
 
     def __getitem__(self, index):

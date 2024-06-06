@@ -28,22 +28,17 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
                 label = batch['label'].to(device)
 
 
-                print('here1')
                 outputs = model(inputs)
-                print('here2')
                 loss = criterion(outputs, label)
 
                 running_loss += loss.item()
-                print('here3')
 
                 _, pred = torch.max(outputs, dim=dimesion)
                 _, true = torch.max(label, dim=dimesion)
-                print('here4')
 
                 # Append predictions and true labels for F1 score calculation
                 predictions.extend(pred.tolist())
                 true_labels.extend(true.tolist())
-                print('here5')
 
     predictions = np.array(predictions)
     true_labels = np.array(true_labels)
@@ -106,7 +101,7 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
             show_evaluation_task_2(true_labels, predictions)
 
         # Evaluation on Dev set
-        evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running)
+        evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running, device=device)
 
         if saving_path:
             path = saving_path + "_" + str(epoch) + '.pth'

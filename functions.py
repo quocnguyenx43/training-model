@@ -42,6 +42,8 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
 
     predictions = np.array(predictions)
     true_labels = np.array(true_labels)
+
+    print(f'Evaluation, Loss: {running_loss:.4f}, ', end="")
     
     if task_running == 'task-1':
         show_evaluation_task_1(true_labels, predictions)

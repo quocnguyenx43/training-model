@@ -70,11 +70,11 @@ test_dataloader = DataLoader(test_dataset, batch_size=args['batch_size'], shuffl
 
 
 ### Printing args
+print()
 for key, value in args.items():
     if args['task'] == 'task-1' and key == 'target_len':
         continue
     if args['task'] == 'task-3' and key == 'model_type' or key == 'fine_tune':
         continue
     console.log(f'{key}: {value}')
-
 print()

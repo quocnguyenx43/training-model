@@ -12,8 +12,7 @@ import datasets as dst
 
 #####################
 console = Console(record=True)
-with warnings.catch_warnings():
-    warnings.simplefilter("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore")
 
 
 ### Params 

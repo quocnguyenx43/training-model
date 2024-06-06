@@ -7,7 +7,7 @@ import functions as func
 import my_import as imp
 
 import warnings
-warnings.filterwarnings('ignore')
+warnings.filterwarnings("ignore")
 
 
 ###### Model

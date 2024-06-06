@@ -10,23 +10,32 @@ import my_import as imp
 
 ###### Model
 if imp.args['model_type'] == 'simple':
-    cls_model = md.SimpleCLSModel(num_classes=3, pretrained_model_name=imp.args['model_name'])
+    if imp.args['task'] == 'task-1':
+        model = md.SimpleCLSModel(pretrained_model_name=imp.args['model_name'])
+    elif imp.args['task'] == 'task-2':
+        model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])    
 elif imp.args['model_type'] == 'lstm':
-    pass
+    if imp.args['task'] == 'task-1':
+        pass
+    elif imp.args['task'] == 'task-2':
+        pass
 elif imp.args['model_type'] == 'cnn':
-    pass
+    if imp.args['task'] == 'task-1':
+        pass
+    elif imp.args['task'] == 'task-2':
+        pass
 
 
 ###### Change device & setting criterion, optimizer
-cls_model = cls_model.to(imp.args['device'])
+model = model.to(imp.args['device'])
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(cls_model.parameters(), lr=imp.args['learning_rate'])
+optimizer = optim.Adam(model.parameters(), lr=imp.args['learning_rate'])
 
 
 ###### Training
 print('Training ...')
 func.train(
-    cls_model, criterion, optimizer,
+    model, criterion, optimizer,
     epochs=imp.args['epochs'],
     train_dataloader=imp.train_dataloader, dev_dataloader=imp.dev_dataloader,
     saving_path=imp.args['saving_path'],

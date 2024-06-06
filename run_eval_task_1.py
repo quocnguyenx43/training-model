@@ -26,16 +26,25 @@ model_weight_path = './models/' + task_folder + '/' + prefix_file_name + '_' + l
 
 ###### Model
 if imp.args['model_type'] == 'simple':
-    cls_model = md.SimpleCLSModel(num_classes=3, pretrained_model_name=imp.args['model_name'])
+    if imp.args['task'] == 'task-1':
+        model = md.SimpleCLSModel(pretrained_model_name=imp.args['model_name'])
+    elif imp.args['task'] == 'task-2':
+        model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])    
 elif imp.args['model_type'] == 'lstm':
-    pass
+    if imp.args['task'] == 'task-1':
+        pass
+    elif imp.args['task'] == 'task-2':
+        pass
 elif imp.args['model_type'] == 'cnn':
-    pass
+    if imp.args['task'] == 'task-1':
+        pass
+    elif imp.args['task'] == 'task-2':
+        pass
 
 
 ###### Loading weights
-cls_model = cls_model.to(imp.device)
-cls_model.load_state_dict(torch.load(model_weight_path))
+model = model.to(imp.device)
+model.load_state_dict(torch.load(model_weight_path))
 criterion = nn.CrossEntropyLoss()
 print(f'model_weight_path: {model_weight_path}')
 print('Loading model weight successfully!\n')
@@ -44,7 +53,7 @@ print('Loading model weight successfully!\n')
 ### Evaluating on Dev set
 print('Evaluation on dev test')
 func.evaluate(
-    cls_model, criterion,
+    model, criterion,
     dataloader=imp.dev_dataloader, 
     task_running=imp.args['task'],
     cm=True, cr=True, last_epoch=True,
@@ -55,7 +64,7 @@ func.evaluate(
 ### Evaluating on Test set
 print('Evaluation on test test')
 func.evaluate(
-    cls_model, criterion,
+    model, criterion,
     dataloader=imp.test_dataloader, 
     task_running=imp.args['task'],
     cm=True, cr=True, last_epoch=True,

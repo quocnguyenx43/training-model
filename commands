@@ -60,3 +60,8 @@ TASK 3: ####################################
     python run_train_task_2.py --model_type "simple" --pretrained_model "uitnlp/visobert" --padding_len 400 --batch_size 16 --learning_rate 0.001 --epochs 20
 
     python run_train_task_1.py --task "task-1" --model_type "simple" --model_name "vinai/phobert-base" --source_len 200 --batch_size 16 --learning_rate 0.001 --epochs 20
+
+
+
+    
+    python run_eval_task_1.py --task "task-1" --model_type "simple" --model_name "uitnlp/visobert" --source_len 400 --batch_size 16

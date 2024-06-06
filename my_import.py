@@ -40,9 +40,9 @@ args['saving_path'] = saving_path
 
 
 ### Read data
-train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv')
-dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
+train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv').head(200)
+dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv').head(50)
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv').head(30)
 
 train_df.dropna(subset=['explanation'], inplace=True)
 dev_df.dropna(subset=['explanation'], inplace=True)

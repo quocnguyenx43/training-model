@@ -56,14 +56,3 @@ TASK 3: ####################################
 + VietAI/vit5-base
     + python run_train_task_3_fine_tune.py --model_name "VietAI/vit5-base" --source_len 128 --target_len 64 --batch_size 2 --learning_rate 0.001 --epochs 2
     # + python run_eval_task_3_fine_tune.py --model_name "VietAI/vit5-base" --source_len 512 --target_len 256 --batch_size 16 --learning_rate 0.001 --epochs 2
-
-    python run_train_task_2.py --model_type "simple" --pretrained_model "uitnlp/visobert" --padding_len 400 --batch_size 16 --learning_rate 0.001 --epochs 20
-
-    python run_train_task_1.py --task "task-1" --model_type "simple" --model_name "vinai/phobert-base" --source_len 200 --batch_size 16 --learning_rate 0.001 --epochs 20
-
-
-
-    
-    python run_eval_task_1.py --task "task-1" --model_type "simple" --model_name "uitnlp/visobert" --source_len 400 --batch_size 16
-
-    python run_train_task_1.py --task "task-1" --model_type "simple" --model_name "vinai/phobert-base" --source_len 200 --batch_size 16 --learning_rate 0.001 --epochs 20

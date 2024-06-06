@@ -1,7 +1,11 @@
 import pandas as pd
+
 import torch
+from torch.utils.data import DataLoader
+
 import argparse as arg
 from rich.console import Console
+
 import datasets as dst
 
 
@@ -59,9 +63,9 @@ test_dataset = dst.RecruitmentDataset(
 
 
 ### Dataloader
-train_dataloader = dst.DataLoader(train_dataset, batch_size=args['batch_size'], shuffle=True)
-dev_dataloader = dst.DataLoader(dev_dataset, batch_size=args['batch_size'], shuffle=False)
-test_dataloader = dst.DataLoader(test_dataset, batch_size=args['batch_size'], shuffle=False)
+train_dataloader = DataLoader(train_dataset, batch_size=args['batch_size'], shuffle=True)
+dev_dataloader = DataLoader(dev_dataset, batch_size=args['batch_size'], shuffle=False)
+test_dataloader = DataLoader(test_dataset, batch_size=args['batch_size'], shuffle=False)
 
 
 ### Printing args

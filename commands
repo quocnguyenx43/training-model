@@ -1,27 +1,27 @@
 TASK 1: ####################################
 + vinai/phobert-base / 200
-    + python run_train_task_1.py --model_type "simple" --pretrained_model_name "vinai/phobert-base" --padding_len 200 --batch_size 16 --learning_rate 0.001 --epochs 20
-    + python run_eval_task_1.py --model_type "simple" --pretrained_model_name "vinai/phobert-base" --padding_len 200 --batch_size 16
+    + python run_train_task_1.py --task 'task-1' --model_type "simple" --model_name "vinai/phobert-base" --source_len 200 --batch_size 16 --learning_rate 0.001 --epochs 20
+    + python run_eval_task_1.py --task 'task-1' --model_type "simple" --model_name "vinai/phobert-base" --source_len 200 --batch_size 16
 
 + uitnlp/visobert / 400
-    + python run_train_task_1.py --model_type "simple" --pretrained_model_name "uitnlp/visobert" --padding_len 400 --batch_size 16 --learning_rate 0.001 --epochs 3
-    + python run_eval_task_1.py --model_type "simple" --pretrained_model_name "uitnlp/visobert" --padding_len 400 --batch_size 16
+    + python run_train_task_1.py --task 'task-1' --model_type "simple" --model_name "uitnlp/visobert" --source_len 400 --batch_size 16 --learning_rate 0.001 --epochs 3
+    + python run_eval_task_1.py --task 'task-1' --model_type "simple" --model_name "uitnlp/visobert" --source_len 400 --batch_size 16
 
 + uitnlp/CafeBERT / 300
-    + python run_train_task_1.py --model_type "simple" --pretrained_model_name "uitnlp/CafeBERT" --padding_len 300 --batch_size 16 --learning_rate 0.001 --epochs 3
-    + python run_eval_task_1.py --model_type "simple" --pretrained_model_name "uitnlp/CafeBERT" --padding_len 300 --batch_size 16
+    + python run_train_task_1.py --task 'task-1' --model_type "simple" --model_name "uitnlp/CafeBERT" --source_len 300 --batch_size 16 --learning_rate 0.001 --epochs 3
+    + python run_eval_task_1.py --task 'task-1' --model_type "simple" --model_name "uitnlp/CafeBERT" --source_len 300 --batch_size 16
 
 + xlm-roberta-base / 500
-    + python run_train_task_1.py --model_type "simple" --pretrained_model_name "xlm-roberta-base" --padding_len 500 --batch_size 16 --learning_rate 0.001 --epochs 3
-    + python run_eval_task_1.py --model_type "simple" --pretrained_model_name "xlm-roberta-base" --padding_len 500 --batch_size 16
+    + python run_train_task_1.py --task 'task-1' --model_type "simple" --model_name "xlm-roberta-base" --source_len 500 --batch_size 16 --learning_rate 0.001 --epochs 3
+    + python run_eval_task_1.py --task 'task-1' --model_type "simple" --model_name "xlm-roberta-base" --source_len 500 --batch_size 16
 
 + bert-base-multilingual-cased / 500
-    + python run_train_task_1.py --model_type "simple" --pretrained_model_name "bert-base-multilingual-cased" --padding_len 500 --batch_size 16 --learning_rate 0.001 --epochs 3
-    + python run_eval_task_1.py --model_type "simple" --pretrained_model_name "bert-base-multilingual-cased" --padding_len 500 --batch_size 16
+    + python run_train_task_1.py --task 'task-1' --model_type "simple" --model_name "bert-base-multilingual-cased" --source_len 500 --batch_size 16 --learning_rate 0.001 --epochs 3
+    + python run_eval_task_1.py --task 'task-1' --model_type "simple" --model_name "bert-base-multilingual-cased" --source_len 500 --batch_size 16
 
 + distilbert-base-multilingual-cased / 500
-    + python run_train_task_1.py --model_type "simple" --pretrained_model_name "distilbert-base-multilingual-cased" --padding_len 500 --batch_size 16 --learning_rate 0.001 --epochs 3
-    + python run_eval_task_1.py --model_type "simple" --pretrained_model_name "distilbert-base-multilingual-cased" --padding_len 500 --batch_size 16
+    + python run_train_task_1.py --task 'task-1' --model_type "simple" --model_name "distilbert-base-multilingual-cased" --source_len 500 --batch_size 16 --learning_rate 0.001 --epochs 3
+    + python run_eval_task_1.py --task 'task-1' --model_type "simple" --model_name "distilbert-base-multilingual-cased" --source_len 500 --batch_size 16
 
 
 

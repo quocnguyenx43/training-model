@@ -1,111 +1,58 @@
-import pandas as pd
-import numpy as np
 import os
 
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import torch.nn.functional as F
-from torch.utils.data import DataLoader
 
-import datasets as dst
 import models as md
 import functions as func
+import my_import as imp
 
-import argparse as arg
-
-from rich.console import Console
-
-import warnings
-warnings.filterwarnings('ignore')
-
-
-#####################
-console = Console(record=True)
-
-try:
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-except RuntimeError as e:
-    device = 'cpu'
-
-
-### Params
-parser = arg.ArgumentParser(description="Params")
-parser.add_argument("--model_type", type=str, default='simple')
-parser.add_argument("--pretrained_model_name", type=str, default='vinai/phobert-base')
-parser.add_argument("--padding_len", type=int, default=200)
-parser.add_argument("--batch_size", type=int, default=12)
-args = parser.parse_args()
-
-model_type = args.model_type
-pretrained_model_name = args.pretrained_model_name
-pretrained_model_name_2 = pretrained_model_name.split('/')[-1]
-padding_len = args.padding_len
-batch_size = args.batch_size
 
 ### Find weight model path
-all_model_files = os.listdir('./models/task_1/')
+all_model_files = os.listdir(f'./models/{imp.args['task']}/')
 lastest = 0
 for file in all_model_files:
-    if file.startswith(f'{model_type}_{pretrained_model_name_2}'):
+    if file.startswith(f'{imp.args['model_type']}_{imp.args['model_name']}'):
         a = int(file.split('_')[-1].split('.')[0])
         if a > lastest:
             lastest = a
-model_weight_path = f'./models/task_1/{model_type}_{pretrained_model_name_2}_{lastest}.pth'
+model_weight_path = f'./models/{imp.args['task']}/{imp.args['model_type']}_{imp.args['model_name']}_{lastest}.pth'
 
 
-### Read data
-dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
-
-### Dataset & Dataloader
-dev_dataset = dst.RecruitmentDataset(dev_df, tokenizer_name=pretrained_model_name, padding_len=padding_len, task='task-1')
-test_dataset = dst.RecruitmentDataset(test_df, tokenizer_name=pretrained_model_name, padding_len=padding_len, task='task-1')
-
-dev_dataloader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
-test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
-
-### Model
-if model_type == 'simple':
-    cls_model = md.SimpleCLSModel(pretrained_model_name=pretrained_model_name, num_classes=3).to(device)
-elif model_type == 'lstm':
+###### Model
+if imp.args['model_type'] == 'simple':
+    cls_model = md.SimpleCLSModel(num_classes=3, pretrained_model_name=imp.args['model_name'])
+elif imp.args['model_type'] == 'lstm':
     pass
-elif model_type == 'cnn':
+elif imp.args['model_type'] == 'cnn':
     pass
 
 
-### Print params
-console.log(f"Using device: {device}")
-console.log(f'Model type: {model_type}')
-console.log(f'Pretrained model using: {pretrained_model_name}')
-console.log(f'Padding length: {padding_len}')
-console.log(f'Task running: task-1')
-console.log(f'Batch size: {batch_size}')
-console.log(f'Model path: {model_weight_path}')
-
-
-### Loading weights
+###### Loading weights
+cls_model = cls_model.to(imp.device)
 cls_model.load_state_dict(torch.load(model_weight_path))
 criterion = nn.CrossEntropyLoss()
-console.log('Loading model weights successfully!\n')
+imp.console.log(f'model_weight_path: {model_weight_path}')
+imp.console.log('Loading model weight successfully!\n')
+
 
 ### Evaluating on Dev set
-console.log('Evaluation on dev test')
+imp.console.log('Evaluation on dev test')
 func.evaluate(
     cls_model, criterion,
-    dataloader=dev_dataloader, 
-    task_running='task-1',
+    dataloader=imp.dev_dataloader, 
+    task_running=imp.args['task'],
     cm=True, cr=True, last_epoch=True,
-    device=device,
+    device=imp.args['device'],
 )
 
+
 ### Evaluating on Test set
-console.log('Evaluation on test test')
+imp.console.log('Evaluation on test test')
 func.evaluate(
     cls_model, criterion,
-    dataloader=dev_dataloader, 
-    task_running='task-1',
+    dataloader=imp.test_dataloader, 
+    task_running=imp.args['task'],
     cm=True, cr=True, last_epoch=True,
-    device=device,
+    device=imp.args['device'],
 )

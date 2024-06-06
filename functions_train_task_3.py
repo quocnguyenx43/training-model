@@ -34,3 +34,6 @@ def train(model, optimizer, tokenizer, epochs, train_dataloader, saving_path=Non
             path = saving_path + "_" + str(epoch) + '.pth'
             torch.save(model.state_dict(), path)
             print('Saved Model in ' +  path)
+
+
+            

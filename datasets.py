@@ -10,7 +10,9 @@ import utils
 class RecruitmentDataset(Dataset):
 
     def __init__(self, df, tokenizer_name, padding_len, task='task-1', target_len=None):
-        self.df = df
+
+        self.data_x = utils.create_X(df, task)
+        self.data_y = utils.create_y(df, task)
 
         self.tokenizer_name = tokenizer_name
         self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
@@ -18,8 +20,6 @@ class RecruitmentDataset(Dataset):
         self.target_len = target_len
         self.task = task
 
-        self.data_x = utils.create_X(self.df, self.task)
-        self.data_y = utils.create_y(self.df, self.task)
 
 
     def __len__(self):

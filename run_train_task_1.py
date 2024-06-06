@@ -68,11 +68,13 @@ test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 ### Model
 if model_type == 'simple':
-    cls_model = md.SimpleCLSModel(num_classes=3, pretrained_model_name=pretrained_model_name).to(device)
+    cls_model = md.SimpleCLSModel(num_classes=3, pretrained_model_name=pretrained_model_name)
 elif model_type == 'lstm':
     pass
 elif model_type == 'cnn':
     pass
+
+cls_model = cls_model.to(device)
 
 
 ### Training

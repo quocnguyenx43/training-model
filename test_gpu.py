@@ -34,5 +34,5 @@ if torch.cuda.is_available():
 else:
     print("No GPU available. Training will run on CPU.")
 
-input_data = torch.randn(20, 3, 32, 32).to('cuda')
+input_data = torch.randn(20, 3).to('cuda')
 print(input_data)

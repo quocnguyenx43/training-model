@@ -75,6 +75,7 @@ def create_X(df, task):
 def create_y(df, task):
     print(df)
     print(df.columns)
+    print(df.label)
     if task == 'task-1':
         label = torch.tensor(df.label)
         label = F.one_hot(label, num_classes=3).float()

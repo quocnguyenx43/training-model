@@ -129,12 +129,42 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
         print()
 
 
-def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, saving_path=None, device='cpu'):
+def validate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
     
-    patience = 5
-    patience_counter = 0
-    best_val_loss = float('inf')
+    predictions = []
+    references = []
 
+    model.eval()
+    with torch.no_grad():
+        # Wrap the dataloader with tqdm to monitor progress
+        with tqdm(dataloader, desc="Evaluation") as tqdm_loader:
+            for batch_idx, data in enumerate(tqdm_loader, 0):
+                tqdm_loader.set_description(f"Validation, Batch {batch_idx + 1}/{len(dataloader)}")
+
+                ids = data['input']['input_ids'].to(device, dtype=torch.long)
+                mask = data['input']['attention_mask'].to(device, dtype=torch.long)
+                y = data['label']['input_ids'].to(device, dtype=torch.long)
+
+                generated_ids = model.generate(
+                    input_ids=ids,
+                    attention_mask=mask,
+                    max_length=target_len,
+                    num_beams=2,
+                    repetition_penalty=2.5,
+                    length_penalty=1.0,
+                    early_stopping=True
+                )
+
+                preds = [tokenizer.decode(g, skip_special_tokens=True, clean_up_tokenization_spaces=True) for g in generated_ids]
+                target = [tokenizer.decode(t, skip_special_tokens=True, clean_up_tokenization_spaces=True)for t in y]
+
+                predictions.extend(preds)
+                references.extend(target)
+
+    return predictions, references
+
+
+def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, saving_path=None, device='cpu'):
     for epoch in range(epochs):
         model.train()
         running_loss = 0.0

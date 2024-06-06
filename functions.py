@@ -130,10 +130,16 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
 
 
 def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, saving_path=None, device='cpu'):
+    
+    patience = 5
+    patience_counter = 0
+    best_val_loss = float('inf')
+
     for epoch in range(epochs):
         model.train()
         running_loss = 0.0
         
+        # Wrap the train_dataloader with tqdm to monitor progress
         with tqdm(train_dataloader, desc=f"Epoch {epoch + 1}/{epochs}") as tqdm_loader:
             for batch_idx, batch in enumerate(tqdm_loader):
                 tqdm_loader.set_description(f"Epoch {epoch + 1}/{epochs}, Batch {batch_idx + 1}/{len(train_dataloader)}")
@@ -146,7 +152,10 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, saving_p
                 lm_labels = y[:, 1:].clone().detach()
                 lm_labels[y[:, 1:] == tokenizer.pad_token_id] = -100
 
-                outputs = model(input_ids=ids, attention_mask=mask, decoder_input_ids=y_ids, labels=lm_labels)
+                outputs = model(
+                    input_ids=ids, attention_mask=mask,
+                    decoder_input_ids=y_ids, labels=lm_labels
+                )
                 loss = outputs[0]
                 running_loss += loss
                 
@@ -159,7 +168,9 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, saving_p
         if saving_path:
             path = saving_path + "_" + str(epoch) + '.pth'
             torch.save(model.state_dict(), path)
-            print('Saved Model in ' +  path)
+            print('Saved the best model to path: ' +  path)
+        
+    print()
 
 
 def show_evaluation_task_1(true_labels, predictions):

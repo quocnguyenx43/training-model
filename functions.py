@@ -27,19 +27,23 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
                 inputs = batch['input'].to(device)
                 label = batch['label'].to(device)
 
-                print('here')
 
+                print('here1')
                 outputs = model(inputs)
+                print('here2')
                 loss = criterion(outputs, label)
 
                 running_loss += loss.item()
+                print('here3')
 
                 _, pred = torch.max(outputs, dim=dimesion)
                 _, true = torch.max(label, dim=dimesion)
+                print('here4')
 
                 # Append predictions and true labels for F1 score calculation
                 predictions.extend(pred.tolist())
                 true_labels.extend(true.tolist())
+                print('here5')
 
     predictions = np.array(predictions)
     true_labels = np.array(true_labels)

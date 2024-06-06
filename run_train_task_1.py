@@ -51,9 +51,9 @@ saving_path = f'./models/task_1/{model_type}_{pretrained_model_name_2}'
 
 
 ### Read data
-train_df = pd.read_csv('./data/small/train_preprocessed.csv')
-dev_df = pd.read_csv('./data/small/dev_preprocessed.csv')
-test_df = pd.read_csv('./data/small/test_preprocessed.csv')
+train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv')
+dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
 
 
 ### Dataset & Dataloader

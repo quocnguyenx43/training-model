@@ -18,12 +18,13 @@ elif imp.args['model_type'] == 'cnn':
 
 
 ###### Change device & setting criterion, optimizer
-cls_model = cls_model.to(imp.device)
+cls_model = cls_model.to(imp.args['device'])
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(cls_model.parameters(), lr=imp.args['learning_rate'])
 
 
 ###### Training
+print('Training ...')
 func.train(
     cls_model, criterion, optimizer,
     epochs=imp.args['epochs'],

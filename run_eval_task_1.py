@@ -8,15 +8,20 @@ import functions as func
 import my_import as imp
 
 
-### Find weight model path
-all_model_files = os.listdir(f'./models/{imp.args['task']}/')
+### Find weight model path (lastest epoch)
+task_folder = imp.args['task'].replace('-', '_')
+prefix_file_name = imp.args['model_type'] + '_' + imp.args['model_name'].split('/')[-1]
+all_model_files = os.listdir('./models/' + task_folder + '/')
+
 lastest = 0
 for file in all_model_files:
-    if file.startswith(f'{imp.args['model_type']}_{imp.args['model_name']}'):
+    if file.startswith(prefix_file_name):
         a = int(file.split('_')[-1].split('.')[0])
         if a > lastest:
             lastest = a
-model_weight_path = f'./models/{imp.args['task']}/{imp.args['model_type']}_{imp.args['model_name']}_{lastest}.pth'
+
+lastest = str(lastest)
+model_weight_path = './models/' + task_folder + '/' + prefix_file_name + '_' + lastest + '.pth'
 
 
 ###### Model
@@ -32,12 +37,12 @@ elif imp.args['model_type'] == 'cnn':
 cls_model = cls_model.to(imp.device)
 cls_model.load_state_dict(torch.load(model_weight_path))
 criterion = nn.CrossEntropyLoss()
-imp.console.log(f'model_weight_path: {model_weight_path}')
-imp.console.log('Loading model weight successfully!\n')
+print(f'model_weight_path: {model_weight_path}')
+print('Loading model weight successfully!\n')
 
 
 ### Evaluating on Dev set
-imp.console.log('Evaluation on dev test')
+print('Evaluation on dev test')
 func.evaluate(
     cls_model, criterion,
     dataloader=imp.dev_dataloader, 
@@ -48,7 +53,7 @@ func.evaluate(
 
 
 ### Evaluating on Test set
-imp.console.log('Evaluation on test test')
+print('Evaluation on test test')
 func.evaluate(
     cls_model, criterion,
     dataloader=imp.test_dataloader, 

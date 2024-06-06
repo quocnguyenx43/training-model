@@ -33,7 +33,7 @@ try:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 except RuntimeError as e:
     device = 'cpu'
-saving_path = './models/task_1/' + args['model_type'] + '_' + args['model_name'].split('/')[-1]
+saving_path = './models/' + args['task'].replace('-', '_') + '/' + args['model_type'] + '_' + args['model_name'].split('/')[-1]
 
 args['device'] = device
 args['saving_path'] = saving_path
@@ -72,8 +72,12 @@ test_dataloader = DataLoader(test_dataset, batch_size=args['batch_size'], shuffl
 ### Printing args
 print()
 for key, value in args.items():
-    if args['task'] == 'task-1' and key == 'target_len':
-        continue
+    if args['task'] in ['task-1', 'task-2']:
+        if key == 'source_len':
+            console.log(f'padding_len: {value}')
+            continue
+        elif key == 'target_len':
+            continue
     if args['task'] == 'task-3' and key == 'model_type' or key == 'fine_tune':
         continue
     console.log(f'{key}: {value}')

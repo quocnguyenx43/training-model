@@ -37,3 +37,4 @@ a, b = func.validate_task_3(
 
 
 print(a, b)
+

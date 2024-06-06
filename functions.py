@@ -164,7 +164,7 @@ def validate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
     return predictions, references
 
 
-def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, saving_path=None, device='cpu'):
+def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_dataloader, target_len, saving_path=None, device='cpu'):
     for epoch in range(epochs):
         model.train()
         running_loss = 0.0
@@ -194,6 +194,8 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, saving_p
                 optimizer.step()
 
         print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}')
+
+        predictions, references = validate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
 
         if saving_path:
             path = saving_path + "_" + str(epoch) + '.pth'

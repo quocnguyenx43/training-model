@@ -5,13 +5,15 @@ from torch.utils.data import DataLoader
 
 import argparse as arg
 from rich.console import Console
+import warnings
 
 import datasets as dst
 
 
 #####################
 console = Console(record=True)
-
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore", category=FutureWarning)
 
 
 ### Params 
@@ -75,6 +77,5 @@ for key, value in args.items():
     if args['task'] == 'task-3' and key == 'model_type' or key == 'fine_tune':
         continue
     console.log(f'{key}: {value}')
-    
-print()
+
 print()

@@ -54,13 +54,18 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
         if cm and cr:
             show_cm_cr_task_2(true_labels, predictions)
 
+    return running_loss
+
 
 def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader, saving_path=None, task_running='task-1', device='cpu'):
     if task_running == 'task-1':
         dimesion = 1
     elif task_running == 'task-2':
         dimesion = 2
-
+    
+    patience = 5
+    patience_counter = 0
+    best_val_loss = float('inf')
     for epoch in range(epochs):
         model.train()
 
@@ -103,14 +108,58 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
             show_evaluation_task_2(true_labels, predictions)
 
         # Evaluation on Dev set
-        evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running, device=device)
+        val_running_loss = evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running, device=device)
+
+        # Saving
+        if saving_path:
+            if val_running_loss < best_val_loss:
+                path = saving_path + "_" + str(epoch) + '.pth'
+                torch.save(model.state_dict(), path)
+                print('Saved the best model to path: ' +  path)
+                best_val_loss = val_running_loss
+                patience_counter = 0
+            else:
+                patience_counter += 1
+
+        # Check if
+        if patience_counter >= patience:
+            print('Early stopping triggered')
+            break
+        
+        print()
+
+
+def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, saving_path=None, device='cpu'):
+    for epoch in range(epochs):
+        model.train()
+        running_loss = 0.0
+        
+        with tqdm(train_dataloader, desc=f"Epoch {epoch + 1}/{epochs}") as tqdm_loader:
+            for batch_idx, batch in enumerate(tqdm_loader):
+                tqdm_loader.set_description(f"Epoch {epoch + 1}/{epochs}, Batch {batch_idx + 1}/{len(train_dataloader)}")
+
+                ids = batch['input']['input_ids'].to(device, dtype=torch.long)
+                mask = batch['input']['attention_mask'].to(device, dtype=torch.long)
+
+                y = batch['label']['input_ids'].to(device, dtype=torch.long)
+                y_ids = y[:, :-1].contiguous()
+                lm_labels = y[:, 1:].clone().detach()
+                lm_labels[y[:, 1:] == tokenizer.pad_token_id] = -100
+
+                outputs = model(input_ids=ids, attention_mask=mask, decoder_input_ids=y_ids, labels=lm_labels)
+                loss = outputs[0]
+                running_loss += loss
+                
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+
+        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}')
 
         if saving_path:
             path = saving_path + "_" + str(epoch) + '.pth'
             torch.save(model.state_dict(), path)
             print('Saved Model in ' +  path)
-
-        print()
 
 
 def show_evaluation_task_1(true_labels, predictions):
@@ -157,3 +206,5 @@ def show_cm_cr_task_2(true_labels, predictions):
         print(cm_p)
         print(f"Classification Report for {aspect} aspect")
         print(classification_report(true_labels[:, i], predictions[:, i]))#, target_names=['neu', 'pos', 'neg', 'nm'])
+
+

@@ -75,3 +75,6 @@ for key, value in args.items():
     if args['task'] == 'task-3' and key == 'model_type' or key == 'fine_tune':
         continue
     console.log(f'{key}: {value}')
+    
+print()
+print()

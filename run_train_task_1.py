@@ -31,6 +31,6 @@ func.train(
     epochs=imp.args['epochs'],
     train_dataloader=imp.train_dataloader, dev_dataloader=imp.dev_dataloader,
     saving_path=imp.args['saving_path'],
-    task_running=imp.args['saving_path'],
+    task_running=imp.args['task'],
     device=imp.args['device']
 )

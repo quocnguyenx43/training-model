@@ -32,7 +32,7 @@ try:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 except RuntimeError as e:
     device = 'cpu'
-saving_path = './models/task_1/' + args['model_type'] + '/' + args['model_name'].split('/')[-1]
+saving_path = './models/task_1/' + args['model_type'] + '_' + args['model_name'].split('/')[-1]
 
 args['device'] = device
 args['saving_path'] = saving_path

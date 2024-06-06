@@ -44,6 +44,14 @@ train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv')
 dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
 test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
 
+train_df.dropna(subset=['explanation'], inplace=True)
+dev_df.dropna(subset=['explanation'], inplace=True)
+test_df.dropna(subset=['explanation'], inplace=True)
+
+args['train_shape'] = train_df.shape
+args['dev_shape'] = dev_df.shape
+args['test_shape'] = test_df.shape
+
 
 ### Dataset
 train_dataset = dst.RecruitmentDataset(

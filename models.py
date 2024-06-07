@@ -70,12 +70,15 @@ class SimpleAspectModel(nn.Module):
 
         # FCs
         self.fc_layers_1 = nn.ModuleList([
-            nn.Linear(self.pretrained_model.config.hidden_size, 256)
+            nn.Linear(self.pretrained_model.config.hidden_size, 512)
             for _ in range(num_aspects)
         ])
-
-        self.fc_layers_1 = nn.ModuleList([
-            nn.Linear(self.pretrained_model.config.hidden_size, 256)
+        self.fc_layers_2 = nn.ModuleList([
+            nn.Linear(512, 256)
+            for _ in range(num_aspects)
+        ])
+        self.fc_layers_3 = nn.ModuleList([
+            nn.Linear(256, num_aspect_classes)
             for _ in range(num_aspects)
         ])
 
@@ -93,13 +96,21 @@ class SimpleAspectModel(nn.Module):
             model_output = self.pretrained_model(**input).pooler_output # BERT
 
         # Fully connected layers with Dropout for each aspect
-        aspect_outputs = [
+        outputs_1 = [
             self.dropout_layer(F.relu(fc(model_output)))
-            for fc in self.fc_layers
+            for fc in self.fc_layers_1
+        ]
+        outputs_2 = [
+            self.dropout_layer(F.relu(fc(outputs_1)))
+            for fc in self.fc_layers_2
+        ]
+        outputs_3 = [
+            self.dropout_layer(F.relu(fc(outputs_2)))
+            for fc in self.fc_layers_3
         ]
 
         # Apply Softmax to each aspect output
-        aspect_outputs_softmax = [self.softmax(output) for output in aspect_outputs]
+        aspect_outputs_softmax = [self.softmax(output) for output in outputs_3]
         aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
         aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
 

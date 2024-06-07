@@ -25,6 +25,7 @@ func.train_task_3(
     epochs=imp.args['epochs'],
     train_dataloader=imp.train_dataloader,
     dev_dataloader=imp.dev_dataloader,
+    target_len=imp.args['target_len'],
     saving_path=imp.args['saving_path'],
     device=imp.args['device']
 )

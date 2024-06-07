@@ -7,7 +7,7 @@ import argparse as arg
 from rich.console import Console
 import warnings
 
-import datasets as dst
+import my_datasets as dst
 
 
 #####################

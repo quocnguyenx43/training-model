@@ -179,11 +179,11 @@ def show_cm_cr_task_2(true_labels, predictions):
         print(classification_report(true_labels[:, i], predictions[:, i]))#, target_names=['neu', 'pos', 'neg', 'nm'])
 
 
-def generate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
+def validate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
 
     predictions = []
     references = []
-    metric = load_metric("rouge")
+    metric = load_metric('bertscore', 'bleu', 'rouge')
 
     model.eval()
     with torch.no_grad():
@@ -247,7 +247,7 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
                 loss.backward()
                 optimizer.step()
 
-        predictions, references, metric = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
+        predictions, references, metric = validate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
         print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}, Rouge: {metric}')
         print()
 

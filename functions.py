@@ -4,6 +4,9 @@ from tqdm import tqdm
 
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.metrics import confusion_matrix, classification_report
+
+from datasets import load_metric
+
 import utils
 
 
@@ -177,9 +180,10 @@ def show_cm_cr_task_2(true_labels, predictions):
 
 
 def generate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
-    
+
     predictions = []
     references = []
+    metric = load_metric("rouge")
 
     model.eval()
     with torch.no_grad():
@@ -208,7 +212,10 @@ def generate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
                 predictions.extend(preds)
                 references.extend(target)
 
-    return predictions, references
+                metric.add_batch(predictions=preds, references=target)
+
+    metric.compute()
+    return predictions, references, metric
 
 
 def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_dataloader, target_len, saving_path=None, device='cpu'):
@@ -240,9 +247,9 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
                 loss.backward()
                 optimizer.step()
 
-        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}')
-
-        predictions, references = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
+        predictions, references, metric = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
+        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}, Rouge: {metric}')
+        print()
 
         if saving_path:
             path = saving_path + "_" + str(epoch) + '.pth'

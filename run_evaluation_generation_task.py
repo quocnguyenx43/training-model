@@ -45,9 +45,10 @@ predictions, references = func.generate_task_3(
     device=imp.args['device']
 )
 bertscore, rouge, bleu = func.compute_score_task_3(predictions, references)
+bleu = bleu['bleu']
 random_index = random.randint(0, len(predictions) - 1)
 print('Evaluation on dev set:')
-print(f'Bert score (prec, rec, f1): {bertscore}, Bleu score: {bleu['bleu']}, Rouge score (1, 2, L): {rouge}')
+print(f'Bert score (prec, rec, f1): {bertscore}, Bleu score: {bleu}, Rouge score (1, 2, L): {rouge}')
 print('*** Example: ')
 print(f'Original @ [{random_index}]: {references[random_index]}')
 print(f'Generated @ [{random_index}]: {predictions[random_index]}')
@@ -65,9 +66,10 @@ predictions, references = func.generate_task_3(
     device=imp.args['device']
 )
 bertscore, rouge, bleu = func.compute_score_task_3(predictions, references)
+bleu = bleu['bleu']
 random_index = random.randint(0, len(predictions) - 1)
 print('Evaluation on test set:')
-print(f'Bert score (prec, rec, f1): {bertscore}, Bleu score: {bleu['bleu']}, Rouge score (1, 2, L): {rouge}')
+print(f'Bert score (prec, rec, f1): {bertscore}, Bleu score: {bleu}, Rouge score (1, 2, L): {rouge}')
 print('*** Example: ')
 print(f'Original @ [{random_index}]: {references[random_index]}')
 print(f'Generated @ [{random_index}]: {predictions[random_index]}')

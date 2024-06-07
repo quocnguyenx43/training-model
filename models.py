@@ -102,15 +102,13 @@ class SimpleAspectModel(nn.Module):
             self.dropout_layer(F.relu(fc(model_output)))
             for fc in self.fc_layers_1
         ]
-        print(len(outputs_1))
-        print(outputs_1[0].shape)
         outputs_2 = [
-            self.dropout_layer(F.relu(fc(outputs_1)))
-            for fc in self.fc_layers_2
+            self.dropout_layer(F.relu(fc(inp))) \
+            for fc, inp in zip(self.fc_layers_2, outputs_1)
         ]
         outputs_3 = [
-            self.dropout_layer(F.relu(fc(outputs_2)))
-            for fc in self.fc_layers_3
+            self.dropout_layer(F.relu(fc(inp))) \
+            for fc, inp in zip(self.fc_layers_3, outputs_2)
         ]
 
         # Apply Softmax to each aspect output

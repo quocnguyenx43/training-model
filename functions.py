@@ -244,8 +244,9 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
                 optimizer.step()
 
         predictions, references = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
-        metric = compute_score_task_3(predictions, references)
-        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}, Rouge: {metric}')
+        bertscore, _ = compute_score_task_3(predictions, references)
+
+        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}, Bert score (prec, rec, f1): {bertscore}')
         print()
 
         if saving_path:
@@ -267,4 +268,4 @@ def compute_score_task_3(predictions, references):
 
     # bleuscore = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
 
-    return bertscore_precision#, bertscore_recall, bertscore_f1
+    return bertscore_precision, bertscore_recall, bertscore_f1

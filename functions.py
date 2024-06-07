@@ -129,7 +129,54 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
         print()
 
 
-def validate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
+
+def show_evaluation_task_1(true_labels, predictions):
+    acc = accuracy_score(true_labels, predictions)
+    f1 = f1_score(true_labels, predictions, average='macro')
+    prec = precision_score(true_labels, predictions, average='macro')
+    recall = recall_score(true_labels, predictions, average='macro')
+    
+    print(
+        f'Acc: {acc:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}, F1: {f1:.4f}'
+    )
+
+
+def show_cm_cr_task_1(true_labels, predictions):
+    class_names = ['clean', 'warning', 'seeding']  # 0, 1, 2
+    cm = confusion_matrix(true_labels, predictions)#, labels=class_names)
+    print("Confusion Matrix:")
+    print(cm)
+    print("Classification Report:")
+    print(classification_report(true_labels, predictions))#, target_names=class_names))
+
+
+def show_evaluation_task_2(true_labels, predictions):
+    zero_one_loss = np.any(true_labels != predictions, axis=1).mean()
+    hamming_loss = utils.my_hamming_loss(true_labels, predictions)
+    emr = np.all(predictions == true_labels, axis=1).mean()
+
+    acc = utils.my_accuracy(true_labels, predictions)
+    prec = utils.my_precision(true_labels, predictions)
+    f1 = utils.my_f1_score(true_labels, predictions)
+    recall = utils.my_recall(true_labels, predictions)
+
+    print(
+        f'0/1 Loss: {zero_one_loss:.4f}, Hamming Loss: {hamming_loss:.4f}, EMR: {emr:.4f}, ' \
+        + f'Acc: {acc:.4f}, F1: {f1:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}'
+    )
+
+
+def show_cm_cr_task_2(true_labels, predictions):
+    aspect_names = ['title', 'desc', 'company', 'other']
+    for i, aspect in enumerate(aspect_names):
+        cm_p = confusion_matrix(true_labels[:, i], predictions[:, i])#, labels=['neu', 'pos', 'neg', 'nm'])
+        print(f"Confusion Matrix of {aspect} aspect")
+        print(cm_p)
+        print(f"Classification Report for {aspect} aspect")
+        print(classification_report(true_labels[:, i], predictions[:, i]))#, target_names=['neu', 'pos', 'neg', 'nm'])
+
+
+def generate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
     
     predictions = []
     references = []
@@ -195,7 +242,7 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
 
         print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}')
 
-        predictions, references = validate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
+        predictions, references = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
 
         if saving_path:
             path = saving_path + "_" + str(epoch) + '.pth'
@@ -204,50 +251,5 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
         
     print()
 
-
-def show_evaluation_task_1(true_labels, predictions):
-    acc = accuracy_score(true_labels, predictions)
-    f1 = f1_score(true_labels, predictions, average='macro')
-    prec = precision_score(true_labels, predictions, average='macro')
-    recall = recall_score(true_labels, predictions, average='macro')
-    
-    print(
-        f'Acc: {acc:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}, F1: {f1:.4f}'
-    )
-
-
-def show_cm_cr_task_1(true_labels, predictions):
-    class_names = ['clean', 'warning', 'seeding']  # 0, 1, 2
-    cm = confusion_matrix(true_labels, predictions)#, labels=class_names)
-    print("Confusion Matrix:")
-    print(cm)
-    print("Classification Report:")
-    print(classification_report(true_labels, predictions))#, target_names=class_names))
-
-
-def show_evaluation_task_2(true_labels, predictions):
-    zero_one_loss = np.any(true_labels != predictions, axis=1).mean()
-    hamming_loss = utils.my_hamming_loss(true_labels, predictions)
-    emr = np.all(predictions == true_labels, axis=1).mean()
-
-    acc = utils.my_accuracy(true_labels, predictions)
-    prec = utils.my_precision(true_labels, predictions)
-    f1 = utils.my_f1_score(true_labels, predictions)
-    recall = utils.my_recall(true_labels, predictions)
-
-    print(
-        f'0/1 Loss: {zero_one_loss:.4f}, Hamming Loss: {hamming_loss:.4f}, EMR: {emr:.4f}, ' \
-        + f'Acc: {acc:.4f}, F1: {f1:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}'
-    )
-
-
-def show_cm_cr_task_2(true_labels, predictions):
-    aspect_names = ['title', 'desc', 'company', 'other']
-    for i, aspect in enumerate(aspect_names):
-        cm_p = confusion_matrix(true_labels[:, i], predictions[:, i])#, labels=['neu', 'pos', 'neg', 'nm'])
-        print(f"Confusion Matrix of {aspect} aspect")
-        print(cm_p)
-        print(f"Classification Report for {aspect} aspect")
-        print(classification_report(true_labels[:, i], predictions[:, i]))#, target_names=['neu', 'pos', 'neg', 'nm'])
 
 

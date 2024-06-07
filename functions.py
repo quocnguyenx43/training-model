@@ -183,7 +183,7 @@ def validate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
 
     predictions = []
     references = []
-    metric = load_metric('bertscore', 'bleu', 'rouge')
+    bert_score = load_metric('bertscore')
 
     model.eval()
     with torch.no_grad():
@@ -212,10 +212,10 @@ def validate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
                 predictions.extend(preds)
                 references.extend(target)
 
-                metric.add_batch(predictions=preds, references=target)
+                bert_score.add_batch(predictions=preds, references=target)
 
-    metric.compute()
-    return predictions, references, metric
+    bert_score.compute()
+    return predictions, references, bert_score
 
 
 def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_dataloader, target_len, saving_path=None, device='cpu'):

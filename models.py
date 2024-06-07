@@ -95,8 +95,6 @@ class SimpleAspectModel(nn.Module):
         else:
             model_output = self.pretrained_model(**input).pooler_output # BERT
 
-        print(model_output.shape)
-
         # Fully connected layers with Dropout for each aspect
         outputs_1 = [
             self.dropout_layer(F.relu(fc(model_output)))

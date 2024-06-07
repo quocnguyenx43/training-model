@@ -55,4 +55,4 @@ TASK 2: ####################################
 TASK 3: ####################################
 + VietAI/vit5-base
     + python run_train_generation_task.py --task "task-3" --model_name "VietAI/vit5-base" --source_len 64 --target_len 32 --batch_size 4 --learning_rate 0.001 --epochs 3
-    # + python run_eval_task_3_fine_tune.py --model_name "VietAI/vit5-base" --source_len 512 --target_len 256 --batch_size 16 --learning_rate 0.001 --epochs 2
+    + python run_evaluation_generation_task.py --task "task-3" --model_name "VietAI/vit5-base" --source_len 64 --target_len 32 --batch_size 4

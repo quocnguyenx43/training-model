@@ -259,4 +259,4 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
 def compute_score_task_3(predictions, references):
     bertscore_metric = load_metric('bertscore')
     bertscore_result = bertscore_metric.compute(predictions=predictions, references=references, lang="vi")
-    return bertscore_result
+    return bertscore_result['Rouge']

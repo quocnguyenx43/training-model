@@ -23,9 +23,10 @@ class SimpleCLSModel(nn.Module):
 
         # FC
         self.dropout = nn.Dropout(0.4)
-        self.fc1 = nn.Linear(self.pretrained_model.config.hidden_size, 256)
-        self.fc2 = nn.Linear(256, 128)
-        self.fc3 = nn.Linear(128, num_classes)
+        self.fc1 = nn.Linear(self.pretrained_model.config.hidden_size, 1024)
+        self.fc2 = nn.Linear(1024, 512)
+        self.fc3 = nn.Linear(512, 256)
+        self.fc4 = nn.Linear(256, num_classes)
 
         # LeakyReLU activation
         self.leaky_relu = nn.LeakyReLU(0.01)
@@ -40,9 +41,10 @@ class SimpleCLSModel(nn.Module):
         # Linear
         fc1_output = F.relu(self.dropout(self.fc1(model_output)))
         fc2_output = F.relu(self.dropout(self.fc2(fc1_output)))
+        fc3_output = F.relu(self.dropout(self.fc3(fc2_output)))
 
         # Softmax
-        soft_max_output = F.log_softmax(self.fc3(fc2_output), dim=1)
+        soft_max_output = F.log_softmax(self.fc4(fc3_output), dim=1)
 
         return soft_max_output
     
@@ -67,8 +69,13 @@ class SimpleAspectModel(nn.Module):
             self.pretrained_model.requires_grad_(False)
 
         # FCs
-        self.fc_layers = nn.ModuleList([
-            nn.Linear(self.pretrained_model.config.hidden_size, num_aspect_classes)
+        self.fc_layers_1 = nn.ModuleList([
+            nn.Linear(self.pretrained_model.config.hidden_size, 256)
+            for _ in range(num_aspects)
+        ])
+
+        self.fc_layers_1 = nn.ModuleList([
+            nn.Linear(self.pretrained_model.config.hidden_size, 256)
             for _ in range(num_aspects)
         ])
 

@@ -256,8 +256,7 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
             path = saving_path + "_" + str(epoch) + '.pth'
             torch.save(model.state_dict(), path)
             print('Saved the model to path: ' +  path)
-        
-    print()
+            print()
 
 
 def compute_score_task_3(predictions, references):

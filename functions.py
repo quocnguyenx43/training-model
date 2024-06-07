@@ -271,9 +271,9 @@ def compute_score_task_3(predictions, references):
     # bleuscore_result = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
 
     rouge_result = rouge_metric.compute(predictions=predictions, references=references)
-    rouge_1 = round(rouge_result['rouge1'].fmeasure, 4)
-    rouge_2 = round(rouge_result['rouge2'].fmeasure, 4)
-    rouge_L = round(rouge_result['rougeL'].fmeasure, 4)
+    # rouge_1 = round(rouge_result['rouge1'].fmeasure, 4)
+    # rouge_2 = round(rouge_result['rouge2'].fmeasure, 4)
+    # rouge_L = round(rouge_result['rougeL'].fmeasure, 4)
 
     return (bertscore_precision, bertscore_recall, bertscore_f1), \
            rouge_result, #\

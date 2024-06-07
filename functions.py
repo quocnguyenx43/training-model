@@ -267,4 +267,4 @@ def compute_score_task_3(predictions, references):
 
     # bleuscore = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
 
-    return bertscore_precision, bertscore_recall, bertscore_f1
+    return bertscore_precision#, bertscore_recall, bertscore_f1

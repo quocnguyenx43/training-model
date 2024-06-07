@@ -148,6 +148,17 @@ def show_cm_cr_task_1(true_labels, predictions):
     class_names = ['clean', 'warning', 'seeding'] # 0, 1, 2
     cm = confusion_matrix(true_labels, predictions)#, labels=class_names)
     print("Confusion Matrix:")
+    
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from sklearn.metrics import confusion_matrix, classification_report, ConfusionMatrixDisplay
+
+    # Display the confusion matrix
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
+    disp.plot(cmap=plt.cm.Blues)
+    plt.title('Confusion Matrix')
+    plt.show()
+
     print(cm)
     print("Classification Report:")
     print(classification_report(true_labels, predictions))#, target_names=class_names)
@@ -243,10 +254,11 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
                 loss.backward()
                 optimizer.step()
 
+        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}')
+        
         predictions, references = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
         bertscore, bleuscore, rougescore = compute_score_task_3(predictions, references)
 
-        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}')
         print('Evaluation on dev set:')
         print(f'BERT score (prec, rec, f1): {bertscore}')
         print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')

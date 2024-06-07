@@ -39,6 +39,7 @@ print('Loading model weight successfully!\n')
 
 
 ###### Evaluating on dev set
+print('Evaluation on dev set:')
 predictions, references = func.generate_task_3(
     generation_model, tokenizer,
     imp.dev_dataloader, target_len=imp.args['target_len'],
@@ -47,7 +48,6 @@ predictions, references = func.generate_task_3(
 bertscore, rouge, bleu = func.compute_score_task_3(predictions, references)
 bleu = bleu['bleu']
 random_index = random.randint(0, len(predictions) - 1)
-print('Evaluation on dev set:')
 print(f'Bert score (prec, rec, f1): {bertscore}, Bleu score: {bleu}, Rouge score (1, 2, L): {rouge}')
 print('*** Example: ')
 print(f'Original @ [{random_index}]: {references[random_index]}')
@@ -60,6 +60,7 @@ pd.DataFrame({
 
 
 ###### Evaluating on test test
+print('Evaluation on test set:')
 predictions, references = func.generate_task_3(
     generation_model, tokenizer,
     imp.test_dataloader, target_len=imp.args['target_len'],
@@ -68,7 +69,6 @@ predictions, references = func.generate_task_3(
 bertscore, rouge, bleu = func.compute_score_task_3(predictions, references)
 bleu = bleu['bleu']
 random_index = random.randint(0, len(predictions) - 1)
-print('Evaluation on test set:')
 print(f'Bert score (prec, rec, f1): {bertscore}, Bleu score: {bleu}, Rouge score (1, 2, L): {rouge}')
 print('*** Example: ')
 print(f'Original @ [{random_index}]: {references[random_index]}')

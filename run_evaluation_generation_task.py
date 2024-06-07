@@ -45,9 +45,12 @@ predictions, references = func.generate_task_3(
     imp.dev_dataloader, target_len=imp.args['target_len'],
     device=imp.args['device']
 )
-bertscore, rouge, bleu = func.compute_score_task_3(predictions, references)
+bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions, references)
 random_index = random.randint(0, len(predictions) - 1)
-print(f'Bert score (prec, rec, f1): {bertscore}\nBleu score: {bleu}\nRouge score (1, 2, L): {rouge}')
+print(f'BERT score (prec, rec, f1): {bertscore}')
+print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
+print(f'Rouge score (1, 2, L): {rougescore}')
+print()
 print('*** Example: ')
 print(f'Original @ [{random_index}]: {references[random_index]}')
 print(f'Generated @ [{random_index}]: {predictions[random_index]}')
@@ -65,10 +68,13 @@ predictions, references = func.generate_task_3(
     imp.test_dataloader, target_len=imp.args['target_len'],
     device=imp.args['device']
 )
-bertscore, rouge, bleu = func.compute_score_task_3(predictions, references)
+bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions, references)
 # bleu = bleu['bleu']
 random_index = random.randint(0, len(predictions) - 1)
-print(f'Bert score (prec, rec, f1): {bertscore}, Bleu score: {bleu}, Rouge score (1, 2, L): {rouge}')
+print(f'BERT score (prec, rec, f1): {bertscore}')
+print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
+print(f'Rouge score (1, 2, L): {rougescore}')
+print()
 print('*** Example: ')
 print(f'Original @ [{random_index}]: {references[random_index]}')
 print(f'Generated @ [{random_index}]: {predictions[random_index]}')

@@ -102,7 +102,8 @@ class SimpleAspectModel(nn.Module):
             self.dropout_layer(F.relu(fc(model_output)))
             for fc in self.fc_layers_1
         ]
-        print(outputs_1.shape)
+        print(len(outputs_1))
+        print(outputs_1[0].shape)
         outputs_2 = [
             self.dropout_layer(F.relu(fc(outputs_1)))
             for fc in self.fc_layers_2

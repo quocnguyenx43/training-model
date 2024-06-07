@@ -67,7 +67,7 @@ predictions, references = func.generate_task_3(
     device=imp.args['device']
 )
 bertscore, rouge, bleu = func.compute_score_task_3(predictions, references)
-bleu = bleu['bleu']
+# bleu = bleu['bleu']
 random_index = random.randint(0, len(predictions) - 1)
 print(f'Bert score (prec, rec, f1): {bertscore}, Bleu score: {bleu}, Rouge score (1, 2, L): {rouge}')
 print('*** Example: ')

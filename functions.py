@@ -258,5 +258,13 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
 
 def compute_score_task_3(predictions, references):
     bertscore_metric = load_metric('bertscore')
+    bleu_metric = load_metric('bleu')
+
     bertscore_result = bertscore_metric.compute(predictions=predictions, references=references, lang="vi")
-    return bertscore_result['Rouge']
+    bertscore_precision = np.mean(bertscore_result['precision'])
+    bertscore_recall = np.mean(bertscore_result['recall'])
+    bertscore_f1 = np.mean(bertscore_result['f1'])
+
+    bleuscore = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
+
+    return bertscore_precision, bertscore_recall, bertscore_f1, bleuscore

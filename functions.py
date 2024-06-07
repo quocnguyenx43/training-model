@@ -272,7 +272,7 @@ def compute_score_task_3(predictions, references):
 
     bleuscore_result = bleu_metric.compute(
         predictions=[pred.split() for pred in predictions],
-        references=[[ref.split() for ref in refs] for refs in references],
+        references=[[ref.split()] for ref in references],
     )
     bleuscore = bleuscore_result
 

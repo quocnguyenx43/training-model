@@ -179,11 +179,10 @@ def show_cm_cr_task_2(true_labels, predictions):
         print(classification_report(true_labels[:, i], predictions[:, i]))#, target_names=['neu', 'pos', 'neg', 'nm'])
 
 
-def validate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
+def generate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
 
     predictions = []
     references = []
-    bert_score = load_metric('bertscore')
 
     model.eval()
     with torch.no_grad():
@@ -211,11 +210,8 @@ def validate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):
 
                 predictions.extend(preds)
                 references.extend(target)
-
-                bert_score.add_batch(predictions=preds, references=target)
-
-    bert_score.compute()
-    return predictions, references, bert_score
+                
+    return predictions, references
 
 
 def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_dataloader, target_len, saving_path=None, device='cpu'):
@@ -247,7 +243,8 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
                 loss.backward()
                 optimizer.step()
 
-        predictions, references, metric = validate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
+        predictions, references = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
+        metric = compute_score_task_3(predictions, references)
         print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}, Rouge: {metric}')
         print()
 
@@ -259,4 +256,7 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
     print()
 
 
-
+def compute_score_task_3(predictions, references):
+    bertscore_metric = load_metric('bertscore')
+    bertscore_result = bertscore_metric.compute(predictions=predictions, references=references, lang="vi")
+    return bertscore_result

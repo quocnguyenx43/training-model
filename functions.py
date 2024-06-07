@@ -270,9 +270,10 @@ def compute_score_task_3(predictions, references):
     bertscore_recall = round(np.mean(bertscore_result['recall']), 4)
     bertscore_f1 = round(np.mean(bertscore_result['f1']), 4)
 
-    # bleuscore_result = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
-    print(predictions)
-    print(references)
+    bleuscore_result = bleu_metric.compute(
+        predictions=[[pred] for pred in predictions],
+        references=[[[ref]] for ref in references]
+    )
 
     rouge_result = rouge_metric.compute(predictions=predictions, references=references)
     rouge_1 = round(rouge_result['rouge1'].mid.fmeasure, 4)

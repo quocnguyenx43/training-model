@@ -271,8 +271,8 @@ def compute_score_task_3(predictions, references):
     bertscore_f1 = round(np.mean(bertscore_result['f1']), 4)
 
     bleuscore_result = bleu_metric.compute(
-        predictions=[[pred] for pred in predictions],
-        references=[[[ref]] for ref in references]
+        predictions=[pred.split() for pred in predictions],
+        references=[[ref.split() for ref in refs] for refs in references],
     )
     bleuscore = bleuscore_result
 

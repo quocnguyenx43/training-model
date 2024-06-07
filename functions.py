@@ -244,9 +244,10 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
                 optimizer.step()
 
         predictions, references = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
-        bertscore, _ = compute_score_task_3(predictions, references)
+        bertscore, rouge = compute_score_task_3(predictions, references)
 
         print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}, Bert score (prec, rec, f1): {bertscore}')
+        print(rouge)
         print()
 
         if saving_path:
@@ -260,12 +261,15 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
 def compute_score_task_3(predictions, references):
     bertscore_metric = load_metric('bertscore')
     bleu_metric = load_metric('bleu')
+    rouge_metric = load_metric('rouge')
 
     bertscore_result = bertscore_metric.compute(predictions=predictions, references=references, lang="vi")
     bertscore_precision = np.mean(bertscore_result['precision'])
     bertscore_recall = np.mean(bertscore_result['recall'])
     bertscore_f1 = np.mean(bertscore_result['f1'])
 
-    # bleuscore = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
+    # bleuscore_result = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
 
-    return bertscore_precision, bertscore_recall, bertscore_f1
+    rouge_result = rouge_metric.compute(predictions=predictions, references=references)
+
+    return (bertscore_precision, bertscore_recall, bertscore_f1), rouge_result

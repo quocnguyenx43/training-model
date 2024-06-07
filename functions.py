@@ -274,6 +274,7 @@ def compute_score_task_3(predictions, references):
         predictions=[[pred] for pred in predictions],
         references=[[[ref]] for ref in references]
     )
+    print(bleuscore_result)
 
     rouge_result = rouge_metric.compute(predictions=predictions, references=references)
     rouge_1 = round(rouge_result['rouge1'].mid.fmeasure, 4)

@@ -244,12 +244,13 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
                 optimizer.step()
 
         predictions, references = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
-        bertscore, rougescore = compute_score_task_3(predictions, references)
+        bertscore, rougescore, bleuscore = compute_score_task_3(predictions, references)
 
         print(f'Epoch {epoch + 1}/{epochs}')
         print(f'Loss: {running_loss:.4f}')
         print(f'Bert score (prec, rec, f1): {bertscore}')
         print(f'Rouge score (1, 2, L): {rougescore}')
+        print(bleuscore)
         print()
 
         if saving_path:
@@ -274,12 +275,11 @@ def compute_score_task_3(predictions, references):
         predictions=[[pred] for pred in predictions],
         references=[[[ref]] for ref in references]
     )
-    print(bleuscore_result)
-
     rouge_result = rouge_metric.compute(predictions=predictions, references=references)
     rouge_1 = round(rouge_result['rouge1'].mid.fmeasure, 4)
     rouge_2 = round(rouge_result['rouge2'].mid.fmeasure, 4)
     rouge_L = round(rouge_result['rougeL'].mid.fmeasure, 4)
     
     return (bertscore_precision, bertscore_recall, bertscore_f1), \
-           (rouge_1, rouge_2, rouge_L),
+           (rouge_1, rouge_2, rouge_L), \
+            bleuscore_result

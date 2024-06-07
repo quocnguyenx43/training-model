@@ -24,17 +24,18 @@ func.train_task_3(
     generation_model, optimizer, tokenizer,
     epochs=imp.args['epochs'],
     train_dataloader=imp.train_dataloader,
+    dev_dataloader=imp.dev_dataloader,
     saving_path=imp.args['saving_path'],
     device=imp.args['device']
 )
 
-print('Validating ...')
-a, b = func.validate_task_3(
-    generation_model, tokenizer,
-    imp.test_dataloader, target_len=imp.args['target_len'],
-    device=imp.args['device']
-)
+# print('Validating ...')
+# a, b = func.validate_task_3(
+#     generation_model, tokenizer,
+#     imp.test_dataloader, target_len=imp.args['target_len'],
+#     device=imp.args['device']
+# )
 
 
-print(a, b)
+# print(a, b)
 

@@ -146,7 +146,7 @@ def show_evaluation_task_1(true_labels, predictions):
 
 def show_cm_cr_task_1(true_labels, predictions):
     class_names = ['clean', 'warning', 'seeding'] # 0, 1, 2
-    cm = confusion_matrix(true_labels, predictions)#, labels=class_names)
+    cm = confusion_matrix(true_labels, predictions)
     print("Confusion Matrix:")
     print(cm)
     print("Classification Report:")
@@ -171,12 +171,13 @@ def show_evaluation_task_2(true_labels, predictions):
 
 def show_cm_cr_task_2(true_labels, predictions):
     aspect_names = ['title', 'desc', 'company', 'other']
+    class_names = ['neutral', 'positive', 'negative', 'not_mentioned']
     for i, aspect in enumerate(aspect_names):
-        cm_p = confusion_matrix(true_labels[:, i], predictions[:, i])#, labels=['neu', 'pos', 'neg', 'nm'])
+        cm_p = confusion_matrix(true_labels[:, i], predictions[:, i])
         print(f"Confusion Matrix of {aspect} aspect")
         print(cm_p)
         print(f"Classification Report for {aspect} aspect")
-        print(classification_report(true_labels[:, i], predictions[:, i]))#, target_names=['neu', 'pos', 'neg', 'nm'])
+        print(classification_report(true_labels[:, i], predictions[:, i], target_names=class_names))
 
 
 def generate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):

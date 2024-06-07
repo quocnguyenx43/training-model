@@ -264,12 +264,16 @@ def compute_score_task_3(predictions, references):
     rouge_metric = load_metric('rouge')
 
     bertscore_result = bertscore_metric.compute(predictions=predictions, references=references, lang="vi")
-    bertscore_precision = np.mean(bertscore_result['precision'])
-    bertscore_recall = np.mean(bertscore_result['recall'])
-    bertscore_f1 = np.mean(bertscore_result['f1'])
+    bertscore_precision = round(np.mean(bertscore_result['precision']), 4)
+    bertscore_recall = round(np.mean(bertscore_result['recall']), 4)
+    bertscore_f1 = round(np.mean(bertscore_result['f1']), 4)
 
     # bleuscore_result = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
 
     rouge_result = rouge_metric.compute(predictions=predictions, references=references)
+    rouge_1 = round(rouge_result['rouge1'].fmeasure, 4)
+    rouge_2 = round(rouge_result['rouge2'].fmeasure, 4)
+    rouge_L = round(rouge_result['rougeL'].fmeasure, 4)
 
-    return (bertscore_precision, bertscore_recall, bertscore_f1), rouge_result
+    return (bertscore_precision, bertscore_recall, bertscore_f1), \
+           (rouge_1, rouge_2, rouge_L), #\

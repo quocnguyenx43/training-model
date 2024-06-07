@@ -246,13 +246,11 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
         predictions, references = generate_task_3(model, tokenizer, dev_dataloader, target_len=target_len, device=device)
         bertscore, bleuscore, rougescore = compute_score_task_3(predictions, references)
 
-        print(f'Epoch {epoch + 1}/{epochs}')
-        print(f'Loss: {running_loss:.4f}')
+        print(f'Epoch {epoch + 1}/{epochs}, Loss: {running_loss:.4f}')
         print('Evaluation on dev set:')
         print(f'BERT score (prec, rec, f1): {bertscore}')
         print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
         print(f'Rouge score (1, 2, L): {rougescore}')
-        print()
 
         if saving_path:
             path = saving_path + "_" + str(epoch) + '.pth'

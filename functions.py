@@ -150,7 +150,7 @@ def show_cm_cr_task_1(true_labels, predictions):
     print("Confusion Matrix:")
     print(cm)
     print("Classification Report:")
-    print(classification_report(true_labels, predictions), target_names=class_names)
+    print(classification_report(true_labels, predictions, target_names=class_names))
 
 
 def show_evaluation_task_2(true_labels, predictions):

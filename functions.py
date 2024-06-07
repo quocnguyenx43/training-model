@@ -145,21 +145,21 @@ def show_evaluation_task_1(true_labels, predictions):
 
 
 def show_cm_cr_task_1(true_labels, predictions):
-    class_names = ['clean', 'warning', 'seeding'] # 0, 1, 2
-    cm = confusion_matrix(true_labels, predictions)#, labels=class_names)
-    print("Confusion Matrix:")
-    
     import numpy as np
     import matplotlib.pyplot as plt
     from sklearn.metrics import confusion_matrix, classification_report, ConfusionMatrixDisplay
 
+    class_names = ['clean', 'warning', 'seeding'] # 0, 1, 2
+    cm = confusion_matrix(true_labels, predictions)#, labels=class_names)
+    print("Confusion Matrix:")
+    print(cm)
+    
     # Display the confusion matrix
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
     disp.plot(cmap=plt.cm.Blues)
     plt.title('Confusion Matrix')
     plt.show()
 
-    print(cm)
     print("Classification Report:")
     print(classification_report(true_labels, predictions))#, target_names=class_names)
 

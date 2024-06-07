@@ -278,10 +278,10 @@ def compute_score_task_3(predictions, references):
         references=[[ref.split()] for ref in references],
     )
     bleuscore = round(bleuscore_result['bleu'], 4)
-    bleu_prec_1 = round(bleuscore['precisions'][0])
-    bleu_prec_2 = round(bleuscore['precisions'][1])
-    bleu_prec_3 = round(bleuscore['precisions'][2])
-    bleu_prec_4 = round(bleuscore['precisions'][3])
+    bleu_prec_1 = round(bleuscore_result['precisions'][0])
+    bleu_prec_2 = round(bleuscore_result['precisions'][1])
+    bleu_prec_3 = round(bleuscore_result['precisions'][2])
+    bleu_prec_4 = round(bleuscore_result['precisions'][3])
 
     rouge_result = rouge_metric.compute(predictions=predictions, references=references)
     rouge_1 = round(rouge_result['rouge1'].mid.fmeasure, 4)

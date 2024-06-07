@@ -265,6 +265,6 @@ def compute_score_task_3(predictions, references):
     bertscore_recall = np.mean(bertscore_result['recall'])
     bertscore_f1 = np.mean(bertscore_result['f1'])
 
-    bleuscore = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
+    # bleuscore = bleu_metric.compute(predictions=predictions, references=[[ref] for ref in references])
 
-    return bertscore_precision, bertscore_recall, bertscore_f1, bleuscore
+    return bertscore_precision, bertscore_recall, bertscore_f1

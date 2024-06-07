@@ -276,4 +276,4 @@ def compute_score_task_3(predictions, references):
     rouge_L = round(rouge_result['rougeL'].fmeasure, 4)
 
     return (bertscore_precision, bertscore_recall, bertscore_f1), \
-           (rouge_1, rouge_2, rouge_L), #\
+           rouge_result, #\

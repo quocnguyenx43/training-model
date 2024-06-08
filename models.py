@@ -43,7 +43,7 @@ class SimpleCLSModel(nn.Module):
         fc2_output = F.relu(self.dropout(self.fc2(fc1_output)))
         fc3_output = F.relu(self.dropout(self.fc3(fc2_output)))
 
-        print(fc3_output.shape)
+        print(self.fc4(fc3_output).shape)
 
         # Softmax
         soft_max_output = F.log_softmax(self.fc4(fc3_output), dim=1)

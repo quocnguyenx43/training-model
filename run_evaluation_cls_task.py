@@ -32,7 +32,9 @@ if imp.args['model_type'] == 'simple':
         model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])    
 elif imp.args['model_type'] == 'lstm':
     if imp.args['task'] == 'task-1':
-        pass
+        model = md.LSTMCLSModel(pretrained_model_name=imp.args['model_name'],
+                                lstm_hidden=imp.args['lstm_hidden'],
+                                lstm_layers=imp.args['lstm_layers'])
     elif imp.args['task'] == 'task-2':
         pass
 elif imp.args['model_type'] == 'cnn':
@@ -40,7 +42,7 @@ elif imp.args['model_type'] == 'cnn':
         pass
     elif imp.args['task'] == 'task-2':
         pass
-
+    
 
 ###### Loading weights
 model = model.to(imp.device)

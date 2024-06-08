@@ -1,0 +1,954 @@
+vinai/phobert-base
+[11:52:07] task: task-2                                                                                 my_import.py:91
+           model_type: simple                                                                           my_import.py:91
+           model_name: vinai/phobert-base                                                               my_import.py:91
+           padding_len: 200                                                                             my_import.py:85
+           batch_size: 32                                                                               my_import.py:91
+           learning_rate: 0.001                                                                         my_import.py:91
+           epochs: 10                                                                                   my_import.py:91
+           device: cuda                                                                                 my_import.py:91
+           saving_path: ./models/task_2/simple_phobert-base                                             my_import.py:91
+           train_shape: (8444, 28)                                                                      my_import.py:91
+           dev_shape: (1207, 28)                                                                        my_import.py:91
+           test_shape: (2413, 28)                                                                       my_import.py:91
+
+
+model_weight_path: ./models/task_2/simple_phobert-base_6.pth
+Loading model weight successfully!
+
+Evaluation on dev set
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:08<00:00,  4.47it/s]
+Evaluation, Loss: 50.9303, 0/1 Loss: 0.9776, Hamming Loss: 0.5594, EMR: 0.0224, Acc: 0.9861, F1: 0.6074, Precision: 0.5255, Recall: 0.7683
+
+Confusion Matrix of title aspect
+[[  0   8   1   0]
+ [  0 587 259   0]
+ [  0 247 102   0]
+ [  0   2   1   0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         9
+           1       0.70      0.69      0.69       846
+           2       0.28      0.29      0.29       349
+           3       0.00      0.00      0.00         3
+    accuracy                           0.57      1207
+
+   macro avg       0.24      0.25      0.25      1207
+weighted avg       0.57      0.57      0.57      1207
+
+Confusion Matrix of desc aspect
+[[  0   1   1   0]
+ [  0 346 399   0]
+ [  0 129 330   0]
+ [  0   0   1   0]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         2
+           1       0.73      0.46      0.57       745
+           2       0.45      0.72      0.55       459
+           3       0.00      0.00      0.00         1
+    accuracy                           0.56      1207
+
+   macro avg       0.29      0.30      0.28      1207
+weighted avg       0.62      0.56      0.56      1207
+
+Confusion Matrix of company aspect
+[[  0   0   0  56]
+ [  0   0   0 586]
+ [  0   0   0 399]
+ [  0   0   0 166]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00        56
+           1       0.00      0.00      0.00       586
+           2       0.00      0.00      0.00       399
+           3       0.14      1.00      0.24       166
+    accuracy                           0.14      1207
+
+   macro avg       0.03      0.25      0.06      1207
+weighted avg       0.02      0.14      0.03      1207
+
+Confusion Matrix of other aspect
+[[576   0 449]
+ [ 74   0  56]
+ [ 32   0  20]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+
+
+           1       0.84      0.56      0.67      1025
+           2       0.00      0.00      0.00       130
+           3       0.04      0.38      0.07        52
+    accuracy                           0.49      1207
+
+   macro avg       0.29      0.32      0.25      1207
+weighted avg       0.72      0.49      0.58      1207
+
+Evaluation on test set
+Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:08<00:00,  8.65it/s]
+Evaluation, Loss: 101.4900, 0/1 Loss: 0.9760, Hamming Loss: 0.5467, EMR: 0.0240, Acc: 0.9867, F1: 0.6104, Precision: 0.5298, Recall: 0.7668
+
+Confusion Matrix of title aspect
+[[   0   18    5    0]
+ [   0 1221  465    0]
+ [   0  519  181    0]
+ [   0    1    3    0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00        23
+           1       0.69      0.72      0.71      1686
+           2       0.28      0.26      0.27       700
+           3       0.00      0.00      0.00         4
+    accuracy                           0.58      2413
+
+   macro avg       0.24      0.25      0.24      2413
+weighted avg       0.57      0.58      0.57      2413
+
+Confusion Matrix of desc aspect
+[[673 778]
+ [254 708]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+
+
+           1       0.73      0.46      0.57      1451
+           2       0.48      0.74      0.58       962
+    accuracy                           0.57      2413
+
+   macro avg       0.60      0.60      0.57      2413
+weighted avg       0.63      0.57      0.57      2413
+
+Confusion Matrix of company aspect
+[[   0    0    0  102]
+ [   0    0    0 1182]
+ [   0    0    0  798]
+ [   0    0    0  331]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       102
+           1       0.00      0.00      0.00      1182
+           2       0.00      0.00      0.00       798
+           3       0.14      1.00      0.24       331
+    accuracy                           0.14      2413
+
+   macro avg       0.03      0.25      0.06      2413
+weighted avg       0.02      0.14      0.03      2413
+
+Confusion Matrix of other aspect
+[[   0    2    0    1]
+ [   0 1231    0  821]
+ [   0  131    0  137]
+ [   0   60    0   30]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         3
+           1       0.86      0.60      0.71      2052
+           2       0.00      0.00      0.00       268
+           3       0.03      0.33      0.06        90
+    accuracy                           0.52      2413
+
+   macro avg       0.22      0.23      0.19      2413
+weighted avg       0.74      0.52      0.60      2413
+
+
+
+uitnlp/visobert
+[11:52:41] task: task-2                                                                                 my_import.py:91
+           model_type: simple                                                                           my_import.py:91
+           model_name: uitnlp/visobert                                                                  my_import.py:91
+           padding_len: 400                                                                             my_import.py:85
+           batch_size: 32                                                                               my_import.py:91
+           learning_rate: 0.001                                                                         my_import.py:91
+           epochs: 10                                                                                   my_import.py:91
+           device: cuda                                                                                 my_import.py:91
+           saving_path: ./models/task_2/simple_visobert                                                 my_import.py:91
+           train_shape: (8444, 28)                                                                      my_import.py:91
+           dev_shape: (1207, 28)                                                                        my_import.py:91
+           test_shape: (2413, 28)                                                                       my_import.py:91
+
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/visobert and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+
+
+model_weight_path: ./models/task_2/simple_visobert_5.pth
+Loading model weight successfully!
+
+Evaluation on dev set
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  4.87it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.70it/s]
+Evaluation, Loss: 51.3034, 0/1 Loss: 1.0000, Hamming Loss: 0.8200, EMR: 0.0000, Acc: 0.4898, F1: 0.3902, Precision: 0.4267, Recall: 0.3790
+
+Confusion Matrix of title aspect
+[[  9   0   0   0]
+ [846   0   0   0]
+ [349   0   0   0]
+ [  3   0   0   0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.01      1.00      0.01         9
+           1       0.00      0.00      0.00       846
+           2       0.00      0.00      0.00       349
+           3       0.00      0.00      0.00         3
+    accuracy                           0.01      1207
+
+   macro avg       0.00      0.25      0.00      1207
+weighted avg       0.00      0.01      0.00      1207
+
+Confusion Matrix of desc aspect
+[[  2   0   0   0]
+ [745   0   0   0]
+ [459   0   0   0]
+ [  1   0   0   0]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+           0       0.00      1.00      0.00         2
+           1       0.00      0.00      0.00       745
+           2       0.00      0.00      0.00       459
+           3       0.00      0.00      0.00         1
+    accuracy                           0.00      1207
+
+   macro avg       0.00      0.25      0.00      1207
+weighted avg       0.00      0.00      0.00      1207
+
+Confusion Matrix of company aspect
+[[  0   0   0  56]
+ [  0   0   0 586]
+ [  0   0   0 399]
+ [  0   0   0 166]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00        56
+           1       0.00      0.00      0.00       586
+           2       0.00      0.00      0.00       399
+           3       0.14      1.00      0.24       166
+    accuracy                           0.14      1207
+
+   macro avg       0.03      0.25      0.06      1207
+weighted avg       0.02      0.14      0.03      1207
+
+Confusion Matrix of other aspect
+[[661   0 364]
+ [ 70   0  60]
+ [ 21   0  31]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+
+
+           1       0.88      0.64      0.74      1025
+           2       0.00      0.00      0.00       130
+           3       0.07      0.60      0.12        52
+    accuracy                           0.57      1207
+
+   macro avg       0.32      0.41      0.29      1207
+weighted avg       0.75      0.57      0.64      1207
+
+Evaluation on test set
+Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:16<00:00,  4.62it/s]
+Evaluation, Loss: 102.4855, 0/1 Loss: 1.0000, Hamming Loss: 0.8244, EMR: 0.0000, Acc: 0.4907, F1: 0.3893, Precision: 0.4252, Recall: 0.3788
+
+Confusion Matrix of title aspect
+[[  23    0    0    0]
+ [1686    0    0    0]
+ [ 700    0    0    0]
+ [   4    0    0    0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.01      1.00      0.02        23
+           1       0.00      0.00      0.00      1686
+           2       0.00      0.00      0.00       700
+           3       0.00      0.00      0.00         4
+    accuracy                           0.01      2413
+
+   macro avg       0.00      0.25      0.00      2413
+weighted avg       0.00      0.01      0.00      2413
+
+Confusion Matrix of desc aspect
+[[   0    0    0]
+ [1451    0    0]
+ [ 962    0    0]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       0.0
+           1       0.00      0.00      0.00    1451.0
+           2       0.00      0.00      0.00     962.0
+    accuracy                           0.00    2413.0
+
+   macro avg       0.00      0.00      0.00    2413.0
+weighted avg       0.00      0.00      0.00    2413.0
+
+Confusion Matrix of company aspect
+[[   0    0    0  102]
+ [   0    0    0 1182]
+ [   0    0    0  798]
+ [   0    0    0  331]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       102
+           1       0.00      0.00      0.00      1182
+           2       0.00      0.00      0.00       798
+           3       0.14      1.00      0.24       331
+    accuracy                           0.14      2413
+
+   macro avg       0.03      0.25      0.06      2413
+weighted avg       0.02      0.14      0.03      2413
+
+Confusion Matrix of other aspect
+[[   0    3    0    0]
+ [   0 1295    0  757]
+ [   0  128    0  140]
+ [   0   44    0   46]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         3
+           1       0.88      0.63      0.74      2052
+           2       0.00      0.00      0.00       268
+           3       0.05      0.51      0.09        90
+    accuracy                           0.56      2413
+
+   macro avg       0.23      0.29      0.21      2413
+weighted avg       0.75      0.56      0.63      2413
+
+
+
+uitnlp/CafeBERT
+[11:53:24] task: task-2                                                                                 my_import.py:91
+           model_type: simple                                                                           my_import.py:91
+           model_name: uitnlp/CafeBERT                                                                  my_import.py:91
+           padding_len: 400                                                                             my_import.py:85
+           batch_size: 32                                                                               my_import.py:91
+           learning_rate: 0.001                                                                         my_import.py:91
+           epochs: 10                                                                                   my_import.py:91
+           device: cuda                                                                                 my_import.py:91
+           saving_path: ./models/task_2/simple_CafeBERT                                                 my_import.py:91
+           train_shape: (8444, 28)                                                                      my_import.py:91
+           dev_shape: (1207, 28)                                                                        my_import.py:91
+           test_shape: (2413, 28)                                                                       my_import.py:91
+
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/CafeBERT and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+
+
+model_weight_path: ./models/task_2/simple_CafeBERT_9.pth
+Loading model weight successfully!
+
+Evaluation on dev set
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:25<00:00,  1.74it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:25<00:00,  1.49it/s]
+Evaluation, Loss: 51.6339, 0/1 Loss: 1.0000, Hamming Loss: 0.8494, EMR: 0.0000, Acc: 0.4891, F1: 0.3844, Precision: 0.4035, Recall: 0.3786
+
+Confusion Matrix of title aspect
+[[  9   0   0   0]
+ [846   0   0   0]
+ [349   0   0   0]
+ [  3   0   0   0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.01      1.00      0.01         9
+           1       0.00      0.00      0.00       846
+           2       0.00      0.00      0.00       349
+           3       0.00      0.00      0.00         3
+    accuracy                           0.01      1207
+
+   macro avg       0.00      0.25      0.00      1207
+weighted avg       0.00      0.01      0.00      1207
+
+Confusion Matrix of desc aspect
+[[  0   1   1   0]
+ [  0 128 617   0]
+ [  0  35 424   0]
+ [  0   0   1   0]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         2
+           1       0.78      0.17      0.28       745
+           2       0.41      0.92      0.56       459
+           3       0.00      0.00      0.00         1
+    accuracy                           0.46      1207
+
+   macro avg       0.30      0.27      0.21      1207
+weighted avg       0.64      0.46      0.39      1207
+
+Confusion Matrix of company aspect
+[[  0   0   0  56]
+ [  0   0   0 586]
+ [  0   0   0 399]
+ [  0   0   0 166]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00        56
+           1       0.00      0.00      0.00       586
+           2       0.00      0.00      0.00       399
+           3       0.14      1.00      0.24       166
+    accuracy                           0.14      1207
+
+   macro avg       0.03      0.25      0.06      1207
+weighted avg       0.02      0.14      0.03      1207
+
+Confusion Matrix of other aspect
+[[   0    0    0    0]
+ [1025    0    0    0]
+ [ 130    0    0    0]
+ [  52    0    0    0]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       0.0
+           1       0.00      0.00      0.00    1025.0
+           2       0.00      0.00      0.00     130.0
+           3       0.00      0.00      0.00      52.0
+    accuracy                           0.00    1207.0
+
+   macro avg       0.00      0.00      0.00    1207.0
+weighted avg       0.00      0.00      0.00    1207.0
+
+Evaluation on test set
+Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:47<00:00,  1.92it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:47<00:00,  1.60it/s]
+Evaluation, Loss: 103.0969, 0/1 Loss: 1.0000, Hamming Loss: 0.8454, EMR: 0.0000, Acc: 0.4912, F1: 0.3854, Precision: 0.4045, Recall: 0.3791
+
+Confusion Matrix of title aspect
+[[  23    0    0    0]
+ [1686    0    0    0]
+ [ 700    0    0    0]
+ [   4    0    0    0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.01      1.00      0.02        23
+           1       0.00      0.00      0.00      1686
+           2       0.00      0.00      0.00       700
+           3       0.00      0.00      0.00         4
+    accuracy                           0.01      2413
+
+   macro avg       0.00      0.25      0.00      2413
+weighted avg       0.00      0.01      0.00      2413
+
+Confusion Matrix of desc aspect
+[[ 247 1204]
+ [  74  888]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+
+
+           1       0.77      0.17      0.28      1451
+           2       0.42      0.92      0.58       962
+    accuracy                           0.47      2413
+
+   macro avg       0.60      0.55      0.43      2413
+weighted avg       0.63      0.47      0.40      2413
+
+Confusion Matrix of company aspect
+[[   0    0    0  102]
+ [   0    0    0 1182]
+ [   0    0    0  798]
+ [   0    0    0  331]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       102
+           1       0.00      0.00      0.00      1182
+           2       0.00      0.00      0.00       798
+           3       0.14      1.00      0.24       331
+    accuracy                           0.14      2413
+
+   macro avg       0.03      0.25      0.06      2413
+weighted avg       0.02      0.14      0.03      2413
+
+Confusion Matrix of other aspect
+[[   3    0    0    0]
+ [2052    0    0    0]
+ [ 268    0    0    0]
+ [  90    0    0    0]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+           0       0.00      1.00      0.00         3
+           1       0.00      0.00      0.00      2052
+           2       0.00      0.00      0.00       268
+           3       0.00      0.00      0.00        90
+    accuracy                           0.00      2413
+
+   macro avg       0.00      0.25      0.00      2413
+weighted avg       0.00      0.00      0.00      2413
+
+
+
+xlm-roberta-base
+[11:54:54] task: task-2                                                                                 my_import.py:91
+           model_type: simple                                                                           my_import.py:91
+           model_name: xlm-roberta-base                                                                 my_import.py:91
+           padding_len: 500                                                                             my_import.py:85
+           batch_size: 32                                                                               my_import.py:91
+           learning_rate: 0.001                                                                         my_import.py:91
+           epochs: 10                                                                                   my_import.py:91
+           device: cuda                                                                                 my_import.py:91
+           saving_path: ./models/task_2/simple_xlm-roberta-base                                         my_import.py:91
+           train_shape: (8444, 28)                                                                      my_import.py:91
+           dev_shape: (1207, 28)                                                                        my_import.py:91
+           test_shape: (2413, 28)                                                                       my_import.py:91
+
+
+model_weight_path: ./models/task_2/simple_xlm-roberta-base_5.pth
+Loading model weight successfully!
+
+Evaluation on dev set
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:12<00:00,  4.05it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:12<00:00,  3.01it/s]
+Evaluation, Loss: 51.5537, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+Confusion Matrix of title aspect
+[[  9   0   0   0]
+ [846   0   0   0]
+ [349   0   0   0]
+ [  3   0   0   0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.01      1.00      0.01         9
+           1       0.00      0.00      0.00       846
+           2       0.00      0.00      0.00       349
+           3       0.00      0.00      0.00         3
+    accuracy                           0.01      1207
+
+   macro avg       0.00      0.25      0.00      1207
+weighted avg       0.00      0.01      0.00      1207
+
+Confusion Matrix of desc aspect
+[[  0   0   2   0]
+ [  0   0 745   0]
+ [  0   0 459   0]
+ [  0   0   1   0]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         2
+           1       0.00      0.00      0.00       745
+           2       0.38      1.00      0.55       459
+           3       0.00      0.00      0.00         1
+    accuracy                           0.38      1207
+
+   macro avg       0.10      0.25      0.14      1207
+weighted avg       0.14      0.38      0.21      1207
+
+Confusion Matrix of company aspect
+[[  0   0   0  56]
+ [  0   0   0 586]
+ [  0   0   0 399]
+ [  0   0   0 166]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00        56
+           1       0.00      0.00      0.00       586
+           2       0.00      0.00      0.00       399
+           3       0.14      1.00      0.24       166
+    accuracy                           0.14      1207
+
+   macro avg       0.03      0.25      0.06      1207
+weighted avg       0.02      0.14      0.03      1207
+
+Confusion Matrix of other aspect
+[[1025    0    0]
+ [ 130    0    0]
+ [  52    0    0]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+
+
+           1       0.85      1.00      0.92      1025
+           2       0.00      0.00      0.00       130
+           3       0.00      0.00      0.00        52
+    accuracy                           0.85      1207
+
+   macro avg       0.28      0.33      0.31      1207
+weighted avg       0.72      0.85      0.78      1207
+
+Evaluation on test set
+Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  4.47it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.75it/s]
+Evaluation, Loss: 102.9362, 0/1 Loss: 0.9992, Hamming Loss: 0.6511, EMR: 0.0008, Acc: 0.7415, F1: 0.5231, Precision: 0.4927, Recall: 0.5741
+
+Confusion Matrix of title aspect
+[[  23    0    0    0]
+ [1686    0    0    0]
+ [ 700    0    0    0]
+ [   4    0    0    0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.01      1.00      0.02        23
+           1       0.00      0.00      0.00      1686
+           2       0.00      0.00      0.00       700
+           3       0.00      0.00      0.00         4
+    accuracy                           0.01      2413
+
+   macro avg       0.00      0.25      0.00      2413
+weighted avg       0.00      0.01      0.00      2413
+
+Confusion Matrix of desc aspect
+[[   0 1451]
+ [   0  962]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+
+
+           1       0.00      0.00      0.00      1451
+           2       0.40      1.00      0.57       962
+    accuracy                           0.40      2413
+
+   macro avg       0.20      0.50      0.29      2413
+weighted avg       0.16      0.40      0.23      2413
+
+Confusion Matrix of company aspect
+[[   0    0    0  102]
+ [   0    0    0 1182]
+ [   0    0    0  798]
+ [   0    0    0  331]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       102
+           1       0.00      0.00      0.00      1182
+           2       0.00      0.00      0.00       798
+           3       0.14      1.00      0.24       331
+    accuracy                           0.14      2413
+
+   macro avg       0.03      0.25      0.06      2413
+weighted avg       0.02      0.14      0.03      2413
+
+Confusion Matrix of other aspect
+[[   0    3    0    0]
+ [   0 2052    0    0]
+ [   0  268    0    0]
+ [   0   90    0    0]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         3
+           1       0.85      1.00      0.92      2052
+           2       0.00      0.00      0.00       268
+           3       0.00      0.00      0.00        90
+    accuracy                           0.85      2413
+
+   macro avg       0.21      0.25      0.23      2413
+weighted avg       0.72      0.85      0.78      2413
+
+
+
+bert-base-multilingual-cased
+[11:55:46] task: task-2                                                                                 my_import.py:91
+           model_type: simple                                                                           my_import.py:91
+           model_name: bert-base-multilingual-cased                                                     my_import.py:91
+           padding_len: 500                                                                             my_import.py:85
+           batch_size: 32                                                                               my_import.py:91
+           learning_rate: 0.001                                                                         my_import.py:91
+           epochs: 10                                                                                   my_import.py:91
+           device: cuda                                                                                 my_import.py:91
+           saving_path: ./models/task_2/simple_bert-base-multilingual-cased                             my_import.py:91
+           train_shape: (8444, 28)                                                                      my_import.py:91
+           dev_shape: (1207, 28)                                                                        my_import.py:91
+           test_shape: (2413, 28)                                                                       my_import.py:91
+
+
+model_weight_path: ./models/task_2/simple_bert-base-multilingual-cased_2.pth
+Loading model weight successfully!
+
+Evaluation on dev set
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:13<00:00,  3.98it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:13<00:00,  2.82it/s]
+Evaluation, Loss: 51.6851, 0/1 Loss: 1.0000, Hamming Loss: 0.5860, EMR: 0.0000, Acc: 0.7249, F1: 0.5647, Precision: 0.5825, Recall: 0.5635
+
+Confusion Matrix of title aspect
+[[  0   9   0   0]
+ [ 19 827   0   0]
+ [ 11 338   0   0]
+ [  0   3   0   0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         9
+           1       0.70      0.98      0.82       846
+           2       0.00      0.00      0.00       349
+           3       0.00      0.00      0.00         3
+    accuracy                           0.69      1207
+
+   macro avg       0.18      0.24      0.20      1207
+weighted avg       0.49      0.69      0.57      1207
+
+Confusion Matrix of desc aspect
+[[  2   0   0   0]
+ [745   0   0   0]
+ [459   0   0   0]
+ [  1   0   0   0]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+           0       0.00      1.00      0.00         2
+           1       0.00      0.00      0.00       745
+           2       0.00      0.00      0.00       459
+           3       0.00      0.00      0.00         1
+    accuracy                           0.00      1207
+
+   macro avg       0.00      0.25      0.00      1207
+weighted avg       0.00      0.00      0.00      1207
+
+Confusion Matrix of company aspect
+[[  0   0   0  56]
+ [  0   0   0 586]
+ [  0   0   0 399]
+ [  0   0   0 166]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00        56
+           1       0.00      0.00      0.00       586
+           2       0.00      0.00      0.00       399
+           3       0.14      1.00      0.24       166
+    accuracy                           0.14      1207
+
+   macro avg       0.03      0.25      0.06      1207
+weighted avg       0.02      0.14      0.03      1207
+
+Confusion Matrix of other aspect
+[[   0    0    0    0]
+ [  21 1004    0    0]
+ [   4  126    0    0]
+ [   3   49    0    0]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         0
+           1       0.85      0.98      0.91      1025
+           2       0.00      0.00      0.00       130
+           3       0.00      0.00      0.00        52
+    accuracy                           0.83      1207
+
+   macro avg       0.21      0.24      0.23      1207
+weighted avg       0.72      0.83      0.77      1207
+
+Evaluation on test set
+Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  4.39it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.68it/s]
+Evaluation, Loss: 103.2773, 0/1 Loss: 1.0000, Hamming Loss: 0.5855, EMR: 0.0000, Acc: 0.7254, F1: 0.5650, Precision: 0.5833, Recall: 0.5633
+
+Confusion Matrix of title aspect
+[[   0   23    0    0]
+ [  35 1651    0    0]
+ [  24  676    0    0]
+ [   0    4    0    0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00        23
+           1       0.70      0.98      0.82      1686
+           2       0.00      0.00      0.00       700
+           3       0.00      0.00      0.00         4
+    accuracy                           0.68      2413
+
+   macro avg       0.18      0.24      0.20      2413
+weighted avg       0.49      0.68      0.57      2413
+
+Confusion Matrix of desc aspect
+[[   0    0    0]
+ [1451    0    0]
+ [ 962    0    0]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       0.0
+           1       0.00      0.00      0.00    1451.0
+           2       0.00      0.00      0.00     962.0
+    accuracy                           0.00    2413.0
+
+   macro avg       0.00      0.00      0.00    2413.0
+weighted avg       0.00      0.00      0.00    2413.0
+
+Confusion Matrix of company aspect
+[[   0    0    0  102]
+ [   0    0    0 1182]
+ [   0    0    0  798]
+ [   0    0    0  331]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       102
+           1       0.00      0.00      0.00      1182
+           2       0.00      0.00      0.00       798
+           3       0.14      1.00      0.24       331
+    accuracy                           0.14      2413
+
+   macro avg       0.03      0.25      0.06      2413
+weighted avg       0.02      0.14      0.03      2413
+
+Confusion Matrix of other aspect
+[[   0    3    0    0]
+ [  33 2019    0    0]
+ [  13  255    0    0]
+ [   4   86    0    0]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         3
+           1       0.85      0.98      0.91      2052
+           2       0.00      0.00      0.00       268
+           3       0.00      0.00      0.00        90
+    accuracy                           0.84      2413
+
+   macro avg       0.21      0.25      0.23      2413
+weighted avg       0.73      0.84      0.78      2413
+
+
+
+distilbert-base-multilingual-cased
+[11:56:35] task: task-2                                                                                 my_import.py:91
+           model_type: simple                                                                           my_import.py:91
+           model_name: distilbert-base-multilingual-cased                                               my_import.py:91
+           padding_len: 500                                                                             my_import.py:85
+           batch_size: 32                                                                               my_import.py:91
+           learning_rate: 0.001                                                                         my_import.py:91
+           epochs: 10                                                                                   my_import.py:91
+           device: cuda                                                                                 my_import.py:91
+           saving_path: ./models/task_2/simple_distilbert-base-multilingual-cased                       my_import.py:91
+           train_shape: (8444, 28)                                                                      my_import.py:91
+           dev_shape: (1207, 28)                                                                        my_import.py:91
+           test_shape: (2413, 28)                                                                       my_import.py:91
+
+
+model_weight_path: ./models/task_2/simple_distilbert-base-multilingual-cased_12.pth
+Loading model weight successfully!
+
+Evaluation on dev set
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:07<00:00,  7.09it/s]
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:07<00:00,  5.01it/s]
+Evaluation, Loss: 50.8029, 0/1 Loss: 0.9992, Hamming Loss: 0.6622, EMR: 0.0008, Acc: 0.7397, F1: 0.5143, Precision: 0.4857, Recall: 0.5746
+
+Confusion Matrix of title aspect
+[[  9   0   0   0]
+ [846   0   0   0]
+ [349   0   0   0]
+ [  3   0   0   0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.01      1.00      0.01         9
+           1       0.00      0.00      0.00       846
+           2       0.00      0.00      0.00       349
+           3       0.00      0.00      0.00         3
+    accuracy                           0.01      1207
+
+   macro avg       0.00      0.25      0.00      1207
+weighted avg       0.00      0.01      0.00      1207
+
+Confusion Matrix of desc aspect
+[[  0   1   1   0]
+ [  0 317 428   0]
+ [  0 104 355   0]
+ [  0   0   1   0]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         2
+           1       0.75      0.43      0.54       745
+           2       0.45      0.77      0.57       459
+           3       0.00      0.00      0.00         1
+    accuracy                           0.56      1207
+
+   macro avg       0.30      0.30      0.28      1207
+weighted avg       0.64      0.56      0.55      1207
+
+Confusion Matrix of company aspect
+[[  0   0   0  56]
+ [  0   0   0 586]
+ [  0   0   0 399]
+ [  0   0   0 166]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00        56
+           1       0.00      0.00      0.00       586
+           2       0.00      0.00      0.00       399
+           3       0.14      1.00      0.24       166
+    accuracy                           0.14      1207
+
+   macro avg       0.03      0.25      0.06      1207
+weighted avg       0.02      0.14      0.03      1207
+
+Confusion Matrix of other aspect
+[[757   0 268]
+ [ 67   0  63]
+ [ 25   0  27]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+
+
+           1       0.89      0.74      0.81      1025
+           2       0.00      0.00      0.00       130
+           3       0.08      0.52      0.13        52
+    accuracy                           0.65      1207
+
+   macro avg       0.32      0.42      0.31      1207
+weighted avg       0.76      0.65      0.69      1207
+
+Evaluation on test set
+Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:11<00:00,  6.46it/s]
+Evaluation, Loss: 101.3825, 0/1 Loss: 0.9988, Hamming Loss: 0.6600, EMR: 0.0012, Acc: 0.7415, F1: 0.5142, Precision: 0.4860, Recall: 0.5741
+
+Confusion Matrix of title aspect
+[[  23    0    0    0]
+ [1686    0    0    0]
+ [ 700    0    0    0]
+ [   4    0    0    0]]
+Classification Report for title aspect
+              precision    recall  f1-score   support
+           0       0.01      1.00      0.02        23
+           1       0.00      0.00      0.00      1686
+           2       0.00      0.00      0.00       700
+           3       0.00      0.00      0.00         4
+    accuracy                           0.01      2413
+
+   macro avg       0.00      0.25      0.00      2413
+weighted avg       0.00      0.01      0.00      2413
+
+Confusion Matrix of desc aspect
+[[639 812]
+ [203 759]]
+Classification Report for desc aspect
+              precision    recall  f1-score   support
+
+
+           1       0.76      0.44      0.56      1451
+           2       0.48      0.79      0.60       962
+    accuracy                           0.58      2413
+
+   macro avg       0.62      0.61      0.58      2413
+weighted avg       0.65      0.58      0.57      2413
+
+Confusion Matrix of company aspect
+[[   0    0    0  102]
+ [   0    0    0 1182]
+ [   0    0    0  798]
+ [   0    0    0  331]]
+Classification Report for company aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00       102
+           1       0.00      0.00      0.00      1182
+           2       0.00      0.00      0.00       798
+           3       0.14      1.00      0.24       331
+    accuracy                           0.14      2413
+
+   macro avg       0.03      0.25      0.06      2413
+weighted avg       0.02      0.14      0.03      2413
+
+Confusion Matrix of other aspect
+[[   0    3    0    0]
+ [   0 1490    0  562]
+ [   0  148    0  120]
+ [   0   50    0   40]]
+Classification Report for other aspect
+              precision    recall  f1-score   support
+           0       0.00      0.00      0.00         3
+           1       0.88      0.73      0.80      2052
+           2       0.00      0.00      0.00       268
+           3       0.06      0.44      0.10        90
+    accuracy                           0.63      2413
+
+   macro avg       0.23      0.29      0.22      2413
+weighted avg       0.75      0.63      0.68      2413
+
+
+
+All commands completed!
+

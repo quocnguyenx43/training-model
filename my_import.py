@@ -26,6 +26,10 @@ parser.add_argument("--batch_size", type=int, default=12)
 parser.add_argument("--learning_rate", type=float, default=0.001)
 parser.add_argument("--epochs", type=int, default=10)
 parser.add_argument("--fine_tune", action="store_true", default=True)
+
+parser.add_argument("--lstm_hidden", type=int, default=128)
+parser.add_argument("--lstm_layers", type=int, default=4)
+
 args = parser.parse_args()
 args = vars(args)
 

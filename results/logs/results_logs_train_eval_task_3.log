@@ -1,0 +1,119 @@
+Training VietAI/vit5-base
+[07:01:14] task: task-3                                                                                 my_import.py:91
+           model_name: VietAI/vit5-base                                                                 my_import.py:91
+           source_len: 1024                                                                             my_import.py:91
+           target_len: 512                                                                              my_import.py:91
+           batch_size: 4                                                                                my_import.py:91
+           learning_rate: 0.001                                                                         my_import.py:91
+           epochs: 3                                                                                    my_import.py:91
+           device: cuda                                                                                 my_import.py:91
+           saving_path: ./models/task_3/simple_vit5-base                                                my_import.py:91
+           train_shape: (8444, 28)                                                                      my_import.py:91
+           dev_shape: (1207, 28)                                                                        my_import.py:91
+           test_shape: (2413, 28)                                                                       my_import.py:91
+
+
+Training ...
+Epoch 1/3:   0%|          | 0/2111 [00:00<?, ?it/s]
+Epoch 1/3, Batch 2111/2111: 100%|█████████▉| 2110/2111 [18:26<00:00,  1.92it/s]
+Epoch 1/3, Batch 2111/2111: 100%|██████████| 2111/2111 [18:27<00:00,  1.92it/s]
+Epoch 1/3, Batch 2111/2111: 100%|██████████| 2111/2111 [18:27<00:00,  1.91it/s]
+Epoch 1/3, Loss: 721.1021
+
+Evaluation:   0%|          | 0/302 [00:00<?, ?it/s]
+Validation, Batch 302/302: 100%|█████████▉| 301/302 [03:47<00:00,  1.25it/s]
+Validation, Batch 302/302: 100%|██████████| 302/302 [03:48<00:00,  1.20it/s]
+Validation, Batch 302/302: 100%|██████████| 302/302 [03:48<00:00,  1.32it/s]
+
+Evaluation on dev set:
+BERT score (prec, rec, f1): (0.828, 0.7598, 0.7919)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.1309, 1, 0, 0, 0)
+Rouge score (1, 2, L): (0.5031, 0.3468, 0.4049)
+Saved the model to path: ./models/task_3/simple_vit5-base_0.pth
+
+
+Epoch 2/3:   0%|          | 0/2111 [00:00<?, ?it/s]
+Epoch 2/3, Batch 2111/2111: 100%|█████████▉| 2110/2111 [18:15<00:00,  1.93it/s]
+Epoch 2/3, Batch 2111/2111: 100%|██████████| 2111/2111 [18:15<00:00,  1.93it/s]
+Epoch 2/3, Batch 2111/2111: 100%|██████████| 2111/2111 [18:15<00:00,  1.93it/s]
+Epoch 2/3, Loss: 1287.1870
+
+Evaluation:   0%|          | 0/302 [00:00<?, ?it/s]
+Validation, Batch 302/302: 100%|█████████▉| 301/302 [39:33<00:07,  7.14s/it]
+Validation, Batch 302/302: 100%|██████████| 302/302 [39:41<00:00,  7.47s/it]
+Validation, Batch 302/302: 100%|██████████| 302/302 [39:41<00:00,  7.89s/it]
+
+Evaluation on dev set:
+BERT score (prec, rec, f1): (0.5943, 0.6569, 0.6171)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.0124, 0, 0, 0, 0)
+Rouge score (1, 2, L): (0.2754, 0.106, 0.1864)
+Saved the model to path: ./models/task_3/simple_vit5-base_1.pth
+
+
+Epoch 3/3:   0%|          | 0/2111 [00:00<?, ?it/s]
+Epoch 3/3, Batch 2111/2111: 100%|█████████▉| 2110/2111 [18:12<00:00,  1.92it/s]
+Epoch 3/3, Batch 2111/2111: 100%|██████████| 2111/2111 [18:13<00:00,  1.92it/s]
+Epoch 3/3, Batch 2111/2111: 100%|██████████| 2111/2111 [18:13<00:00,  1.93it/s]
+Epoch 3/3, Loss: 2763.8252
+
+Evaluation:   0%|          | 0/302 [00:00<?, ?it/s]
+Validation, Batch 302/302: 100%|█████████▉| 301/302 [20:49<00:03,  3.06s/it]
+Validation, Batch 302/302: 100%|██████████| 302/302 [20:57<00:00,  4.56s/it]
+Validation, Batch 302/302: 100%|██████████| 302/302 [20:57<00:00,  4.16s/it]
+
+Evaluation on dev set:
+BERT score (prec, rec, f1): (0.7741, 0.7841, 0.7764)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.1413, 0, 0, 0, 0)
+Rouge score (1, 2, L): (0.5919, 0.4005, 0.4624)
+Saved the model to path: ./models/task_3/simple_vit5-base_2.pth
+
+
+
+Evaluating VietAI/vit5-base
+[09:02:07] task: task-3                                                                                 my_import.py:91
+           model_name: VietAI/vit5-base                                                                 my_import.py:91
+           source_len: 1024                                                                             my_import.py:91
+           target_len: 512                                                                              my_import.py:91
+           batch_size: 4                                                                                my_import.py:91
+           learning_rate: 0.001                                                                         my_import.py:91
+           epochs: 10                                                                                   my_import.py:91
+           device: cuda                                                                                 my_import.py:91
+           saving_path: ./models/task_3/simple_vit5-base                                                my_import.py:91
+           train_shape: (8444, 28)                                                                      my_import.py:91
+           dev_shape: (1207, 28)                                                                        my_import.py:91
+           test_shape: (2413, 28)                                                                       my_import.py:91
+
+
+model_weight_path: ./models/task_3/simple_vit5-base_2.pth
+Loading model weight successfully!
+
+
+Evaluation on dev set:
+Evaluation:   0%|          | 0/302 [00:00<?, ?it/s]
+Validation, Batch 302/302: 100%|█████████▉| 301/302 [20:11<00:02,  2.91s/it]
+Validation, Batch 302/302: 100%|██████████| 302/302 [20:21<00:00,  5.02s/it]
+Validation, Batch 302/302: 100%|██████████| 302/302 [20:21<00:00,  4.05s/it]
+BERT score (prec, rec, f1): (0.7741, 0.7841, 0.7764)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.1413, 0, 0, 0, 0)
+Rouge score (1, 2, L): (0.5921, 0.4007, 0.4625)
+
+*** Random example: 
+Original @ [130]: Thông tin về tiêu đề rõ ràng; Mô tả công việc đầy đủ thông tin căn bản tuy nhiên BHYT, BHXH, BHTN là trách nhiệm của công ty với người lao động theo quy định của pháp luật, không cần thiết phải ghi vào.; Tên và địa chỉ công ty rõ ràng và xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng;
+Generated @ [130]: đề; Mô tả công việc căn bản; Tên và là không cần theo, thông tin chi tiết sẽ việc chỉ về thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng; 
+
+
+
+Evaluation on test set:
+Evaluation:   0%|          | 0/604 [00:00<?, ?it/s]
+BERT score (prec, rec, f1): (0.7689, 0.7802, 0.7718)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.133, 0, 0, 0, 0)
+Rouge score (1, 2, L): (0.5827, 0.3915, 0.4539)
+
+*** Random example: 
+Original @ [31]: Thông tin về tiêu đề rõ ràng; Mô tả công việc đầy đủ thông tin căn bản; Đây là công việc không cần trình độ cao và thuộc về tư nhân, thông tin nơi làm việc chỉ cần đề cập ở mức quận huyện, chi tiết sẽ được liên lạc sau; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng; 
+Generated @ [31]: đề; Mô tả công việc căn bản; Tên và địa chỉ sau định, BHTN là không ty xác thực; Các thông tin chi về mức lương ở mức lương được cung cấp đầy đủ và rõ ràng; 
+
+
+
+All commands completed!
+

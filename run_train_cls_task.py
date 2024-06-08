@@ -13,10 +13,12 @@ if imp.args['model_type'] == 'simple':
     if imp.args['task'] == 'task-1':
         model = md.SimpleCLSModel(pretrained_model_name=imp.args['model_name'])
     elif imp.args['task'] == 'task-2':
-        model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])    
+        model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])
 elif imp.args['model_type'] == 'lstm':
     if imp.args['task'] == 'task-1':
-        pass
+        model = md.LSTMCLSModel(pretrained_model_name=imp.args['model_name'],
+                                lstm_hidden=imp.args['lstm_hidden'],
+                                lstm_layers=imp.args['lstm_layers'])
     elif imp.args['task'] == 'task-2':
         pass
 elif imp.args['model_type'] == 'cnn':

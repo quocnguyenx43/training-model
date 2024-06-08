@@ -156,28 +156,17 @@ class LSTMCLSModel(nn.Module):
         else:
             model_output = self.pretrained_model(**input).pooler_output # BERT
 
-        print(model_output.shape)
 
         # 1st-LSTM
         lstm_output1, (h_n1, c_n1) = self.lstm1(model_output)
 
-        print(lstm_output1.shape)
-
         # 2nd-LSTM
         lstm_output2, (h_n2, c_n2) = self.lstm2(lstm_output1)
 
-        print(lstm_output2.shape)
-
-        print(h_n2.shape)
-
-        lstm_output = h_n2[-1]
-
         # Linear
-        fc1_output = F.relu(self.dropout(self.fc1(lstm_output)))
+        fc1_output = F.relu(self.dropout(self.fc1(lstm_output2)))
         fc2_output = F.relu(self.dropout(self.fc2(fc1_output)))
         fc3_output = self.fc3(fc2_output)
-
-        print(fc3_output.shape)
 
         # Softmax
         soft_max_output = F.log_softmax(fc3_output, dim=1)

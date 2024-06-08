@@ -3,6 +3,7 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 from io import BytesIO
+import os
 
 
 
@@ -54,11 +55,16 @@ def upload_file(local_file_path, dest_file_name):
 
 import argparse as arg
 parser = arg.ArgumentParser(description="Params")
-parser.add_argument("--path_file", type=str)
+parser.add_argument("--folder_name", type=str)
 args = parser.parse_args()
 args = vars(args)
+folder_name = args['folder_name']
+file_list = os.listdir(folder_name)
 
-path_file = args['path_file']
+for file in file_list:
+    path = folder_name + file
+    print('path_file: ', path)
+    upload_file(path, path)
 
-upload_file(path_file, path_file)
-print('path_file: ', path_file)
+# python upload_file_to_drive.py --path_file "results/logs/eval_task_2.log"
+# python upload_file_to_drive.py --folder_name "models/task_1"

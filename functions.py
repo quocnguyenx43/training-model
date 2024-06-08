@@ -177,7 +177,7 @@ def show_cm_cr_task_2(true_labels, predictions):
         print(f"Confusion Matrix of {aspect} aspect")
         print(cm_p)
         print(f"Classification Report for {aspect} aspect")
-        print(classification_report(true_labels[:, i], predictions[:, i], target_names=class_names))
+        print(classification_report(true_labels[:, i], predictions[:, i]))#, target_names=class_names))
 
 
 def generate_task_3(model, tokenizer, dataloader, target_len=512, device='cpu'):

@@ -164,13 +164,13 @@ class LSTMCLSModel(nn.Module):
         # 2nd-LSTM
         lstm_output2, (h_n2, c_n2) = self.lstm2(lstm_output1)
 
-        print(lstm_output2.shape, h_n2.shape)
-
         lstm_output = h_n2[-1]
 
         # Linear
         fc1_output = F.relu(self.dropout(self.fc1(lstm_output)))
         fc2_output = F.relu(self.dropout(self.fc2(fc1_output)))
+
+        print(fc2_output.shape)
 
         # Softmax
         soft_max_output = F.log_softmax(self.fc3(fc2_output), dim=1)

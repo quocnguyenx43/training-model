@@ -110,3 +110,8 @@ def vit5_encode(source_text, target_text, source_len, target_len, tokenizer):
     target_encoded['attention_mask'] = target_encoded['attention_mask'].squeeze()
 
     return source_encoded, target_encoded
+
+
+
+
+### dkasldlas;d

@@ -175,10 +175,11 @@ class LSTMCLSModel(nn.Module):
         # Linear
         fc1_output = F.relu(self.dropout(self.fc1(lstm_output)))
         fc2_output = F.relu(self.dropout(self.fc2(fc1_output)))
+        fc3_output = self.fc3(fc2_output)
 
-        print(self.fc3(fc2_output).shape)
+        print(fc3_output.shape)
 
         # Softmax
-        soft_max_output = F.log_softmax(self.fc3(fc2_output), dim=1)
+        soft_max_output = F.log_softmax(fc3_output, dim=1)
 
         return soft_max_output

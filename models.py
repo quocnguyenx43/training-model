@@ -161,10 +161,10 @@ class LSTMCLSModel(nn.Module):
         # 1st-LSTM
         lstm_output1, (h_n1, c_n1) = self.lstm1(model_output)
 
-        print(lstm_output1.shape)
-
         # 2nd-LSTM
         lstm_output2, (h_n2, c_n2) = self.lstm2(lstm_output1)
+
+        print(lstm_output2.shape, h_n2.shape)
 
         lstm_output = h_n2[-1]
 

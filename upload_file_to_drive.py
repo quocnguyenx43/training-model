@@ -26,12 +26,6 @@ def upload_file(local_file_path, dest_file_name):
     creds = authenticate()
     service = build('drive', 'v3', credentials=creds)
 
-    progress = 0
-    def callback(chunk, total_size):
-        global progress
-        progress += len(chunk)
-        print(f"Uploaded {progress / total_size * 100:.2f}%")
-
     # Check if the file already exists in Google Drive
     existing_file_id = get_file_id_by_name(dest_file_name, service, PARENT_FOLDER_ID)
     if existing_file_id:
@@ -40,7 +34,6 @@ def upload_file(local_file_path, dest_file_name):
         file = service.files().update(
             fileId=existing_file_id,
             media_body=media,
-            progress_callback=callback,
         ).execute()
         print('File updated. File ID: ', existing_file_id)
         return existing_file_id
@@ -54,7 +47,6 @@ def upload_file(local_file_path, dest_file_name):
         file = service.files().create(
             body=file_metadata,
             media_body=media,
-            progress_callback=callback,
         ).execute()
         file_id = file['id']
         print('File uploaded. File ID: ', file_id)

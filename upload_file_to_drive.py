@@ -62,7 +62,7 @@ folder_name = args['folder_name']
 file_list = os.listdir(folder_name)
 
 for file in file_list:
-    path = folder_name + file
+    path = folder_name + '/' + file
     print('path_file: ', path)
     upload_file(path, path)
 

@@ -24,7 +24,11 @@ elif imp.args['model_type'] == 'lstm':
             pretrained_model_name=imp.args['model_name'],
         )
     elif imp.args['task'] == 'task-2':
-        pass
+        model = md.ComplexAspectModel(
+            model_type='lstm',
+            params=imp.params,
+            pretrained_model_name=imp.args['model_name'],
+        )
 # if cnn
 elif imp.args['model_type'] == 'cnn':
     if imp.args['task'] == 'task-1':
@@ -34,7 +38,11 @@ elif imp.args['model_type'] == 'cnn':
             pretrained_model_name=imp.args['model_name'],
         )
     elif imp.args['task'] == 'task-2':
-        pass
+        model = md.ComplexAspectModel(
+            model_type='cnn',
+            params=imp.params,
+            pretrained_model_name=imp.args['model_name'],
+        )
     
 
 ###### Change device & setting criterion, optimizer

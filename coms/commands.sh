@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Redirect outputs
 exec > >(tee -i ./results/logs/test_log.log) 2>&1
 

@@ -27,11 +27,29 @@ parser.add_argument("--learning_rate", type=float, default=0.001)
 parser.add_argument("--epochs", type=int, default=10)
 parser.add_argument("--fine_tune", action="store_true", default=True)
 
-parser.add_argument("--lstm_hidden", type=int, default=128)
-parser.add_argument("--lstm_layers", type=int, default=4)
+# for LSTM
+parser.add_argument("--hidden_size", type=int, default=128)
+parser.add_argument("--num_layers", type=int, default=4)
+
+# for CNN
+parser.add_argument("--num_channels", type=int, default=256)
+parser.add_argument("--kernel_size", type=int, default=12)
+parser.add_argument("--padding", type=int, default=3)
 
 args = parser.parse_args()
 args = vars(args)
+
+
+# Model params 
+params = {}
+if args['model_type'] == 'lstm':
+    params['hidden_size'] = args['hidden_size']
+    params['num_layers'] = args['num_layers']
+elif args['model_type'] == 'cnn':
+    params['num_channels'] = args['num_channels']
+    params['kernel_size'] = args['kernel_size']
+    params['padding'] = args['padding']
+
 
 try:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -44,9 +62,9 @@ args['saving_path'] = saving_path
 
 
 ### Read data
-train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv')
-dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
+train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv').head(3)
+dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv').head(3)
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv').head(3)
 
 train_df.dropna(subset=['explanation'], inplace=True)
 dev_df.dropna(subset=['explanation'], inplace=True)
@@ -82,15 +100,29 @@ test_dataloader = DataLoader(test_dataset, batch_size=args['batch_size'], shuffl
 
 
 ### Printing args
+p_args = args.copy()
+if p_args['task'] == 'task-3':
+    p_args.pop('model_type')
+    p_args.pop('fine_tune')
+else:
+    p_args.pop('target_len')
+    if p_args['model_type'] == 'lstm':
+        p_args.pop('num_channels')
+        p_args.pop('kernel_size')
+        p_args.pop('padding')
+    elif p_args['model_type'] == 'cnn':
+        p_args.pop('hidden_size')
+        p_args.pop('num_layers')
+    else:
+        p_args.pop('hidden_size')
+        p_args.pop('num_layers')
+        p_args.pop('num_channels')
+        p_args.pop('kernel_size')
+        p_args.pop('padding') 
 print()
-for key, value in args.items():
-    if args['task'] in ['task-1', 'task-2']:
-        if key == 'source_len':
-            console.log(f'padding_len: {value}')
-            continue
-        elif key == 'target_len':
-            continue
-    if args['task'] == 'task-3' and key == 'model_type' or key == 'fine_tune':
+for key, value in p_args.items():
+    if p_args['task'] in ['task-1', 'task-2'] and key == 'source_len':
+        console.log(f'padding_len: {value}')
         continue
     console.log(f'{key}: {value}')
 print()

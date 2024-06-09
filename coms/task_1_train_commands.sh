@@ -11,7 +11,7 @@ echo "uitnlp/visobert"
 python run_train_cls_task.py --task "task-1" --model_type "simple" --model_name "uitnlp/visobert" --source_len 400 --batch_size 32 --learning_rate 0.001 --epochs 20
 
 echo "uitnlp/CafeBERT"
-python run_train_cls_task.py --task "task-1" --model_type "simple" --model_name "uitnlp/CafeBERT" --source_len 400 --batch_size 32 --learning_rate 0.001 --epochs 20
+python run_train_cls_task.py --task "task-1" --model_type "simple" --model_name "uitnlp/CafeBERT" --source_len 200 --batch_size 32 --learning_rate 0.001 --epochs 20
 
 echo "xlm-roberta-base"
 python run_train_cls_task.py --task "task-1" --model_type "simple" --model_name "xlm-roberta-base" --source_len 500 --batch_size 32 --learning_rate 0.001 --epochs 20

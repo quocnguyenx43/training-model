@@ -25,21 +25,30 @@ model_weight_path = './models/' + task_folder + '/' + prefix_file_name + '_' + l
 
 
 ###### Model
+# if simple
 if imp.args['model_type'] == 'simple':
     if imp.args['task'] == 'task-1':
         model = md.SimpleCLSModel(pretrained_model_name=imp.args['model_name'])
     elif imp.args['task'] == 'task-2':
         model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])    
+# if lstm
 elif imp.args['model_type'] == 'lstm':
     if imp.args['task'] == 'task-1':
-        model = md.LSTMCLSModel(pretrained_model_name=imp.args['model_name'],
-                                lstm_hidden=imp.args['lstm_hidden'],
-                                lstm_layers=imp.args['lstm_layers'])
+        model = md.ComplexCLSModel(
+            model_type='lstm',
+            params=imp.params,
+            pretrained_model_name=imp.args['model_name'],
+        )
     elif imp.args['task'] == 'task-2':
         pass
+# if cnn
 elif imp.args['model_type'] == 'cnn':
     if imp.args['task'] == 'task-1':
-        pass
+        model = md.ComplexCLSModel(
+            model_type='cnn',
+            params=imp.params,
+            pretrained_model_name=imp.args['model_name'],
+        )
     elif imp.args['task'] == 'task-2':
         pass
     

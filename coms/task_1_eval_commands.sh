@@ -11,7 +11,7 @@ echo "uitnlp/visobert"
 python run_evaluation_cls_task.py --task "task-1" --model_type "simple" --model_name "uitnlp/visobert" --source_len 400 --batch_size 32
 
 echo "uitnlp/CafeBERT"
-python run_evaluation_cls_task.py --task "task-1" --model_type "simple" --model_name "uitnlp/CafeBERT" --source_len 400 --batch_size 32
+python run_evaluation_cls_task.py --task "task-1" --model_type "simple" --model_name "uitnlp/CafeBERT" --source_len 300 --batch_size 32
 
 echo "xlm-roberta-base"
 python run_evaluation_cls_task.py --task "task-1" --model_type "simple" --model_name "xlm-roberta-base" --source_len 500 --batch_size 32

@@ -180,9 +180,10 @@ class ComplexCLSModel(nn.Module):
             lstm_output2, (h_n2, c_n2) = self.lstm2(lstm_output1)
             complex_output = lstm_output2
         elif self.model_type == 'cnn':
-            complex_output = F.relu(self.cnn1(model_output.unsqueeze(1)))
-            complex_output = F.relu(self.cnn2(complex_output))
-            complex_output = F.max_pool1d(complex_output, kernel_size=complex_output.size(2)).squeeze(2)
+            cnn_output_1 = F.relu(self.cnn1(model_output.unsqueeze(1)))
+            cnn_output_2 = F.relu(self.cnn2(cnn_output_1))
+            max_pool_out = F.max_pool1d(cnn_output_2, kernel_size=complex_output.size(2)).squeeze(2)
+            complex_output = max_pool_out
 
         # Linear
         fc1_output = F.relu(self.dropout(self.fc1(complex_output)))

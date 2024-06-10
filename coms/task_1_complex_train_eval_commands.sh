@@ -187,17 +187,3 @@ python run_evaluation_cls_task.py --task "task-2" --model_type "cnn" --num_chann
 
 echo "cnn + distilbert-base-multilingual-cased"
 python run_evaluation_cls_task.py --task "task-2" --model_type "cnn" --num_channels 768 --kernel_size 256 --padding 32 --model_name "distilbert-base-multilingual-cased" --source_len 500 --batch_size 32
-
-
-
-
-
-
-
-
-
-
-
-
-layer = 1 len
-layer = 2 ko len

@@ -176,8 +176,9 @@ class ComplexCLSModel(nn.Module):
             model_output = self.pretrained_model(**input).pooler_output # BERT
 
         if self.model_type == 'lstm':
-            complex_output, (h_n1, c_n1) = self.lstm1(model_output)
-            complex_output, (h_n2, c_n2) = self.lstm2(complex_output)
+            lstm_output1, (h_n1, c_n1) = self.lstm1(model_output)
+            lstm_output2, (h_n2, c_n2) = self.lstm2(lstm_output1)
+            complex_output = lstm_output2
         elif self.model_type == 'cnn':
             complex_output = F.relu(self.cnn1(model_output.unsqueeze(1)))
             complex_output = F.relu(self.cnn2(complex_output))

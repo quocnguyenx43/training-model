@@ -182,7 +182,7 @@ class ComplexCLSModel(nn.Module):
         elif self.model_type == 'cnn':
             cnn_output_1 = F.relu(self.cnn1(model_output.unsqueeze(1)))
             cnn_output_2 = F.relu(self.cnn2(cnn_output_1))
-            max_pool_out = F.max_pool1d(cnn_output_2, kernel_size=complex_output.size(2)).squeeze(2)
+            max_pool_out = F.max_pool1d(cnn_output_2, kernel_size=cnn_output_2.size(2)).squeeze(2)
             complex_output = max_pool_out
 
         # Linear

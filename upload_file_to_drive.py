@@ -15,14 +15,13 @@ def authenticate():
     return creds
 
 def get_file_id_by_name(file_name, service, folder_id):
-    PARENT_FOLDER_ID = '1Y1x3Sg54i6ltb-PZvfwyaLaLCvqTXJCO'
     query = f"name='{file_name}' and '{folder_id}' in parents and trashed=false"
     results = service.files().list(q=query, fields="files(id)").execute()
     files = results.get('files', [])
     return files[0]['id'] if files else None
 
 def upload_file(local_file_path, dest_file_name):
-    PARENT_FOLDER_ID = '1Y1x3Sg54i6ltb-PZvfwyaLaLCvqTXJCO'
+    PARENT_FOLDER_ID = '1kP-rV9axCcL_VRz449KOhske1nyOmPXu'
     creds = authenticate()
     service = build('drive', 'v3', credentials=creds)
 

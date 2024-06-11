@@ -1,0 +1,1202 @@
+======= Training LSTM =======
+
+lstm + vinai/phobert-base
+[14:23:41] task: task-2                                                                                my_import.py:127
+           model_type: lstm                                                                            my_import.py:127
+           model_name: vinai/phobert-base                                                              my_import.py:127
+           padding_len: 200                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           hidden_size: 128                                                                            my_import.py:127
+           num_layers: 1                                                                               my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/lstm_phobert-base                                              my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 360.9160, 0/1 Loss: 0.9910, Hamming Loss: 0.6707, EMR: 0.0090, Acc: 0.7003, F1: 0.5234, Precision: 0.5493, Recall: 0.5494
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5617, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+Saved the best model to path: ./models/task_2/lstm_phobert-base_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 359.5153, 0/1 Loss: 0.9931, Hamming Loss: 0.6634, EMR: 0.0069, Acc: 0.6848, F1: 0.5218, Precision: 0.5643, Recall: 0.5377
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.3841, 0/1 Loss: 0.9867, Hamming Loss: 0.4957, EMR: 0.0133, Acc: 0.9399, F1: 0.6285, Precision: 0.5683, Recall: 0.7330
+Saved the best model to path: ./models/task_2/lstm_phobert-base_1.pth
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 358.7622, 0/1 Loss: 0.9940, Hamming Loss: 0.6691, EMR: 0.0060, Acc: 0.6121, F1: 0.4950, Precision: 0.5826, Recall: 0.4795
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.0816, 0/1 Loss: 0.9486, Hamming Loss: 0.4468, EMR: 0.0514, Acc: 0.9420, F1: 0.6704, Precision: 0.6433, Recall: 0.7341
+Saved the best model to path: ./models/task_2/lstm_phobert-base_2.pth
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 357.8678, 0/1 Loss: 0.9865, Hamming Loss: 0.6350, EMR: 0.0135, Acc: 0.6554, F1: 0.5259, Precision: 0.6063, Recall: 0.5132
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.7516, 0/1 Loss: 0.9122, Hamming Loss: 0.4074, EMR: 0.0878, Acc: 0.9857, F1: 0.6841, Precision: 0.6382, Recall: 0.7680
+Saved the best model to path: ./models/task_2/lstm_phobert-base_3.pth
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 357.3398, 0/1 Loss: 0.9840, Hamming Loss: 0.6405, EMR: 0.0160, Acc: 0.6811, F1: 0.5291, Precision: 0.5844, Recall: 0.5342
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6593, 0/1 Loss: 0.9180, Hamming Loss: 0.4857, EMR: 0.0820, Acc: 0.9822, F1: 0.6413, Precision: 0.5726, Recall: 0.7653
+Saved the best model to path: ./models/task_2/lstm_phobert-base_4.pth
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 356.7758, 0/1 Loss: 0.9837, Hamming Loss: 0.6444, EMR: 0.0163, Acc: 0.6716, F1: 0.5261, Precision: 0.5890, Recall: 0.5263
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.7687, 0/1 Loss: 0.9345, Hamming Loss: 0.5764, EMR: 0.0655, Acc: 0.8434, F1: 0.5890, Precision: 0.5594, Recall: 0.6493
+
+
+Epoch 7/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 7/20, Loss: 356.6333, 0/1 Loss: 0.9846, Hamming Loss: 0.6581, EMR: 0.0154, Acc: 0.6535, F1: 0.5147, Precision: 0.5829, Recall: 0.5118
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.7179, 0/1 Loss: 0.8815, Hamming Loss: 0.4265, EMR: 0.1185, Acc: 0.9816, F1: 0.6791, Precision: 0.6363, Recall: 0.7646
+
+
+Epoch 8/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 8/20, Loss: 356.4261, 0/1 Loss: 0.9813, Hamming Loss: 0.6412, EMR: 0.0187, Acc: 0.6656, F1: 0.5239, Precision: 0.5882, Recall: 0.5219
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6531, 0/1 Loss: 0.8766, Hamming Loss: 0.4470, EMR: 0.1234, Acc: 0.9633, F1: 0.6694, Precision: 0.6295, Recall: 0.7490
+Saved the best model to path: ./models/task_2/lstm_phobert-base_7.pth
+
+
+Epoch 9/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 9/20, Loss: 356.1394, 0/1 Loss: 0.9781, Hamming Loss: 0.6384, EMR: 0.0219, Acc: 0.6706, F1: 0.5268, Precision: 0.5922, Recall: 0.5256
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.3756, 0/1 Loss: 0.9014, Hamming Loss: 0.4689, EMR: 0.0986, Acc: 0.9596, F1: 0.6476, Precision: 0.5938, Recall: 0.7461
+Saved the best model to path: ./models/task_2/lstm_phobert-base_8.pth
+
+
+Epoch 10/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 10/20, Loss: 356.0075, 0/1 Loss: 0.9809, Hamming Loss: 0.6350, EMR: 0.0191, Acc: 0.6653, F1: 0.5261, Precision: 0.6006, Recall: 0.5219
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5058, 0/1 Loss: 0.9014, Hamming Loss: 0.4304, EMR: 0.0986, Acc: 0.9704, F1: 0.6661, Precision: 0.6178, Recall: 0.7548
+
+
+Epoch 11/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 11/20, Loss: 355.8503, 0/1 Loss: 0.9819, Hamming Loss: 0.6400, EMR: 0.0181, Acc: 0.6531, F1: 0.5203, Precision: 0.5963, Recall: 0.5112
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6447, 0/1 Loss: 0.8616, Hamming Loss: 0.4116, EMR: 0.1384, Acc: 0.9778, F1: 0.6864, Precision: 0.6490, Recall: 0.7613
+
+
+Epoch 12/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 12/20, Loss: 355.6945, 0/1 Loss: 0.9825, Hamming Loss: 0.6445, EMR: 0.0175, Acc: 0.6454, F1: 0.5159, Precision: 0.5976, Recall: 0.5057
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.4256, 0/1 Loss: 0.8998, Hamming Loss: 0.4710, EMR: 0.1002, Acc: 0.9459, F1: 0.6469, Precision: 0.6030, Recall: 0.7343
+
+
+Epoch 13/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 13/20, Loss: 355.4541, 0/1 Loss: 0.9808, Hamming Loss: 0.6369, EMR: 0.0192, Acc: 0.6433, F1: 0.5202, Precision: 0.6095, Recall: 0.5035
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.3510, 0/1 Loss: 0.8749, Hamming Loss: 0.4331, EMR: 0.1251, Acc: 0.9542, F1: 0.6708, Precision: 0.6369, Recall: 0.7410
+Saved the best model to path: ./models/task_2/lstm_phobert-base_12.pth
+
+
+Epoch 14/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 14/20, Loss: 355.3594, 0/1 Loss: 0.9795, Hamming Loss: 0.6375, EMR: 0.0205, Acc: 0.6397, F1: 0.5186, Precision: 0.6132, Recall: 0.5000
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.3223, 0/1 Loss: 0.8807, Hamming Loss: 0.4265, EMR: 0.1193, Acc: 0.9383, F1: 0.6701, Precision: 0.6450, Recall: 0.7276
+Saved the best model to path: ./models/task_2/lstm_phobert-base_13.pth
+
+
+Epoch 15/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 15/20, Loss: 355.2818, 0/1 Loss: 0.9789, Hamming Loss: 0.6217, EMR: 0.0211, Acc: 0.6457, F1: 0.5285, Precision: 0.6275, Recall: 0.5049
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.4720, 0/1 Loss: 0.8948, Hamming Loss: 0.4362, EMR: 0.1052, Acc: 0.8950, F1: 0.6630, Precision: 0.6620, Recall: 0.6920
+
+
+Epoch 16/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 16/20, Loss: 355.4021, 0/1 Loss: 0.9796, Hamming Loss: 0.6350, EMR: 0.0204, Acc: 0.6389, F1: 0.5209, Precision: 0.6193, Recall: 0.4992
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.2560, 0/1 Loss: 0.8865, Hamming Loss: 0.4356, EMR: 0.1135, Acc: 0.9248, F1: 0.6574, Precision: 0.6318, Recall: 0.7165
+Saved the best model to path: ./models/task_2/lstm_phobert-base_15.pth
+
+
+Epoch 17/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 17/20, Loss: 355.0991, 0/1 Loss: 0.9803, Hamming Loss: 0.6374, EMR: 0.0197, Acc: 0.6277, F1: 0.5149, Precision: 0.6232, Recall: 0.4894
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.2796, 0/1 Loss: 0.8708, Hamming Loss: 0.4076, EMR: 0.1292, Acc: 0.9430, F1: 0.6785, Precision: 0.6558, Recall: 0.7321
+
+
+Epoch 18/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 18/20, Loss: 354.9723, 0/1 Loss: 0.9760, Hamming Loss: 0.6213, EMR: 0.0240, Acc: 0.6293, F1: 0.5235, Precision: 0.6405, Recall: 0.4903
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.2368, 0/1 Loss: 0.8699, Hamming Loss: 0.4109, EMR: 0.1301, Acc: 0.9468, F1: 0.6783, Precision: 0.6519, Recall: 0.7352
+Saved the best model to path: ./models/task_2/lstm_phobert-base_17.pth
+
+
+Epoch 19/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 19/20, Loss: 354.9287, 0/1 Loss: 0.9802, Hamming Loss: 0.6286, EMR: 0.0198, Acc: 0.6370, F1: 0.5213, Precision: 0.6221, Recall: 0.4978
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.1070, 0/1 Loss: 0.8732, Hamming Loss: 0.4236, EMR: 0.1268, Acc: 0.9412, F1: 0.6687, Precision: 0.6401, Recall: 0.7296
+Saved the best model to path: ./models/task_2/lstm_phobert-base_18.pth
+
+
+Epoch 20/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 20/20, Loss: 354.8779, 0/1 Loss: 0.9792, Hamming Loss: 0.6232, EMR: 0.0208, Acc: 0.6248, F1: 0.5207, Precision: 0.6423, Recall: 0.4870
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.4202, 0/1 Loss: 0.8981, Hamming Loss: 0.4716, EMR: 0.1019, Acc: 0.8447, F1: 0.6330, Precision: 0.6455, Recall: 0.6484
+
+lstm + uitnlp/visobert
+[14:36:01] task: task-2                                                                                my_import.py:127
+           model_type: lstm                                                                            my_import.py:127
+           model_name: uitnlp/visobert                                                                 my_import.py:127
+           padding_len: 400                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           hidden_size: 128                                                                            my_import.py:127
+           num_layers: 1                                                                               my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/lstm_visobert                                                  my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/visobert and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 361.0398, 0/1 Loss: 0.9982, Hamming Loss: 0.7329, EMR: 0.0018, Acc: 0.5434, F1: 0.4437, Precision: 0.5509, Recall: 0.4256
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.3132, 0/1 Loss: 0.9917, Hamming Loss: 0.5286, EMR: 0.0083, Acc: 0.8368, F1: 0.6000, Precision: 0.5785, Recall: 0.6504
+Saved the best model to path: ./models/task_2/lstm_visobert_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 358.9022, 0/1 Loss: 0.9963, Hamming Loss: 0.6884, EMR: 0.0037, Acc: 0.6302, F1: 0.4899, Precision: 0.5723, Recall: 0.4932
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.1602, 0/1 Loss: 0.9843, Hamming Loss: 0.6433, EMR: 0.0157, Acc: 0.9189, F1: 0.5528, Precision: 0.4665, Recall: 0.7138
+Saved the best model to path: ./models/task_2/lstm_visobert_1.pth
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 358.2952, 0/1 Loss: 0.9954, Hamming Loss: 0.6900, EMR: 0.0046, Acc: 0.6235, F1: 0.4857, Precision: 0.5654, Recall: 0.4882
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.8084, 0/1 Loss: 0.9818, Hamming Loss: 0.5242, EMR: 0.0182, Acc: 0.9623, F1: 0.6113, Precision: 0.5349, Recall: 0.7489
+Saved the best model to path: ./models/task_2/lstm_visobert_2.pth
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 358.1135, 0/1 Loss: 0.9960, Hamming Loss: 0.7131, EMR: 0.0040, Acc: 0.5902, F1: 0.4650, Precision: 0.5551, Recall: 0.4613
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.8775, 0/1 Loss: 0.9826, Hamming Loss: 0.6147, EMR: 0.0174, Acc: 0.9033, F1: 0.5622, Precision: 0.4867, Recall: 0.7009
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 357.7912, 0/1 Loss: 0.9960, Hamming Loss: 0.7019, EMR: 0.0040, Acc: 0.6033, F1: 0.4746, Precision: 0.5695, Recall: 0.4727
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6967, 0/1 Loss: 0.9818, Hamming Loss: 0.5466, EMR: 0.0182, Acc: 0.8975, F1: 0.5940, Precision: 0.5365, Recall: 0.6969
+Saved the best model to path: ./models/task_2/lstm_visobert_4.pth
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 357.9219, 0/1 Loss: 0.9960, Hamming Loss: 0.7090, EMR: 0.0040, Acc: 0.5932, F1: 0.4691, Precision: 0.5650, Recall: 0.4647
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6551, 0/1 Loss: 0.9776, Hamming Loss: 0.5220, EMR: 0.0224, Acc: 0.9258, F1: 0.6080, Precision: 0.5452, Recall: 0.7193
+Saved the best model to path: ./models/task_2/lstm_visobert_5.pth
+
+
+Epoch 7/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 7/20, Loss: 357.4213, 0/1 Loss: 0.9957, Hamming Loss: 0.7020, EMR: 0.0043, Acc: 0.6033, F1: 0.4736, Precision: 0.5637, Recall: 0.4714
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5957, 0/1 Loss: 0.9785, Hamming Loss: 0.5433, EMR: 0.0215, Acc: 0.9305, F1: 0.5972, Precision: 0.5280, Recall: 0.7230
+Saved the best model to path: ./models/task_2/lstm_visobert_6.pth
+
+
+Epoch 8/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 8/20, Loss: 357.2764, 0/1 Loss: 0.9968, Hamming Loss: 0.7101, EMR: 0.0032, Acc: 0.5950, F1: 0.4676, Precision: 0.5554, Recall: 0.4658
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6807, 0/1 Loss: 0.9809, Hamming Loss: 0.5603, EMR: 0.0191, Acc: 0.9144, F1: 0.5897, Precision: 0.5238, Recall: 0.7096
+
+
+Epoch 9/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 9/20, Loss: 356.8849, 0/1 Loss: 0.9959, Hamming Loss: 0.7011, EMR: 0.0041, Acc: 0.6039, F1: 0.4732, Precision: 0.5595, Recall: 0.4730
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5838, 0/1 Loss: 0.9801, Hamming Loss: 0.5626, EMR: 0.0199, Acc: 0.9122, F1: 0.5875, Precision: 0.5211, Recall: 0.7079
+Saved the best model to path: ./models/task_2/lstm_visobert_8.pth
+
+
+Epoch 10/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 10/20, Loss: 357.1638, 0/1 Loss: 0.9966, Hamming Loss: 0.7061, EMR: 0.0034, Acc: 0.5931, F1: 0.4688, Precision: 0.5633, Recall: 0.4644
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5430, 0/1 Loss: 0.9809, Hamming Loss: 0.5493, EMR: 0.0191, Acc: 0.8858, F1: 0.5902, Precision: 0.5346, Recall: 0.6860
+Saved the best model to path: ./models/task_2/lstm_visobert_9.pth
+
+
+Epoch 11/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 11/20, Loss: 357.1434, 0/1 Loss: 0.9960, Hamming Loss: 0.7110, EMR: 0.0040, Acc: 0.5862, F1: 0.4635, Precision: 0.5562, Recall: 0.4587
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6049, 0/1 Loss: 0.9776, Hamming Loss: 0.5797, EMR: 0.0224, Acc: 0.9022, F1: 0.5789, Precision: 0.5129, Recall: 0.6990
+
+
+Epoch 12/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 12/20, Loss: 356.9902, 0/1 Loss: 0.9954, Hamming Loss: 0.7031, EMR: 0.0046, Acc: 0.5961, F1: 0.4705, Precision: 0.5660, Recall: 0.4658
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5849, 0/1 Loss: 0.9809, Hamming Loss: 0.5365, EMR: 0.0191, Acc: 0.9215, F1: 0.5994, Precision: 0.5351, Recall: 0.7153
+
+
+Epoch 13/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 13/20, Loss: 356.9641, 0/1 Loss: 0.9959, Hamming Loss: 0.6998, EMR: 0.0041, Acc: 0.6028, F1: 0.4745, Precision: 0.5629, Recall: 0.4721
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.4943, 0/1 Loss: 0.9809, Hamming Loss: 0.5062, EMR: 0.0191, Acc: 0.9159, F1: 0.6145, Precision: 0.5579, Recall: 0.7109
+Saved the best model to path: ./models/task_2/lstm_visobert_12.pth
+
+
+Epoch 14/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 14/20, Loss: 357.2997, 0/1 Loss: 0.9953, Hamming Loss: 0.7113, EMR: 0.0047, Acc: 0.5828, F1: 0.4634, Precision: 0.5616, Recall: 0.4561
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5113, 0/1 Loss: 0.9801, Hamming Loss: 0.5203, EMR: 0.0199, Acc: 0.9016, F1: 0.6056, Precision: 0.5516, Recall: 0.6990
+
+
+Epoch 15/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 15/20, Loss: 356.7209, 0/1 Loss: 0.9960, Hamming Loss: 0.7149, EMR: 0.0040, Acc: 0.5775, F1: 0.4583, Precision: 0.5571, Recall: 0.4511
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.4541, 0/1 Loss: 0.9809, Hamming Loss: 0.5244, EMR: 0.0191, Acc: 0.9466, F1: 0.6082, Precision: 0.5373, Recall: 0.7372
+Saved the best model to path: ./models/task_2/lstm_visobert_14.pth
+
+
+Epoch 16/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 16/20, Loss: 357.1116, 0/1 Loss: 0.9959, Hamming Loss: 0.7169, EMR: 0.0041, Acc: 0.5810, F1: 0.4594, Precision: 0.5517, Recall: 0.4546
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5997, 0/1 Loss: 0.9776, Hamming Loss: 0.5636, EMR: 0.0224, Acc: 0.9109, F1: 0.5863, Precision: 0.5204, Recall: 0.7067
+
+
+Epoch 17/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 17/20, Loss: 356.7591, 0/1 Loss: 0.9962, Hamming Loss: 0.7082, EMR: 0.0038, Acc: 0.5853, F1: 0.4641, Precision: 0.5599, Recall: 0.4573
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5825, 0/1 Loss: 0.9785, Hamming Loss: 0.5762, EMR: 0.0215, Acc: 0.9035, F1: 0.5779, Precision: 0.5104, Recall: 0.7014
+
+
+Epoch 18/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 18/20, Loss: 356.7517, 0/1 Loss: 0.9953, Hamming Loss: 0.7093, EMR: 0.0047, Acc: 0.5880, F1: 0.4649, Precision: 0.5580, Recall: 0.4601
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5177, 0/1 Loss: 0.9801, Hamming Loss: 0.5835, EMR: 0.0199, Acc: 0.9116, F1: 0.5769, Precision: 0.5056, Recall: 0.7074
+
+
+Epoch 19/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 19/20, Loss: 356.5154, 0/1 Loss: 0.9956, Hamming Loss: 0.7096, EMR: 0.0044, Acc: 0.5812, F1: 0.4615, Precision: 0.5569, Recall: 0.4541
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5546, 0/1 Loss: 0.9793, Hamming Loss: 0.5791, EMR: 0.0207, Acc: 0.9012, F1: 0.5770, Precision: 0.5096, Recall: 0.6988
+
+
+Epoch 20/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 20/20, Loss: 356.4568, 0/1 Loss: 0.9956, Hamming Loss: 0.7054, EMR: 0.0044, Acc: 0.5920, F1: 0.4668, Precision: 0.5571, Recall: 0.4632
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.5206, 0/1 Loss: 0.9793, Hamming Loss: 0.5710, EMR: 0.0207, Acc: 0.8941, F1: 0.5808, Precision: 0.5190, Recall: 0.6936
+
+Early stopping triggered!
+
+lstm + uitnlp/CafeBERT
+[15:00:22] task: task-2                                                                                my_import.py:127
+           model_type: lstm                                                                            my_import.py:127
+           model_name: uitnlp/CafeBERT                                                                 my_import.py:127
+           padding_len: 300                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           hidden_size: 128                                                                            my_import.py:127
+           num_layers: 1                                                                               my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/lstm_CafeBERT                                                  my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/CafeBERT and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 362.2592, 0/1 Loss: 0.9998, Hamming Loss: 0.7758, EMR: 0.0002, Acc: 0.4578, F1: 0.4016, Precision: 0.5375, Recall: 0.3582
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.7560, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 360.8408, 0/1 Loss: 0.9998, Hamming Loss: 0.7751, EMR: 0.0002, Acc: 0.4905, F1: 0.4078, Precision: 0.4965, Recall: 0.3834
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6278, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_1.pth
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 360.1395, 0/1 Loss: 0.9996, Hamming Loss: 0.7720, EMR: 0.0004, Acc: 0.5359, F1: 0.4278, Precision: 0.4982, Recall: 0.4190
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.3107, 0/1 Loss: 1.0000, Hamming Loss: 0.6659, EMR: 0.0000, Acc: 0.7397, F1: 0.5192, Precision: 0.4887, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_2.pth
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 359.7080, 0/1 Loss: 0.9998, Hamming Loss: 0.7842, EMR: 0.0002, Acc: 0.5606, F1: 0.4325, Precision: 0.4866, Recall: 0.4390
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2177, 0/1 Loss: 1.0000, Hamming Loss: 0.6715, EMR: 0.0000, Acc: 0.7397, F1: 0.5164, Precision: 0.4873, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_3.pth
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 359.2009, 0/1 Loss: 0.9998, Hamming Loss: 0.7818, EMR: 0.0002, Acc: 0.5605, F1: 0.4320, Precision: 0.4819, Recall: 0.4386
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.3034, 0/1 Loss: 1.0000, Hamming Loss: 0.6885, EMR: 0.0000, Acc: 0.7397, F1: 0.5105, Precision: 0.4759, Recall: 0.5746
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 358.9030, 0/1 Loss: 0.9998, Hamming Loss: 0.7887, EMR: 0.0002, Acc: 0.5494, F1: 0.4248, Precision: 0.4827, Recall: 0.4298
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2266, 0/1 Loss: 1.0000, Hamming Loss: 0.7521, EMR: 0.0000, Acc: 0.7397, F1: 0.4832, Precision: 0.4373, Recall: 0.5746
+
+
+Epoch 7/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 7/20, Loss: 359.1636, 0/1 Loss: 0.9995, Hamming Loss: 0.7908, EMR: 0.0005, Acc: 0.5474, F1: 0.4245, Precision: 0.4821, Recall: 0.4286
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.1072, 0/1 Loss: 1.0000, Hamming Loss: 0.7082, EMR: 0.0000, Acc: 0.7397, F1: 0.5018, Precision: 0.4672, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_6.pth
+
+
+Epoch 8/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 8/20, Loss: 359.1501, 0/1 Loss: 0.9996, Hamming Loss: 0.7896, EMR: 0.0004, Acc: 0.5450, F1: 0.4233, Precision: 0.4869, Recall: 0.4265
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2456, 0/1 Loss: 0.9992, Hamming Loss: 0.7430, EMR: 0.0008, Acc: 0.7397, F1: 0.4881, Precision: 0.4454, Recall: 0.5746
+
+
+Epoch 9/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 9/20, Loss: 358.5353, 0/1 Loss: 0.9999, Hamming Loss: 0.7825, EMR: 0.0001, Acc: 0.5480, F1: 0.4277, Precision: 0.4916, Recall: 0.4296
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.3246, 0/1 Loss: 1.0000, Hamming Loss: 0.6537, EMR: 0.0000, Acc: 0.7397, F1: 0.5376, Precision: 0.5295, Recall: 0.5746
+
+
+Epoch 10/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 10/20, Loss: 358.1795, 0/1 Loss: 0.9995, Hamming Loss: 0.7717, EMR: 0.0005, Acc: 0.5437, F1: 0.4314, Precision: 0.5057, Recall: 0.4261
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.9100, 0/1 Loss: 0.9992, Hamming Loss: 0.7200, EMR: 0.0008, Acc: 0.7397, F1: 0.5017, Precision: 0.4694, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_9.pth
+
+
+Epoch 11/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 11/20, Loss: 357.9254, 0/1 Loss: 0.9993, Hamming Loss: 0.7764, EMR: 0.0007, Acc: 0.5350, F1: 0.4261, Precision: 0.5029, Recall: 0.4196
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.9907, 0/1 Loss: 0.9983, Hamming Loss: 0.6777, EMR: 0.0017, Acc: 0.7370, F1: 0.5218, Precision: 0.5089, Recall: 0.5724
+
+
+Epoch 12/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 12/20, Loss: 357.7308, 0/1 Loss: 0.9996, Hamming Loss: 0.7752, EMR: 0.0004, Acc: 0.5287, F1: 0.4235, Precision: 0.5055, Recall: 0.4143
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.9619, 0/1 Loss: 1.0000, Hamming Loss: 0.6643, EMR: 0.0000, Acc: 0.7397, F1: 0.5202, Precision: 0.4965, Recall: 0.5746
+
+
+Epoch 13/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 13/20, Loss: 358.0254, 0/1 Loss: 0.9996, Hamming Loss: 0.7666, EMR: 0.0004, Acc: 0.5323, F1: 0.4310, Precision: 0.5220, Recall: 0.4178
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.7876, 0/1 Loss: 0.9992, Hamming Loss: 0.7127, EMR: 0.0008, Acc: 0.7397, F1: 0.5046, Precision: 0.4718, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_12.pth
+
+
+Epoch 14/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 14/20, Loss: 357.2603, 0/1 Loss: 0.9992, Hamming Loss: 0.7652, EMR: 0.0008, Acc: 0.5393, F1: 0.4318, Precision: 0.5140, Recall: 0.4227
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.7239, 0/1 Loss: 0.9992, Hamming Loss: 0.6340, EMR: 0.0008, Acc: 0.7397, F1: 0.5433, Precision: 0.5454, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_13.pth
+
+
+Epoch 15/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 15/20, Loss: 357.3144, 0/1 Loss: 0.9995, Hamming Loss: 0.7681, EMR: 0.0005, Acc: 0.5345, F1: 0.4290, Precision: 0.5138, Recall: 0.4199
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6992, 0/1 Loss: 0.9992, Hamming Loss: 0.6587, EMR: 0.0008, Acc: 0.7397, F1: 0.5281, Precision: 0.5189, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_14.pth
+
+
+Epoch 16/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 16/20, Loss: 357.3655, 0/1 Loss: 0.9994, Hamming Loss: 0.7713, EMR: 0.0006, Acc: 0.5207, F1: 0.4222, Precision: 0.5171, Recall: 0.4076
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.7449, 0/1 Loss: 0.9983, Hamming Loss: 0.7177, EMR: 0.0017, Acc: 0.7397, F1: 0.4998, Precision: 0.4671, Recall: 0.5746
+
+
+Epoch 17/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 17/20, Loss: 357.5686, 0/1 Loss: 0.9992, Hamming Loss: 0.7736, EMR: 0.0008, Acc: 0.5316, F1: 0.4264, Precision: 0.5122, Recall: 0.4174
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.8163, 0/1 Loss: 0.9992, Hamming Loss: 0.6841, EMR: 0.0008, Acc: 0.7397, F1: 0.5203, Precision: 0.5048, Recall: 0.5746
+
+
+Epoch 18/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 18/20, Loss: 356.9569, 0/1 Loss: 0.9993, Hamming Loss: 0.7738, EMR: 0.0007, Acc: 0.5384, F1: 0.4274, Precision: 0.5006, Recall: 0.4227
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.6648, 0/1 Loss: 0.9992, Hamming Loss: 0.6959, EMR: 0.0008, Acc: 0.7397, F1: 0.5125, Precision: 0.4909, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_CafeBERT_17.pth
+
+
+Epoch 19/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 19/20, Loss: 357.0621, 0/1 Loss: 0.9992, Hamming Loss: 0.7715, EMR: 0.0008, Acc: 0.5358, F1: 0.4278, Precision: 0.5098, Recall: 0.4202
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.8614, 0/1 Loss: 0.9983, Hamming Loss: 0.7241, EMR: 0.0017, Acc: 0.7397, F1: 0.4994, Precision: 0.4648, Recall: 0.5746
+
+
+Epoch 20/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 20/20, Loss: 357.2588, 0/1 Loss: 0.9996, Hamming Loss: 0.7686, EMR: 0.0004, Acc: 0.5271, F1: 0.4263, Precision: 0.5182, Recall: 0.4134
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 50.7697, 0/1 Loss: 0.9992, Hamming Loss: 0.6589, EMR: 0.0008, Acc: 0.7397, F1: 0.5357, Precision: 0.5341, Recall: 0.5746
+
+lstm + xlm-roberta-base
+[15:51:15] task: task-2                                                                                my_import.py:127
+           model_type: lstm                                                                            my_import.py:127
+           model_name: xlm-roberta-base                                                                my_import.py:127
+           padding_len: 500                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           hidden_size: 128                                                                            my_import.py:127
+           num_layers: 1                                                                               my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/lstm_xlm-roberta-base                                          my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 361.5140, 0/1 Loss: 0.9954, Hamming Loss: 0.6810, EMR: 0.0046, Acc: 0.6759, F1: 0.5096, Precision: 0.5589, Recall: 0.5306
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6388, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+Saved the best model to path: ./models/task_2/lstm_xlm-roberta-base_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 361.2037, 0/1 Loss: 0.9936, Hamming Loss: 0.6712, EMR: 0.0064, Acc: 0.7038, F1: 0.5212, Precision: 0.5477, Recall: 0.5523
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6397, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 361.0449, 0/1 Loss: 0.9946, Hamming Loss: 0.6650, EMR: 0.0054, Acc: 0.7017, F1: 0.5222, Precision: 0.5547, Recall: 0.5504
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6927, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 360.8752, 0/1 Loss: 0.9947, Hamming Loss: 0.6653, EMR: 0.0053, Acc: 0.7059, F1: 0.5228, Precision: 0.5488, Recall: 0.5540
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6030, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+Saved the best model to path: ./models/task_2/lstm_xlm-roberta-base_3.pth
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 360.8833, 0/1 Loss: 0.9956, Hamming Loss: 0.6718, EMR: 0.0044, Acc: 0.6987, F1: 0.5198, Precision: 0.5516, Recall: 0.5489
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6293, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 360.8789, 0/1 Loss: 0.9948, Hamming Loss: 0.6702, EMR: 0.0052, Acc: 0.6945, F1: 0.5190, Precision: 0.5542, Recall: 0.5446
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5929, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+Saved the best model to path: ./models/task_2/lstm_xlm-roberta-base_5.pth
+
+
+Epoch 7/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 7/20, Loss: 360.9098, 0/1 Loss: 0.9928, Hamming Loss: 0.6619, EMR: 0.0072, Acc: 0.7106, F1: 0.5256, Precision: 0.5514, Recall: 0.5570
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5643, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+Saved the best model to path: ./models/task_2/lstm_xlm-roberta-base_6.pth
+
+
+Epoch 8/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 8/20, Loss: 360.7975, 0/1 Loss: 0.9948, Hamming Loss: 0.6657, EMR: 0.0052, Acc: 0.7019, F1: 0.5220, Precision: 0.5515, Recall: 0.5505
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6080, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 9/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 9/20, Loss: 360.5048, 0/1 Loss: 0.9943, Hamming Loss: 0.6650, EMR: 0.0057, Acc: 0.7052, F1: 0.5226, Precision: 0.5493, Recall: 0.5538
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5681, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 10/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 10/20, Loss: 360.7542, 0/1 Loss: 0.9944, Hamming Loss: 0.6662, EMR: 0.0056, Acc: 0.7076, F1: 0.5232, Precision: 0.5475, Recall: 0.5560
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6521, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 11/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 11/20, Loss: 360.8495, 0/1 Loss: 0.9935, Hamming Loss: 0.6634, EMR: 0.0065, Acc: 0.7133, F1: 0.5261, Precision: 0.5490, Recall: 0.5594
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6464, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 12/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 12/20, Loss: 360.8776, 0/1 Loss: 0.9949, Hamming Loss: 0.6656, EMR: 0.0051, Acc: 0.7081, F1: 0.5246, Precision: 0.5495, Recall: 0.5564
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5465, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+Saved the best model to path: ./models/task_2/lstm_xlm-roberta-base_11.pth
+
+
+Epoch 13/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 13/20, Loss: 360.9722, 0/1 Loss: 0.9955, Hamming Loss: 0.6699, EMR: 0.0045, Acc: 0.7017, F1: 0.5197, Precision: 0.5489, Recall: 0.5511
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6302, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 14/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 14/20, Loss: 360.7533, 0/1 Loss: 0.9935, Hamming Loss: 0.6679, EMR: 0.0065, Acc: 0.6958, F1: 0.5184, Precision: 0.5519, Recall: 0.5454
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5953, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 15/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 15/20, Loss: 360.6984, 0/1 Loss: 0.9935, Hamming Loss: 0.6654, EMR: 0.0065, Acc: 0.7068, F1: 0.5232, Precision: 0.5469, Recall: 0.5546
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5620, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 16/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 16/20, Loss: 360.7058, 0/1 Loss: 0.9954, Hamming Loss: 0.6664, EMR: 0.0046, Acc: 0.6958, F1: 0.5209, Precision: 0.5571, Recall: 0.5452
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5710, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+
+Epoch 17/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 17/20, Loss: 361.1206, 0/1 Loss: 0.9944, Hamming Loss: 0.6700, EMR: 0.0056, Acc: 0.6991, F1: 0.5208, Precision: 0.5543, Recall: 0.5486
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5647, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+
+Early stopping triggered!
+
+lstm + bert-base-multilingual-cased
+[16:16:45] task: task-2                                                                                my_import.py:127
+           model_type: lstm                                                                            my_import.py:127
+           model_name: bert-base-multilingual-cased                                                    my_import.py:127
+           padding_len: 500                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           hidden_size: 128                                                                            my_import.py:127
+           num_layers: 1                                                                               my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/lstm_bert-base-multilingual-cased                              my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 362.4960, 0/1 Loss: 0.9995, Hamming Loss: 0.7602, EMR: 0.0005, Acc: 0.4807, F1: 0.4247, Precision: 0.5903, Recall: 0.3750
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.8878, 0/1 Loss: 0.9992, Hamming Loss: 0.6054, EMR: 0.0008, Acc: 0.7397, F1: 0.5757, Precision: 0.5939, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_bert-base-multilingual-cased_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 362.1601, 0/1 Loss: 0.9998, Hamming Loss: 0.7583, EMR: 0.0002, Acc: 0.4808, F1: 0.4276, Precision: 0.5969, Recall: 0.3752
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.8229, 0/1 Loss: 0.9992, Hamming Loss: 0.6058, EMR: 0.0008, Acc: 0.7397, F1: 0.5758, Precision: 0.5942, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_bert-base-multilingual-cased_1.pth
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 360.8712, 0/1 Loss: 0.9996, Hamming Loss: 0.7564, EMR: 0.0004, Acc: 0.5760, F1: 0.4512, Precision: 0.5095, Recall: 0.4510
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.4764, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_bert-base-multilingual-cased_2.pth
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 360.5462, 0/1 Loss: 0.9996, Hamming Loss: 0.7620, EMR: 0.0004, Acc: 0.5743, F1: 0.4473, Precision: 0.5004, Recall: 0.4492
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5566, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 360.5714, 0/1 Loss: 0.9999, Hamming Loss: 0.7561, EMR: 0.0001, Acc: 0.5759, F1: 0.4507, Precision: 0.5107, Recall: 0.4503
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.4907, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 360.5405, 0/1 Loss: 1.0000, Hamming Loss: 0.7595, EMR: 0.0000, Acc: 0.5735, F1: 0.4480, Precision: 0.5042, Recall: 0.4486
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5854, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 7/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 7/20, Loss: 360.3924, 0/1 Loss: 0.9995, Hamming Loss: 0.7565, EMR: 0.0005, Acc: 0.5660, F1: 0.4450, Precision: 0.5123, Recall: 0.4423
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5396, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 8/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 8/20, Loss: 360.4556, 0/1 Loss: 0.9998, Hamming Loss: 0.7565, EMR: 0.0002, Acc: 0.5713, F1: 0.4485, Precision: 0.5137, Recall: 0.4472
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.4558, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_bert-base-multilingual-cased_7.pth
+
+
+Epoch 9/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 9/20, Loss: 360.2921, 0/1 Loss: 0.9995, Hamming Loss: 0.7572, EMR: 0.0005, Acc: 0.5683, F1: 0.4457, Precision: 0.5105, Recall: 0.4440
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.4926, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 10/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 10/20, Loss: 360.1066, 0/1 Loss: 0.9998, Hamming Loss: 0.7551, EMR: 0.0002, Acc: 0.5730, F1: 0.4496, Precision: 0.5128, Recall: 0.4483
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.3939, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+Saved the best model to path: ./models/task_2/lstm_bert-base-multilingual-cased_9.pth
+
+
+Epoch 11/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 11/20, Loss: 360.2770, 0/1 Loss: 0.9994, Hamming Loss: 0.7636, EMR: 0.0006, Acc: 0.5686, F1: 0.4438, Precision: 0.5046, Recall: 0.4446
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5023, 0/1 Loss: 1.0000, Hamming Loss: 0.6831, EMR: 0.0000, Acc: 0.7397, F1: 0.5117, Precision: 0.4755, Recall: 0.5746
+
+
+Epoch 12/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 12/20, Loss: 360.2039, 0/1 Loss: 0.9998, Hamming Loss: 0.7584, EMR: 0.0002, Acc: 0.5744, F1: 0.4475, Precision: 0.5029, Recall: 0.4498
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5506, 0/1 Loss: 1.0000, Hamming Loss: 0.6272, EMR: 0.0000, Acc: 0.7397, F1: 0.5378, Precision: 0.5206, Recall: 0.5746
+
+
+Epoch 13/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 13/20, Loss: 359.9894, 0/1 Loss: 0.9999, Hamming Loss: 0.7559, EMR: 0.0001, Acc: 0.5790, F1: 0.4505, Precision: 0.5069, Recall: 0.4532
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.4770, 0/1 Loss: 1.0000, Hamming Loss: 0.6518, EMR: 0.0000, Acc: 0.7397, F1: 0.5248, Precision: 0.4961, Recall: 0.5746
+
+
+Epoch 14/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 14/20, Loss: 359.8701, 0/1 Loss: 0.9995, Hamming Loss: 0.7568, EMR: 0.0005, Acc: 0.5778, F1: 0.4491, Precision: 0.5024, Recall: 0.4522
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.4093, 0/1 Loss: 1.0000, Hamming Loss: 0.6560, EMR: 0.0000, Acc: 0.7397, F1: 0.5235, Precision: 0.4934, Recall: 0.5746
+
+
+Epoch 15/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 15/20, Loss: 360.0586, 0/1 Loss: 0.9998, Hamming Loss: 0.7605, EMR: 0.0002, Acc: 0.5728, F1: 0.4466, Precision: 0.5072, Recall: 0.4480
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.4849, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+Early stopping triggered!
+
+lstm + distilbert-base-multilingual-cased
+[16:39:29] task: task-2                                                                                my_import.py:127
+           model_type: lstm                                                                            my_import.py:127
+           model_name: distilbert-base-multilingual-cased                                              my_import.py:127
+           padding_len: 500                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           hidden_size: 128                                                                            my_import.py:127
+           num_layers: 1                                                                               my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/lstm_distilbert-base-multilingual-cased                        my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 361.9299, 0/1 Loss: 1.0000, Hamming Loss: 0.7273, EMR: 0.0000, Acc: 0.5365, F1: 0.4554, Precision: 0.5828, Recall: 0.4199
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6447, 0/1 Loss: 1.0000, Hamming Loss: 0.5777, EMR: 0.0000, Acc: 0.7370, F1: 0.5729, Precision: 0.5892, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 361.6345, 0/1 Loss: 1.0000, Hamming Loss: 0.7328, EMR: 0.0000, Acc: 0.5178, F1: 0.4457, Precision: 0.5991, Recall: 0.4057
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.6111, 0/1 Loss: 1.0000, Hamming Loss: 0.5779, EMR: 0.0000, Acc: 0.7370, F1: 0.5726, Precision: 0.5887, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_1.pth
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 361.0241, 0/1 Loss: 1.0000, Hamming Loss: 0.7360, EMR: 0.0000, Acc: 0.5468, F1: 0.4537, Precision: 0.5603, Recall: 0.4289
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.5519, 0/1 Loss: 1.0000, Hamming Loss: 0.5988, EMR: 0.0000, Acc: 0.7370, F1: 0.5588, Precision: 0.5644, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_2.pth
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 360.7342, 0/1 Loss: 1.0000, Hamming Loss: 0.7471, EMR: 0.0000, Acc: 0.5269, F1: 0.4396, Precision: 0.5546, Recall: 0.4135
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.4878, 0/1 Loss: 1.0000, Hamming Loss: 0.6239, EMR: 0.0000, Acc: 0.7370, F1: 0.5459, Precision: 0.5435, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_3.pth
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 360.9367, 0/1 Loss: 1.0000, Hamming Loss: 0.7618, EMR: 0.0000, Acc: 0.4846, F1: 0.4172, Precision: 0.5779, Recall: 0.3799
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.3588, 0/1 Loss: 1.0000, Hamming Loss: 0.6139, EMR: 0.0000, Acc: 0.7370, F1: 0.5495, Precision: 0.5491, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_4.pth
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 360.5373, 0/1 Loss: 1.0000, Hamming Loss: 0.7589, EMR: 0.0000, Acc: 0.4821, F1: 0.4154, Precision: 0.5744, Recall: 0.3777
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2997, 0/1 Loss: 1.0000, Hamming Loss: 0.5953, EMR: 0.0000, Acc: 0.7370, F1: 0.5583, Precision: 0.5633, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_5.pth
+
+
+Epoch 7/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 7/20, Loss: 360.4543, 0/1 Loss: 1.0000, Hamming Loss: 0.7560, EMR: 0.0000, Acc: 0.4928, F1: 0.4223, Precision: 0.5803, Recall: 0.3862
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.3447, 0/1 Loss: 1.0000, Hamming Loss: 0.6183, EMR: 0.0000, Acc: 0.7370, F1: 0.5471, Precision: 0.5453, Recall: 0.5727
+
+
+Epoch 8/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 8/20, Loss: 360.5014, 0/1 Loss: 1.0000, Hamming Loss: 0.7616, EMR: 0.0000, Acc: 0.4852, F1: 0.4158, Precision: 0.5706, Recall: 0.3807
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2559, 0/1 Loss: 1.0000, Hamming Loss: 0.5886, EMR: 0.0000, Acc: 0.7365, F1: 0.5622, Precision: 0.5706, Recall: 0.5724
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_7.pth
+
+
+Epoch 9/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 9/20, Loss: 360.0118, 0/1 Loss: 1.0000, Hamming Loss: 0.7696, EMR: 0.0000, Acc: 0.4683, F1: 0.4039, Precision: 0.5639, Recall: 0.3674
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2299, 0/1 Loss: 1.0000, Hamming Loss: 0.6533, EMR: 0.0000, Acc: 0.6952, F1: 0.5208, Precision: 0.5259, Recall: 0.5387
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_8.pth
+
+
+Epoch 10/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 10/20, Loss: 359.8961, 0/1 Loss: 1.0000, Hamming Loss: 0.7667, EMR: 0.0000, Acc: 0.4771, F1: 0.4091, Precision: 0.5585, Recall: 0.3736
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.1933, 0/1 Loss: 1.0000, Hamming Loss: 0.6524, EMR: 0.0000, Acc: 0.6983, F1: 0.5211, Precision: 0.5238, Recall: 0.5416
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_9.pth
+
+
+Epoch 11/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 11/20, Loss: 360.0447, 0/1 Loss: 1.0000, Hamming Loss: 0.7885, EMR: 0.0000, Acc: 0.4507, F1: 0.3884, Precision: 0.5429, Recall: 0.3522
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2139, 0/1 Loss: 1.0000, Hamming Loss: 0.6700, EMR: 0.0000, Acc: 0.6860, F1: 0.5103, Precision: 0.5139, Recall: 0.5310
+
+
+Epoch 12/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 12/20, Loss: 360.0753, 0/1 Loss: 1.0000, Hamming Loss: 0.7798, EMR: 0.0000, Acc: 0.4581, F1: 0.3956, Precision: 0.5535, Recall: 0.3588
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.1869, 0/1 Loss: 1.0000, Hamming Loss: 0.6531, EMR: 0.0000, Acc: 0.6640, F1: 0.5117, Precision: 0.5299, Recall: 0.5131
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_11.pth
+
+
+Epoch 13/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 13/20, Loss: 359.9091, 0/1 Loss: 1.0000, Hamming Loss: 0.7862, EMR: 0.0000, Acc: 0.4468, F1: 0.3884, Precision: 0.5499, Recall: 0.3492
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.1413, 0/1 Loss: 1.0000, Hamming Loss: 0.6572, EMR: 0.0000, Acc: 0.6520, F1: 0.5063, Precision: 0.5287, Recall: 0.5033
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_12.pth
+
+
+Epoch 14/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 14/20, Loss: 359.7240, 0/1 Loss: 1.0000, Hamming Loss: 0.7924, EMR: 0.0000, Acc: 0.4417, F1: 0.3825, Precision: 0.5409, Recall: 0.3447
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2176, 0/1 Loss: 1.0000, Hamming Loss: 0.6845, EMR: 0.0000, Acc: 0.6968, F1: 0.5059, Precision: 0.4992, Recall: 0.5395
+
+
+Epoch 15/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 15/20, Loss: 359.7495, 0/1 Loss: 1.0000, Hamming Loss: 0.7913, EMR: 0.0000, Acc: 0.4440, F1: 0.3838, Precision: 0.5379, Recall: 0.3479
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.2291, 0/1 Loss: 1.0000, Hamming Loss: 0.7181, EMR: 0.0000, Acc: 0.6560, F1: 0.4803, Precision: 0.4797, Recall: 0.5058
+
+
+Epoch 16/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 16/20, Loss: 359.4453, 0/1 Loss: 1.0000, Hamming Loss: 0.7907, EMR: 0.0000, Acc: 0.4469, F1: 0.3854, Precision: 0.5396, Recall: 0.3486
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.1875, 0/1 Loss: 1.0000, Hamming Loss: 0.6874, EMR: 0.0000, Acc: 0.6620, F1: 0.4946, Precision: 0.5007, Recall: 0.5111
+
+
+Epoch 17/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 17/20, Loss: 359.6757, 0/1 Loss: 1.0000, Hamming Loss: 0.7892, EMR: 0.0000, Acc: 0.4525, F1: 0.3896, Precision: 0.5433, Recall: 0.3538
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.1026, 0/1 Loss: 1.0000, Hamming Loss: 0.6744, EMR: 0.0000, Acc: 0.7370, F1: 0.5215, Precision: 0.5022, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_16.pth
+
+
+Epoch 18/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 18/20, Loss: 359.4119, 0/1 Loss: 1.0000, Hamming Loss: 0.7778, EMR: 0.0000, Acc: 0.4893, F1: 0.4093, Precision: 0.5428, Recall: 0.3843
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.1060, 0/1 Loss: 1.0000, Hamming Loss: 0.7106, EMR: 0.0000, Acc: 0.7370, F1: 0.5054, Precision: 0.4770, Recall: 0.5727
+
+
+Epoch 19/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 19/20, Loss: 359.2143, 0/1 Loss: 1.0000, Hamming Loss: 0.7735, EMR: 0.0000, Acc: 0.4925, F1: 0.4126, Precision: 0.5465, Recall: 0.3874
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.0591, 0/1 Loss: 1.0000, Hamming Loss: 0.6469, EMR: 0.0000, Acc: 0.7370, F1: 0.5332, Precision: 0.5221, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_18.pth
+
+
+Epoch 20/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 20/20, Loss: 359.2758, 0/1 Loss: 1.0000, Hamming Loss: 0.7761, EMR: 0.0000, Acc: 0.4953, F1: 0.4128, Precision: 0.5436, Recall: 0.3888
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 51.0149, 0/1 Loss: 1.0000, Hamming Loss: 0.6433, EMR: 0.0000, Acc: 0.7370, F1: 0.5318, Precision: 0.5184, Recall: 0.5727
+Saved the best model to path: ./models/task_2/lstm_distilbert-base-multilingual-cased_19.pth
+
+
+===== Training CNN =====
+
+cnn + vinai/phobert-base
+[17:01:14] task: task-2                                                                                my_import.py:127
+           model_type: cnn                                                                             my_import.py:127
+           model_name: vinai/phobert-base                                                              my_import.py:127
+           padding_len: 200                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           num_channels: 768                                                                           my_import.py:127
+           kernel_size: 256                                                                            my_import.py:127
+           padding: 32                                                                                 my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/cnn_phobert-base                                               my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 367.5631, 0/1 Loss: 0.9972, Hamming Loss: 0.6842, EMR: 0.0028, Acc: 0.5945, F1: 0.4835, Precision: 0.5959, Recall: 0.4647
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.0481, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
+Saved the best model to path: ./models/task_2/cnn_phobert-base_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 367.9472, 0/1 Loss: 0.9977, Hamming Loss: 0.6907, EMR: 0.0023, Acc: 0.4692, F1: 0.4568, Precision: 0.7289, Recall: 0.3646
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.9692, 0/1 Loss: 0.9934, Hamming Loss: 0.5058, EMR: 0.0066, Acc: 0.7592, F1: 0.6474, Precision: 0.7477, Recall: 0.5854
+Saved the best model to path: ./models/task_2/cnn_phobert-base_1.pth
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 367.6900, 0/1 Loss: 0.9982, Hamming Loss: 0.6927, EMR: 0.0018, Acc: 0.4562, F1: 0.4515, Precision: 0.7332, Recall: 0.3553
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.9692, 0/1 Loss: 0.9934, Hamming Loss: 0.5058, EMR: 0.0066, Acc: 0.7592, F1: 0.6474, Precision: 0.7477, Recall: 0.5854
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 367.8770, 0/1 Loss: 0.9981, Hamming Loss: 0.6952, EMR: 0.0019, Acc: 0.4521, F1: 0.4492, Precision: 0.7392, Recall: 0.3517
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.9692, 0/1 Loss: 0.9934, Hamming Loss: 0.5058, EMR: 0.0066, Acc: 0.7592, F1: 0.6474, Precision: 0.7477, Recall: 0.5854
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 367.8053, 0/1 Loss: 0.9981, Hamming Loss: 0.6949, EMR: 0.0019, Acc: 0.4524, F1: 0.4496, Precision: 0.7393, Recall: 0.3526
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.9692, 0/1 Loss: 0.9934, Hamming Loss: 0.5058, EMR: 0.0066, Acc: 0.7592, F1: 0.6474, Precision: 0.7477, Recall: 0.5854
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 367.9909, 0/1 Loss: 0.9979, Hamming Loss: 0.6900, EMR: 0.0021, Acc: 0.4603, F1: 0.4546, Precision: 0.7344, Recall: 0.3584
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.9692, 0/1 Loss: 0.9934, Hamming Loss: 0.5058, EMR: 0.0066, Acc: 0.7592, F1: 0.6474, Precision: 0.7477, Recall: 0.5854
+
+
+Epoch 7/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 7/20, Loss: 368.1642, 0/1 Loss: 0.9987, Hamming Loss: 0.6934, EMR: 0.0013, Acc: 0.4561, F1: 0.4520, Precision: 0.7358, Recall: 0.3549
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.9692, 0/1 Loss: 0.9934, Hamming Loss: 0.5058, EMR: 0.0066, Acc: 0.7592, F1: 0.6474, Precision: 0.7477, Recall: 0.5854
+
+Early stopping triggered!
+
+cnn + uitnlp/visobert
+[17:10:35] task: task-2                                                                                my_import.py:127
+           model_type: cnn                                                                             my_import.py:127
+           model_name: uitnlp/visobert                                                                 my_import.py:127
+           padding_len: 400                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           num_channels: 768                                                                           my_import.py:127
+           kernel_size: 256                                                                            my_import.py:127
+           padding: 32                                                                                 my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/cnn_visobert                                                   my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/visobert and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 369.9230, 0/1 Loss: 0.9998, Hamming Loss: 0.7079, EMR: 0.0002, Acc: 0.4459, F1: 0.4435, Precision: 0.7196, Recall: 0.3485
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4441, 0/1 Loss: 0.9992, Hamming Loss: 0.5294, EMR: 0.0008, Acc: 0.7370, F1: 0.6357, Precision: 0.7365, Recall: 0.5727
+Saved the best model to path: ./models/task_2/cnn_visobert_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 369.9207, 0/1 Loss: 1.0000, Hamming Loss: 0.7083, EMR: 0.0000, Acc: 0.4423, F1: 0.4421, Precision: 0.7234, Recall: 0.3459
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4441, 0/1 Loss: 0.9992, Hamming Loss: 0.5294, EMR: 0.0008, Acc: 0.7370, F1: 0.6357, Precision: 0.7365, Recall: 0.5727
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 369.7987, 0/1 Loss: 1.0000, Hamming Loss: 0.7066, EMR: 0.0000, Acc: 0.4452, F1: 0.4447, Precision: 0.7295, Recall: 0.3483
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4441, 0/1 Loss: 0.9992, Hamming Loss: 0.5294, EMR: 0.0008, Acc: 0.7370, F1: 0.6357, Precision: 0.7365, Recall: 0.5727
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 369.8686, 0/1 Loss: 1.0000, Hamming Loss: 0.7068, EMR: 0.0000, Acc: 0.4433, F1: 0.4424, Precision: 0.7247, Recall: 0.3467
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4441, 0/1 Loss: 0.9992, Hamming Loss: 0.5294, EMR: 0.0008, Acc: 0.7370, F1: 0.6357, Precision: 0.7365, Recall: 0.5727
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 369.3996, 0/1 Loss: 0.9999, Hamming Loss: 0.7049, EMR: 0.0001, Acc: 0.4462, F1: 0.4451, Precision: 0.7287, Recall: 0.3484
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4441, 0/1 Loss: 0.9992, Hamming Loss: 0.5294, EMR: 0.0008, Acc: 0.7370, F1: 0.6357, Precision: 0.7365, Recall: 0.5727
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 369.6555, 0/1 Loss: 1.0000, Hamming Loss: 0.7084, EMR: 0.0000, Acc: 0.4417, F1: 0.4418, Precision: 0.7239, Recall: 0.3457
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4441, 0/1 Loss: 0.9992, Hamming Loss: 0.5294, EMR: 0.0008, Acc: 0.7370, F1: 0.6357, Precision: 0.7365, Recall: 0.5727
+
+Early stopping triggered!
+
+cnn + uitnlp/CafeBERT
+[17:22:04] task: task-2                                                                                my_import.py:127
+           model_type: cnn                                                                             my_import.py:127
+           model_name: uitnlp/CafeBERT                                                                 my_import.py:127
+           padding_len: 300                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           num_channels: 768                                                                           my_import.py:127
+           kernel_size: 256                                                                            my_import.py:127
+           padding: 32                                                                                 my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/cnn_CafeBERT                                                   my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/CafeBERT and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 367.9220, 0/1 Loss: 0.9949, Hamming Loss: 0.7486, EMR: 0.0051, Acc: 0.5974, F1: 0.4546, Precision: 0.5051, Recall: 0.4681
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.1044, 0/1 Loss: 0.9594, Hamming Loss: 0.5860, EMR: 0.0406, Acc: 0.9861, F1: 0.5926, Precision: 0.4931, Recall: 0.7683
+Saved the best model to path: ./models/task_2/cnn_CafeBERT_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 367.8441, 0/1 Loss: 0.9949, Hamming Loss: 0.7520, EMR: 0.0051, Acc: 0.5937, F1: 0.4524, Precision: 0.5024, Recall: 0.4657
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.1044, 0/1 Loss: 0.9594, Hamming Loss: 0.5860, EMR: 0.0406, Acc: 0.9861, F1: 0.5926, Precision: 0.4931, Recall: 0.7683
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 367.6459, 0/1 Loss: 0.9948, Hamming Loss: 0.7492, EMR: 0.0052, Acc: 0.5976, F1: 0.4538, Precision: 0.5039, Recall: 0.4679
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.1044, 0/1 Loss: 0.9594, Hamming Loss: 0.5860, EMR: 0.0406, Acc: 0.9861, F1: 0.5926, Precision: 0.4931, Recall: 0.7683
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 367.7386, 0/1 Loss: 0.9953, Hamming Loss: 0.7509, EMR: 0.0047, Acc: 0.5961, F1: 0.4538, Precision: 0.5043, Recall: 0.4666
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.1044, 0/1 Loss: 0.9594, Hamming Loss: 0.5860, EMR: 0.0406, Acc: 0.9861, F1: 0.5926, Precision: 0.4931, Recall: 0.7683
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 368.1551, 0/1 Loss: 0.9943, Hamming Loss: 0.7537, EMR: 0.0057, Acc: 0.5921, F1: 0.4502, Precision: 0.5015, Recall: 0.4629
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.1044, 0/1 Loss: 0.9594, Hamming Loss: 0.5860, EMR: 0.0406, Acc: 0.9861, F1: 0.5926, Precision: 0.4931, Recall: 0.7683
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 367.8491, 0/1 Loss: 0.9953, Hamming Loss: 0.7505, EMR: 0.0047, Acc: 0.5961, F1: 0.4525, Precision: 0.5046, Recall: 0.4667
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.1044, 0/1 Loss: 0.9594, Hamming Loss: 0.5860, EMR: 0.0406, Acc: 0.9861, F1: 0.5926, Precision: 0.4931, Recall: 0.7683
+
+Early stopping triggered!
+
+corrupted size vs. prev_size while consolidating
+cnn + xlm-roberta-base
+[17:43:23] task: task-2                                                                                my_import.py:127
+           model_type: cnn                                                                             my_import.py:127
+           model_name: xlm-roberta-base                                                                my_import.py:127
+           padding_len: 500                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           num_channels: 768                                                                           my_import.py:127
+           kernel_size: 256                                                                            my_import.py:127
+           padding: 32                                                                                 my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/cnn_xlm-roberta-base                                           my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 370.2511, 0/1 Loss: 1.0000, Hamming Loss: 0.9391, EMR: 0.0000, Acc: 0.1547, F1: 0.1684, Precision: 0.2991, Recall: 0.1199
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.6626, 0/1 Loss: 1.0000, Hamming Loss: 0.9151, EMR: 0.0000, Acc: 0.2390, F1: 0.2618, Precision: 0.4768, Recall: 0.1830
+Saved the best model to path: ./models/task_2/cnn_xlm-roberta-base_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 370.5842, 0/1 Loss: 1.0000, Hamming Loss: 0.9431, EMR: 0.0000, Acc: 0.1441, F1: 0.1591, Precision: 0.2871, Recall: 0.1115
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.6626, 0/1 Loss: 1.0000, Hamming Loss: 0.9151, EMR: 0.0000, Acc: 0.2390, F1: 0.2618, Precision: 0.4768, Recall: 0.1830
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 369.9167, 0/1 Loss: 1.0000, Hamming Loss: 0.9413, EMR: 0.0000, Acc: 0.1427, F1: 0.1574, Precision: 0.2842, Recall: 0.1102
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.6626, 0/1 Loss: 1.0000, Hamming Loss: 0.9151, EMR: 0.0000, Acc: 0.2390, F1: 0.2618, Precision: 0.4768, Recall: 0.1830
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 370.3223, 0/1 Loss: 1.0000, Hamming Loss: 0.9433, EMR: 0.0000, Acc: 0.1417, F1: 0.1566, Precision: 0.2823, Recall: 0.1097
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.6626, 0/1 Loss: 1.0000, Hamming Loss: 0.9151, EMR: 0.0000, Acc: 0.2390, F1: 0.2618, Precision: 0.4768, Recall: 0.1830
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 370.1025, 0/1 Loss: 1.0000, Hamming Loss: 0.9422, EMR: 0.0000, Acc: 0.1426, F1: 0.1578, Precision: 0.2841, Recall: 0.1106
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.6626, 0/1 Loss: 1.0000, Hamming Loss: 0.9151, EMR: 0.0000, Acc: 0.2390, F1: 0.2618, Precision: 0.4768, Recall: 0.1830
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 370.4335, 0/1 Loss: 1.0000, Hamming Loss: 0.9434, EMR: 0.0000, Acc: 0.1425, F1: 0.1573, Precision: 0.2838, Recall: 0.1102
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.6626, 0/1 Loss: 1.0000, Hamming Loss: 0.9151, EMR: 0.0000, Acc: 0.2390, F1: 0.2618, Precision: 0.4768, Recall: 0.1830
+
+Early stopping triggered!
+
+cnn + bert-base-multilingual-cased
+[17:56:40] task: task-2                                                                                my_import.py:127
+           model_type: cnn                                                                             my_import.py:127
+           model_name: bert-base-multilingual-cased                                                    my_import.py:127
+           padding_len: 500                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           num_channels: 768                                                                           my_import.py:127
+           kernel_size: 256                                                                            my_import.py:127
+           padding: 32                                                                                 my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/cnn_bert-base-multilingual-cased                               my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 364.3242, 0/1 Loss: 1.0000, Hamming Loss: 0.7902, EMR: 0.0000, Acc: 0.4443, F1: 0.3800, Precision: 0.5031, Recall: 0.3471
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.5645, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+Saved the best model to path: ./models/task_2/cnn_bert-base-multilingual-cased_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 364.7494, 0/1 Loss: 0.9996, Hamming Loss: 0.7870, EMR: 0.0004, Acc: 0.4514, F1: 0.3836, Precision: 0.5033, Recall: 0.3520
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.5645, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 364.3408, 0/1 Loss: 0.9999, Hamming Loss: 0.7910, EMR: 0.0001, Acc: 0.4447, F1: 0.3801, Precision: 0.5046, Recall: 0.3469
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.5645, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 364.8246, 0/1 Loss: 0.9998, Hamming Loss: 0.7887, EMR: 0.0002, Acc: 0.4461, F1: 0.3814, Precision: 0.5038, Recall: 0.3480
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.5645, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 364.9346, 0/1 Loss: 0.9998, Hamming Loss: 0.7919, EMR: 0.0002, Acc: 0.4444, F1: 0.3793, Precision: 0.5011, Recall: 0.3469
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.5645, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 364.8344, 0/1 Loss: 0.9998, Hamming Loss: 0.7880, EMR: 0.0002, Acc: 0.4497, F1: 0.3831, Precision: 0.5047, Recall: 0.3513
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 52.5645, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
+
+Early stopping triggered!
+
+cnn + distilbert-base-multilingual-cased
+[18:10:03] task: task-2                                                                                my_import.py:127
+           model_type: cnn                                                                             my_import.py:127
+           model_name: distilbert-base-multilingual-cased                                              my_import.py:127
+           padding_len: 500                                                                            my_import.py:125
+           batch_size: 32                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 20                                                                                  my_import.py:127
+           fine_tune: True                                                                             my_import.py:127
+           num_channels: 768                                                                           my_import.py:127
+           kernel_size: 256                                                                            my_import.py:127
+           padding: 32                                                                                 my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_2/cnn_distilbert-base-multilingual-cased                         my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+Epoch 1/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 1/20, Loss: 369.1128, 0/1 Loss: 1.0000, Hamming Loss: 0.8014, EMR: 0.0000, Acc: 0.4702, F1: 0.3948, Precision: 0.4949, Recall: 0.3672
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4269, 0/1 Loss: 1.0000, Hamming Loss: 0.6806, EMR: 0.0000, Acc: 0.7370, F1: 0.5215, Precision: 0.4910, Recall: 0.5727
+Saved the best model to path: ./models/task_2/cnn_distilbert-base-multilingual-cased_0.pth
+
+
+Epoch 2/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 2/20, Loss: 368.9233, 0/1 Loss: 1.0000, Hamming Loss: 0.8060, EMR: 0.0000, Acc: 0.4486, F1: 0.3815, Precision: 0.5000, Recall: 0.3504
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4269, 0/1 Loss: 1.0000, Hamming Loss: 0.6806, EMR: 0.0000, Acc: 0.7370, F1: 0.5215, Precision: 0.4910, Recall: 0.5727
+
+
+Epoch 3/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 3/20, Loss: 368.9243, 0/1 Loss: 1.0000, Hamming Loss: 0.8082, EMR: 0.0000, Acc: 0.4427, F1: 0.3791, Precision: 0.5032, Recall: 0.3466
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4269, 0/1 Loss: 1.0000, Hamming Loss: 0.6806, EMR: 0.0000, Acc: 0.7370, F1: 0.5215, Precision: 0.4910, Recall: 0.5727
+
+
+Epoch 4/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 4/20, Loss: 369.0544, 0/1 Loss: 1.0000, Hamming Loss: 0.8092, EMR: 0.0000, Acc: 0.4406, F1: 0.3772, Precision: 0.5009, Recall: 0.3445
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4269, 0/1 Loss: 1.0000, Hamming Loss: 0.6806, EMR: 0.0000, Acc: 0.7370, F1: 0.5215, Precision: 0.4910, Recall: 0.5727
+
+
+Epoch 5/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 5/20, Loss: 369.3034, 0/1 Loss: 1.0000, Hamming Loss: 0.8093, EMR: 0.0000, Acc: 0.4437, F1: 0.3796, Precision: 0.5009, Recall: 0.3477
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4269, 0/1 Loss: 1.0000, Hamming Loss: 0.6806, EMR: 0.0000, Acc: 0.7370, F1: 0.5215, Precision: 0.4910, Recall: 0.5727
+
+
+Epoch 6/20:   0%|          | 0/264 [00:00<?, ?it/s]
+Epoch 6/20, Loss: 369.1739, 0/1 Loss: 1.0000, Hamming Loss: 0.8081, EMR: 0.0000, Acc: 0.4451, F1: 0.3808, Precision: 0.5022, Recall: 0.3480
+Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
+Evaluation, Loss: 53.4269, 0/1 Loss: 1.0000, Hamming Loss: 0.6806, EMR: 0.0000, Acc: 0.7370, F1: 0.5215, Precision: 0.4910, Recall: 0.5727
+
+Early stopping triggered!

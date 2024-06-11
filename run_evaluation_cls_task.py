@@ -30,7 +30,7 @@ if imp.args['model_type'] == 'simple':
     if imp.args['task'] == 'task-1':
         model = md.SimpleCLSModel(pretrained_model_name=imp.args['model_name'])
     elif imp.args['task'] == 'task-2':
-        model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])    
+        model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])
 # if lstm
 elif imp.args['model_type'] == 'lstm':
     if imp.args['task'] == 'task-1':

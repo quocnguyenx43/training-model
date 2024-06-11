@@ -104,6 +104,11 @@ p_args = args.copy()
 if p_args['task'] == 'task-3':
     p_args.pop('model_type')
     p_args.pop('fine_tune')
+        p_args.pop('hidden_size')
+        p_args.pop('num_layers')
+    p_args.pop('num_channels')
+    p_args.pop('kernel_size')
+    p_args.pop('padding')
 else:
     p_args.pop('target_len')
     if p_args['model_type'] == 'lstm':

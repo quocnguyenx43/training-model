@@ -36,9 +36,6 @@ parser.add_argument("--num_channels", type=int, default=256)
 parser.add_argument("--kernel_size", type=int, default=12)
 parser.add_argument("--padding", type=int, default=3)
 
-
-parser.add_argument("--path", type=str)
-
 args = parser.parse_args()
 args = vars(args)
 
@@ -65,7 +62,8 @@ args['saving_path'] = saving_path
 
 
 ### Read data
-train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv')
+# train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv')
+train_df = pd.read_csv('./data/preprocessed_50/train_split_1.csv')
 dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
 test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
 

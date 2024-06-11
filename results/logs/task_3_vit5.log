@@ -1,0 +1,103 @@
+Training VietAI/vit5-base
+[14:07:27] task: task-3                                                                                my_import.py:127
+           model_name: VietAI/vit5-base                                                                my_import.py:127
+           source_len: 768                                                                             my_import.py:127
+           target_len: 128                                                                             my_import.py:127
+           batch_size: 12                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 3                                                                                   my_import.py:127
+           hidden_size: 128                                                                            my_import.py:127
+           num_layers: 4                                                                               my_import.py:127
+           num_channels: 256                                                                           my_import.py:127
+           kernel_size: 12                                                                             my_import.py:127
+           padding: 3                                                                                  my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_3/simple_vit5-base                                               my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+Training ...
+
+Epoch 1/3:   0%|          | 0/704 [00:00<?, ?it/s]
+Epoch 1/3, Batch 704/704: 100%|██████████| 704/704 [08:20<00:00,  1.41it/s]
+Epoch 1/3, Loss: 233.7054
+Evaluation:   0%|          | 0/101 [00:00<?, ?it/s]
+Validation, Batch 101/101: 100%|██████████| 101/101 [02:59<00:00,  1.78s/it]
+Evaluation on dev set:
+BERT score (prec, rec, f1): (0.8214, 0.8132, 0.8167)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.3771, 1, 0, 0, 0)
+Rouge score (1, 2, L): (0.6609, 0.4587, 0.5354)
+Saved the model to path: ./models/task_3/simple_vit5-base_0.pth
+
+
+Epoch 2/3:   0%|          | 0/704 [00:00<?, ?it/s]
+Epoch 2/3, Batch 704/704: 100%|██████████| 704/704 [08:18<00:00,  1.41it/s]
+Epoch 2/3, Loss: 148.7573
+Evaluation:   0%|          | 0/101 [00:00<?, ?it/s]
+Validation, Batch 101/101: 100%|██████████| 101/101 [04:15<00:00,  2.53s/it]
+Evaluation on dev set:
+BERT score (prec, rec, f1): (0.8234, 0.8055, 0.8129)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.396, 1, 0, 0, 0)
+Rouge score (1, 2, L): (0.6186, 0.46, 0.5223)
+Saved the model to path: ./models/task_3/simple_vit5-base_1.pth
+
+
+Epoch 3/3:   0%|          | 0/704 [00:00<?, ?it/s]
+Epoch 3/3, Batch 704/704: 100%|██████████| 704/704 [08:18<00:00,  1.41it/s]
+Epoch 3/3, Loss: 136.9789
+Evaluation:   0%|          | 0/101 [00:00<?, ?it/s]
+Validation, Batch 101/101: 100%|██████████| 101/101 [03:07<00:00,  1.86s/it]
+Evaluation on dev set:
+BERT score (prec, rec, f1): (0.817, 0.7841, 0.7995)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.3039, 1, 1, 0, 0)
+Rouge score (1, 2, L): (0.5816, 0.4283, 0.4999)
+Saved the model to path: ./models/task_3/simple_vit5-base_2.pth
+
+Evaluating VietAI/vit5-base
+[14:43:55] task: task-3                                                                                my_import.py:127
+           model_name: VietAI/vit5-base                                                                my_import.py:127
+           source_len: 768                                                                             my_import.py:127
+           target_len: 128                                                                             my_import.py:127
+           batch_size: 12                                                                              my_import.py:127
+           learning_rate: 0.001                                                                        my_import.py:127
+           epochs: 10                                                                                  my_import.py:127
+           hidden_size: 128                                                                            my_import.py:127
+           num_layers: 4                                                                               my_import.py:127
+           num_channels: 256                                                                           my_import.py:127
+           kernel_size: 12                                                                             my_import.py:127
+           padding: 3                                                                                  my_import.py:127
+           device: cuda                                                                                my_import.py:127
+           saving_path: ./models/task_3/simple_vit5-base                                               my_import.py:127
+           train_shape: (8444, 28)                                                                     my_import.py:127
+           dev_shape: (1207, 28)                                                                       my_import.py:127
+           test_shape: (2413, 28)                                                                      my_import.py:127
+
+model_weight_path: ./models/task_3/simple_vit5-base_2.pth
+Loading model weight successfully!
+
+Evaluation on dev set:
+Evaluation:   0%|          | 0/101 [00:00<?, ?it/s]
+Validation, Batch 101/101: 100%|██████████| 101/101 [02:33<00:00,  1.52s/it]
+BERT score (prec, rec, f1): (0.817, 0.7841, 0.7995)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.3039, 1, 1, 0, 0)
+Rouge score (1, 2, L): (0.5817, 0.428, 0.4999)
+
+*** Random example: 
+Original @ [297]: Đây không phải là tin tuyển dụng. 
+Generated @ [297]: không cần trình độ cao và thuộc về tư nhân, thông tin nơi làm việc chỉ cần đề cập ở mức quận huyện, chi tiết sẽ được liên lạc sau.
+
+
+
+Evaluation on test set:
+Evaluation:   0%|          | 0/202 [00:00<?, ?it/s]
+Validation, Batch 202/202: 100%|██████████| 202/202 [06:05<00:00,  1.81s/it]
+BERT score (prec, rec, f1): (0.8132, 0.7779, 0.7945)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.2872, 1, 1, 0, 0)
+Rouge score (1, 2, L): (0.5658, 0.4165, 0.4886)
+
+*** Random example: 
+Original @ [1943]: Thông tin về tiêu đề rõ ràng; Mô tả công việc đầy đủ thông tin căn bản; Tên và địa chỉ công ty rõ ràng và xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng; 
+Generated @ [1943]: ; Mô tả công việc đầy đủ thông tin căn bản; Tên và địa chỉ công ty được xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng;
+
+All commands completed!

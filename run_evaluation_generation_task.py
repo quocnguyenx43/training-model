@@ -24,7 +24,7 @@ for file in all_model_files:
 
 lastest = str(lastest)
 model_weight_path = './models/' + task_folder + '/' + prefix_file_name + '_' + lastest + '.pth'
-model_weight_path  = './models/task_3/simple_vit5-base_2.pth'
+model_weight_path  = imp.args['path']
 
 
 ###### Model
@@ -59,7 +59,7 @@ print()
 pd.DataFrame({
     'original': references,
     'prediction': predictions,
-}).to_csv('./results/inferences_dev_task_3.csv')
+}).to_csv('./results/' + model_weight_path.split('/')[-1] + 'inferences_dev_task_3.csv')
 
 
 ###### Evaluating on test test
@@ -83,4 +83,4 @@ print()
 pd.DataFrame({
     'original': references,
     'prediction': predictions,
-}).to_csv('./results/inferences_test_task_3.csv')
+}).to_csv('./results/' + model_weight_path.split('/')[-1] + 'inferences_test_task_3.csv')

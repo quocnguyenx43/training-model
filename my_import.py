@@ -36,6 +36,9 @@ parser.add_argument("--num_channels", type=int, default=256)
 parser.add_argument("--kernel_size", type=int, default=12)
 parser.add_argument("--padding", type=int, default=3)
 
+
+parser.add_argument("--path", type=str)
+
 args = parser.parse_args()
 args = vars(args)
 

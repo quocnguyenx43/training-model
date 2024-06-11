@@ -21,7 +21,7 @@ def get_file_id_by_name(file_name, service, folder_id):
     return files[0]['id'] if files else None
 
 def upload_file(local_file_path, dest_file_name):
-    PARENT_FOLDER_ID = '1kP-rV9axCcL_VRz449KOhske1nyOmPXu'
+    PARENT_FOLDER_ID = '1Y1x3Sg54i6ltb-PZvfwyaLaLCvqTXJCO'
     creds = authenticate()
     service = build('drive', 'v3', credentials=creds)
 

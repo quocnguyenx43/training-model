@@ -59,7 +59,7 @@ print()
 pd.DataFrame({
     'original': references,
     'prediction': predictions,
-}).to_csv('./results/' + model_weight_path.split('/')[-1] + 'inferences_dev_task_3.csv')
+}).to_csv('./results/' + model_weight_path.split('/')[-1].split('.')[0] + 'inferences_dev_task_3.csv')
 
 
 ###### Evaluating on test test
@@ -83,4 +83,4 @@ print()
 pd.DataFrame({
     'original': references,
     'prediction': predictions,
-}).to_csv('./results/' + model_weight_path.split('/')[-1] + 'inferences_test_task_3.csv')
+}).to_csv('./results/' + model_weight_path.split('/')[-1].split('.')[0] + 'inferences_test_task_3.csv')

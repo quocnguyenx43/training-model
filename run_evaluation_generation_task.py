@@ -24,6 +24,7 @@ for file in all_model_files:
 
 lastest = str(lastest)
 model_weight_path = './models/' + task_folder + '/' + prefix_file_name + '_' + lastest + '.pth'
+model_weight_path  = './models/task_3/simple_vit5-base_2.pth'
 
 
 ###### Model

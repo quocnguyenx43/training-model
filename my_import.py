@@ -63,8 +63,8 @@ args['saving_path'] = saving_path
 
 ### Read data
 # train_df = pd.read_csv('./data/preprocessed/train_preprocessed.csv')
-# train_df = pd.read_csv('./data/preprocessed_50/train_split_1.csv')
-train_df = pd.read_csv('./data/preprocessed_50/train_50_1.csv')
+# train_df = pd.read_csv('./data/preprocessed_50/train_50_1.csv')
+train_df = pd.read_csv('./data/preprocessed_50/train_20_1.csv')
 dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
 test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
 

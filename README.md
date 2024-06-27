@@ -6,3 +6,28 @@
 # Models using:
 	* Task 1 & 2: PhoBERT, ViSoBERT, CafeBERT, XLM-RoBERTa, BERT-base-multilingual-cased, Distilbert-base-multilingual-cased
 	* Task 3: ViT5, BARTpho
+
+
+<!-- Tạo môi trường:
+	conda create --name vuongquoctest2 python=3.10.12
+	conda activate vuongquocenv
+	conda install [packet] / torchvision
+	pip3 install pipreqs
+	pip3 install pip-tools
+	pipreqs --savepath=requirements.txt && pip-compile
+
+	conda create --name quocenv python=3.10.12
+	pip install -r requirements.txt
+	conda config --add channels pytorch
+
+	conda env remove --name <environment_name>
+	conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+	ls -lha
+
+
+quy trình chạy:
+	+ tạo file .sh
+	+ pull
+	+ tạo folder: models, results/logs
+	+ chmod +x -> .sh -->

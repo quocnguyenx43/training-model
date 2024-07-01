@@ -55,10 +55,10 @@ print('*** Random example: ')
 print(f'Original @ [{random_index}]: {references[random_index]}')
 print(f'Generated @ [{random_index}]: {predictions[random_index]}')
 print()
-pd.DataFrame({
-    'original': references,
-    'prediction': predictions,
-}).to_csv('./results/generation_outputs/{prefix_file_name}_inferences_dev_task_3.csv')
+# pd.DataFrame({
+#     'original': references,
+#     'prediction': predictions,
+# }).to_csv('./results/generation_outputs/{prefix_file_name}_inferences_dev_task_3.csv')
 
 
 ###### Evaluating on test test
@@ -79,7 +79,7 @@ print('*** Random example: ')
 print(f'Original @ [{random_index}]: {references[random_index]}')
 print(f'Generated @ [{random_index}]: {predictions[random_index]}')
 print()
-pd.DataFrame({
-    'original': references,
-    'prediction': predictions,
-}).to_csv('./results/generation_outputs/{prefix_file_name}_inferences_test_task_3.csv')
+# pd.DataFrame({
+#     'original': references,
+#     'prediction': predictions,
+# }).to_csv('./results/generation_outputs/{prefix_file_name}_inferences_test_task_3.csv')

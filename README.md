@@ -4,8 +4,12 @@
 * `run_evaluation_generation_task.py`: task 3 evaluation <br>
 
 # Models using:
-	* Task 1 & 2: PhoBERT, ViSoBERT, CafeBERT, XLM-RoBERTa, BERT-base-multilingual-cased, Distilbert-base-multilingual-cased
-	* Task 3: ViT5, BARTpho
+	* Task 1 & 2: 
+		- XLM-RoBERTa, BERT-base-multilingual-cased, Distilbert-base-multilingual-cased
+		- PhoBERT, ViSoBERT, CafeBERT
+	* Task 3:
+		- ViT5: base
+		- BARTpho: word + syllabel
 
 
 <!-- Tạo môi trường:

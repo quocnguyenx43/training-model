@@ -254,7 +254,7 @@ def train_task_3(model, optimizer, tokenizer, epochs, train_dataloader, dev_data
         print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
         print(f'Rouge score (1, 2, L): {rougescore}')
 
-        if saving_path:
+        if saving_path and epoch == epochs - 1:
             path = saving_path + "_" + str(epoch) + '.pth'
             torch.save(model.state_dict(), path)
             print('Saved the model to path: ' +  path)

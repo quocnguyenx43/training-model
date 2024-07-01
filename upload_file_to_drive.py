@@ -20,8 +20,8 @@ def get_file_id_by_name(file_name, service, folder_id):
     files = results.get('files', [])
     return files[0]['id'] if files else None
 
-def upload_file(local_file_path, dest_file_name, folder_id):
-    PARENT_FOLDER_ID = folder_id
+def upload_file(local_file_path, dest_file_name):
+    PARENT_FOLDER_ID = '1cl11_T-lL9rBxwclgdRtXYBX6ciHZpH7'
     creds = authenticate()
     service = build('drive', 'v3', credentials=creds)
 
@@ -65,7 +65,6 @@ file_list = os.listdir(folder_name)
 for file in file_list:
     path = folder_name + '/' + file
     print('path_file: ', path)
-    upload_file(path, path, folder_id)
-
-# python upload_file_to_drive.py --path_file "results/logs/eval_task_2.log"
-# python upload_file_to_drive.py --folder_name "results/logs"
+    upload_file(path, path)
+    
+# python upload_file_to_drive.py --folder_name "results/logs" --folder_id "1cl11_T-lL9rBxwclgdRtXYBX6ciHZpH7"

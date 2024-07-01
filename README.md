@@ -1,4 +1,4 @@
-* `run_train_cls_task.py`: task 1 & task 2 training <br>
+<!-- * `run_train_cls_task.py`: task 1 & task 2 training <br>
 * `run_evaluation_cls_task.py`: task 1 & task 2 evaluation <br>
 * `run_train_generation_task.py`: task 3 training <br>
 * `run_evaluation_generation_task.py`: task 3 evaluation <br>
@@ -9,8 +9,7 @@
 		- PhoBERT, ViSoBERT, CafeBERT
 	* Task 3:
 		- ViT5: base
-		- BARTpho: word + syllabel
-
+		- BARTpho: word + syllabel -->
 
 <!-- Tạo môi trường:
 	conda create --name vuongquoctest2 python=3.10.12

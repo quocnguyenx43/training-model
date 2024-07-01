@@ -6,11 +6,11 @@ exec > >(tee -i ./results/logs/task_3_train_eval.log) 2>&1
 
 
 # vinai/bartpho-syllable-based
-echo "Training vinai/bartpho-syllable-based"
-python run_train_generation_task.py --task "task-3" --model_name "vinai/bartpho-syllable-based" --source_len 768 --target_len 128 --batch_size 12 --learning_rate 0.001 --epochs 3
+echo "Training vinai/bartpho-syllable-base"
+python run_train_generation_task.py --task "task-3" --model_name "vinai/bartpho-syllable-base" --source_len 768 --target_len 128 --batch_size 12 --learning_rate 0.001 --epochs 3
 
-echo "Evaluating vinai/bartpho-syllable-based"
-python run_evaluation_generation_task.py --task "task-3" --model_name "vinai/bartpho-syllable-based" --source_len 768 --target_len 128 --batch_size 12
+echo "Evaluating vinai/bartpho-syllable-base"
+python run_evaluation_generation_task.py --task "task-3" --model_name "vinai/bartpho-syllable-base" --source_len 768 --target_len 128 --batch_size 12
 
 
 # Training vinai/bartpho-word-base
@@ -19,7 +19,6 @@ python run_train_generation_task.py --task "task-3" --model_name "vinai/bartpho-
 
 echo "Evaluating vinai/bartpho-word-base"
 python run_evaluation_generation_task.py --task "task-3" --model_name "vinai/bartpho-word-base" --source_len 768 --target_len 128 --batch_size 12
-
 
 
 # VietAI/vit5-base

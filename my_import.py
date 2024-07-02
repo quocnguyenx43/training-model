@@ -17,6 +17,12 @@ warnings.filterwarnings("ignore")
 
 ### Params 
 parser = arg.ArgumentParser(description="Params")
+
+
+parser.add_argument("--path1", type=str, default="")
+parser.add_argument("--path2", type=str, default="")
+parser.add_argument("--path3", type=str, default="")
+
 parser.add_argument("--task", type=str, default='task-1')
 parser.add_argument("--model_type", type=str, default='simple')
 parser.add_argument("--model_name", type=str, default='vinai/phobert-base')
@@ -36,9 +42,6 @@ parser.add_argument("--num_channels", type=int, default=256)
 parser.add_argument("--kernel_size", type=int, default=12)
 parser.add_argument("--padding", type=int, default=3)
 
-parser.add_argument("--path1", type=str, default="")
-parser.add_argument("--path2", type=str, default="")
-parser.add_argument("--path3", type=str, default="")
 
 args = parser.parse_args()
 args = vars(args)

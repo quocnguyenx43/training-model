@@ -83,7 +83,7 @@ print()
 
 ### TASK 1
 print('task 1')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv').head(10)
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='uitnlp/visobert',
@@ -116,7 +116,7 @@ predictions_1, _, _ = func.evaluate(
 
 ## TASK 2
 print('task 2')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv').head(10)
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='vinai/phobert-base',
@@ -218,7 +218,6 @@ predictions_3, references_3 = func.generate_task_3(
     test_dataloader, target_len=target_len,
     device='cuda'
 )
-print(pd.Series(predictions_3))
 bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3, references_3)
 random_index = random.randint(0, len(predictions_3) - 1)
 print(f'BERT score (prec, rec, f1): {bertscore}')

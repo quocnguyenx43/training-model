@@ -8,17 +8,13 @@ import functions as func
 import my_import as imp
 
 
-import argparse as arg
-parser = arg.ArgumentParser(description="Params")
-parser.add_argument("--path1", type=str)
-parser.add_argument("--path2", type=str)
-parser.add_argument("--path3", type=str)
-args = parser.parse_args()
-args = vars(args)
+task_1_model_path = imp.args['path1']
+task_2_model_path = imp.args['path2']
+task_3_model_path = imp.args['path3']
 
-task_1_model_path = args['path1']
-task_2_model_path = args['path2']
-task_3_model_path = args['path3']
+print(f'path1: {task_1_model_path}')
+print(f'path2: {task_2_model_path}')
+print(f'path3: {task_3_model_path}')
 
 params = {
     'hidden_size': 128,

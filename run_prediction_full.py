@@ -77,49 +77,49 @@ print()
 
 
 
-# ### TASK 1
-# print('task 1')
-# test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
-# args['test_shape'] = test_df.shape
-# test_dataset = dst.RecruitmentDataset(
-#     test_df, tokenizer_name='uitnlp/visobert',
-#     padding_len=padding_1, target_len=128,
-#     task='task-1',
-# )
-# test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+### TASK 1
+print('task 1')
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
+args['test_shape'] = test_df.shape
+test_dataset = dst.RecruitmentDataset(
+    test_df, tokenizer_name='uitnlp/visobert',
+    padding_len=padding_1, target_len=128,
+    task='task-1',
+)
+test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-# model1 = md.ComplexCLSModel(
-#     model_type='cnn',
-#     params=params,
-#     pretrained_model_name='uitnlp/visobert',
-# )
+model1 = md.ComplexCLSModel(
+    model_type='cnn',
+    params=params,
+    pretrained_model_name='uitnlp/visobert',
+)
 
-# model1 = model1.to('cuda')
-# model1.load_state_dict(torch.load(task_1_model_path))
-# criterion = nn.CrossEntropyLoss()
-# print(f'model_weight_path: {task_1_model_path}')
-# print('Loading model weight successfully!\n')
+model1 = model1.to('cuda')
+model1.load_state_dict(torch.load(task_1_model_path))
+criterion = nn.CrossEntropyLoss()
+print(f'model_weight_path: {task_1_model_path}')
+print('Loading model weight successfully!\n')
 
-# print('Task 1 prediction')
-# predictions_1, _, _ = func.evaluate(
-#     model1, criterion,
-#     dataloader=test_dataloader, 
-#     task_running='task-1',
-#     cm=True, cr=True, last_epoch=True,
-#     device='cuda',
-# )
+print('Task 1 prediction')
+predictions_1, _, _ = func.evaluate(
+    model1, criterion,
+    dataloader=test_dataloader, 
+    task_running='task-1',
+    cm=True, cr=True, last_epoch=True,
+    device='cuda',
+)
 
 
-### TASK 2
-# print('task 2')
-# test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
-# args['test_shape'] = test_df.shape
-# test_dataset = dst.RecruitmentDataset(
-#     test_df, tokenizer_name='vinai/phobert-base',
-#     padding_len=padding_2, target_len=128,
-#     task='task-2',
-# )
-# test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+## TASK 2
+print('task 2')
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
+args['test_shape'] = test_df.shape
+test_dataset = dst.RecruitmentDataset(
+    test_df, tokenizer_name='vinai/phobert-base',
+    padding_len=padding_2, target_len=128,
+    task='task-2',
+)
+test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 model2 = md.ComplexAspectModel(
     model_type='lstm',
@@ -133,11 +133,15 @@ model2.load_state_dict(torch.load(task_2_model_path))
 criterion = nn.CrossEntropyLoss()
 print('Loading model weight successfully!\n')
 
-# print('Task 2 prediction')
-# predictions_2, _, _ = func.evaluate(
-#     model2, criterion,
-#     dataloader=test_dataloader, 
-#     task_running='task-2',
-#     cm=True, cr=True, last_epoch=True,
-#     device='cuda',
-# )
+print('Task 2 prediction')
+predictions_2, _, _ = func.evaluate(
+    model2, criterion,
+    dataloader=test_dataloader, 
+    task_running='task-2',
+    cm=True, cr=True, last_epoch=True,
+    device='cuda',
+)
+
+
+print(predictions_1)
+print(predictions_2)

@@ -233,3 +233,5 @@ print()
 
 df_merged['generated_text'] = pd.Series(predictions_3)
 print(df_merged)
+
+df_merged.to_csv('ha_outs/' + task_1_model_path.replace('.', '_').replace('/', '_') + task_2_model_path.replace('.', '_').replace('/', '_') + '.csv')

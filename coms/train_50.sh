@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Redirect outputs
-exec > >(tee -i ./results/logs/train_50.log) 2>&1
+exec > >(tee -i ./results/logs_raw/train_50.log) 2>&1
 
 
 

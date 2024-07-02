@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Redirect outputs
-exec > >(tee -i ./results/logs/train_task_2.log) 2>&1
+exec > >(tee -i ./results/logs_raw/train_task_2.log) 2>&1
 
 # Training
 echo "vinai/phobert-base"

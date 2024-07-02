@@ -121,15 +121,13 @@ print()
 # )
 # test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-print(params)
-model2 = md.ComplexCLSModel(
+model2 = md.ComplexAspectModel(
     model_type='lstm',
     params=params,
     pretrained_model_name='vinai/phobert-base',
 )
 
 print(f'model_weight_path: {task_2_model_path}')
-print('hi')
 model2 = model2.to('cuda')
 model2.load_state_dict(torch.load(task_2_model_path))
 criterion = nn.CrossEntropyLoss()

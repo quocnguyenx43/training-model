@@ -73,7 +73,7 @@ print('Loading model weight successfully!\n')
 print('Evaluation on dev test')
 func.evaluate(
     model, criterion,
-    dataloader=imp.dev_dataloader, 
+    dataloader=imp.dev_dataloader,
     task_running=imp.args['task'],
     cm=True, cr=True, last_epoch=True,
     device=imp.args['device'],

@@ -46,6 +46,9 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
     predictions = np.array(predictions)
     true_labels = np.array(true_labels)
 
+    print(predictions)
+    print(true_labels)
+
     print(f'Evaluation, Loss: {running_loss:.4f}, ', end="")
     
     if task_running == 'task-1':
@@ -57,7 +60,7 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
         if cm and cr:
             show_cm_cr_task_2(true_labels, predictions)
 
-    return running_loss
+    return predictions, true_labels, running_loss
 
 
 def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader, saving_path=None, task_running='task-1', device='cpu'):
@@ -111,7 +114,7 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
             show_evaluation_task_2(true_labels, predictions)
 
         # Evaluation on Dev set
-        val_running_loss = evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running, device=device)
+        _, _, val_running_loss = evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running, device=device)
 
         # Saving
         if saving_path:
@@ -154,19 +157,12 @@ def show_cm_cr_task_1(true_labels, predictions):
 
 
 def show_evaluation_task_2(true_labels, predictions):
-    zero_one_loss = np.any(true_labels != predictions, axis=1).mean()
-    hamming_loss = utils.my_hamming_loss(true_labels, predictions)
-    emr = np.all(predictions == true_labels, axis=1).mean()
+    acc = accuracy_score(true_labels, predictions)
+    prec = precision_score(true_labels, predictions)
+    f1 = f1_score(true_labels, predictions)
+    recall = recall_score(true_labels, predictions)
 
-    acc = utils.my_accuracy(true_labels, predictions)
-    prec = utils.my_precision(true_labels, predictions)
-    f1 = utils.my_f1_score(true_labels, predictions)
-    recall = utils.my_recall(true_labels, predictions)
-
-    print(
-        f'0/1 Loss: {zero_one_loss:.4f}, Hamming Loss: {hamming_loss:.4f}, EMR: {emr:.4f}, ' \
-        + f'Acc: {acc:.4f}, F1: {f1:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}'
-    )
+    print(f'Acc: {acc:.4f}, F1: {f1:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}')
 
 
 def show_cm_cr_task_2(true_labels, predictions):

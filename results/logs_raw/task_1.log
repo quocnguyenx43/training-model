@@ -1,0 +1,898 @@
+vinai/phobert-base
+
+[10:22:26] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: vinai/phobert-base                                                                 my_import.py:132
+           padding_len: 256                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_phobert-base                                               my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [00:40<00:00,  6.48it/s]
+Epoch 1/20, Loss: 277.4598, Acc: 0.4464, Precision: 0.3811, Recall: 0.3691, F1: 0.3232
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.39it/s]
+Evaluation, Loss: 39.0165, Acc: 0.4656, Precision: 0.5049, Recall: 0.3985, F1: 0.3533
+Saved the best model to path: ./models/task_1/simple_phobert-base_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.11it/s]
+Epoch 2/20, Loss: 268.4337, Acc: 0.4915, Precision: 0.4773, Recall: 0.4336, F1: 0.4199
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:04<00:00,  7.61it/s]
+Evaluation, Loss: 38.3306, Acc: 0.5054, Precision: 0.5675, Recall: 0.4309, F1: 0.3891
+Saved the best model to path: ./models/task_1/simple_phobert-base_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.09it/s]
+Epoch 3/20, Loss: 265.7110, Acc: 0.4986, Precision: 0.4827, Recall: 0.4425, F1: 0.4342
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.57it/s]
+Evaluation, Loss: 37.4727, Acc: 0.5270, Precision: 0.5561, Recall: 0.4667, F1: 0.4525
+Saved the best model to path: ./models/task_1/simple_phobert-base_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.09it/s]
+Epoch 4/20, Loss: 263.3427, Acc: 0.5108, Precision: 0.4996, Recall: 0.4573, F1: 0.4527
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.56it/s]
+Evaluation, Loss: 36.9897, Acc: 0.5170, Precision: 0.5287, Recall: 0.4667, F1: 0.4613
+Saved the best model to path: ./models/task_1/simple_phobert-base_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.04it/s]
+Epoch 5/20, Loss: 260.0843, Acc: 0.5240, Precision: 0.5098, Recall: 0.4697, F1: 0.4655
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.52it/s]
+Evaluation, Loss: 36.5868, Acc: 0.5237, Precision: 0.5190, Recall: 0.4882, F1: 0.4900
+Saved the best model to path: ./models/task_1/simple_phobert-base_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.07it/s]
+Epoch 6/20, Loss: 257.1196, Acc: 0.5399, Precision: 0.5389, Recall: 0.4919, F1: 0.4916
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.55it/s]
+Evaluation, Loss: 37.2769, Acc: 0.5253, Precision: 0.6035, Recall: 0.4553, F1: 0.4274
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.06it/s]
+Epoch 7/20, Loss: 256.7295, Acc: 0.5327, Precision: 0.5211, Recall: 0.4843, F1: 0.4836
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.51it/s]
+Evaluation, Loss: 37.3232, Acc: 0.5261, Precision: 0.6207, Recall: 0.4697, F1: 0.4465
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.01it/s]
+Epoch 8/20, Loss: 257.3470, Acc: 0.5314, Precision: 0.5228, Recall: 0.4801, F1: 0.4782
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.39it/s]
+Evaluation, Loss: 36.6317, Acc: 0.5328, Precision: 0.5486, Recall: 0.4978, F1: 0.4984
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.05it/s]
+Epoch 9/20, Loss: 255.8511, Acc: 0.5328, Precision: 0.5288, Recall: 0.4832, F1: 0.4821
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.53it/s]
+Evaluation, Loss: 36.6075, Acc: 0.5485, Precision: 0.5851, Recall: 0.4965, F1: 0.4921
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [00:37<00:00,  7.04it/s]
+Epoch 10/20, Loss: 257.0890, Acc: 0.5331, Precision: 0.5242, Recall: 0.4815, F1: 0.4797
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.54it/s]
+Evaluation, Loss: 36.7594, Acc: 0.5270, Precision: 0.5432, Recall: 0.4708, F1: 0.4605
+Early stopping triggered
+uitnlp/visobert
+
+[10:29:53] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: uitnlp/visobert                                                                    my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_visobert                                                   my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/visobert and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.33it/s]
+Epoch 1/20, Loss: 275.6301, Acc: 0.4524, Precision: 0.4239, Recall: 0.3864, F1: 0.3611
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.73it/s]
+Evaluation, Loss: 39.2210, Acc: 0.4573, Precision: 0.5647, Recall: 0.3781, F1: 0.2973
+Saved the best model to path: ./models/task_1/simple_visobert_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.42it/s]
+Epoch 2/20, Loss: 264.0919, Acc: 0.5040, Precision: 0.4805, Recall: 0.4448, F1: 0.4348
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.73it/s]
+Evaluation, Loss: 36.9134, Acc: 0.5037, Precision: 0.5989, Recall: 0.4272, F1: 0.3733
+Saved the best model to path: ./models/task_1/simple_visobert_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.42it/s]
+Epoch 3/20, Loss: 258.0116, Acc: 0.5261, Precision: 0.5149, Recall: 0.4722, F1: 0.4690
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.74it/s]
+Evaluation, Loss: 36.3536, Acc: 0.5494, Precision: 0.5533, Recall: 0.5008, F1: 0.4986
+Saved the best model to path: ./models/task_1/simple_visobert_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.42it/s]
+Epoch 4/20, Loss: 255.7587, Acc: 0.5350, Precision: 0.5293, Recall: 0.4868, F1: 0.4868
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.74it/s]
+Evaluation, Loss: 35.9624, Acc: 0.5494, Precision: 0.5482, Recall: 0.5257, F1: 0.5278
+Saved the best model to path: ./models/task_1/simple_visobert_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.41it/s]
+Epoch 5/20, Loss: 253.6246, Acc: 0.5427, Precision: 0.5366, Recall: 0.4883, F1: 0.4864
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 36.1049, Acc: 0.5527, Precision: 0.5727, Recall: 0.5106, F1: 0.5085
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.46it/s]
+Epoch 6/20, Loss: 252.4621, Acc: 0.5447, Precision: 0.5406, Recall: 0.4968, F1: 0.4975
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.79it/s]
+Evaluation, Loss: 35.6248, Acc: 0.5560, Precision: 0.5588, Recall: 0.5172, F1: 0.5195
+Saved the best model to path: ./models/task_1/simple_visobert_5.pth
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.47it/s]
+Epoch 7/20, Loss: 252.2011, Acc: 0.5396, Precision: 0.5319, Recall: 0.4907, F1: 0.4907
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 35.5796, Acc: 0.5535, Precision: 0.5745, Recall: 0.5240, F1: 0.5252
+Saved the best model to path: ./models/task_1/simple_visobert_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.47it/s]
+Epoch 8/20, Loss: 251.3661, Acc: 0.5492, Precision: 0.5414, Recall: 0.4991, F1: 0.4995
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 36.9791, Acc: 0.5137, Precision: 0.5921, Recall: 0.4381, F1: 0.3979
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [01:15<00:00,  3.47it/s]
+Epoch 9/20, Loss: 250.0377, Acc: 0.5536, Precision: 0.5502, Recall: 0.5024, F1: 0.5026
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 35.8312, Acc: 0.5618, Precision: 0.5744, Recall: 0.5185, F1: 0.5197
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [01:15<00:00,  3.47it/s]
+Epoch 10/20, Loss: 249.3319, Acc: 0.5562, Precision: 0.5555, Recall: 0.5047, F1: 0.5056
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 35.5720, Acc: 0.5544, Precision: 0.5685, Recall: 0.5310, F1: 0.5299
+Saved the best model to path: ./models/task_1/simple_visobert_9.pth
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.47it/s]
+Epoch 11/20, Loss: 248.4973, Acc: 0.5570, Precision: 0.5575, Recall: 0.5115, F1: 0.5139
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 35.3647, Acc: 0.5635, Precision: 0.5987, Recall: 0.5093, F1: 0.5059
+Saved the best model to path: ./models/task_1/simple_visobert_10.pth
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.44it/s]
+Epoch 12/20, Loss: 247.0301, Acc: 0.5556, Precision: 0.5503, Recall: 0.5089, F1: 0.5113
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.62it/s]
+Evaluation, Loss: 35.4095, Acc: 0.5651, Precision: 0.5819, Recall: 0.5277, F1: 0.5306
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.39it/s]
+Epoch 13/20, Loss: 246.6368, Acc: 0.5676, Precision: 0.5634, Recall: 0.5204, F1: 0.5234
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 34.9436, Acc: 0.5751, Precision: 0.5946, Recall: 0.5376, F1: 0.5418
+Saved the best model to path: ./models/task_1/simple_visobert_12.pth
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.47it/s]
+Epoch 14/20, Loss: 246.3546, Acc: 0.5602, Precision: 0.5589, Recall: 0.5140, F1: 0.5162
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 35.4917, Acc: 0.5618, Precision: 0.5850, Recall: 0.5148, F1: 0.5144
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.47it/s]
+Epoch 15/20, Loss: 247.4936, Acc: 0.5555, Precision: 0.5490, Recall: 0.5075, F1: 0.5095
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 35.5162, Acc: 0.5560, Precision: 0.5726, Recall: 0.5376, F1: 0.5374
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.47it/s]
+Epoch 16/20, Loss: 247.4165, Acc: 0.5570, Precision: 0.5483, Recall: 0.5144, F1: 0.5168
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.78it/s]
+Evaluation, Loss: 35.1087, Acc: 0.5718, Precision: 0.5851, Recall: 0.5308, F1: 0.5329
+
+Epoch 17/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.47it/s]
+Epoch 17/20, Loss: 247.1510, Acc: 0.5580, Precision: 0.5546, Recall: 0.5143, F1: 0.5165
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.80it/s]
+Evaluation, Loss: 35.0472, Acc: 0.5701, Precision: 0.5765, Recall: 0.5325, F1: 0.5359
+
+Epoch 18/20, Batch 264/264: 100%|██████████| 264/264 [01:15<00:00,  3.47it/s]
+Epoch 18/20, Loss: 245.6240, Acc: 0.5670, Precision: 0.5621, Recall: 0.5213, F1: 0.5242
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.80it/s]
+Evaluation, Loss: 35.3077, Acc: 0.5701, Precision: 0.6031, Recall: 0.5239, F1: 0.5243
+Early stopping triggered
+uitnlp/CafeBERT
+
+[10:56:17] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: uitnlp/CafeBERT                                                                    my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_CafeBERT                                                   my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/CafeBERT and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 1/20, Loss: 283.2955, Acc: 0.4308, Precision: 0.3535, Recall: 0.3465, F1: 0.2786
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 40.4471, Acc: 0.4332, Precision: 0.3964, Recall: 0.3449, F1: 0.2250
+Saved the best model to path: ./models/task_1/simple_CafeBERT_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 2/20, Loss: 279.7702, Acc: 0.4579, Precision: 0.2988, Recall: 0.3724, F1: 0.3064
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 40.1387, Acc: 0.4589, Precision: 0.3451, Recall: 0.3736, F1: 0.2845
+Saved the best model to path: ./models/task_1/simple_CafeBERT_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 3/20, Loss: 277.3676, Acc: 0.4628, Precision: 0.3119, Recall: 0.3751, F1: 0.3068
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 40.6297, Acc: 0.4257, Precision: 0.4190, Recall: 0.3369, F1: 0.2066
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 4/20, Loss: 277.2906, Acc: 0.4723, Precision: 0.3252, Recall: 0.3834, F1: 0.3153
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 39.7352, Acc: 0.4805, Precision: 0.3543, Recall: 0.3970, F1: 0.3208
+Saved the best model to path: ./models/task_1/simple_CafeBERT_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 5/20, Loss: 276.2859, Acc: 0.4717, Precision: 0.3179, Recall: 0.3848, F1: 0.3197
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 39.7100, Acc: 0.4772, Precision: 0.4142, Recall: 0.3903, F1: 0.3056
+Saved the best model to path: ./models/task_1/simple_CafeBERT_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 6/20, Loss: 274.6225, Acc: 0.4762, Precision: 0.3331, Recall: 0.3880, F1: 0.3225
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 40.0860, Acc: 0.4614, Precision: 0.3660, Recall: 0.3748, F1: 0.2825
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.14it/s]
+Epoch 7/20, Loss: 273.4557, Acc: 0.4858, Precision: 0.3382, Recall: 0.3979, F1: 0.3344
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 39.3377, Acc: 0.4838, Precision: 0.4210, Recall: 0.3971, F1: 0.3158
+Saved the best model to path: ./models/task_1/simple_CafeBERT_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [03:51<00:00,  1.14it/s]
+Epoch 8/20, Loss: 270.8562, Acc: 0.4938, Precision: 0.3407, Recall: 0.4082, F1: 0.3483
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 39.1131, Acc: 0.4888, Precision: 0.4234, Recall: 0.4024, F1: 0.3240
+Saved the best model to path: ./models/task_1/simple_CafeBERT_7.pth
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 9/20, Loss: 271.2386, Acc: 0.4900, Precision: 0.3455, Recall: 0.4016, F1: 0.3384
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 39.5810, Acc: 0.4863, Precision: 0.3931, Recall: 0.4004, F1: 0.3215
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 10/20, Loss: 271.6084, Acc: 0.4913, Precision: 0.3448, Recall: 0.4025, F1: 0.3386
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 38.6564, Acc: 0.5046, Precision: 0.4079, Recall: 0.4192, F1: 0.3475
+Saved the best model to path: ./models/task_1/simple_CafeBERT_9.pth
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 11/20, Loss: 272.0038, Acc: 0.4829, Precision: 0.3387, Recall: 0.3954, F1: 0.3324
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 39.5929, Acc: 0.4622, Precision: 0.4407, Recall: 0.3747, F1: 0.2800
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 12/20, Loss: 273.2073, Acc: 0.4778, Precision: 0.3414, Recall: 0.3874, F1: 0.3187
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 39.5810, Acc: 0.4606, Precision: 0.4341, Recall: 0.3730, F1: 0.2770
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 13/20, Loss: 271.6218, Acc: 0.4854, Precision: 0.3431, Recall: 0.3963, F1: 0.3313
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 39.2056, Acc: 0.4664, Precision: 0.4444, Recall: 0.3789, F1: 0.2870
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 14/20, Loss: 270.1409, Acc: 0.4889, Precision: 0.3490, Recall: 0.3988, F1: 0.3329
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 39.8614, Acc: 0.4498, Precision: 0.4441, Recall: 0.3616, F1: 0.2557
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 15/20, Loss: 271.3093, Acc: 0.4867, Precision: 0.3438, Recall: 0.3976, F1: 0.3330
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 39.7595, Acc: 0.4581, Precision: 0.4093, Recall: 0.3699, F1: 0.2694
+Early stopping triggered
+xlm-roberta-base
+
+[12:01:58] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: xlm-roberta-base                                                                   my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_xlm-roberta-base                                           my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.33it/s]
+Epoch 1/20, Loss: 284.3315, Acc: 0.4237, Precision: 0.3480, Recall: 0.3321, F1: 0.2358
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.74it/s]
+Evaluation, Loss: 41.1115, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Saved the best model to path: ./models/task_1/simple_xlm-roberta-base_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.41it/s]
+Epoch 2/20, Loss: 284.2552, Acc: 0.4317, Precision: 0.2594, Recall: 0.3331, F1: 0.2072
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.70it/s]
+Evaluation, Loss: 40.9247, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Saved the best model to path: ./models/task_1/simple_xlm-roberta-base_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.41it/s]
+Epoch 3/20, Loss: 283.4445, Acc: 0.4317, Precision: 0.2223, Recall: 0.3326, F1: 0.2036
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.75it/s]
+Evaluation, Loss: 40.9261, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.42it/s]
+Epoch 4/20, Loss: 283.1060, Acc: 0.4325, Precision: 0.2276, Recall: 0.3330, F1: 0.2022
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.75it/s]
+Evaluation, Loss: 40.9029, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Saved the best model to path: ./models/task_1/simple_xlm-roberta-base_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.42it/s]
+Epoch 5/20, Loss: 282.8611, Acc: 0.4330, Precision: 0.1443, Recall: 0.3332, F1: 0.2014
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.76it/s]
+Evaluation, Loss: 40.9394, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.43it/s]
+Epoch 6/20, Loss: 282.7787, Acc: 0.4329, Precision: 0.2634, Recall: 0.3333, F1: 0.2025
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.75it/s]
+Evaluation, Loss: 40.9318, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.43it/s]
+Epoch 7/20, Loss: 282.9475, Acc: 0.4327, Precision: 0.1443, Recall: 0.3331, F1: 0.2014
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.76it/s]
+Evaluation, Loss: 40.9495, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.43it/s]
+Epoch 8/20, Loss: 282.7751, Acc: 0.4330, Precision: 0.2694, Recall: 0.3334, F1: 0.2028
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.77it/s]
+Evaluation, Loss: 40.9493, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.43it/s]
+Epoch 9/20, Loss: 282.6425, Acc: 0.4331, Precision: 0.1444, Recall: 0.3333, F1: 0.2015
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.77it/s]
+Evaluation, Loss: 40.9702, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Early stopping triggered
+bert-base-multilingual-cased
+
+[12:15:31] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: bert-base-multilingual-cased                                                       my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_bert-base-multilingual-cased                               my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:11<00:00,  3.70it/s]
+Epoch 1/20, Loss: 282.3400, Acc: 0.4229, Precision: 0.3276, Recall: 0.3319, F1: 0.2377
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.98it/s]
+Evaluation, Loss: 40.2760, Acc: 0.4282, Precision: 0.3367, Recall: 0.3393, F1: 0.2109
+Saved the best model to path: ./models/task_1/simple_bert-base-multilingual-cased_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:09<00:00,  3.80it/s]
+Epoch 2/20, Loss: 280.9427, Acc: 0.4333, Precision: 0.3745, Recall: 0.3442, F1: 0.2626
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.89it/s]
+Evaluation, Loss: 40.2877, Acc: 0.4282, Precision: 0.3542, Recall: 0.3393, F1: 0.2108
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:09<00:00,  3.81it/s]
+Epoch 3/20, Loss: 280.4408, Acc: 0.4338, Precision: 0.3030, Recall: 0.3426, F1: 0.2545
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.96it/s]
+Evaluation, Loss: 40.4583, Acc: 0.4249, Precision: 0.3913, Recall: 0.3359, F1: 0.2035
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:09<00:00,  3.79it/s]
+Epoch 4/20, Loss: 279.3763, Acc: 0.4364, Precision: 0.3785, Recall: 0.3443, F1: 0.2535
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.84it/s]
+Evaluation, Loss: 40.1089, Acc: 0.4440, Precision: 0.3196, Recall: 0.3578, F1: 0.2572
+Saved the best model to path: ./models/task_1/simple_bert-base-multilingual-cased_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.77it/s]
+Epoch 5/20, Loss: 279.1963, Acc: 0.4494, Precision: 0.4046, Recall: 0.3643, F1: 0.3005
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.93it/s]
+Evaluation, Loss: 40.0509, Acc: 0.4498, Precision: 0.2886, Recall: 0.3716, F1: 0.2976
+Saved the best model to path: ./models/task_1/simple_bert-base-multilingual-cased_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.77it/s]
+Epoch 6/20, Loss: 278.9445, Acc: 0.4445, Precision: 0.3838, Recall: 0.3560, F1: 0.2817
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.94it/s]
+Evaluation, Loss: 40.2045, Acc: 0.4091, Precision: 0.2723, Recall: 0.3599, F1: 0.3090
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.77it/s]
+Epoch 7/20, Loss: 278.0594, Acc: 0.4494, Precision: 0.3499, Recall: 0.3595, F1: 0.2827
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.94it/s]
+Evaluation, Loss: 39.9805, Acc: 0.4415, Precision: 0.3669, Recall: 0.3534, F1: 0.2414
+Saved the best model to path: ./models/task_1/simple_bert-base-multilingual-cased_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.77it/s]
+Epoch 8/20, Loss: 277.6364, Acc: 0.4506, Precision: 0.3744, Recall: 0.3604, F1: 0.2833
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.93it/s]
+Evaluation, Loss: 39.9854, Acc: 0.4465, Precision: 0.3726, Recall: 0.3584, F1: 0.2507
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [01:09<00:00,  3.77it/s]
+Epoch 9/20, Loss: 277.2596, Acc: 0.4535, Precision: 0.3860, Recall: 0.3631, F1: 0.2863
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.93it/s]
+Evaluation, Loss: 39.6388, Acc: 0.4573, Precision: 0.3151, Recall: 0.3736, F1: 0.2888
+Saved the best model to path: ./models/task_1/simple_bert-base-multilingual-cased_8.pth
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.76it/s]
+Epoch 10/20, Loss: 276.5180, Acc: 0.4566, Precision: 0.4125, Recall: 0.3667, F1: 0.2934
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.93it/s]
+Evaluation, Loss: 40.0346, Acc: 0.4423, Precision: 0.4131, Recall: 0.3538, F1: 0.2404
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.77it/s]
+Epoch 11/20, Loss: 276.6920, Acc: 0.4598, Precision: 0.4370, Recall: 0.3706, F1: 0.3000
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.93it/s]
+Evaluation, Loss: 39.8781, Acc: 0.4473, Precision: 0.3975, Recall: 0.3589, F1: 0.2499
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.77it/s]
+Epoch 12/20, Loss: 276.8500, Acc: 0.4542, Precision: 0.4310, Recall: 0.3651, F1: 0.2925
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.93it/s]
+Evaluation, Loss: 40.0693, Acc: 0.4498, Precision: 0.5442, Recall: 0.3642, F1: 0.2635
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.76it/s]
+Epoch 13/20, Loss: 275.9946, Acc: 0.4632, Precision: 0.4421, Recall: 0.3780, F1: 0.3191
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.98it/s]
+Evaluation, Loss: 39.6592, Acc: 0.4556, Precision: 0.3555, Recall: 0.3683, F1: 0.2700
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [01:09<00:00,  3.81it/s]
+Epoch 14/20, Loss: 275.6284, Acc: 0.4618, Precision: 0.4332, Recall: 0.3732, F1: 0.3052
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.99it/s]
+Evaluation, Loss: 39.9019, Acc: 0.4531, Precision: 0.4050, Recall: 0.3648, F1: 0.2606
+Early stopping triggered
+distilbert-base-multilingual-cased
+
+[12:34:21] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: distilbert-base-multilingual-cased                                                 my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_distilbert-base-multilingual-cased                         my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [00:44<00:00,  5.88it/s]
+Epoch 1/20, Loss: 278.8114, Acc: 0.4517, Precision: 0.4140, Recall: 0.3673, F1: 0.3033
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.82it/s]
+Evaluation, Loss: 39.5444, Acc: 0.4548, Precision: 0.4005, Recall: 0.3848, F1: 0.3375
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.34it/s]
+Epoch 2/20, Loss: 272.4808, Acc: 0.4676, Precision: 0.4341, Recall: 0.3874, F1: 0.3415
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.79it/s]
+Evaluation, Loss: 38.7580, Acc: 0.4780, Precision: 0.4961, Recall: 0.4086, F1: 0.3649
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.29it/s]
+Epoch 3/20, Loss: 270.2374, Acc: 0.4765, Precision: 0.4496, Recall: 0.3995, F1: 0.3623
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.79it/s]
+Evaluation, Loss: 38.3225, Acc: 0.4730, Precision: 0.4184, Recall: 0.3980, F1: 0.3413
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.28it/s]
+Epoch 4/20, Loss: 265.0225, Acc: 0.4964, Precision: 0.4743, Recall: 0.4229, F1: 0.3950
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.80it/s]
+Evaluation, Loss: 38.0563, Acc: 0.4929, Precision: 0.4703, Recall: 0.4704, F1: 0.4703
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.28it/s]
+Epoch 5/20, Loss: 262.7200, Acc: 0.5059, Precision: 0.4819, Recall: 0.4370, F1: 0.4173
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.81it/s]
+Evaluation, Loss: 37.9203, Acc: 0.5079, Precision: 0.5929, Recall: 0.4275, F1: 0.3746
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.29it/s]
+Epoch 6/20, Loss: 260.5729, Acc: 0.5130, Precision: 0.4779, Recall: 0.4344, F1: 0.3976
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.57it/s]
+Evaluation, Loss: 37.6507, Acc: 0.5162, Precision: 0.5371, Recall: 0.4493, F1: 0.4235
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_5.pth
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.30it/s]
+Epoch 7/20, Loss: 258.4680, Acc: 0.5210, Precision: 0.4964, Recall: 0.4455, F1: 0.4184
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.82it/s]
+Evaluation, Loss: 37.4956, Acc: 0.5120, Precision: 0.5192, Recall: 0.4370, F1: 0.3958
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.21it/s]
+Epoch 8/20, Loss: 258.3162, Acc: 0.5229, Precision: 0.5042, Recall: 0.4531, F1: 0.4346
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.82it/s]
+Evaluation, Loss: 37.2636, Acc: 0.5079, Precision: 0.4899, Recall: 0.4262, F1: 0.3697
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_7.pth
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.31it/s]
+Epoch 9/20, Loss: 257.4837, Acc: 0.5249, Precision: 0.5109, Recall: 0.4546, F1: 0.4369
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.81it/s]
+Evaluation, Loss: 36.4712, Acc: 0.5461, Precision: 0.5813, Recall: 0.4712, F1: 0.4299
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_8.pth
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.30it/s]
+Epoch 10/20, Loss: 258.0642, Acc: 0.5254, Precision: 0.5023, Recall: 0.4479, F1: 0.4172
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.71it/s]
+Evaluation, Loss: 36.1028, Acc: 0.5461, Precision: 0.5304, Recall: 0.4822, F1: 0.4612
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_9.pth
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.17it/s]
+Epoch 11/20, Loss: 254.9587, Acc: 0.5302, Precision: 0.5134, Recall: 0.4620, F1: 0.4477
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.67it/s]
+Evaluation, Loss: 36.9443, Acc: 0.5494, Precision: 0.5517, Recall: 0.4961, F1: 0.4913
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.22it/s]
+Epoch 12/20, Loss: 255.0673, Acc: 0.5325, Precision: 0.5062, Recall: 0.4642, F1: 0.4469
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.68it/s]
+Evaluation, Loss: 35.8806, Acc: 0.5469, Precision: 0.5539, Recall: 0.4802, F1: 0.4591
+Saved the best model to path: ./models/task_1/simple_distilbert-base-multilingual-cased_11.pth
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [00:43<00:00,  6.14it/s]
+Epoch 13/20, Loss: 256.8923, Acc: 0.5267, Precision: 0.5046, Recall: 0.4570, F1: 0.4401
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.59it/s]
+Evaluation, Loss: 36.4030, Acc: 0.5402, Precision: 0.5713, Recall: 0.4599, F1: 0.4029
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.16it/s]
+Epoch 14/20, Loss: 252.8759, Acc: 0.5393, Precision: 0.5175, Recall: 0.4686, F1: 0.4505
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.68it/s]
+Evaluation, Loss: 36.3827, Acc: 0.5394, Precision: 0.5338, Recall: 0.4828, F1: 0.4731
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.16it/s]
+Epoch 15/20, Loss: 253.8988, Acc: 0.5389, Precision: 0.5167, Recall: 0.4704, F1: 0.4559
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.67it/s]
+Evaluation, Loss: 36.7870, Acc: 0.5278, Precision: 0.5615, Recall: 0.5024, F1: 0.5052
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.18it/s]
+Epoch 16/20, Loss: 254.0718, Acc: 0.5405, Precision: 0.5261, Recall: 0.4743, F1: 0.4629
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.68it/s]
+Evaluation, Loss: 36.0359, Acc: 0.5427, Precision: 0.5536, Recall: 0.4699, F1: 0.4402
+
+Epoch 17/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.22it/s]
+Epoch 17/20, Loss: 253.7391, Acc: 0.5399, Precision: 0.5216, Recall: 0.4714, F1: 0.4573
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.68it/s]
+Evaluation, Loss: 36.4409, Acc: 0.5394, Precision: 0.5750, Recall: 0.4805, F1: 0.4683
+Early stopping triggered
+All commands completed!
+
+vinai/phobert-base
+
+[12:53:44] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: vinai/phobert-base                                                                 my_import.py:132
+           padding_len: 256                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 10                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_phobert-base                                               my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+model_weight_path: ./models/task_1/simple_phobert-base_4.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  4.02it/s]
+Evaluation, Loss: 36.5868, Acc: 0.5237, Precision: 0.5190, Recall: 0.4882, F1: 0.4900
+Confusion Matrix:
+[[368  71  70]
+ [169 167  58]
+ [169  37  96]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.52      0.72      0.61       509
+     warning       0.61      0.42      0.50       394
+     seeding       0.43      0.32      0.37       302
+
+    accuracy                           0.52      1205
+   macro avg       0.52      0.49      0.49      1205
+weighted avg       0.53      0.52      0.51      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:10<00:00,  7.07it/s]
+Evaluation, Loss: 72.2000, Acc: 0.5547, Precision: 0.5508, Recall: 0.5114, F1: 0.5119
+Confusion Matrix:
+[[813 103 109]
+ [335 338 116]
+ [331  80 187]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.55      0.79      0.65      1025
+     warning       0.65      0.43      0.52       789
+     seeding       0.45      0.31      0.37       598
+
+    accuracy                           0.55      2412
+   macro avg       0.55      0.51      0.51      2412
+weighted avg       0.56      0.55      0.54      2412
+
+uitnlp/visobert
+
+[12:54:20] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: uitnlp/visobert                                                                    my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 10                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_visobert                                                   my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/visobert and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+model_weight_path: ./models/task_1/simple_visobert_12.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:12<00:00,  3.11it/s]
+Evaluation, Loss: 34.9436, Acc: 0.5751, Precision: 0.5946, Recall: 0.5376, F1: 0.5418
+Confusion Matrix:
+[[410  36  63]
+ [176 168  50]
+ [161  26 115]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.55      0.81      0.65       509
+     warning       0.73      0.43      0.54       394
+     seeding       0.50      0.38      0.43       302
+
+    accuracy                           0.58      1205
+   macro avg       0.59      0.54      0.54      1205
+weighted avg       0.60      0.58      0.56      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.78it/s]
+Evaluation, Loss: 69.4381, Acc: 0.5800, Precision: 0.5912, Recall: 0.5375, F1: 0.5399
+Confusion Matrix:
+[[849  65 111]
+ [352 335 102]
+ [311  72 215]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.56      0.83      0.67      1025
+     warning       0.71      0.42      0.53       789
+     seeding       0.50      0.36      0.42       598
+
+    accuracy                           0.58      2412
+   macro avg       0.59      0.54      0.54      2412
+weighted avg       0.60      0.58      0.56      2412
+
+uitnlp/CafeBERT
+
+[12:55:10] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: uitnlp/CafeBERT                                                                    my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 10                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_CafeBERT                                                   my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/CafeBERT and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+model_weight_path: ./models/task_1/simple_CafeBERT_9.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:32<00:00,  1.17it/s]
+Evaluation, Loss: 38.6564, Acc: 0.5046, Precision: 0.4079, Recall: 0.4192, F1: 0.3475
+Confusion Matrix:
+[[498  11   0]
+ [284 110   0]
+ [277  25   0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.47      0.98      0.64       509
+     warning       0.75      0.28      0.41       394
+     seeding       0.00      0.00      0.00       302
+
+    accuracy                           0.50      1205
+   macro avg       0.41      0.42      0.35      1205
+weighted avg       0.44      0.50      0.40      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [01:00<00:00,  1.25it/s]
+Evaluation, Loss: 77.3120, Acc: 0.5029, Precision: 0.4033, Recall: 0.4162, F1: 0.3469
+Confusion Matrix:
+[[990  35   0]
+ [566 223   0]
+ [555  43   0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.47      0.97      0.63      1025
+     warning       0.74      0.28      0.41       789
+     seeding       0.00      0.00      0.00       598
+
+    accuracy                           0.50      2412
+   macro avg       0.40      0.42      0.35      2412
+weighted avg       0.44      0.50      0.40      2412
+
+xlm-roberta-base
+
+[12:57:06] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: xlm-roberta-base                                                                   my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 10                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_xlm-roberta-base                                           my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+model_weight_path: ./models/task_1/simple_xlm-roberta-base_3.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:11<00:00,  3.24it/s]
+Evaluation, Loss: 40.9029, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Confusion Matrix:
+[[509   0   0]
+ [394   0   0]
+ [302   0   0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.42      1.00      0.59       509
+     warning       0.00      0.00      0.00       394
+     seeding       0.00      0.00      0.00       302
+
+    accuracy                           0.42      1205
+   macro avg       0.14      0.33      0.20      1205
+weighted avg       0.18      0.42      0.25      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.72it/s]
+Evaluation, Loss: 81.6344, Acc: 0.4250, Precision: 0.1417, Recall: 0.3333, F1: 0.1988
+Confusion Matrix:
+[[1025    0    0]
+ [ 789    0    0]
+ [ 598    0    0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.42      1.00      0.60      1025
+     warning       0.00      0.00      0.00       789
+     seeding       0.00      0.00      0.00       598
+
+    accuracy                           0.42      2412
+   macro avg       0.14      0.33      0.20      2412
+weighted avg       0.18      0.42      0.25      2412
+
+bert-base-multilingual-cased
+
+[12:57:49] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: bert-base-multilingual-cased                                                       my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 10                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_bert-base-multilingual-cased                               my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+model_weight_path: ./models/task_1/simple_bert-base-multilingual-cased_8.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:11<00:00,  3.19it/s]
+Evaluation, Loss: 39.6388, Acc: 0.4573, Precision: 0.3151, Recall: 0.3736, F1: 0.2888
+Confusion Matrix:
+[[484  25   0]
+ [327  67   0]
+ [258  44   0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.45      0.95      0.61       509
+     warning       0.49      0.17      0.25       394
+     seeding       0.00      0.00      0.00       302
+
+    accuracy                           0.46      1205
+   macro avg       0.32      0.37      0.29      1205
+weighted avg       0.35      0.46      0.34      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.69it/s]
+Evaluation, Loss: 79.0381, Acc: 0.4573, Precision: 0.3114, Recall: 0.3730, F1: 0.2931
+Confusion Matrix:
+[[956  69   0]
+ [642 147   0]
+ [508  90   0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.45      0.93      0.61      1025
+     warning       0.48      0.19      0.27       789
+     seeding       0.00      0.00      0.00       598
+
+    accuracy                           0.46      2412
+   macro avg       0.31      0.37      0.29      2412
+weighted avg       0.35      0.46      0.35      2412
+
+distilbert-base-multilingual-cased
+
+[12:58:36] task: task-1                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: distilbert-base-multilingual-cased                                                 my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 10                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_1/simple_distilbert-base-multilingual-cased                         my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+model_weight_path: ./models/task_1/simple_distilbert-base-multilingual-cased_11.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:07<00:00,  5.07it/s]
+Evaluation, Loss: 35.8806, Acc: 0.5469, Precision: 0.5539, Recall: 0.4802, F1: 0.4591
+Confusion Matrix:
+[[456  30  23]
+ [201 165  28]
+ [230  34  38]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.51      0.90      0.65       509
+     warning       0.72      0.42      0.53       394
+     seeding       0.43      0.13      0.19       302
+
+    accuracy                           0.55      1205
+   macro avg       0.55      0.48      0.46      1205
+weighted avg       0.56      0.55      0.50      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:11<00:00,  6.67it/s]
+Evaluation, Loss: 71.4998, Acc: 0.5460, Precision: 0.5440, Recall: 0.4775, F1: 0.4566
+Confusion Matrix:
+[[910  63  52]
+ [398 336  55]
+ [458  69  71]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.52      0.89      0.65      1025
+     warning       0.72      0.43      0.53       789
+     seeding       0.40      0.12      0.18       598
+
+    accuracy                           0.55      2412
+   macro avg       0.54      0.48      0.46      2412
+weighted avg       0.55      0.55      0.50      2412
+
+All commands completed!

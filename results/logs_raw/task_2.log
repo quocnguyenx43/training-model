@@ -1,0 +1,644 @@
+vinai/phobert-base
+
+[13:05:21] task: task-2                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: vinai/phobert-base                                                                 my_import.py:132
+           padding_len: 256                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_2/simple_phobert-base                                               my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [00:40<00:00,  6.45it/s]
+Epoch 1/20, Loss: 360.0212, 0/1 Loss: 0.9941, Hamming Loss: 0.6852, EMR: 0.0059, Acc: 0.6375, F1: 0.4937, Precision: 0.5554, Recall: 0.4976
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.23it/s]
+Evaluation, Loss: 51.3066, 0/1 Loss: 0.9859, Hamming Loss: 0.5683, EMR: 0.0141, Acc: 0.8826, F1: 0.5835, Precision: 0.5249, Recall: 0.6887
+Saved the best model to path: ./models/task_2/simple_phobert-base_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.92it/s]
+Epoch 2/20, Loss: 358.6567, 0/1 Loss: 0.9902, Hamming Loss: 0.6540, EMR: 0.0098, Acc: 0.6883, F1: 0.5214, Precision: 0.5696, Recall: 0.5381
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.94it/s]
+Evaluation, Loss: 51.0042, 0/1 Loss: 0.9054, Hamming Loss: 0.4707, EMR: 0.0946, Acc: 0.9641, F1: 0.6543, Precision: 0.6049, Recall: 0.7545
+Saved the best model to path: ./models/task_2/simple_phobert-base_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.81it/s]
+Epoch 3/20, Loss: 357.3591, 0/1 Loss: 0.9864, Hamming Loss: 0.6413, EMR: 0.0136, Acc: 0.7052, F1: 0.5341, Precision: 0.5838, Recall: 0.5519
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.46it/s]
+Evaluation, Loss: 50.7192, 0/1 Loss: 0.9154, Hamming Loss: 0.5004, EMR: 0.0846, Acc: 0.9861, F1: 0.6371, Precision: 0.5688, Recall: 0.7715
+Saved the best model to path: ./models/task_2/simple_phobert-base_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.86it/s]
+Epoch 4/20, Loss: 357.0882, 0/1 Loss: 0.9873, Hamming Loss: 0.6634, EMR: 0.0127, Acc: 0.6715, F1: 0.5117, Precision: 0.5681, Recall: 0.5249
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.42it/s]
+Evaluation, Loss: 50.7548, 0/1 Loss: 0.9544, Hamming Loss: 0.4820, EMR: 0.0456, Acc: 0.9861, F1: 0.6391, Precision: 0.5669, Recall: 0.7715
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.82it/s]
+Epoch 5/20, Loss: 356.6175, 0/1 Loss: 0.9836, Hamming Loss: 0.6535, EMR: 0.0164, Acc: 0.7025, F1: 0.5251, Precision: 0.5707, Recall: 0.5493
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.34it/s]
+Evaluation, Loss: 50.6574, 0/1 Loss: 0.9336, Hamming Loss: 0.5790, EMR: 0.0664, Acc: 0.9861, F1: 0.6003, Precision: 0.5128, Recall: 0.7715
+Saved the best model to path: ./models/task_2/simple_phobert-base_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.86it/s]
+Epoch 6/20, Loss: 356.4764, 0/1 Loss: 0.9874, Hamming Loss: 0.6564, EMR: 0.0126, Acc: 0.7093, F1: 0.5263, Precision: 0.5666, Recall: 0.5551
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.41it/s]
+Evaluation, Loss: 50.5932, 0/1 Loss: 0.9494, Hamming Loss: 0.5670, EMR: 0.0506, Acc: 0.9861, F1: 0.6054, Precision: 0.5198, Recall: 0.7715
+Saved the best model to path: ./models/task_2/simple_phobert-base_5.pth
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.85it/s]
+Epoch 7/20, Loss: 356.3071, 0/1 Loss: 0.9825, Hamming Loss: 0.6545, EMR: 0.0175, Acc: 0.6935, F1: 0.5229, Precision: 0.5748, Recall: 0.5437
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.42it/s]
+Evaluation, Loss: 50.3931, 0/1 Loss: 0.9220, Hamming Loss: 0.5595, EMR: 0.0780, Acc: 0.9861, F1: 0.5999, Precision: 0.5154, Recall: 0.7715
+Saved the best model to path: ./models/task_2/simple_phobert-base_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.84it/s]
+Epoch 8/20, Loss: 355.9091, 0/1 Loss: 0.9840, Hamming Loss: 0.6537, EMR: 0.0160, Acc: 0.7071, F1: 0.5273, Precision: 0.5727, Recall: 0.5541
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.43it/s]
+Evaluation, Loss: 50.1629, 0/1 Loss: 0.9104, Hamming Loss: 0.5122, EMR: 0.0896, Acc: 0.9861, F1: 0.6223, Precision: 0.5452, Recall: 0.7715
+Saved the best model to path: ./models/task_2/simple_phobert-base_7.pth
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.83it/s]
+Epoch 9/20, Loss: 355.5466, 0/1 Loss: 0.9826, Hamming Loss: 0.6540, EMR: 0.0174, Acc: 0.7070, F1: 0.5245, Precision: 0.5648, Recall: 0.5539
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.40it/s]
+Evaluation, Loss: 50.4575, 0/1 Loss: 0.8954, Hamming Loss: 0.4548, EMR: 0.1046, Acc: 0.9861, F1: 0.6620, Precision: 0.6087, Recall: 0.7715
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.85it/s]
+Epoch 10/20, Loss: 356.0020, 0/1 Loss: 0.9839, Hamming Loss: 0.6560, EMR: 0.0161, Acc: 0.7018, F1: 0.5247, Precision: 0.5699, Recall: 0.5503
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.42it/s]
+Evaluation, Loss: 50.2951, 0/1 Loss: 0.9029, Hamming Loss: 0.5033, EMR: 0.0971, Acc: 0.9861, F1: 0.6288, Precision: 0.5587, Recall: 0.7715
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.84it/s]
+Epoch 11/20, Loss: 356.0994, 0/1 Loss: 0.9838, Hamming Loss: 0.6624, EMR: 0.0162, Acc: 0.6984, F1: 0.5212, Precision: 0.5692, Recall: 0.5470
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.43it/s]
+Evaluation, Loss: 50.4290, 0/1 Loss: 0.9087, Hamming Loss: 0.5409, EMR: 0.0913, Acc: 0.9861, F1: 0.6126, Precision: 0.5357, Recall: 0.7715
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.83it/s]
+Epoch 12/20, Loss: 355.3906, 0/1 Loss: 0.9844, Hamming Loss: 0.6656, EMR: 0.0156, Acc: 0.6944, F1: 0.5164, Precision: 0.5636, Recall: 0.5429
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.44it/s]
+Evaluation, Loss: 50.4118, 0/1 Loss: 0.9154, Hamming Loss: 0.5670, EMR: 0.0846, Acc: 0.9838, F1: 0.6105, Precision: 0.5315, Recall: 0.7694
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.91it/s]
+Epoch 13/20, Loss: 355.5230, 0/1 Loss: 0.9863, Hamming Loss: 0.6594, EMR: 0.0137, Acc: 0.7024, F1: 0.5228, Precision: 0.5671, Recall: 0.5500
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.44it/s]
+Evaluation, Loss: 50.0811, 0/1 Loss: 0.9095, Hamming Loss: 0.5320, EMR: 0.0905, Acc: 0.9861, F1: 0.6144, Precision: 0.5364, Recall: 0.7715
+Saved the best model to path: ./models/task_2/simple_phobert-base_12.pth
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.90it/s]
+Epoch 14/20, Loss: 355.3685, 0/1 Loss: 0.9801, Hamming Loss: 0.6529, EMR: 0.0199, Acc: 0.7017, F1: 0.5247, Precision: 0.5731, Recall: 0.5499
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.43it/s]
+Evaluation, Loss: 50.0716, 0/1 Loss: 0.9120, Hamming Loss: 0.5135, EMR: 0.0880, Acc: 0.9861, F1: 0.6240, Precision: 0.5484, Recall: 0.7715
+Saved the best model to path: ./models/task_2/simple_phobert-base_13.pth
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.92it/s]
+Epoch 15/20, Loss: 355.3614, 0/1 Loss: 0.9828, Hamming Loss: 0.6573, EMR: 0.0172, Acc: 0.6928, F1: 0.5208, Precision: 0.5733, Recall: 0.5428
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.90it/s]
+Evaluation, Loss: 50.0953, 0/1 Loss: 0.9071, Hamming Loss: 0.5566, EMR: 0.0929, Acc: 0.9861, F1: 0.6055, Precision: 0.5241, Recall: 0.7712
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.89it/s]
+Epoch 16/20, Loss: 355.0875, 0/1 Loss: 0.9828, Hamming Loss: 0.6605, EMR: 0.0172, Acc: 0.6837, F1: 0.5171, Precision: 0.5739, Recall: 0.5355
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.44it/s]
+Evaluation, Loss: 50.1367, 0/1 Loss: 0.9112, Hamming Loss: 0.5400, EMR: 0.0888, Acc: 0.9859, F1: 0.6112, Precision: 0.5318, Recall: 0.7713
+
+Epoch 17/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.90it/s]
+Epoch 17/20, Loss: 355.1125, 0/1 Loss: 0.9822, Hamming Loss: 0.6602, EMR: 0.0178, Acc: 0.6881, F1: 0.5171, Precision: 0.5689, Recall: 0.5390
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.43it/s]
+Evaluation, Loss: 50.1213, 0/1 Loss: 0.8855, Hamming Loss: 0.4774, EMR: 0.1145, Acc: 0.9728, F1: 0.6396, Precision: 0.5827, Recall: 0.7599
+
+Epoch 18/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.93it/s]
+Epoch 18/20, Loss: 354.9221, 0/1 Loss: 0.9822, Hamming Loss: 0.6599, EMR: 0.0178, Acc: 0.6908, F1: 0.5174, Precision: 0.5667, Recall: 0.5409
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.44it/s]
+Evaluation, Loss: 50.0374, 0/1 Loss: 0.8905, Hamming Loss: 0.5100, EMR: 0.1095, Acc: 0.9824, F1: 0.6347, Precision: 0.5680, Recall: 0.7682
+Saved the best model to path: ./models/task_2/simple_phobert-base_17.pth
+
+Epoch 19/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.90it/s]
+Epoch 19/20, Loss: 355.1177, 0/1 Loss: 0.9853, Hamming Loss: 0.6600, EMR: 0.0147, Acc: 0.6991, F1: 0.5216, Precision: 0.5672, Recall: 0.5476
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.40it/s]
+Evaluation, Loss: 50.1114, 0/1 Loss: 0.9054, Hamming Loss: 0.5114, EMR: 0.0946, Acc: 0.9664, F1: 0.6231, Precision: 0.5586, Recall: 0.7541
+
+Epoch 20/20, Batch 264/264: 100%|██████████| 264/264 [00:38<00:00,  6.91it/s]
+Epoch 20/20, Loss: 354.9832, 0/1 Loss: 0.9816, Hamming Loss: 0.6557, EMR: 0.0184, Acc: 0.6902, F1: 0.5199, Precision: 0.5704, Recall: 0.5396
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.43it/s]
+Evaluation, Loss: 50.0131, 0/1 Loss: 0.8797, Hamming Loss: 0.4913, EMR: 0.1203, Acc: 0.9820, F1: 0.6333, Precision: 0.5672, Recall: 0.7675
+Saved the best model to path: ./models/task_2/simple_phobert-base_19.pth
+
+uitnlp/visobert
+
+[13:20:28] task: task-2                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: uitnlp/visobert                                                                    my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_2/simple_visobert                                                   my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/visobert and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.32it/s]
+Epoch 1/20, Loss: 359.5919, 0/1 Loss: 0.9998, Hamming Loss: 0.7854, EMR: 0.0002, Acc: 0.5026, F1: 0.4065, Precision: 0.4970, Recall: 0.3914
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.72it/s]
+Evaluation, Loss: 51.4019, 0/1 Loss: 0.9992, Hamming Loss: 0.6598, EMR: 0.0008, Acc: 0.7407, F1: 0.5207, Precision: 0.4869, Recall: 0.5771
+Saved the best model to path: ./models/task_2/simple_visobert_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.41it/s]
+Epoch 2/20, Loss: 359.5695, 0/1 Loss: 0.9999, Hamming Loss: 0.7986, EMR: 0.0001, Acc: 0.4837, F1: 0.3900, Precision: 0.4916, Recall: 0.3765
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.70it/s]
+Evaluation, Loss: 50.8326, 0/1 Loss: 1.0000, Hamming Loss: 0.6716, EMR: 0.0000, Acc: 0.7327, F1: 0.5066, Precision: 0.4737, Recall: 0.5709
+Saved the best model to path: ./models/task_2/simple_visobert_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:18<00:00,  3.37it/s]
+Epoch 3/20, Loss: 358.7205, 0/1 Loss: 0.9998, Hamming Loss: 0.7900, EMR: 0.0002, Acc: 0.4849, F1: 0.3932, Precision: 0.4988, Recall: 0.3779
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.69it/s]
+Evaluation, Loss: 50.8303, 0/1 Loss: 1.0000, Hamming Loss: 0.6357, EMR: 0.0000, Acc: 0.7274, F1: 0.5209, Precision: 0.4991, Recall: 0.5661
+Saved the best model to path: ./models/task_2/simple_visobert_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.34it/s]
+Epoch 4/20, Loss: 358.2506, 0/1 Loss: 1.0000, Hamming Loss: 0.7894, EMR: 0.0000, Acc: 0.4791, F1: 0.3910, Precision: 0.5003, Recall: 0.3727
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.68it/s]
+Evaluation, Loss: 50.8252, 0/1 Loss: 1.0000, Hamming Loss: 0.6284, EMR: 0.0000, Acc: 0.7267, F1: 0.5266, Precision: 0.5101, Recall: 0.5664
+Saved the best model to path: ./models/task_2/simple_visobert_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:21<00:00,  3.25it/s]
+Epoch 5/20, Loss: 358.3380, 0/1 Loss: 0.9999, Hamming Loss: 0.7901, EMR: 0.0001, Acc: 0.4851, F1: 0.3925, Precision: 0.4950, Recall: 0.3776
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.71it/s]
+Evaluation, Loss: 50.7855, 0/1 Loss: 0.9992, Hamming Loss: 0.6662, EMR: 0.0008, Acc: 0.7373, F1: 0.5120, Precision: 0.4785, Recall: 0.5741
+Saved the best model to path: ./models/task_2/simple_visobert_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.33it/s]
+Epoch 6/20, Loss: 358.4399, 0/1 Loss: 0.9999, Hamming Loss: 0.7935, EMR: 0.0001, Acc: 0.4845, F1: 0.3911, Precision: 0.4932, Recall: 0.3780
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.72it/s]
+Evaluation, Loss: 50.6999, 0/1 Loss: 1.0000, Hamming Loss: 0.6616, EMR: 0.0000, Acc: 0.7377, F1: 0.5127, Precision: 0.4803, Recall: 0.5748
+Saved the best model to path: ./models/task_2/simple_visobert_5.pth
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.28it/s]
+Epoch 7/20, Loss: 358.1844, 0/1 Loss: 0.9998, Hamming Loss: 0.7896, EMR: 0.0002, Acc: 0.4773, F1: 0.3903, Precision: 0.5034, Recall: 0.3726
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.74it/s]
+Evaluation, Loss: 50.6286, 0/1 Loss: 1.0000, Hamming Loss: 0.6469, EMR: 0.0000, Acc: 0.7369, F1: 0.5201, Precision: 0.4940, Recall: 0.5740
+Saved the best model to path: ./models/task_2/simple_visobert_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.29it/s]
+Epoch 8/20, Loss: 357.6095, 0/1 Loss: 0.9995, Hamming Loss: 0.7817, EMR: 0.0005, Acc: 0.4883, F1: 0.3973, Precision: 0.5077, Recall: 0.3806
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 50.6505, 0/1 Loss: 1.0000, Hamming Loss: 0.7071, EMR: 0.0000, Acc: 0.7407, F1: 0.4946, Precision: 0.4523, Recall: 0.5771
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.33it/s]
+Epoch 9/20, Loss: 357.5517, 0/1 Loss: 0.9999, Hamming Loss: 0.7788, EMR: 0.0001, Acc: 0.4888, F1: 0.3984, Precision: 0.5070, Recall: 0.3801
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 50.6852, 0/1 Loss: 1.0000, Hamming Loss: 0.6805, EMR: 0.0000, Acc: 0.7351, F1: 0.5040, Precision: 0.4697, Recall: 0.5724
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.26it/s]
+Epoch 10/20, Loss: 357.7003, 0/1 Loss: 0.9998, Hamming Loss: 0.7896, EMR: 0.0002, Acc: 0.4793, F1: 0.3897, Precision: 0.4979, Recall: 0.3734
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.68it/s]
+Evaluation, Loss: 50.6774, 0/1 Loss: 1.0000, Hamming Loss: 0.6913, EMR: 0.0000, Acc: 0.7378, F1: 0.4992, Precision: 0.4612, Recall: 0.5749
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.33it/s]
+Epoch 11/20, Loss: 358.0110, 0/1 Loss: 0.9998, Hamming Loss: 0.7880, EMR: 0.0002, Acc: 0.4834, F1: 0.3934, Precision: 0.5014, Recall: 0.3773
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 50.6147, 0/1 Loss: 1.0000, Hamming Loss: 0.6662, EMR: 0.0000, Acc: 0.7402, F1: 0.5110, Precision: 0.4777, Recall: 0.5767
+Saved the best model to path: ./models/task_2/simple_visobert_10.pth
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.28it/s]
+Epoch 12/20, Loss: 357.8535, 0/1 Loss: 0.9998, Hamming Loss: 0.7858, EMR: 0.0002, Acc: 0.4812, F1: 0.3929, Precision: 0.5026, Recall: 0.3760
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 50.7304, 0/1 Loss: 1.0000, Hamming Loss: 0.7060, EMR: 0.0000, Acc: 0.7326, F1: 0.4931, Precision: 0.4552, Recall: 0.5707
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.28it/s]
+Epoch 13/20, Loss: 357.7530, 0/1 Loss: 0.9995, Hamming Loss: 0.7894, EMR: 0.0005, Acc: 0.4871, F1: 0.3925, Precision: 0.4907, Recall: 0.3796
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 50.6862, 0/1 Loss: 0.9992, Hamming Loss: 0.7046, EMR: 0.0008, Acc: 0.7407, F1: 0.4951, Precision: 0.4528, Recall: 0.5771
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.30it/s]
+Epoch 14/20, Loss: 357.6228, 0/1 Loss: 0.9998, Hamming Loss: 0.7874, EMR: 0.0002, Acc: 0.4848, F1: 0.3930, Precision: 0.4989, Recall: 0.3783
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 50.7362, 0/1 Loss: 1.0000, Hamming Loss: 0.6900, EMR: 0.0000, Acc: 0.7398, F1: 0.5025, Precision: 0.4662, Recall: 0.5763
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.31it/s]
+Epoch 15/20, Loss: 357.6120, 0/1 Loss: 0.9998, Hamming Loss: 0.7826, EMR: 0.0002, Acc: 0.4884, F1: 0.3963, Precision: 0.5047, Recall: 0.3815
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 50.6622, 0/1 Loss: 1.0000, Hamming Loss: 0.6929, EMR: 0.0000, Acc: 0.7385, F1: 0.5004, Precision: 0.4633, Recall: 0.5752
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.34it/s]
+Epoch 16/20, Loss: 357.6723, 0/1 Loss: 0.9998, Hamming Loss: 0.7880, EMR: 0.0002, Acc: 0.4787, F1: 0.3897, Precision: 0.4971, Recall: 0.3737
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.64it/s]
+Evaluation, Loss: 50.5980, 0/1 Loss: 0.9992, Hamming Loss: 0.6834, EMR: 0.0008, Acc: 0.7400, F1: 0.5037, Precision: 0.4666, Recall: 0.5766
+Saved the best model to path: ./models/task_2/simple_visobert_15.pth
+
+Epoch 17/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.27it/s]
+Epoch 17/20, Loss: 357.6458, 0/1 Loss: 0.9999, Hamming Loss: 0.7884, EMR: 0.0001, Acc: 0.4779, F1: 0.3911, Precision: 0.5020, Recall: 0.3734
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.68it/s]
+Evaluation, Loss: 50.6608, 0/1 Loss: 1.0000, Hamming Loss: 0.7008, EMR: 0.0000, Acc: 0.7407, F1: 0.4978, Precision: 0.4580, Recall: 0.5771
+
+Epoch 18/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.31it/s]
+Epoch 18/20, Loss: 357.1806, 0/1 Loss: 0.9996, Hamming Loss: 0.7867, EMR: 0.0004, Acc: 0.4928, F1: 0.3960, Precision: 0.4969, Recall: 0.3846
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 50.5692, 0/1 Loss: 1.0000, Hamming Loss: 0.6880, EMR: 0.0000, Acc: 0.7407, F1: 0.5028, Precision: 0.4655, Recall: 0.5771
+Saved the best model to path: ./models/task_2/simple_visobert_17.pth
+
+Epoch 19/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.30it/s]
+Epoch 19/20, Loss: 357.4908, 0/1 Loss: 0.9999, Hamming Loss: 0.7870, EMR: 0.0001, Acc: 0.4856, F1: 0.3948, Precision: 0.5050, Recall: 0.3789
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 50.6696, 0/1 Loss: 1.0000, Hamming Loss: 0.7255, EMR: 0.0000, Acc: 0.7296, F1: 0.4842, Precision: 0.4418, Recall: 0.5682
+
+Epoch 20/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.32it/s]
+Epoch 20/20, Loss: 357.4009, 0/1 Loss: 0.9998, Hamming Loss: 0.7903, EMR: 0.0002, Acc: 0.4814, F1: 0.3909, Precision: 0.4939, Recall: 0.3756
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.69it/s]
+Evaluation, Loss: 50.7079, 0/1 Loss: 1.0000, Hamming Loss: 0.7286, EMR: 0.0000, Acc: 0.7384, F1: 0.4859, Precision: 0.4404, Recall: 0.5753
+
+uitnlp/CafeBERT
+
+[13:50:58] task: task-2                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: uitnlp/CafeBERT                                                                    my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_2/simple_CafeBERT                                                   my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/CafeBERT and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [03:52<00:00,  1.14it/s]
+Epoch 1/20, Loss: 361.5518, 0/1 Loss: 0.9999, Hamming Loss: 0.8027, EMR: 0.0001, Acc: 0.4681, F1: 0.3849, Precision: 0.4963, Recall: 0.3640
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 51.6295, 0/1 Loss: 1.0000, Hamming Loss: 0.6973, EMR: 0.0000, Acc: 0.6058, F1: 0.4691, Precision: 0.4900, Recall: 0.4710
+Saved the best model to path: ./models/task_2/simple_CafeBERT_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.14it/s]
+Epoch 2/20, Loss: 360.8752, 0/1 Loss: 0.9999, Hamming Loss: 0.7951, EMR: 0.0001, Acc: 0.4958, F1: 0.3999, Precision: 0.5021, Recall: 0.3863
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 51.5744, 0/1 Loss: 1.0000, Hamming Loss: 0.7073, EMR: 0.0000, Acc: 0.5809, F1: 0.4589, Precision: 0.4893, Recall: 0.4519
+Saved the best model to path: ./models/task_2/simple_CafeBERT_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [03:52<00:00,  1.14it/s]
+Epoch 3/20, Loss: 360.5711, 0/1 Loss: 1.0000, Hamming Loss: 0.7915, EMR: 0.0000, Acc: 0.4912, F1: 0.4000, Precision: 0.5109, Recall: 0.3820
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 51.4310, 0/1 Loss: 0.9992, Hamming Loss: 0.6560, EMR: 0.0008, Acc: 0.7253, F1: 0.5180, Precision: 0.4920, Recall: 0.5653
+Saved the best model to path: ./models/task_2/simple_CafeBERT_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [03:52<00:00,  1.14it/s]
+Epoch 4/20, Loss: 360.2852, 0/1 Loss: 0.9999, Hamming Loss: 0.7911, EMR: 0.0001, Acc: 0.4905, F1: 0.3988, Precision: 0.5108, Recall: 0.3819
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 51.3907, 0/1 Loss: 0.9992, Hamming Loss: 0.6544, EMR: 0.0008, Acc: 0.7295, F1: 0.5196, Precision: 0.4920, Recall: 0.5686
+Saved the best model to path: ./models/task_2/simple_CafeBERT_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [03:52<00:00,  1.14it/s]
+Epoch 5/20, Loss: 360.2019, 0/1 Loss: 1.0000, Hamming Loss: 0.8023, EMR: 0.0000, Acc: 0.4847, F1: 0.3921, Precision: 0.5000, Recall: 0.3781
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 51.4131, 0/1 Loss: 1.0000, Hamming Loss: 0.6388, EMR: 0.0000, Acc: 0.7402, F1: 0.5379, Precision: 0.5246, Recall: 0.5766
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 6/20, Loss: 359.7317, 0/1 Loss: 0.9998, Hamming Loss: 0.7902, EMR: 0.0002, Acc: 0.5012, F1: 0.4033, Precision: 0.5076, Recall: 0.3899
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 51.3564, 0/1 Loss: 1.0000, Hamming Loss: 0.7942, EMR: 0.0000, Acc: 0.7407, F1: 0.4690, Precision: 0.4101, Recall: 0.5771
+Saved the best model to path: ./models/task_2/simple_CafeBERT_5.pth
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 7/20, Loss: 359.6921, 0/1 Loss: 1.0000, Hamming Loss: 0.8010, EMR: 0.0000, Acc: 0.5031, F1: 0.3995, Precision: 0.4916, Recall: 0.3916
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 51.2579, 0/1 Loss: 0.9992, Hamming Loss: 0.7164, EMR: 0.0008, Acc: 0.7328, F1: 0.4948, Precision: 0.4550, Recall: 0.5710
+Saved the best model to path: ./models/task_2/simple_CafeBERT_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 8/20, Loss: 360.0140, 0/1 Loss: 0.9999, Hamming Loss: 0.8057, EMR: 0.0001, Acc: 0.4986, F1: 0.3965, Precision: 0.4896, Recall: 0.3885
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 51.3449, 0/1 Loss: 1.0000, Hamming Loss: 0.7293, EMR: 0.0000, Acc: 0.7407, F1: 0.4945, Precision: 0.4530, Recall: 0.5771
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 9/20, Loss: 359.7653, 0/1 Loss: 0.9999, Hamming Loss: 0.7922, EMR: 0.0001, Acc: 0.5096, F1: 0.4068, Precision: 0.5043, Recall: 0.3973
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 51.2806, 0/1 Loss: 1.0000, Hamming Loss: 0.6380, EMR: 0.0000, Acc: 0.7407, F1: 0.5310, Precision: 0.5059, Recall: 0.5771
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [03:51<00:00,  1.14it/s]
+Epoch 10/20, Loss: 359.6144, 0/1 Loss: 0.9999, Hamming Loss: 0.7914, EMR: 0.0001, Acc: 0.5094, F1: 0.4068, Precision: 0.5023, Recall: 0.3967
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:31<00:00,  1.22it/s]
+Evaluation, Loss: 51.3477, 0/1 Loss: 1.0000, Hamming Loss: 0.6981, EMR: 0.0000, Acc: 0.7407, F1: 0.5083, Precision: 0.4763, Recall: 0.5771
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [03:53<00:00,  1.13it/s]
+Epoch 11/20, Loss: 359.6272, 0/1 Loss: 0.9996, Hamming Loss: 0.7963, EMR: 0.0004, Acc: 0.5133, F1: 0.4058, Precision: 0.4960, Recall: 0.3996
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 51.1845, 0/1 Loss: 0.9992, Hamming Loss: 0.7562, EMR: 0.0008, Acc: 0.7407, F1: 0.4811, Precision: 0.4307, Recall: 0.5771
+Saved the best model to path: ./models/task_2/simple_CafeBERT_10.pth
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [03:52<00:00,  1.13it/s]
+Epoch 12/20, Loss: 360.0340, 0/1 Loss: 0.9995, Hamming Loss: 0.7803, EMR: 0.0005, Acc: 0.5209, F1: 0.4179, Precision: 0.5166, Recall: 0.4060
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
+Evaluation, Loss: 51.3178, 0/1 Loss: 1.0000, Hamming Loss: 0.6239, EMR: 0.0000, Acc: 0.7407, F1: 0.5384, Precision: 0.5201, Recall: 0.5771
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 13/20, Loss: 359.7631, 0/1 Loss: 0.9998, Hamming Loss: 0.7696, EMR: 0.0002, Acc: 0.5167, F1: 0.4196, Precision: 0.5305, Recall: 0.4017
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 51.3040, 0/1 Loss: 1.0000, Hamming Loss: 0.6295, EMR: 0.0000, Acc: 0.7407, F1: 0.5356, Precision: 0.5149, Recall: 0.5771
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 14/20, Loss: 359.7398, 0/1 Loss: 0.9999, Hamming Loss: 0.7774, EMR: 0.0001, Acc: 0.5174, F1: 0.4167, Precision: 0.5167, Recall: 0.4033
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 51.2986, 0/1 Loss: 1.0000, Hamming Loss: 0.7459, EMR: 0.0000, Acc: 0.7407, F1: 0.4877, Precision: 0.4426, Recall: 0.5771
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [03:49<00:00,  1.15it/s]
+Epoch 15/20, Loss: 359.4157, 0/1 Loss: 0.9999, Hamming Loss: 0.7995, EMR: 0.0001, Acc: 0.5149, F1: 0.4053, Precision: 0.4891, Recall: 0.4009
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 51.1499, 0/1 Loss: 1.0000, Hamming Loss: 0.6670, EMR: 0.0000, Acc: 0.7407, F1: 0.5219, Precision: 0.4980, Recall: 0.5771
+Saved the best model to path: ./models/task_2/simple_CafeBERT_14.pth
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.14it/s]
+Epoch 16/20, Loss: 359.3830, 0/1 Loss: 0.9999, Hamming Loss: 0.7991, EMR: 0.0001, Acc: 0.5131, F1: 0.4045, Precision: 0.4910, Recall: 0.4004
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
+Evaluation, Loss: 51.2860, 0/1 Loss: 1.0000, Hamming Loss: 0.8004, EMR: 0.0000, Acc: 0.7407, F1: 0.4657, Precision: 0.4050, Recall: 0.5771
+
+Epoch 17/20, Batch 264/264: 100%|██████████| 264/264 [03:51<00:00,  1.14it/s]
+Epoch 17/20, Loss: 359.4419, 0/1 Loss: 0.9998, Hamming Loss: 0.7926, EMR: 0.0002, Acc: 0.5179, F1: 0.4095, Precision: 0.4958, Recall: 0.4038
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 51.2606, 0/1 Loss: 1.0000, Hamming Loss: 0.7676, EMR: 0.0000, Acc: 0.7407, F1: 0.4779, Precision: 0.4261, Recall: 0.5771
+
+Epoch 18/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.14it/s]
+Epoch 18/20, Loss: 359.5932, 0/1 Loss: 1.0000, Hamming Loss: 0.7929, EMR: 0.0000, Acc: 0.5156, F1: 0.4091, Precision: 0.4976, Recall: 0.4011
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 51.3559, 0/1 Loss: 1.0000, Hamming Loss: 0.7151, EMR: 0.0000, Acc: 0.7407, F1: 0.5042, Precision: 0.4707, Recall: 0.5771
+
+Epoch 19/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.14it/s]
+Epoch 19/20, Loss: 359.3535, 0/1 Loss: 0.9998, Hamming Loss: 0.7960, EMR: 0.0002, Acc: 0.5124, F1: 0.4063, Precision: 0.4991, Recall: 0.3994
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.25it/s]
+Evaluation, Loss: 51.3135, 0/1 Loss: 1.0000, Hamming Loss: 0.7110, EMR: 0.0000, Acc: 0.7407, F1: 0.5064, Precision: 0.4743, Recall: 0.5771
+
+Epoch 20/20, Batch 264/264: 100%|██████████| 264/264 [03:50<00:00,  1.15it/s]
+Epoch 20/20, Loss: 359.4013, 0/1 Loss: 0.9998, Hamming Loss: 0.7979, EMR: 0.0002, Acc: 0.5074, F1: 0.4030, Precision: 0.4934, Recall: 0.3956
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.26it/s]
+Evaluation, Loss: 51.1226, 0/1 Loss: 1.0000, Hamming Loss: 0.7541, EMR: 0.0000, Acc: 0.7407, F1: 0.4820, Precision: 0.4332, Recall: 0.5771
+Saved the best model to path: ./models/task_2/simple_CafeBERT_19.pth
+
+xlm-roberta-base
+
+[15:19:18] task: task-2                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: xlm-roberta-base                                                                   my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_2/simple_xlm-roberta-base                                           my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:18<00:00,  3.38it/s]
+Epoch 1/20, Loss: 363.0146, 0/1 Loss: 1.0000, Hamming Loss: 0.9144, EMR: 0.0000, Acc: 0.3115, F1: 0.2705, Precision: 0.3438, Recall: 0.2416
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.72it/s]
+Evaluation, Loss: 51.8693, 0/1 Loss: 1.0000, Hamming Loss: 0.8662, EMR: 0.0000, Acc: 0.4899, F1: 0.3805, Precision: 0.3907, Recall: 0.3805
+Saved the best model to path: ./models/task_2/simple_xlm-roberta-base_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.42it/s]
+Epoch 2/20, Loss: 362.7481, 0/1 Loss: 1.0000, Hamming Loss: 0.9187, EMR: 0.0000, Acc: 0.2864, F1: 0.2526, Precision: 0.3286, Recall: 0.2221
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.64it/s]
+Evaluation, Loss: 51.7229, 0/1 Loss: 1.0000, Hamming Loss: 0.8662, EMR: 0.0000, Acc: 0.4899, F1: 0.3805, Precision: 0.3907, Recall: 0.3805
+Saved the best model to path: ./models/task_2/simple_xlm-roberta-base_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.42it/s]
+Epoch 3/20, Loss: 362.7950, 0/1 Loss: 1.0000, Hamming Loss: 0.9176, EMR: 0.0000, Acc: 0.2941, F1: 0.2582, Precision: 0.3338, Recall: 0.2283
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.78it/s]
+Evaluation, Loss: 51.8190, 0/1 Loss: 1.0000, Hamming Loss: 0.8662, EMR: 0.0000, Acc: 0.4899, F1: 0.3805, Precision: 0.3907, Recall: 0.3805
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.43it/s]
+Epoch 4/20, Loss: 362.6646, 0/1 Loss: 1.0000, Hamming Loss: 0.9172, EMR: 0.0000, Acc: 0.2923, F1: 0.2575, Precision: 0.3349, Recall: 0.2267
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.78it/s]
+Evaluation, Loss: 51.8400, 0/1 Loss: 1.0000, Hamming Loss: 0.8662, EMR: 0.0000, Acc: 0.4899, F1: 0.3805, Precision: 0.3907, Recall: 0.3805
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:18<00:00,  3.38it/s]
+Epoch 5/20, Loss: 362.6920, 0/1 Loss: 1.0000, Hamming Loss: 0.9169, EMR: 0.0000, Acc: 0.2933, F1: 0.2592, Precision: 0.3382, Recall: 0.2278
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.72it/s]
+Evaluation, Loss: 51.7606, 0/1 Loss: 1.0000, Hamming Loss: 0.8662, EMR: 0.0000, Acc: 0.4899, F1: 0.3805, Precision: 0.3907, Recall: 0.3805
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:18<00:00,  3.36it/s]
+Epoch 6/20, Loss: 362.7761, 0/1 Loss: 1.0000, Hamming Loss: 0.9184, EMR: 0.0000, Acc: 0.2923, F1: 0.2578, Precision: 0.3353, Recall: 0.2268
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.68it/s]
+Evaluation, Loss: 51.7834, 0/1 Loss: 1.0000, Hamming Loss: 0.8662, EMR: 0.0000, Acc: 0.4899, F1: 0.3805, Precision: 0.3907, Recall: 0.3805
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [01:19<00:00,  3.34it/s]
+Epoch 7/20, Loss: 362.4700, 0/1 Loss: 1.0000, Hamming Loss: 0.9155, EMR: 0.0000, Acc: 0.2937, F1: 0.2584, Precision: 0.3350, Recall: 0.2275
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 51.7753, 0/1 Loss: 1.0000, Hamming Loss: 0.8662, EMR: 0.0000, Acc: 0.4899, F1: 0.3805, Precision: 0.3907, Recall: 0.3805
+Early stopping triggered
+bert-base-multilingual-cased
+
+[15:29:54] task: task-2                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: bert-base-multilingual-cased                                                       my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_2/simple_bert-base-multilingual-cased                               my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:12<00:00,  3.63it/s]
+Epoch 1/20, Loss: 361.5374, 0/1 Loss: 0.9979, Hamming Loss: 0.7384, EMR: 0.0021, Acc: 0.5150, F1: 0.4231, Precision: 0.5417, Recall: 0.4006
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.87it/s]
+Evaluation, Loss: 51.3764, 0/1 Loss: 0.9834, Hamming Loss: 0.4807, EMR: 0.0166, Acc: 0.9729, F1: 0.6380, Precision: 0.5647, Recall: 0.7611
+Saved the best model to path: ./models/task_2/simple_bert-base-multilingual-cased_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.74it/s]
+Epoch 2/20, Loss: 361.2473, 0/1 Loss: 0.9960, Hamming Loss: 0.7006, EMR: 0.0040, Acc: 0.5892, F1: 0.4707, Precision: 0.5702, Recall: 0.4590
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.99it/s]
+Evaluation, Loss: 51.5314, 0/1 Loss: 0.9851, Hamming Loss: 0.5164, EMR: 0.0149, Acc: 0.8695, F1: 0.6076, Precision: 0.5722, Recall: 0.6790
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:09<00:00,  3.81it/s]
+Epoch 3/20, Loss: 360.8629, 0/1 Loss: 0.9942, Hamming Loss: 0.6941, EMR: 0.0058, Acc: 0.6188, F1: 0.4832, Precision: 0.5692, Recall: 0.4823
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.99it/s]
+Evaluation, Loss: 51.4184, 0/1 Loss: 0.9851, Hamming Loss: 0.4927, EMR: 0.0149, Acc: 0.9324, F1: 0.6276, Precision: 0.5709, Recall: 0.7293
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.75it/s]
+Epoch 4/20, Loss: 360.8466, 0/1 Loss: 0.9981, Hamming Loss: 0.7502, EMR: 0.0019, Acc: 0.5483, F1: 0.4357, Precision: 0.5327, Recall: 0.4268
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.98it/s]
+Evaluation, Loss: 51.4395, 0/1 Loss: 0.9992, Hamming Loss: 0.6853, EMR: 0.0008, Acc: 0.6369, F1: 0.4819, Precision: 0.4906, Recall: 0.4945
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:09<00:00,  3.81it/s]
+Epoch 5/20, Loss: 360.7947, 0/1 Loss: 0.9995, Hamming Loss: 0.8001, EMR: 0.0005, Acc: 0.4714, F1: 0.3861, Precision: 0.4966, Recall: 0.3657
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  4.00it/s]
+Evaluation, Loss: 51.3349, 0/1 Loss: 1.0000, Hamming Loss: 0.6894, EMR: 0.0000, Acc: 0.6306, F1: 0.4774, Precision: 0.4869, Recall: 0.4896
+Saved the best model to path: ./models/task_2/simple_bert-base-multilingual-cased_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:14<00:00,  3.55it/s]
+Epoch 6/20, Loss: 360.3808, 0/1 Loss: 0.9994, Hamming Loss: 0.7718, EMR: 0.0006, Acc: 0.5046, F1: 0.4083, Precision: 0.5158, Recall: 0.3922
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.63it/s]
+Evaluation, Loss: 51.3147, 0/1 Loss: 0.9967, Hamming Loss: 0.6432, EMR: 0.0033, Acc: 0.7431, F1: 0.5269, Precision: 0.4994, Recall: 0.5784
+Saved the best model to path: ./models/task_2/simple_bert-base-multilingual-cased_5.pth
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [01:17<00:00,  3.41it/s]
+Epoch 7/20, Loss: 360.6250, 0/1 Loss: 0.9977, Hamming Loss: 0.7498, EMR: 0.0023, Acc: 0.5422, F1: 0.4320, Precision: 0.5331, Recall: 0.4216
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.54it/s]
+Evaluation, Loss: 51.3316, 0/1 Loss: 0.9635, Hamming Loss: 0.5832, EMR: 0.0365, Acc: 0.9645, F1: 0.5913, Precision: 0.5000, Recall: 0.7550
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [01:18<00:00,  3.37it/s]
+Epoch 8/20, Loss: 360.4595, 0/1 Loss: 0.9968, Hamming Loss: 0.7113, EMR: 0.0032, Acc: 0.6018, F1: 0.4677, Precision: 0.5571, Recall: 0.4679
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.57it/s]
+Evaluation, Loss: 51.3480, 0/1 Loss: 0.9851, Hamming Loss: 0.5054, EMR: 0.0149, Acc: 0.9058, F1: 0.6160, Precision: 0.5641, Recall: 0.7081
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [01:16<00:00,  3.44it/s]
+Epoch 9/20, Loss: 360.6389, 0/1 Loss: 0.9986, Hamming Loss: 0.7483, EMR: 0.0014, Acc: 0.5351, F1: 0.4300, Precision: 0.5439, Recall: 0.4157
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.61it/s]
+Evaluation, Loss: 51.3255, 0/1 Loss: 0.9983, Hamming Loss: 0.6340, EMR: 0.0017, Acc: 0.7369, F1: 0.5308, Precision: 0.5094, Recall: 0.5727
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [01:11<00:00,  3.68it/s]
+Epoch 10/20, Loss: 360.4973, 0/1 Loss: 0.9982, Hamming Loss: 0.7491, EMR: 0.0018, Acc: 0.5301, F1: 0.4289, Precision: 0.5450, Recall: 0.4125
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.92it/s]
+Evaluation, Loss: 51.3523, 0/1 Loss: 0.9851, Hamming Loss: 0.5137, EMR: 0.0149, Acc: 0.8720, F1: 0.6093, Precision: 0.5718, Recall: 0.6809
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [01:10<00:00,  3.75it/s]
+Epoch 11/20, Loss: 360.3657, 0/1 Loss: 0.9968, Hamming Loss: 0.7135, EMR: 0.0032, Acc: 0.5824, F1: 0.4613, Precision: 0.5636, Recall: 0.4523
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.75it/s]
+Evaluation, Loss: 51.3206, 0/1 Loss: 0.9851, Hamming Loss: 0.5154, EMR: 0.0149, Acc: 0.8699, F1: 0.6074, Precision: 0.5698, Recall: 0.6794
+Early stopping triggered
+distilbert-base-multilingual-cased
+
+[15:45:26] task: task-2                                                                                   my_import.py:132
+           model_type: simple                                                                             my_import.py:132
+           model_name: distilbert-base-multilingual-cased                                                 my_import.py:132
+           padding_len: 512                                                                               my_import.py:130
+           batch_size: 32                                                                                 my_import.py:132
+           learning_rate: 0.001                                                                           my_import.py:132
+           epochs: 20                                                                                     my_import.py:132
+           fine_tune: True                                                                                my_import.py:132
+           device: cuda                                                                                   my_import.py:132
+           saving_path: ./models/task_2/simple_distilbert-base-multilingual-cased                         my_import.py:132
+           train_shape: (8437, 27)                                                                        my_import.py:132
+           dev_shape: (1205, 27)                                                                          my_import.py:132
+           test_shape: (2412, 27)                                                                         my_import.py:132
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [00:44<00:00,  5.97it/s]
+Epoch 1/20, Loss: 360.6009, 0/1 Loss: 0.9998, Hamming Loss: 0.7822, EMR: 0.0002, Acc: 0.4984, F1: 0.4061, Precision: 0.5092, Recall: 0.3880
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.89it/s]
+Evaluation, Loss: 51.2502, 0/1 Loss: 1.0000, Hamming Loss: 0.6774, EMR: 0.0000, Acc: 0.6589, F1: 0.4907, Precision: 0.4906, Recall: 0.5125
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.32it/s]
+Epoch 2/20, Loss: 359.8073, 0/1 Loss: 1.0000, Hamming Loss: 0.8071, EMR: 0.0000, Acc: 0.4657, F1: 0.3808, Precision: 0.4932, Recall: 0.3611
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.77it/s]
+Evaluation, Loss: 51.2111, 0/1 Loss: 1.0000, Hamming Loss: 0.6876, EMR: 0.0000, Acc: 0.6296, F1: 0.4788, Precision: 0.4902, Recall: 0.4891
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.29it/s]
+Epoch 3/20, Loss: 360.0351, 0/1 Loss: 0.9999, Hamming Loss: 0.8086, EMR: 0.0001, Acc: 0.4575, F1: 0.3770, Precision: 0.4947, Recall: 0.3555
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.85it/s]
+Evaluation, Loss: 51.1201, 0/1 Loss: 0.9992, Hamming Loss: 0.6575, EMR: 0.0008, Acc: 0.7407, F1: 0.5210, Precision: 0.4873, Recall: 0.5771
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.32it/s]
+Epoch 4/20, Loss: 359.7485, 0/1 Loss: 0.9998, Hamming Loss: 0.8162, EMR: 0.0002, Acc: 0.4754, F1: 0.3818, Precision: 0.4778, Recall: 0.3701
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.72it/s]
+Evaluation, Loss: 51.1368, 0/1 Loss: 1.0000, Hamming Loss: 0.6900, EMR: 0.0000, Acc: 0.6209, F1: 0.4752, Precision: 0.4900, Recall: 0.4821
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.33it/s]
+Epoch 5/20, Loss: 359.4607, 0/1 Loss: 0.9999, Hamming Loss: 0.8135, EMR: 0.0001, Acc: 0.4653, F1: 0.3774, Precision: 0.4869, Recall: 0.3618
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.84it/s]
+Evaluation, Loss: 51.0966, 0/1 Loss: 0.9992, Hamming Loss: 0.7232, EMR: 0.0008, Acc: 0.7407, F1: 0.4921, Precision: 0.4443, Recall: 0.5771
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.30it/s]
+Epoch 6/20, Loss: 359.2959, 0/1 Loss: 0.9996, Hamming Loss: 0.8214, EMR: 0.0004, Acc: 0.4526, F1: 0.3676, Precision: 0.4714, Recall: 0.3519
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.87it/s]
+Evaluation, Loss: 51.1247, 0/1 Loss: 1.0000, Hamming Loss: 0.7071, EMR: 0.0000, Acc: 0.6184, F1: 0.4642, Precision: 0.4711, Recall: 0.4797
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.34it/s]
+Epoch 7/20, Loss: 359.1180, 0/1 Loss: 0.9995, Hamming Loss: 0.8183, EMR: 0.0005, Acc: 0.4578, F1: 0.3706, Precision: 0.4747, Recall: 0.3556
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.86it/s]
+Evaluation, Loss: 50.9927, 0/1 Loss: 0.9992, Hamming Loss: 0.7087, EMR: 0.0008, Acc: 0.7239, F1: 0.4921, Precision: 0.4533, Recall: 0.5642
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.31it/s]
+Epoch 8/20, Loss: 359.1115, 0/1 Loss: 0.9999, Hamming Loss: 0.8201, EMR: 0.0001, Acc: 0.4638, F1: 0.3731, Precision: 0.4726, Recall: 0.3610
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.90it/s]
+Evaluation, Loss: 50.9363, 0/1 Loss: 0.9992, Hamming Loss: 0.7081, EMR: 0.0008, Acc: 0.7039, F1: 0.4853, Precision: 0.4547, Recall: 0.5488
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_7.pth
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [00:43<00:00,  6.05it/s]
+Epoch 9/20, Loss: 359.0384, 0/1 Loss: 0.9998, Hamming Loss: 0.8231, EMR: 0.0002, Acc: 0.4573, F1: 0.3693, Precision: 0.4691, Recall: 0.3560
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.90it/s]
+Evaluation, Loss: 51.0098, 0/1 Loss: 1.0000, Hamming Loss: 0.7282, EMR: 0.0000, Acc: 0.6583, F1: 0.4641, Precision: 0.4476, Recall: 0.5120
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.26it/s]
+Epoch 10/20, Loss: 359.0243, 0/1 Loss: 1.0000, Hamming Loss: 0.8204, EMR: 0.0000, Acc: 0.4615, F1: 0.3721, Precision: 0.4728, Recall: 0.3591
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.90it/s]
+Evaluation, Loss: 50.8772, 0/1 Loss: 0.9992, Hamming Loss: 0.7191, EMR: 0.0008, Acc: 0.7293, F1: 0.4889, Precision: 0.4463, Recall: 0.5682
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_9.pth
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.27it/s]
+Epoch 11/20, Loss: 358.8532, 0/1 Loss: 0.9998, Hamming Loss: 0.8209, EMR: 0.0002, Acc: 0.4610, F1: 0.3713, Precision: 0.4745, Recall: 0.3584
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.45it/s]
+Evaluation, Loss: 50.9172, 0/1 Loss: 0.9992, Hamming Loss: 0.6724, EMR: 0.0008, Acc: 0.7055, F1: 0.5013, Precision: 0.4774, Recall: 0.5504
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.29it/s]
+Epoch 12/20, Loss: 358.7160, 0/1 Loss: 0.9995, Hamming Loss: 0.8196, EMR: 0.0005, Acc: 0.4611, F1: 0.3712, Precision: 0.4669, Recall: 0.3586
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.47it/s]
+Evaluation, Loss: 50.8768, 0/1 Loss: 0.9992, Hamming Loss: 0.6722, EMR: 0.0008, Acc: 0.7263, F1: 0.5077, Precision: 0.4754, Recall: 0.5661
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_11.pth
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.34it/s]
+Epoch 13/20, Loss: 358.6076, 0/1 Loss: 0.9999, Hamming Loss: 0.8254, EMR: 0.0001, Acc: 0.4601, F1: 0.3690, Precision: 0.4634, Recall: 0.3591
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.80it/s]
+Evaluation, Loss: 50.8790, 0/1 Loss: 1.0000, Hamming Loss: 0.7037, EMR: 0.0000, Acc: 0.6666, F1: 0.4751, Precision: 0.4608, Recall: 0.5186
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.33it/s]
+Epoch 14/20, Loss: 358.8275, 0/1 Loss: 0.9996, Hamming Loss: 0.8251, EMR: 0.0004, Acc: 0.4536, F1: 0.3660, Precision: 0.4672, Recall: 0.3537
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.87it/s]
+Evaluation, Loss: 50.8766, 0/1 Loss: 0.9992, Hamming Loss: 0.6859, EMR: 0.0008, Acc: 0.7270, F1: 0.5022, Precision: 0.4670, Recall: 0.5666
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_13.pth
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.28it/s]
+Epoch 15/20, Loss: 358.7143, 0/1 Loss: 1.0000, Hamming Loss: 0.8256, EMR: 0.0000, Acc: 0.4585, F1: 0.3681, Precision: 0.4643, Recall: 0.3572
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.40it/s]
+Evaluation, Loss: 50.8346, 0/1 Loss: 1.0000, Hamming Loss: 0.6934, EMR: 0.0000, Acc: 0.6783, F1: 0.4832, Precision: 0.4663, Recall: 0.5283
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_14.pth
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.28it/s]
+Epoch 16/20, Loss: 358.7082, 0/1 Loss: 0.9998, Hamming Loss: 0.8211, EMR: 0.0002, Acc: 0.4650, F1: 0.3726, Precision: 0.4651, Recall: 0.3623
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.84it/s]
+Evaluation, Loss: 50.8284, 0/1 Loss: 1.0000, Hamming Loss: 0.7114, EMR: 0.0000, Acc: 0.7001, F1: 0.4833, Precision: 0.4537, Recall: 0.5460
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_15.pth
+
+Epoch 17/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.26it/s]
+Epoch 17/20, Loss: 358.3544, 0/1 Loss: 1.0000, Hamming Loss: 0.8232, EMR: 0.0000, Acc: 0.4603, F1: 0.3685, Precision: 0.4635, Recall: 0.3581
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.87it/s]
+Evaluation, Loss: 50.8099, 0/1 Loss: 0.9992, Hamming Loss: 0.7158, EMR: 0.0008, Acc: 0.6860, F1: 0.4764, Precision: 0.4511, Recall: 0.5343
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_16.pth
+
+Epoch 18/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.27it/s]
+Epoch 18/20, Loss: 358.3781, 0/1 Loss: 0.9999, Hamming Loss: 0.8223, EMR: 0.0001, Acc: 0.4517, F1: 0.3661, Precision: 0.4678, Recall: 0.3521
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.82it/s]
+Evaluation, Loss: 50.9186, 0/1 Loss: 1.0000, Hamming Loss: 0.6988, EMR: 0.0000, Acc: 0.6183, F1: 0.4655, Precision: 0.4751, Recall: 0.4806
+
+Epoch 19/20, Batch 264/264: 100%|██████████| 264/264 [00:41<00:00,  6.33it/s]
+Epoch 19/20, Loss: 358.4401, 0/1 Loss: 0.9999, Hamming Loss: 0.8250, EMR: 0.0001, Acc: 0.4462, F1: 0.3617, Precision: 0.4657, Recall: 0.3478
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.72it/s]
+Evaluation, Loss: 50.7656, 0/1 Loss: 0.9992, Hamming Loss: 0.6844, EMR: 0.0008, Acc: 0.7035, F1: 0.4950, Precision: 0.4694, Recall: 0.5490
+Saved the best model to path: ./models/task_2/simple_distilbert-base-multilingual-cased_18.pth
+
+Epoch 20/20, Batch 264/264: 100%|██████████| 264/264 [00:42<00:00,  6.28it/s]
+Epoch 20/20, Loss: 357.8453, 0/1 Loss: 0.9999, Hamming Loss: 0.7890, EMR: 0.0001, Acc: 0.4951, F1: 0.3980, Precision: 0.4966, Recall: 0.3861
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.87it/s]
+Evaluation, Loss: 50.8061, 0/1 Loss: 1.0000, Hamming Loss: 0.7330, EMR: 0.0000, Acc: 0.7407, F1: 0.4853, Precision: 0.4372, Recall: 0.5771
+

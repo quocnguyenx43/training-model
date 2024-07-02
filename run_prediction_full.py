@@ -164,14 +164,12 @@ mapping_label = {
 df1 = pd.DataFrame(predictions_1, columns=['predicted_label'])
 df2 = pd.DataFrame(predictions_2, columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
 df_merged = pd.concat([df1, df2], axis=1)
-print(df_merged)
-df_merged.to_csv('results/' + task_1_model_path.replace('.', '_').replace('/', '_') + task_2_model_path.replace('.', '_').replace('/', '_') + '.csv')
+# df_merged.to_csv('results/' + task_1_model_path.replace('.', '_').replace('/', '_') + task_2_model_path.replace('.', '_').replace('/', '_') + '.csv')
 df_merged.predicted_label = df_merged.predicted_label.map(mapping_label)
 df_merged.predicted_title = df_merged.predicted_title.map(mapping_aspect)
 df_merged.predicted_desc = df_merged.predicted_desc.map(mapping_aspect)
 df_merged.predicted_comp = df_merged.predicted_comp.map(mapping_aspect)
 df_merged.predicted_other = df_merged.predicted_other.map(mapping_aspect)
-print(df_merged)
 
 def adding_previous_tasks(df):
     previous_task_outputs = []
@@ -188,10 +186,7 @@ def adding_previous_tasks(df):
     return df
 
 df_merged = adding_previous_tasks(df_merged)
-print(df_merged)
-print(test_df.pre_tasks)
 test_df.pre_tasks = df_merged.pre_tasks
-print(test_df.pre_tasks)
 
 
 
@@ -212,8 +207,8 @@ import random
 
 ###### Loading weights
 generation_model = generation_model.to('cuda')
-print(f'model_weight_path: {task_2_model_path}')
-generation_model.load_state_dict(torch.load(task_2_model_path))
+print(f'model_weight_path: {task_3_model_path}')
+generation_model.load_state_dict(torch.load(task_3_model_path))
 print('Loading model weight successfully!\n')
 
 print('Evaluation on dev set:')

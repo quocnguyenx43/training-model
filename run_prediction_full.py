@@ -199,7 +199,7 @@ test_dataset = dst.RecruitmentDataset(
     padding_len=padding_3, target_len=target_len,
     task='task-3',
 )
-test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+test_dataloader = DataLoader(test_dataset, batch_size=2, shuffle=False)
 
 tokenizer = AutoTokenizer.from_pretrained('VietAI/vit5-base')
 generation_model = AutoModelForSeq2SeqLM.from_pretrained('VietAI/vit5-base')
@@ -212,7 +212,7 @@ print(f'model_weight_path: {task_3_model_path}')
 generation_model.load_state_dict(torch.load(task_3_model_path))
 print('Loading model weight successfully!\n')
 
-print('Evaluation on dev set:')
+
 predictions_3, references_3 = func.generate_task_3(
     generation_model, tokenizer,
     test_dataloader, target_len=target_len,

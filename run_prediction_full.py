@@ -218,7 +218,7 @@ predictions_3, references_3 = func.generate_task_3(
     test_dataloader, target_len=target_len,
     device='cuda'
 )
-print(predictions_3)
+print(pd.Series(predictions_3))
 bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3, references_3)
 random_index = random.randint(0, len(predictions_3) - 1)
 print(f'BERT score (prec, rec, f1): {bertscore}')

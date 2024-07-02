@@ -199,7 +199,7 @@ test_dataset = dst.RecruitmentDataset(
     padding_len=padding_3, target_len=target_len,
     task='task-3',
 )
-test_dataloader = DataLoader(test_dataset, batch_size=12, shuffle=False)
+test_dataloader = DataLoader(test_dataset, batch_size=6, shuffle=False)
 
 tokenizer = AutoTokenizer.from_pretrained('VietAI/vit5-base')
 generation_model = AutoModelForSeq2SeqLM.from_pretrained('VietAI/vit5-base')

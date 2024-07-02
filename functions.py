@@ -164,9 +164,9 @@ def show_evaluation_task_2(true_labels, predictions):
         f1s_1.append(f1_score(true_labels[:, i], predictions[:, i], average='macro'))
         recalls_1.append(recall_score(true_labels[:, i], predictions[:, i], average='macro'))
 
-        precs_2.append(precision_score(true_labels[:, i], predictions[:, i], average='weighted'))
-        f1s_2.append(f1_score(true_labels[:, i], predictions[:, i], average='weighted'))
-        recalls_2.append(recall_score(true_labels[:, i], predictions[:, i], average='weighted'))
+        precs_2.append(precision_score(true_labels[:, i], predictions[:, i], average='micro'))
+        f1s_2.append(f1_score(true_labels[:, i], predictions[:, i], average='micro'))
+        recalls_2.append(recall_score(true_labels[:, i], predictions[:, i], average='micro'))
 
     acc = np.mean(accs)
     

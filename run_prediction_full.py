@@ -1,3 +1,14 @@
+import pandas as pd
+
+import torch
+from torch.utils.data import DataLoader
+
+import argparse as arg
+from rich.console import Console
+import warnings
+
+import my_datasets as dst
+
 import os
 
 import torch
@@ -8,23 +19,73 @@ import functions as func
 import my_import as imp
 
 
-task_1_model_path = imp.args['path1']
-task_2_model_path = imp.args['path2']
-task_3_model_path = imp.args['path3']
+#####################
+console = Console(record=True)
+warnings.filterwarnings("ignore")
+
+
+parser = arg.ArgumentParser(description="Params")
+
+parser.add_argument("--source_len_1", type=int, default=200)
+parser.add_argument("--source_len_2", type=int, default=200)
+parser.add_argument("--target_len", type=int, default=200)
+
+parser.add_argument("--batch_size", type=int, default=12)
+
+# for LSTM
+parser.add_argument("--hidden_size", type=int, default=128)
+parser.add_argument("--num_layers", type=int, default=1)
+
+# for CNN
+parser.add_argument("--num_channels", type=int, default=768)
+parser.add_argument("--kernel_size", type=int, default=256)
+parser.add_argument("--padding", type=int, default=32)
+
+# HA
+parser.add_argument("--path1", type=str, default="")
+parser.add_argument("--path2", type=str, default="")
+parser.add_argument("--path3", type=str, default="")
+
+args = parser.parse_args()
+args = vars(args)
+
+task_1_model_path = args['path1']
+task_2_model_path = args['path2']
+task_3_model_path = args['path3']
+
+padding_1 = args['source_len_1']
+padding_2 = args['source_len_2']
+padding_3 = args['source_len_3']
+
+target_len = args['target_len']
+
+batch_size = args['batch_size']
+
+params = {
+    'hidden_size': args['hidden_size'],
+    'num_layers': args['num_layers'],
+    'num_channels': args['num_channels'],
+    'kernel_size': args['kernel_size'],
+    'padding': args['padding'],
+}
+
 
 print(f'path1: {task_1_model_path}')
 print(f'path2: {task_2_model_path}')
 print(f'path3: {task_3_model_path}')
 
-params = {
-    'hidden_size': 128,
-    'num_layers': 1,
-    'num_channels': 768,
-    'kernel_size': 256,
-    'padding': 32
-}
 
-# Task 1
+
+# TASK 1
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
+# test_df.dropna(subset=['explanation'], inplace=True)
+args['test_shape'] = test_df.shape
+test_dataset = dst.RecruitmentDataset(
+    test_df, tokenizer_name='uitnlp/visobert',
+    padding_len=padding_1, target_len=128,
+    task='task_1',
+)
+
 model1 = md.ComplexCLSModel(
     model_type='cnn',
     params=params,

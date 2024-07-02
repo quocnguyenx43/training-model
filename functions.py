@@ -46,9 +46,6 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
     predictions = np.array(predictions)
     true_labels = np.array(true_labels)
 
-    print(predictions)
-    print(true_labels)
-
     print(f'Evaluation, Loss: {running_loss:.4f}, ', end="")
     
     if task_running == 'task-1':
@@ -157,12 +154,19 @@ def show_cm_cr_task_1(true_labels, predictions):
 
 
 def show_evaluation_task_2(true_labels, predictions):
-    acc = accuracy_score(true_labels, predictions)
-    prec = precision_score(true_labels, predictions)
-    f1 = f1_score(true_labels, predictions)
-    recall = recall_score(true_labels, predictions)
+    accs, precs, f1s, recalls = [], [], [], []
+    for i in range(4):
+        accs.append(accuracy_score(true_labels[:, i], predictions[:, i]))
+        precs.append(precision_score(true_labels[:, i], predictions[:, i]))
+        f1s.append(f1_score(true_labels[:, i], predictions[:, i]))
+        recalls.append(recall_score(true_labels[:, i], predictions[:, i]))
 
-    print(f'Acc: {acc:.4f}, F1: {f1:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}')
+    acc = np.mean(accs)
+    prec = np.mean(precs)
+    recall = np.mean(recalls)
+    f1 = np.mean(f1s)
+
+    print(f'Acc: {acc:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}, F1: {f1:.4f}')
 
 
 def show_cm_cr_task_2(true_labels, predictions):

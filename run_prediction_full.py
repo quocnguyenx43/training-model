@@ -76,6 +76,8 @@ print(f'path3: {task_3_model_path}')
 print()
 
 
+
+### TASK 1
 print('task 1')
 test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
 args['test_shape'] = test_df.shape
@@ -99,7 +101,7 @@ print(f'model_weight_path: {task_1_model_path}')
 print('Loading model weight successfully!\n')
 
 print('Task 1 prediction')
-predictions, true_labels, _ = func.evaluate(
+predictions_1, _, _ = func.evaluate(
     model1, criterion,
     dataloader=test_dataloader, 
     task_running='task-1',
@@ -107,7 +109,38 @@ predictions, true_labels, _ = func.evaluate(
     device='cuda',
 )
 
-print(predictions, true_labels)
+
+### TASK 2
+print('task 2')
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
+args['test_shape'] = test_df.shape
+test_dataset = dst.RecruitmentDataset(
+    test_df, tokenizer_name='vinai/phobert-base',
+    padding_len=padding_2, target_len=128,
+    task='task-2',
+)
+test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+model2 = md.ComplexCLSModel(
+    model_type='lstm',
+    params=params,
+    pretrained_model_name='vinai/phobert-base',
+)
+
+model2 = model2.to('cuda')
+model2.load_state_dict(torch.load(task_2_model_path))
+criterion = nn.CrossEntropyLoss()
+print(f'model_weight_path: {task_2_model_path}')
+print('Loading model weight successfully!\n')
+
+print('Task 2 prediction')
+predictions_2, _, _ = func.evaluate(
+    model2, criterion,
+    dataloader=test_dataloader, 
+    task_running='task-2',
+    cm=True, cr=True, last_epoch=True,
+    device='cuda',
+)
 
 
 # # Task 2

@@ -121,6 +121,7 @@ print()
 # )
 # test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
+print(params)
 model2 = md.ComplexCLSModel(
     model_type='lstm',
     params=params,

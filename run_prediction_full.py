@@ -34,7 +34,7 @@ parser.add_argument("--source_len_2", type=int, default=200)
 parser.add_argument("--source_len_3", type=int, default=1024)
 parser.add_argument("--target_len", type=int, default=200)
 
-parser.add_argument("--batch_size", type=int, default=6)
+parser.add_argument("--batch_size", type=int, default=64)
 
 # for LSTM
 parser.add_argument("--hidden_size", type=int, default=128)
@@ -84,6 +84,7 @@ print()
 ### TASK 1
 print('task 1')
 test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
+test_df.explanation = test_df.explanation.fillna('')
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='uitnlp/visobert',
@@ -199,7 +200,7 @@ test_dataset = dst.RecruitmentDataset(
     padding_len=padding_3, target_len=target_len,
     task='task-3',
 )
-test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=False)
+test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 tokenizer = AutoTokenizer.from_pretrained('VietAI/vit5-base')
 generation_model = AutoModelForSeq2SeqLM.from_pretrained('VietAI/vit5-base')

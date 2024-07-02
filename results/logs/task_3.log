@@ -66,6 +66,16 @@ Rouge score (1, 2, L): (0.7893, 0.6556, 0.7159)
 Original @ [674]: Tiêu đề công việc có từ ngữ thu hút người tìm việc; Mô tả công việc đầy đủ thông tin căn bản; Giấy tờ cung cấp cho công ty nên là bản sao được công chứng, công ty không có quyền giữ giấy tờ gốc của người lao động; Mức lương ở thông tin chi tiết không khớp với mô tả
 Generated @ [674]: Thông tin về tiêu đề rõ ràng; BHYT, BHXH, BHTN là trách nhiệm của công ty với người lao động theo quy định của pháp luật, không cần thiết phải ghi vào; Tên và địa chỉ công ty rõ ràng và xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
 
+Evaluation on test set:
+Validation, Batch 201/201: 100%|██████████| 201/201 [03:51<00:00,  1.15s/it]
+BERT score (prec, rec, f1): (0.9007, 0.8797, 0.8896)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.5463, 1, 1, 1, 1)
+Rouge score (1, 2, L): (0.793, 0.6609, 0.7213)
+
+*** Random example:
+Original @ [452]: Thông tin về tiêu đề rõ ràng; Mô tả công việc đầy đủ thông tin căn bản; Tên và địa chỉ công ty rõ ràng và xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
+Generated @ [452]: Thông tin về tiêu đề rõ ràng; Mô tả công việc đầy đủ thông tin căn bản; Tên và địa chỉ công ty được xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
+
 
 Training vinai/bartpho-word-base
 [16:34:31] task: task-3                                                                                   my_import.py:132
@@ -135,6 +145,16 @@ Rouge score (1, 2, L): (0.7581, 0.6245, 0.6873)
 Original @ [248]: Thông tin về tiêu đề rõ ràng; Mô tả quá ngắn gọn, thiếu các thông tin cơ bản của một tin tuyển dụng; Tên công ty và địa điểm làm việc không được nêu cụ thể; Thông tin mức lương chưa được đề cập
 Generated @ [248]: Thông tin về tiêu đề rõ ràng; Mô tả công việc đầy đủ thông tin căn bản; Tên và địa chỉ công ty được xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
 
+Evaluation on test set:
+Validation, Batch 201/201: 100%|██████████| 201/201 [03:54<00:00,  1.16s/it]
+BERT score (prec, rec, f1): (0.8835, 0.8641, 0.8732)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.5493, 1, 1, 1, 1)
+Rouge score (1, 2, L): (0.7594, 0.6215, 0.6852)
+
+*** Random example:
+Original @ [147]: Thông tin về tiêu đề rõ ràng; Mô tả công việc đầy đủ thông tin căn bản; Tên và địa chỉ công ty rõ ràng và xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
+Generated @ [147]: Thông tin về tiêu đề rõ ràng; Mô tả công việc đầy đủ thông tin căn bản; Tên và địa chỉ công ty rõ ràng và xác thực; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
+
 
 Training VietAI/vit5-base
 [16:55:53] task: task-3                                                                                   my_import.py:132
@@ -202,5 +222,15 @@ Rouge score (1, 2, L): (0.7255, 0.5257, 0.593)
 *** Random example: 
 Original @ [448]: Tiêu đề chứa tiền lương nhằm thu hút người tìm việc; Địa điểm đề cập đến nhiều nhưng không cụ thể, rõ ràng, BHYT, BHXH, BHTN là trách nhiệm của công ty với người lao động theo quy định của pháp luật, không cần thiết phải ghi vào; Tên và địa chỉ công ty rõ ràng và xác thực; Mức lương ở thông tin chi tiết không khớp với mô tả
 Generated @ [448]: đề cập đến tiền lương không nhất quán; Giấy tờ cung cấp cho công ty nên là bản sao được công chứng, công ty không có quyền giữ giấy tờ gốc của người lao động; Chưa đề cập đến tên công ty; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
+
+Evaluation on test set:
+Validation, Batch 201/201: 100%|██████████| 201/201 [07:20<00:00,  2.19s/it]
+BERT score (prec, rec, f1): (0.8519, 0.8393, 0.8452)
+Bleu score (bleu, prec1, prec2, prec3, prec4): (0.4412, 1, 0, 0, 0)
+Rouge score (1, 2, L): (0.7255, 0.5287, 0.5976)
+
+*** Random example:
+Original @ [2360]: Tiêu đề công việc có từ ngữ mang tính gấp gáp hối thúc; Mô tả công việc đầy đủ thông tin căn bản; Tên công ty và địa điểm làm việc không được nêu cụ thể; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
+Generated @ [2360]: đề cập đến tiền lương không nhất quán; Giấy tờ cung cấp cho công ty nên là bản sao được công chứng, công ty không có quyền giữ giấy tờ gốc của người lao động; Chưa đề cập đến tên công ty; Các thông tin chi tiết về mức lương được cung cấp đầy đủ và rõ ràng
 
 All commands completed!

@@ -67,5 +67,5 @@ for file in file_list:
     print('path_file: ', path)
     upload_file(path, path)
     
-# python upload_file_to_drive.py --folder_name "results/logs" --folder_id "1cl11_T-lL9rBxwclgdRtXYBX6ciHZpH7"
+# python upload_file_to_drive.py --folder_name "models/task_3" --folder_id "1cl11_T-lL9rBxwclgdRtXYBX6ciHZpH7"
 # tesst

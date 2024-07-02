@@ -128,10 +128,10 @@ model2 = md.ComplexCLSModel(
     pretrained_model_name='vinai/phobert-base',
 )
 
+print(f'model_weight_path: {task_2_model_path}')
 model2 = model2.to('cuda')
 model2.load_state_dict(torch.load(task_2_model_path))
 criterion = nn.CrossEntropyLoss()
-print(f'model_weight_path: {task_2_model_path}')
 print('Loading model weight successfully!\n')
 
 # print('Task 2 prediction')

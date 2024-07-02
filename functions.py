@@ -165,12 +165,16 @@ def show_evaluation_task_2(true_labels, predictions):
     recall = np.mean(recalls)
     f1 = np.mean(f1s)
 
+    print(accs)
+    print(precs)
+    print(recalls)
+    print(f1s)
     print(f'Acc: {acc:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}, F1: {f1:.4f}')
 
 
 def show_cm_cr_task_2(true_labels, predictions):
     aspect_names = ['title', 'desc', 'company', 'other']
-    class_names = ['neutral', 'positive', 'negative', 'not_mentioned']
+    # class_names = ['neutral', 'positive', 'negative', 'not_mentioned']
     for i, aspect in enumerate(aspect_names):
         cm_p = confusion_matrix(true_labels[:, i], predictions[:, i])
         print(f"Confusion Matrix of {aspect} aspect")

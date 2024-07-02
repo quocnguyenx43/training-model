@@ -129,6 +129,7 @@ model2 = md.ComplexCLSModel(
 )
 
 print(f'model_weight_path: {task_2_model_path}')
+print('hi')
 model2 = model2.to('cuda')
 model2.load_state_dict(torch.load(task_2_model_path))
 criterion = nn.CrossEntropyLoss()

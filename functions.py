@@ -132,7 +132,6 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
         print()
 
 
-
 def show_evaluation_task_1(true_labels, predictions):
     acc = accuracy_score(true_labels, predictions)
     f1 = f1_score(true_labels, predictions, average='macro')
@@ -157,9 +156,9 @@ def show_evaluation_task_2(true_labels, predictions):
     accs, precs, f1s, recalls = [], [], [], []
     for i in range(4):
         accs.append(accuracy_score(true_labels[:, i], predictions[:, i]))
-        precs.append(precision_score(true_labels[:, i], predictions[:, i]))
-        f1s.append(f1_score(true_labels[:, i], predictions[:, i]))
-        recalls.append(recall_score(true_labels[:, i], predictions[:, i]))
+        precs.append(precision_score(true_labels[:, i], predictions[:, i], average='macro'))
+        f1s.append(f1_score(true_labels[:, i], predictions[:, i], average='macro'))
+        recalls.append(recall_score(true_labels[:, i], predictions[:, i], average='macro'))
 
     acc = np.mean(accs)
     prec = np.mean(precs)

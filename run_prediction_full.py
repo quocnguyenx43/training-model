@@ -192,6 +192,7 @@ test_df.pre_tasks = df_merged.pre_tasks
 
 ### TASK 3
 
+print('task 3')
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='VietAI/vit5-base',
@@ -212,23 +213,23 @@ generation_model.load_state_dict(torch.load(task_3_model_path))
 print('Loading model weight successfully!\n')
 
 print('Evaluation on dev set:')
-predictions, references = func.generate_task_3(
+predictions3, references3 = func.generate_task_3(
     generation_model, tokenizer,
     test_dataloader, target_len=target_len,
     device='cuda'
 )
-bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions, references)
-random_index = random.randint(0, len(predictions) - 1)
+bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions3, references3)
+random_index = random.randint(0, len(predictions3) - 1)
 print(f'BERT score (prec, rec, f1): {bertscore}')
 print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
 print(f'Rouge score (1, 2, L): {rougescore}')
 print()
 print('*** Random example: ')
-print(f'Original @ [{random_index}]: {references[random_index]}')
-print(f'Generated @ [{random_index}]: {predictions[random_index]}')
+print(f'Original @ [{random_index}]: {references3[random_index]}')
+print(f'Generated @ [{random_index}]: {predictions3[random_index]}')
 print()
 
 
 print('hii')
-df_merged.generated_text = pd.Series(predictions)
+df_merged.generated_text = pd.Series(predictions3)
 print(df_merged)

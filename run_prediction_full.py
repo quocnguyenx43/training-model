@@ -118,6 +118,7 @@ predictions_1, _, _ = func.evaluate(
 ## TASK 2
 print('task 2')
 test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
+test_df.explanation = test_df.explanation.fillna('')
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='vinai/phobert-base',
@@ -188,6 +189,7 @@ def adding_previous_tasks(df):
 
 df_merged = adding_previous_tasks(df_merged)
 test_df.pre_tasks = df_merged.pre_tasks
+test_df.explanation = test_df.explanation.fillna('')
 
 
 

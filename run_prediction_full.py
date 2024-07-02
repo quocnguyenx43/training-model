@@ -76,15 +76,15 @@ print(f'path3: {task_3_model_path}')
 
 
 
-# TASK 1
+print('task 1')
 test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
-# test_df.dropna(subset=['explanation'], inplace=True)
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='uitnlp/visobert',
     padding_len=padding_1, target_len=128,
     task='task_1',
 )
+test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 model1 = md.ComplexCLSModel(
     model_type='cnn',
@@ -92,7 +92,7 @@ model1 = md.ComplexCLSModel(
     pretrained_model_name='uitnlp/visobert',
 )
 
-model1 = model1.to(imp.device)
+model1 = model1.to('cuda')
 model1.load_state_dict(torch.load(task_1_model_path))
 criterion = nn.CrossEntropyLoss()
 print(f'model_weight_path: {task_1_model_path}')
@@ -101,7 +101,7 @@ print('Loading model weight successfully!\n')
 print('Task 1 prediction')
 predictions, true_labels, _ = func.evaluate(
     model1, criterion,
-    dataloader=imp.test_dataloader, 
+    dataloader=test_dataloader, 
     task_running='task-1',
     cm=True, cr=True, last_epoch=True,
     device='cuda',

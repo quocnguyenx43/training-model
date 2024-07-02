@@ -73,7 +73,7 @@ params = {
 print(f'path1: {task_1_model_path}')
 print(f'path2: {task_2_model_path}')
 print(f'path3: {task_3_model_path}')
-
+print()
 
 
 print('task 1')
@@ -82,7 +82,7 @@ args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='uitnlp/visobert',
     padding_len=padding_1, target_len=128,
-    task='task_1',
+    task='task-1',
 )
 test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 

@@ -165,6 +165,7 @@ def show_evaluation_task_2(true_labels, predictions):
     recall = np.mean(recalls)
     f1 = np.mean(f1s)
     
+    print('hi')
     print('accs: ', end='')
     for i in accs: print(f'{i:.4f}, ', end='')
     print('precs: ', end='')

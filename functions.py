@@ -167,17 +167,16 @@ def show_evaluation_task_2(true_labels, predictions):
     
     print('accs: ', end='')
     for i in accs: print(f'{i:.4f}, ', end='')
-    print()
+    print(f' => {acc:.4f}')
     print('precs: ', end='')
     for i in precs: print(f'{i:.4f}, ', end='')
-    print()
+    print(f' => {prec:.4f}')
     print('recalls: ', end='')
     for i in recalls: print(f'{i:.4f}, ', end='')
-    print()
+    print(f' => {recall:.4f}')
     print('f1s: ', end='')
     for i in f1s: print(f'{i:.4f}, ', end='')
-    print()
-    print(f'Acc: {acc:.4f}, Precision: {prec:.4f}, Recall: {recall:.4f}, F1: {f1:.4f}')
+    print(f' => {f1:.4f}')
 
 
 def show_cm_cr_task_2(true_labels, predictions):

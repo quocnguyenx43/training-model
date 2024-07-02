@@ -34,7 +34,7 @@ parser.add_argument("--source_len_2", type=int, default=200)
 parser.add_argument("--source_len_3", type=int, default=1024)
 parser.add_argument("--target_len", type=int, default=200)
 
-parser.add_argument("--batch_size", type=int, default=12)
+parser.add_argument("--batch_size", type=int, default=6)
 
 # for LSTM
 parser.add_argument("--hidden_size", type=int, default=128)
@@ -199,7 +199,7 @@ test_dataset = dst.RecruitmentDataset(
     padding_len=padding_3, target_len=target_len,
     task='task-3',
 )
-test_dataloader = DataLoader(test_dataset, batch_size=2, shuffle=False)
+test_dataloader = DataLoader(test_dataset, batch_size=12, shuffle=False)
 
 tokenizer = AutoTokenizer.from_pretrained('VietAI/vit5-base')
 generation_model = AutoModelForSeq2SeqLM.from_pretrained('VietAI/vit5-base')

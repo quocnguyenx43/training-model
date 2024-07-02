@@ -181,6 +181,7 @@ def adding_previous_tasks(df):
         previous_task_outputs.append(s[:-1])
 
     df['pre_tasks'] = previous_task_outputs
+    return df
 
 df_merged = adding_previous_tasks(df_merged)
 print(df_merged)

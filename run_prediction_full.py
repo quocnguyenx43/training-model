@@ -17,6 +17,10 @@ import torch.nn as nn
 import models as md
 import functions as func
 
+import torch
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+
 
 #####################
 console = Console(record=True)
@@ -188,3 +192,47 @@ print(df_merged)
 print(test_df.pre_tasks)
 test_df.pre_tasks = df_merged.pre_tasks
 print(test_df.pre_tasks)
+
+
+
+### TASK 3
+
+args['test_shape'] = test_df.shape
+test_dataset = dst.RecruitmentDataset(
+    test_df, tokenizer_name='VietAI/vit5-base',
+    padding_len=padding_3, target_len=target_len,
+    task='task-3',
+)
+test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+tokenizer = AutoTokenizer.from_pretrained('VietAI/vit5-base')
+generation_model = AutoModelForSeq2SeqLM.from_pretrained('VietAI/vit5-base')
+
+import random
+
+###### Loading weights
+generation_model = generation_model.to('cuda')
+print(f'model_weight_path: {task_2_model_path}')
+generation_model.load_state_dict(torch.load(task_2_model_path))
+print('Loading model weight successfully!\n')
+
+print('Evaluation on dev set:')
+predictions, references = func.generate_task_3(
+    generation_model, tokenizer,
+    test_dataloader, target_len=target_len,
+    device='cuda'
+)
+bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions, references)
+random_index = random.randint(0, len(predictions) - 1)
+print(f'BERT score (prec, rec, f1): {bertscore}')
+print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
+print(f'Rouge score (1, 2, L): {rougescore}')
+print()
+print('*** Random example: ')
+print(f'Original @ [{random_index}]: {references[random_index]}')
+print(f'Generated @ [{random_index}]: {predictions[random_index]}')
+print()
+
+
+df_merged.generated_text = pd.Series(predictions)
+print(df_merged)

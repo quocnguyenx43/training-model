@@ -156,6 +156,7 @@ def show_evaluation_task_2(true_labels, predictions):
     accs = []
     precs_1, f1s_1, recalls_1 = [], [], []
     precs_2, f1s_2, recalls_2 = [], [], []
+
     for i in range(4):
         accs.append(accuracy_score(true_labels[:, i], predictions[:, i]))
 
@@ -168,20 +169,18 @@ def show_evaluation_task_2(true_labels, predictions):
         recalls_2.append(recall_score(true_labels[:, i], predictions[:, i], average='weighted'))
 
     acc = np.mean(accs)
+    
+    print()
+    print()
+    print('accs: ', end='')
+    for i in accs: print(f'{i:.4f}, ', end='')
+    print(f' => {acc:.4f}')
+    print()
 
     prec1 = np.mean(precs_1)
     recall1 = np.mean(recalls_1)
     f11 = np.mean(f1s_1)
 
-    prec2 = np.mean(precs_2)
-    recall2 = np.mean(recalls_2)
-    f12 = np.mean(f1s_2)
-    
-    print()
-    print('accs: ', end='')
-    for i in accs: print(f'{i:.4f}, ', end='')
-
-    print(f' => {acc:.4f}')
     print('precs (macro): ', end='')
     for i in precs_1: print(f'{i:.4f}, ', end='')
     print(f' => {prec1:.4f}')
@@ -191,17 +190,21 @@ def show_evaluation_task_2(true_labels, predictions):
     print('f1s (macro): ', end='')
     for i in f1s_1: print(f'{i:.4f}, ', end='')
     print(f' => {f11:.4f}')
+
+    prec2 = np.mean(precs_2)
+    recall2 = np.mean(recalls_2)
+    f12 = np.mean(f1s_2)
     
-    print(f' => {acc:.4f}')
     print('precs (weighed): ', end='')
-    for i in precs_1: print(f'{i:.4f}, ', end='')
+    for i in precs_2: print(f'{i:.4f}, ', end='')
     print(f' => {prec2:.4f}')
     print('recalls (weighed): ', end='')
-    for i in recalls_1: print(f'{i:.4f}, ', end='')
+    for i in recalls_2: print(f'{i:.4f}, ', end='')
     print(f' => {recall2:.4f}')
     print('f1s (weighed): ', end='')
-    for i in f1s_1: print(f'{i:.4f}, ', end='')
+    for i in f1s_2: print(f'{i:.4f}, ', end='')
     print(f' => {f12:.4f}')
+    print()
 
 
 def show_cm_cr_task_2(true_labels, predictions):

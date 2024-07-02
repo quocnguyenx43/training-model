@@ -79,7 +79,7 @@ print()
 
 ### TASK 1
 print('task 1')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv').head(10)
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='uitnlp/visobert',
@@ -112,7 +112,7 @@ predictions_1, _, _ = func.evaluate(
 
 ## TASK 2
 print('task 2')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv').head(10)
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
     test_df, tokenizer_name='vinai/phobert-base',
@@ -143,10 +143,30 @@ predictions_2, _, _ = func.evaluate(
 )
 
 
+mapping_aspect = {
+    0      : 'trung tính',
+    1      : 'tích cực',
+    2      : 'tiêu cực',
+    3      : 'không đề cập',
+}
+
+mapping_label = {
+    0         : 'rõ ràng',
+    1         : 'cảnh báo',
+    2         : 'có yếu tố thu hút',
+}
+
+
 print(predictions_1)
 print(predictions_2)
 
 df1 = pd.DataFrame(predictions_1, columns=['predicted_label'])
 df2 = pd.DataFrame(predictions_2, columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
 df_merged = pd.concat([df1, df2], axis=1)
+df_merged.to_csv(task_1_model_path.replace('.', '_') + task_2_model_path.replace('.', '_') + '.csv')
+df_merged.predicted_label.map(mapping_label)
+df_merged.predicted_title.map(mapping_aspect)
+df_merged.predicted_desc.map(mapping_aspect)
+df_merged.predicted_comp.map(mapping_aspect)
+df_merged.predicted_other.map(mapping_aspect)
 print(df_merged)

@@ -185,3 +185,5 @@ def adding_previous_tasks(df):
 
 df_merged = adding_previous_tasks(df_merged)
 print(df_merged)
+print(test_df.pre_tasks)
+test_df.pre_tasks = df_merged.pre_tasks

@@ -231,5 +231,5 @@ print(f'Generated @ [{random_index}]: {predictions_3[random_index]}')
 print()
 
 
-df_merged.generated_text = pd.Series(predictions_3)
+df_merged['generated_text'] = pd.Series(predictions_3)
 print(df_merged)

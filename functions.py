@@ -156,6 +156,7 @@ def show_evaluation_task_2(true_labels, predictions):
     accs = []
     precs_1, f1s_1, recalls_1 = [], [], []
     precs_2, f1s_2, recalls_2 = [], [], []
+    precs_3, f1s_3, recalls_3 = [], [], []
 
     for i in range(4):
         accs.append(accuracy_score(true_labels[:, i], predictions[:, i]))
@@ -167,6 +168,10 @@ def show_evaluation_task_2(true_labels, predictions):
         precs_2.append(precision_score(true_labels[:, i], predictions[:, i], average='micro'))
         f1s_2.append(f1_score(true_labels[:, i], predictions[:, i], average='micro'))
         recalls_2.append(recall_score(true_labels[:, i], predictions[:, i], average='micro'))
+
+        precs_3.append(precision_score(true_labels[:, i], predictions[:, i], average='weighted'))
+        f1s_3.append(f1_score(true_labels[:, i], predictions[:, i], average='weighted'))
+        recalls_3.append(recall_score(true_labels[:, i], predictions[:, i], average='weighted'))
 
     acc = np.mean(accs)
     
@@ -190,20 +195,36 @@ def show_evaluation_task_2(true_labels, predictions):
     print('f1s (macro): ', end='')
     for i in f1s_1: print(f'{i:.4f}, ', end='')
     print(f' => {f11:.4f}')
+    print()
 
     prec2 = np.mean(precs_2)
     recall2 = np.mean(recalls_2)
     f12 = np.mean(f1s_2)
     
-    print('precs (weighed): ', end='')
+    print('precs (micro): ', end='')
     for i in precs_2: print(f'{i:.4f}, ', end='')
     print(f' => {prec2:.4f}')
-    print('recalls (weighed): ', end='')
+    print('recalls (micro): ', end='')
     for i in recalls_2: print(f'{i:.4f}, ', end='')
     print(f' => {recall2:.4f}')
-    print('f1s (weighed): ', end='')
+    print('f1s (micro): ', end='')
     for i in f1s_2: print(f'{i:.4f}, ', end='')
     print(f' => {f12:.4f}')
+    print()
+
+    prec3 = np.mean(precs_3)
+    recall3 = np.mean(recalls_3)
+    f13 = np.mean(f1s_3)
+    
+    print('precs (weighed): ', end='')
+    for i in precs_3: print(f'{i:.4f}, ', end='')
+    print(f' => {prec3:.4f}')
+    print('recalls (weighed): ', end='')
+    for i in recalls_3: print(f'{i:.4f}, ', end='')
+    print(f' => {recall3:.4f}')
+    print('f1s (weighed): ', end='')
+    for i in f1s_3: print(f'{i:.4f}, ', end='')
+    print(f' => {f13:.4f}')
     print()
 
 

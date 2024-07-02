@@ -157,9 +157,6 @@ mapping_label = {
 }
 
 
-print(predictions_1)
-print(predictions_2)
-
 df1 = pd.DataFrame(predictions_1, columns=['predicted_label'])
 df2 = pd.DataFrame(predictions_2, columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
 df_merged = pd.concat([df1, df2], axis=1)
@@ -169,4 +166,19 @@ df_merged.predicted_title.map(mapping_aspect)
 df_merged.predicted_desc.map(mapping_aspect)
 df_merged.predicted_comp.map(mapping_aspect)
 df_merged.predicted_other.map(mapping_aspect)
+print(df_merged)
+
+def adding_previous_tasks(df):
+    previous_task_outputs = []
+    for index in range(len(df)): 
+        s = "khía cạnh tiêu đề: " + df.iloc[index]['predicted_title'] + " [SEP] " \
+            + "khía cạnh mô tả: " + df.iloc[index]['predicted_desc'] + " [SEP] " \
+            + "khía cạnh công ty: " + df.iloc[index]['predicted_comp'] + " [SEP] " \
+            + "khía cạnh khác: " + df.iloc[index]['predicted_other'] + " [SEP] " \
+            + "nhãn chung: " + df.iloc[index]['predicted_label']  + " [SEP] "
+        previous_task_outputs.append(s[:-1])
+
+    df['pre_tasks'] = previous_task_outputs
+
+df_merged = adding_previous_tasks(df_merged)
 print(df_merged)

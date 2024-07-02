@@ -27,6 +27,7 @@ parser = arg.ArgumentParser(description="Params")
 
 parser.add_argument("--source_len_1", type=int, default=200)
 parser.add_argument("--source_len_2", type=int, default=200)
+parser.add_argument("--source_len_3", type=int, default=1024)
 parser.add_argument("--target_len", type=int, default=200)
 
 parser.add_argument("--batch_size", type=int, default=12)

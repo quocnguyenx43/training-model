@@ -145,3 +145,8 @@ predictions_2, _, _ = func.evaluate(
 
 print(predictions_1)
 print(predictions_2)
+
+df1 = pd.DataFrame(predictions_1, columns=['predicted_label'])
+df2 = pd.DataFrame(predictions_2, columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
+df_merged = pd.concat([df1, df2], axis=1)
+print(df_merged)

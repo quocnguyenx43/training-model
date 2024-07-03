@@ -111,8 +111,8 @@ class SimpleAspectModel(nn.Module):
 
         # Apply Softmax to each aspect output
         aspect_outputs_softmax = [self.softmax(output) for output in outputs_3]
-        # aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
-        # aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
+        aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
+        aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
 
         return aspect_outputs_softmax
 

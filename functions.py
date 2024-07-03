@@ -37,13 +37,12 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
                     running_loss = 0
                     for i in range(4):
                         loss = criterion(outputs[i], label[:, i, :])
-                        loss.backward()
                         running_loss += loss.item()
                     outputs = torch.stack(outputs)
                     outputs = outputs.transpose(0, 1)
+
                 elif task_running == 'task-1':
                     loss = criterion(outputs, label)
-                    loss.backward()
                     running_loss += loss.item()
 
                 running_loss += loss.item()

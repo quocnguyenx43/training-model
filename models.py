@@ -109,6 +109,9 @@ class SimpleAspectModel(nn.Module):
             for fc, inp in zip(self.fc_layers_3, outputs_2)
         ]
 
+        print(len(outputs_3))
+        print(outputs_3[0].shape)
+
         # Apply Softmax to each aspect output
         aspect_outputs_softmax = [self.softmax(output) for output in outputs_3]
         aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)

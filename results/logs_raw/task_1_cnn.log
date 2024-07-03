@@ -1,0 +1,925 @@
+Training CNN
+cnn + vinai/phobert-base
+
+[15:26:28] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: vinai/phobert-base                                                              my_import.py:133
+           padding_len: 256                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 20                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_phobert-base                                               my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [00:55<00:00,  4.74it/s]
+Epoch 1/20, Loss: 282.3505, Acc: 0.4414, Precision: 0.3846, Recall: 0.3673, F1: 0.3265
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.64it/s]
+Evaluation, Loss: 39.6173, Acc: 0.4639, Precision: 0.5694, Recall: 0.3788, F1: 0.2917
+Saved the best model to path: ./models/task_1/cnn_phobert-base_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.42it/s]
+Epoch 2/20, Loss: 270.0974, Acc: 0.4857, Precision: 0.4771, Recall: 0.4245, F1: 0.4053
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.13it/s]
+Evaluation, Loss: 38.6581, Acc: 0.5021, Precision: 0.5517, Recall: 0.4247, F1: 0.3691
+Saved the best model to path: ./models/task_1/cnn_phobert-base_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.43it/s]
+Epoch 3/20, Loss: 265.1527, Acc: 0.5097, Precision: 0.5004, Recall: 0.4455, F1: 0.4318
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.07it/s]
+Evaluation, Loss: 38.0404, Acc: 0.4946, Precision: 0.4836, Recall: 0.4826, F1: 0.4824
+Saved the best model to path: ./models/task_1/cnn_phobert-base_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [00:49<00:00,  5.37it/s]
+Epoch 4/20, Loss: 261.6152, Acc: 0.5185, Precision: 0.5158, Recall: 0.4654, F1: 0.4608
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.10it/s]
+Evaluation, Loss: 38.5528, Acc: 0.4913, Precision: 0.4887, Recall: 0.4604, F1: 0.4500
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.41it/s]
+Epoch 5/20, Loss: 263.3287, Acc: 0.5078, Precision: 0.4985, Recall: 0.4531, F1: 0.4465
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.15it/s]
+Evaluation, Loss: 38.2716, Acc: 0.5245, Precision: 0.5723, Recall: 0.4613, F1: 0.4432
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.46it/s]
+Epoch 6/20, Loss: 256.8516, Acc: 0.5350, Precision: 0.5248, Recall: 0.4813, F1: 0.4783
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.27it/s]
+Evaluation, Loss: 36.4472, Acc: 0.5228, Precision: 0.5601, Recall: 0.4638, F1: 0.4508
+Saved the best model to path: ./models/task_1/cnn_phobert-base_5.pth
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.41it/s]
+Epoch 7/20, Loss: 255.2168, Acc: 0.5428, Precision: 0.5456, Recall: 0.4870, F1: 0.4841
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.30it/s]
+Evaluation, Loss: 36.5131, Acc: 0.5386, Precision: 0.5557, Recall: 0.4876, F1: 0.4839
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [00:47<00:00,  5.57it/s]
+Epoch 8/20, Loss: 255.1586, Acc: 0.5389, Precision: 0.5377, Recall: 0.4846, F1: 0.4821
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.30it/s]
+Evaluation, Loss: 37.7211, Acc: 0.5079, Precision: 0.5551, Recall: 0.4461, F1: 0.4270
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [00:47<00:00,  5.55it/s]
+Epoch 9/20, Loss: 252.7912, Acc: 0.5444, Precision: 0.5456, Recall: 0.4877, F1: 0.4847
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.30it/s]
+Evaluation, Loss: 38.4476, Acc: 0.5436, Precision: 0.6115, Recall: 0.4759, F1: 0.4545
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [00:47<00:00,  5.54it/s]
+Epoch 10/20, Loss: 253.0900, Acc: 0.5462, Precision: 0.5473, Recall: 0.4945, F1: 0.4946
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.21it/s]
+Evaluation, Loss: 36.7728, Acc: 0.5419, Precision: 0.6057, Recall: 0.4718, F1: 0.4470
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.42it/s]
+Epoch 11/20, Loss: 250.8450, Acc: 0.5507, Precision: 0.5534, Recall: 0.4986, F1: 0.4987
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.14it/s]
+Evaluation, Loss: 35.5676, Acc: 0.5585, Precision: 0.5637, Recall: 0.5289, F1: 0.5342
+Saved the best model to path: ./models/task_1/cnn_phobert-base_10.pth
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.43it/s]
+Epoch 12/20, Loss: 252.9156, Acc: 0.5418, Precision: 0.5437, Recall: 0.4877, F1: 0.4858
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.15it/s]
+Evaluation, Loss: 35.6938, Acc: 0.5651, Precision: 0.6013, Recall: 0.5163, F1: 0.5167
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.46it/s]
+Epoch 13/20, Loss: 250.7810, Acc: 0.5538, Precision: 0.5549, Recall: 0.5016, F1: 0.5021
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.16it/s]
+Evaluation, Loss: 36.3719, Acc: 0.5485, Precision: 0.6351, Recall: 0.4903, F1: 0.4803
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.47it/s]
+Epoch 14/20, Loss: 249.7473, Acc: 0.5556, Precision: 0.5548, Recall: 0.5049, F1: 0.5059
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.13it/s]
+Evaluation, Loss: 36.5918, Acc: 0.5353, Precision: 0.5321, Recall: 0.5018, F1: 0.5052
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.46it/s]
+Epoch 15/20, Loss: 249.7716, Acc: 0.5508, Precision: 0.5508, Recall: 0.5005, F1: 0.5016
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.16it/s]
+Evaluation, Loss: 36.6033, Acc: 0.5502, Precision: 0.6090, Recall: 0.4915, F1: 0.4844
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [00:48<00:00,  5.43it/s]
+Epoch 16/20, Loss: 248.2950, Acc: 0.5639, Precision: 0.5666, Recall: 0.5104, F1: 0.5108
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  7.14it/s]
+Evaluation, Loss: 36.0580, Acc: 0.5502, Precision: 0.5551, Recall: 0.5184, F1: 0.5240
+Early stopping triggered
+cnn + uitnlp/visobert
+
+[15:41:14] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: uitnlp/visobert                                                                 my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 20                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_visobert                                                   my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/visobert and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:33<00:00,  2.82it/s]
+Epoch 1/20, Loss: 288.0438, Acc: 0.4472, Precision: 0.3896, Recall: 0.3779, F1: 0.3462
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.63it/s]
+Evaluation, Loss: 40.2188, Acc: 0.4631, Precision: 0.3536, Recall: 0.3775, F1: 0.2893
+Saved the best model to path: ./models/task_1/cnn_visobert_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.99it/s]
+Epoch 2/20, Loss: 264.4897, Acc: 0.4975, Precision: 0.4747, Recall: 0.4336, F1: 0.4180
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.65it/s]
+Evaluation, Loss: 37.4809, Acc: 0.5087, Precision: 0.5590, Recall: 0.4325, F1: 0.3891
+Saved the best model to path: ./models/task_1/cnn_visobert_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.98it/s]
+Epoch 3/20, Loss: 263.9278, Acc: 0.5034, Precision: 0.4984, Recall: 0.4549, F1: 0.4477
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.62it/s]
+Evaluation, Loss: 36.8688, Acc: 0.5402, Precision: 0.5678, Recall: 0.5018, F1: 0.5001
+Saved the best model to path: ./models/task_1/cnn_visobert_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.97it/s]
+Epoch 4/20, Loss: 257.8797, Acc: 0.5340, Precision: 0.5323, Recall: 0.4908, F1: 0.4916
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.65it/s]
+Evaluation, Loss: 36.7623, Acc: 0.5394, Precision: 0.5344, Recall: 0.5043, F1: 0.5067
+Saved the best model to path: ./models/task_1/cnn_visobert_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 5/20, Loss: 255.6792, Acc: 0.5359, Precision: 0.5357, Recall: 0.5000, F1: 0.5013
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.65it/s]
+Evaluation, Loss: 36.9401, Acc: 0.5378, Precision: 0.5831, Recall: 0.5095, F1: 0.5007
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 6/20, Loss: 255.1134, Acc: 0.5443, Precision: 0.5440, Recall: 0.4962, F1: 0.4965
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 37.0913, Acc: 0.5253, Precision: 0.5450, Recall: 0.5153, F1: 0.5058
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.99it/s]
+Epoch 7/20, Loss: 251.9195, Acc: 0.5447, Precision: 0.5473, Recall: 0.5060, F1: 0.5067
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.64it/s]
+Evaluation, Loss: 36.3223, Acc: 0.5552, Precision: 0.5525, Recall: 0.5313, F1: 0.5348
+Saved the best model to path: ./models/task_1/cnn_visobert_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  3.00it/s]
+Epoch 8/20, Loss: 253.4147, Acc: 0.5423, Precision: 0.5385, Recall: 0.5085, F1: 0.5106
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 37.9094, Acc: 0.5120, Precision: 0.5023, Recall: 0.4350, F1: 0.3836
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 9/20, Loss: 251.1718, Acc: 0.5513, Precision: 0.5528, Recall: 0.5153, F1: 0.5165
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 36.4213, Acc: 0.5610, Precision: 0.5906, Recall: 0.5468, F1: 0.5412
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 10/20, Loss: 251.0731, Acc: 0.5542, Precision: 0.5598, Recall: 0.5165, F1: 0.5176
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 36.2454, Acc: 0.5585, Precision: 0.5605, Recall: 0.5359, F1: 0.5390
+Saved the best model to path: ./models/task_1/cnn_visobert_9.pth
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 11/20, Loss: 252.5986, Acc: 0.5462, Precision: 0.5455, Recall: 0.5087, F1: 0.5113
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 36.0429, Acc: 0.5253, Precision: 0.4794, Recall: 0.4454, F1: 0.3882
+Saved the best model to path: ./models/task_1/cnn_visobert_10.pth
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  3.00it/s]
+Epoch 12/20, Loss: 251.0728, Acc: 0.5489, Precision: 0.5458, Recall: 0.5098, F1: 0.5120
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.62it/s]
+Evaluation, Loss: 35.8111, Acc: 0.5593, Precision: 0.5814, Recall: 0.5269, F1: 0.5278
+Saved the best model to path: ./models/task_1/cnn_visobert_11.pth
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  3.00it/s]
+Epoch 13/20, Loss: 251.6752, Acc: 0.5553, Precision: 0.5584, Recall: 0.5217, F1: 0.5242
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 35.4525, Acc: 0.5660, Precision: 0.5936, Recall: 0.5493, F1: 0.5472
+Saved the best model to path: ./models/task_1/cnn_visobert_12.pth
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 14/20, Loss: 250.2973, Acc: 0.5590, Precision: 0.5586, Recall: 0.5210, F1: 0.5238
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 35.9518, Acc: 0.5544, Precision: 0.6076, Recall: 0.4942, F1: 0.4854
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 15/20, Loss: 249.1510, Acc: 0.5516, Precision: 0.5504, Recall: 0.5006, F1: 0.5014
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 35.7693, Acc: 0.5577, Precision: 0.5597, Recall: 0.5319, F1: 0.5351
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 16/20, Loss: 250.5369, Acc: 0.5503, Precision: 0.5467, Recall: 0.5057, F1: 0.5087
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.66it/s]
+Evaluation, Loss: 35.8606, Acc: 0.5394, Precision: 0.5650, Recall: 0.5285, F1: 0.5244
+
+Epoch 17/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.00it/s]
+Epoch 17/20, Loss: 248.5561, Acc: 0.5487, Precision: 0.5501, Recall: 0.5145, F1: 0.5177
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 35.7880, Acc: 0.5585, Precision: 0.6080, Recall: 0.5093, F1: 0.5058
+
+Epoch 18/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.98it/s]
+Epoch 18/20, Loss: 249.6926, Acc: 0.5562, Precision: 0.5547, Recall: 0.5124, F1: 0.5144
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.70it/s]
+Evaluation, Loss: 35.1284, Acc: 0.5701, Precision: 0.5852, Recall: 0.5420, F1: 0.5451
+Saved the best model to path: ./models/task_1/cnn_visobert_17.pth
+
+Epoch 19/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.02it/s]
+Epoch 19/20, Loss: 250.4110, Acc: 0.5524, Precision: 0.5498, Recall: 0.5090, F1: 0.5117
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.69it/s]
+Evaluation, Loss: 35.8894, Acc: 0.5527, Precision: 0.6061, Recall: 0.5187, F1: 0.5141
+
+Epoch 20/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.03it/s]
+Epoch 20/20, Loss: 247.7024, Acc: 0.5543, Precision: 0.5673, Recall: 0.4980, F1: 0.4974
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.70it/s]
+Evaluation, Loss: 35.1952, Acc: 0.5660, Precision: 0.5682, Recall: 0.5265, F1: 0.5289
+
+cnn + uitnlp/CafeBERT
+
+[16:14:35] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: uitnlp/CafeBERT                                                                 my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 20                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_CafeBERT                                                   my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/CafeBERT and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [04:08<00:00,  1.06it/s]
+Epoch 1/20, Loss: 294.9419, Acc: 0.4295, Precision: 0.3577, Recall: 0.3531, F1: 0.3036
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
+Evaluation, Loss: 40.8075, Acc: 0.4224, Precision: 0.3074, Recall: 0.3335, F1: 0.1995
+Saved the best model to path: ./models/task_1/cnn_CafeBERT_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [04:05<00:00,  1.07it/s]
+Epoch 2/20, Loss: 280.2291, Acc: 0.4596, Precision: 0.3609, Recall: 0.3726, F1: 0.3049
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
+Evaluation, Loss: 40.5800, Acc: 0.4282, Precision: 0.3859, Recall: 0.3400, F1: 0.2161
+Saved the best model to path: ./models/task_1/cnn_CafeBERT_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [04:06<00:00,  1.07it/s]
+Epoch 3/20, Loss: 276.8094, Acc: 0.4677, Precision: 0.4341, Recall: 0.3865, F1: 0.3330
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
+Evaluation, Loss: 41.4347, Acc: 0.4266, Precision: 0.4271, Recall: 0.3378, F1: 0.2084
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [04:05<00:00,  1.08it/s]
+Epoch 4/20, Loss: 272.7097, Acc: 0.4774, Precision: 0.4767, Recall: 0.3953, F1: 0.3389
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.24it/s]
+Evaluation, Loss: 39.7174, Acc: 0.4523, Precision: 0.3917, Recall: 0.3649, F1: 0.2645
+Saved the best model to path: ./models/task_1/cnn_CafeBERT_3.pth
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [04:08<00:00,  1.06it/s]
+Epoch 5/20, Loss: 271.9313, Acc: 0.4864, Precision: 0.4156, Recall: 0.4033, F1: 0.3471
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
+Evaluation, Loss: 38.0641, Acc: 0.4988, Precision: 0.5366, Recall: 0.4173, F1: 0.3519
+Saved the best model to path: ./models/task_1/cnn_CafeBERT_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [04:09<00:00,  1.06it/s]
+Epoch 6/20, Loss: 269.9325, Acc: 0.4961, Precision: 0.4652, Recall: 0.4156, F1: 0.3691
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
+Evaluation, Loss: 38.4764, Acc: 0.4938, Precision: 0.3914, Recall: 0.4082, F1: 0.3323
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [04:09<00:00,  1.06it/s]
+Epoch 7/20, Loss: 267.5994, Acc: 0.4964, Precision: 0.4586, Recall: 0.4171, F1: 0.3735
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:31<00:00,  1.22it/s]
+Evaluation, Loss: 37.7810, Acc: 0.5037, Precision: 0.5019, Recall: 0.4218, F1: 0.3606
+Saved the best model to path: ./models/task_1/cnn_CafeBERT_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [04:10<00:00,  1.05it/s]
+Epoch 8/20, Loss: 267.7166, Acc: 0.4934, Precision: 0.4640, Recall: 0.4162, F1: 0.3793
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:31<00:00,  1.22it/s]
+Evaluation, Loss: 38.7475, Acc: 0.4697, Precision: 0.5385, Recall: 0.3828, F1: 0.2944
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [04:08<00:00,  1.06it/s]
+Epoch 9/20, Loss: 266.0302, Acc: 0.4993, Precision: 0.4784, Recall: 0.4248, F1: 0.3954
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
+Evaluation, Loss: 38.7394, Acc: 0.4772, Precision: 0.3561, Recall: 0.3922, F1: 0.3115
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [04:10<00:00,  1.06it/s]
+Epoch 10/20, Loss: 266.8889, Acc: 0.5009, Precision: 0.4728, Recall: 0.4183, F1: 0.3694
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:33<00:00,  1.13it/s]
+Evaluation, Loss: 38.3352, Acc: 0.4838, Precision: 0.4164, Recall: 0.3973, F1: 0.3165
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [04:20<00:00,  1.01it/s]
+Epoch 11/20, Loss: 262.8864, Acc: 0.5105, Precision: 0.4868, Recall: 0.4333, F1: 0.3982
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:31<00:00,  1.22it/s]
+Evaluation, Loss: 40.1409, Acc: 0.4390, Precision: 0.4215, Recall: 0.3512, F1: 0.2395
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [04:10<00:00,  1.05it/s]
+Epoch 12/20, Loss: 264.5054, Acc: 0.5078, Precision: 0.4880, Recall: 0.4306, F1: 0.3979
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:31<00:00,  1.22it/s]
+Evaluation, Loss: 39.7560, Acc: 0.4822, Precision: 0.5310, Recall: 0.4010, F1: 0.3362
+Early stopping triggered
+cnn + xlm-roberta-base
+
+[17:11:35] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: xlm-roberta-base                                                                my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 20                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_xlm-roberta-base                                           my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:33<00:00,  2.83it/s]
+Epoch 1/20, Loss: 291.6274, Acc: 0.4220, Precision: 0.3440, Recall: 0.3363, F1: 0.2601
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.61it/s]
+Evaluation, Loss: 40.9052, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Saved the best model to path: ./models/task_1/cnn_xlm-roberta-base_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.97it/s]
+Epoch 2/20, Loss: 284.0342, Acc: 0.4299, Precision: 0.2233, Recall: 0.3316, F1: 0.2059
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.61it/s]
+Evaluation, Loss: 40.9240, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.97it/s]
+Epoch 3/20, Loss: 283.1931, Acc: 0.4334, Precision: 0.3296, Recall: 0.3338, F1: 0.2027
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.62it/s]
+Evaluation, Loss: 40.9492, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.98it/s]
+Epoch 4/20, Loss: 282.8751, Acc: 0.4320, Precision: 0.2110, Recall: 0.3327, F1: 0.2026
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.63it/s]
+Evaluation, Loss: 40.9259, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:28<00:00,  2.98it/s]
+Epoch 5/20, Loss: 282.6709, Acc: 0.4331, Precision: 0.1444, Recall: 0.3333, F1: 0.2015
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.67it/s]
+Evaluation, Loss: 40.9333, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:27<00:00,  3.02it/s]
+Epoch 6/20, Loss: 282.5316, Acc: 0.4331, Precision: 0.1444, Recall: 0.3333, F1: 0.2015
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.68it/s]
+Evaluation, Loss: 40.9409, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Early stopping triggered
+cnn + bert-base-multilingual-cased
+
+[17:21:51] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: bert-base-multilingual-cased                                                    my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 20                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_bert-base-multilingual-cased                               my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [01:23<00:00,  3.15it/s]
+Epoch 1/20, Loss: 286.1730, Acc: 0.4199, Precision: 0.3438, Recall: 0.3375, F1: 0.2708
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.83it/s]
+Evaluation, Loss: 40.4609, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Saved the best model to path: ./models/task_1/cnn_bert-base-multilingual-cased_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.28it/s]
+Epoch 2/20, Loss: 280.9931, Acc: 0.4316, Precision: 0.2305, Recall: 0.3326, F1: 0.2044
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.86it/s]
+Evaluation, Loss: 41.0376, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [01:21<00:00,  3.24it/s]
+Epoch 3/20, Loss: 280.6392, Acc: 0.4326, Precision: 0.2726, Recall: 0.3338, F1: 0.2079
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.87it/s]
+Evaluation, Loss: 40.3077, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Saved the best model to path: ./models/task_1/cnn_bert-base-multilingual-cased_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.28it/s]
+Epoch 4/20, Loss: 279.9265, Acc: 0.4320, Precision: 0.2633, Recall: 0.3365, F1: 0.2286
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.84it/s]
+Evaluation, Loss: 40.3729, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.29it/s]
+Epoch 5/20, Loss: 280.0421, Acc: 0.4342, Precision: 0.2754, Recall: 0.3355, F1: 0.2118
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.86it/s]
+Evaluation, Loss: 40.4549, Acc: 0.4166, Precision: 0.2731, Recall: 0.3635, F1: 0.3118
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.29it/s]
+Epoch 6/20, Loss: 279.3536, Acc: 0.4384, Precision: 0.2775, Recall: 0.3450, F1: 0.2509
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.87it/s]
+Evaluation, Loss: 40.1570, Acc: 0.4332, Precision: 0.3482, Recall: 0.3449, F1: 0.2252
+Saved the best model to path: ./models/task_1/cnn_bert-base-multilingual-cased_5.pth
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.29it/s]
+Epoch 7/20, Loss: 279.8804, Acc: 0.4385, Precision: 0.4065, Recall: 0.3444, F1: 0.2466
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.81it/s]
+Evaluation, Loss: 40.4386, Acc: 0.4232, Precision: 0.4743, Recall: 0.3342, F1: 0.1998
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.26it/s]
+Epoch 8/20, Loss: 279.8989, Acc: 0.4391, Precision: 0.3598, Recall: 0.3443, F1: 0.2446
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.83it/s]
+Evaluation, Loss: 40.2116, Acc: 0.4398, Precision: 0.3448, Recall: 0.3517, F1: 0.2384
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [01:21<00:00,  3.25it/s]
+Epoch 9/20, Loss: 278.8821, Acc: 0.4402, Precision: 0.2734, Recall: 0.3500, F1: 0.2681
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.83it/s]
+Evaluation, Loss: 40.2056, Acc: 0.4224, Precision: 0.1409, Recall: 0.3333, F1: 0.1981
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.26it/s]
+Epoch 10/20, Loss: 279.1154, Acc: 0.4478, Precision: 0.3001, Recall: 0.3536, F1: 0.2622
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.83it/s]
+Evaluation, Loss: 40.1922, Acc: 0.4539, Precision: 0.3539, Recall: 0.3662, F1: 0.2651
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [01:20<00:00,  3.26it/s]
+Epoch 11/20, Loss: 278.2308, Acc: 0.4369, Precision: 0.3546, Recall: 0.3443, F1: 0.2524
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  3.83it/s]
+Evaluation, Loss: 40.2637, Acc: 0.4539, Precision: 0.3481, Recall: 0.3668, F1: 0.2682
+Early stopping triggered
+cnn + distilbert-base-multilingual-cased
+
+[17:38:52] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: distilbert-base-multilingual-cased                                              my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 20                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_distilbert-base-multilingual-cased                         my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+
+Training ...
+Epoch 1/20, Batch 264/264: 100%|██████████| 264/264 [00:56<00:00,  4.66it/s]
+Epoch 1/20, Loss: 287.8141, Acc: 0.4256, Precision: 0.3714, Recall: 0.3576, F1: 0.3234
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.40it/s]
+Evaluation, Loss: 39.5165, Acc: 0.4606, Precision: 0.5164, Recall: 0.4074, F1: 0.3649
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_0.pth
+
+Epoch 2/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.90it/s]
+Epoch 2/20, Loss: 271.0968, Acc: 0.4717, Precision: 0.4386, Recall: 0.4021, F1: 0.3755
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.22it/s]
+Evaluation, Loss: 38.6181, Acc: 0.4672, Precision: 0.4587, Recall: 0.4579, F1: 0.4520
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_1.pth
+
+Epoch 3/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.90it/s]
+Epoch 3/20, Loss: 266.1037, Acc: 0.4896, Precision: 0.4644, Recall: 0.4303, F1: 0.4190
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.11it/s]
+Evaluation, Loss: 37.6416, Acc: 0.4979, Precision: 0.5264, Recall: 0.4373, F1: 0.4123
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_2.pth
+
+Epoch 4/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.91it/s]
+Epoch 4/20, Loss: 259.9462, Acc: 0.5213, Precision: 0.5075, Recall: 0.4547, F1: 0.4404
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.27it/s]
+Evaluation, Loss: 39.0104, Acc: 0.4730, Precision: 0.4931, Recall: 0.3911, F1: 0.3199
+
+Epoch 5/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.93it/s]
+Epoch 5/20, Loss: 257.4866, Acc: 0.5338, Precision: 0.5191, Recall: 0.4727, F1: 0.4649
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.01it/s]
+Evaluation, Loss: 37.3177, Acc: 0.5087, Precision: 0.6060, Recall: 0.4785, F1: 0.4594
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_4.pth
+
+Epoch 6/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.92it/s]
+Epoch 6/20, Loss: 263.9573, Acc: 0.5069, Precision: 0.4987, Recall: 0.4439, F1: 0.4309
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.33it/s]
+Evaluation, Loss: 37.9792, Acc: 0.4855, Precision: 0.4997, Recall: 0.4412, F1: 0.4183
+
+Epoch 7/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.91it/s]
+Epoch 7/20, Loss: 261.4860, Acc: 0.5033, Precision: 0.4944, Recall: 0.4421, F1: 0.4300
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.17it/s]
+Evaluation, Loss: 36.6830, Acc: 0.5237, Precision: 0.5731, Recall: 0.4510, F1: 0.4191
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_6.pth
+
+Epoch 8/20, Batch 264/264: 100%|██████████| 264/264 [00:54<00:00,  4.88it/s]
+Epoch 8/20, Loss: 256.5094, Acc: 0.5310, Precision: 0.5227, Recall: 0.4735, F1: 0.4688
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  5.97it/s]
+Evaluation, Loss: 36.6452, Acc: 0.5228, Precision: 0.4003, Recall: 0.4414, F1: 0.3791
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_7.pth
+
+Epoch 9/20, Batch 264/264: 100%|██████████| 264/264 [00:54<00:00,  4.89it/s]
+Epoch 9/20, Loss: 252.9087, Acc: 0.5393, Precision: 0.5321, Recall: 0.4793, F1: 0.4736
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.26it/s]
+Evaluation, Loss: 36.3227, Acc: 0.5519, Precision: 0.5941, Recall: 0.4895, F1: 0.4764
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_8.pth
+
+Epoch 10/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.90it/s]
+Epoch 10/20, Loss: 250.0389, Acc: 0.5559, Precision: 0.5521, Recall: 0.5038, F1: 0.5044
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.21it/s]
+Evaluation, Loss: 36.8469, Acc: 0.5129, Precision: 0.6791, Recall: 0.4315, F1: 0.3762
+
+Epoch 11/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.92it/s]
+Epoch 11/20, Loss: 247.0046, Acc: 0.5609, Precision: 0.5630, Recall: 0.5084, F1: 0.5092
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.37it/s]
+Evaluation, Loss: 34.9228, Acc: 0.5668, Precision: 0.5781, Recall: 0.5268, F1: 0.5308
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_10.pth
+
+Epoch 12/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.92it/s]
+Epoch 12/20, Loss: 247.9413, Acc: 0.5604, Precision: 0.5605, Recall: 0.5059, F1: 0.5061
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.19it/s]
+Evaluation, Loss: 35.0388, Acc: 0.5851, Precision: 0.6115, Recall: 0.5391, F1: 0.5419
+
+Epoch 13/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.89it/s]
+Epoch 13/20, Loss: 247.8218, Acc: 0.5667, Precision: 0.5641, Recall: 0.5145, F1: 0.5157
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.09it/s]
+Evaluation, Loss: 35.9274, Acc: 0.5469, Precision: 0.5964, Recall: 0.4882, F1: 0.4772
+
+Epoch 14/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.89it/s]
+Epoch 14/20, Loss: 246.7744, Acc: 0.5632, Precision: 0.5642, Recall: 0.5127, F1: 0.5136
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.37it/s]
+Evaluation, Loss: 37.1152, Acc: 0.5162, Precision: 0.6619, Recall: 0.4344, F1: 0.3730
+
+Epoch 15/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.89it/s]
+Epoch 15/20, Loss: 246.9513, Acc: 0.5728, Precision: 0.5761, Recall: 0.5175, F1: 0.5178
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.15it/s]
+Evaluation, Loss: 34.8075, Acc: 0.5693, Precision: 0.6070, Recall: 0.5174, F1: 0.5158
+Saved the best model to path: ./models/task_1/cnn_distilbert-base-multilingual-cased_14.pth
+
+Epoch 16/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.96it/s]
+Epoch 16/20, Loss: 243.1804, Acc: 0.5693, Precision: 0.5723, Recall: 0.5223, F1: 0.5250
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.54it/s]
+Evaluation, Loss: 36.7249, Acc: 0.5394, Precision: 0.6317, Recall: 0.4599, F1: 0.4149
+
+Epoch 17/20, Batch 264/264: 100%|██████████| 264/264 [00:52<00:00,  4.98it/s]
+Epoch 17/20, Loss: 243.0787, Acc: 0.5737, Precision: 0.5786, Recall: 0.5268, F1: 0.5298
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.40it/s]
+Evaluation, Loss: 35.3105, Acc: 0.5585, Precision: 0.6354, Recall: 0.4967, F1: 0.4635
+
+Epoch 18/20, Batch 264/264: 100%|██████████| 264/264 [00:53<00:00,  4.94it/s]
+Epoch 18/20, Loss: 240.8399, Acc: 0.5840, Precision: 0.5901, Recall: 0.5394, F1: 0.5438
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:05<00:00,  6.54it/s]
+Evaluation, Loss: 35.4700, Acc: 0.5627, Precision: 0.5865, Recall: 0.5233, F1: 0.5246
+
+Evaluating CNN
+cnn + vinai/phobert-base
+
+[18:07:52] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: vinai/phobert-base                                                              my_import.py:133
+           padding_len: 256                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 10                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_phobert-base                                               my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+
+model_weight_path: ./models/task_1/cnn_phobert-base_10.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:11<00:00,  3.44it/s]
+Evaluation, Loss: 35.5676, Acc: 0.5585, Precision: 0.5637, Recall: 0.5289, F1: 0.5342
+Confusion Matrix:
+[[371  60  78]
+ [160 184  50]
+ [153  31 118]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.54      0.73      0.62       509
+     warning       0.67      0.47      0.55       394
+     seeding       0.48      0.39      0.43       302
+
+    accuracy                           0.56      1205
+   macro avg       0.56      0.53      0.53      1205
+weighted avg       0.57      0.56      0.55      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:11<00:00,  6.79it/s]
+Evaluation, Loss: 70.5254, Acc: 0.5738, Precision: 0.5737, Recall: 0.5397, F1: 0.5434
+Confusion Matrix:
+[[789 106 130]
+ [308 360 121]
+ [291  72 235]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.57      0.77      0.65      1025
+     warning       0.67      0.46      0.54       789
+     seeding       0.48      0.39      0.43       598
+
+    accuracy                           0.57      2412
+   macro avg       0.57      0.54      0.54      2412
+weighted avg       0.58      0.57      0.56      2412
+
+cnn + uitnlp/visobert
+
+[18:08:32] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: uitnlp/visobert                                                                 my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 10                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_visobert                                                   my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/visobert and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+model_weight_path: ./models/task_1/cnn_visobert_17.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:13<00:00,  2.73it/s]
+Evaluation, Loss: 35.1284, Acc: 0.5701, Precision: 0.5852, Recall: 0.5420, F1: 0.5451
+Confusion Matrix:
+[[386  28  95]
+ [168 167  59]
+ [134  34 134]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.56      0.76      0.64       509
+     warning       0.73      0.42      0.54       394
+     seeding       0.47      0.44      0.45       302
+
+    accuracy                           0.57      1205
+   macro avg       0.59      0.54      0.55      1205
+weighted avg       0.59      0.57      0.56      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.67it/s]
+Evaluation, Loss: 70.4282, Acc: 0.5713, Precision: 0.5785, Recall: 0.5401, F1: 0.5415
+Confusion Matrix:
+[[795  69 161]
+ [338 322 129]
+ [263  74 261]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.57      0.78      0.66      1025
+     warning       0.69      0.41      0.51       789
+     seeding       0.47      0.44      0.45       598
+
+    accuracy                           0.57      2412
+   macro avg       0.58      0.54      0.54      2412
+weighted avg       0.59      0.57      0.56      2412
+
+cnn + uitnlp/CafeBERT
+
+[18:09:26] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: uitnlp/CafeBERT                                                                 my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 10                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_CafeBERT                                                   my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at uitnlp/CafeBERT and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+model_weight_path: ./models/task_1/cnn_CafeBERT_6.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:32<00:00,  1.16it/s]
+Evaluation, Loss: 37.7810, Acc: 0.5037, Precision: 0.5019, Recall: 0.4218, F1: 0.3606
+Confusion Matrix:
+[[488  17   4]
+ [272 113   9]
+ [268  28   6]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.47      0.96      0.64       509
+     warning       0.72      0.29      0.41       394
+     seeding       0.32      0.02      0.04       302
+
+    accuracy                           0.50      1205
+   macro avg       0.50      0.42      0.36      1205
+weighted avg       0.51      0.50      0.41      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [01:01<00:00,  1.24it/s]
+Evaluation, Loss: 75.5661, Acc: 0.5100, Precision: 0.5648, Recall: 0.4273, F1: 0.3727
+Confusion Matrix:
+[[977  38  10]
+ [545 233  11]
+ [530  48  20]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.48      0.95      0.64      1025
+     warning       0.73      0.30      0.42       789
+     seeding       0.49      0.03      0.06       598
+
+    accuracy                           0.51      2412
+   macro avg       0.56      0.43      0.37      2412
+weighted avg       0.56      0.51      0.42      2412
+
+cnn + xlm-roberta-base
+
+[18:11:23] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: xlm-roberta-base                                                                my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 10                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_xlm-roberta-base                                           my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+
+model_weight_path: ./models/task_1/cnn_xlm-roberta-base_0.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:13<00:00,  2.72it/s]
+Evaluation, Loss: 40.9052, Acc: 0.4224, Precision: 0.1408, Recall: 0.3333, F1: 0.1980
+Confusion Matrix:
+[[509   0   0]
+ [394   0   0]
+ [302   0   0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.42      1.00      0.59       509
+     warning       0.00      0.00      0.00       394
+     seeding       0.00      0.00      0.00       302
+
+    accuracy                           0.42      1205
+   macro avg       0.14      0.33      0.20      1205
+weighted avg       0.18      0.42      0.25      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.71it/s]
+Evaluation, Loss: 81.5844, Acc: 0.4250, Precision: 0.1417, Recall: 0.3333, F1: 0.1988
+Confusion Matrix:
+[[1025    0    0]
+ [ 789    0    0]
+ [ 598    0    0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.42      1.00      0.60      1025
+     warning       0.00      0.00      0.00       789
+     seeding       0.00      0.00      0.00       598
+
+    accuracy                           0.42      2412
+   macro avg       0.14      0.33      0.20      2412
+weighted avg       0.18      0.42      0.25      2412
+
+cnn + bert-base-multilingual-cased
+
+[18:12:10] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: bert-base-multilingual-cased                                                    my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 10                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_bert-base-multilingual-cased                               my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+
+model_weight_path: ./models/task_1/cnn_bert-base-multilingual-cased_5.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:12<00:00,  3.09it/s]
+Evaluation, Loss: 40.1570, Acc: 0.4332, Precision: 0.3482, Recall: 0.3449, F1: 0.2252
+Confusion Matrix:
+[[506   3   0]
+ [378  16   0]
+ [295   7   0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.43      0.99      0.60       509
+     warning       0.62      0.04      0.08       394
+     seeding       0.00      0.00      0.00       302
+
+    accuracy                           0.43      1205
+   macro avg       0.35      0.34      0.23      1205
+weighted avg       0.38      0.43      0.28      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.66it/s]
+Evaluation, Loss: 79.9478, Acc: 0.4386, Precision: 0.3400, Recall: 0.3481, F1: 0.2332
+Confusion Matrix:
+[[1017    8    0]
+ [ 748   41    0]
+ [ 577   21    0]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.43      0.99      0.60      1025
+     warning       0.59      0.05      0.10       789
+     seeding       0.00      0.00      0.00       598
+
+    accuracy                           0.44      2412
+   macro avg       0.34      0.35      0.23      2412
+weighted avg       0.38      0.44      0.29      2412
+
+cnn + distilbert-base-multilingual-cased
+
+[18:12:58] task: task-1                                                                                my_import.py:133
+           model_type: cnn                                                                             my_import.py:133
+           model_name: distilbert-base-multilingual-cased                                              my_import.py:133
+           padding_len: 512                                                                            my_import.py:131
+           batch_size: 32                                                                              my_import.py:133
+           learning_rate: 0.001                                                                        my_import.py:133
+           epochs: 10                                                                                  my_import.py:133
+           fine_tune: True                                                                             my_import.py:133
+           num_channels: 768                                                                           my_import.py:133
+           kernel_size: 256                                                                            my_import.py:133
+           padding: 32                                                                                 my_import.py:133
+           device: cuda                                                                                my_import.py:133
+           saving_path: ./models/task_1/cnn_distilbert-base-multilingual-cased                         my_import.py:133
+           train_shape: (8437, 27)                                                                     my_import.py:133
+           dev_shape: (1205, 27)                                                                       my_import.py:133
+           test_shape: (2412, 27)                                                                      my_import.py:133
+
+model_weight_path: ./models/task_1/cnn_distilbert-base-multilingual-cased_14.pth
+Loading model weight successfully!
+
+Evaluation on dev test
+Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:09<00:00,  4.21it/s]
+Evaluation, Loss: 34.8075, Acc: 0.5693, Precision: 0.6070, Recall: 0.5174, F1: 0.5158
+Confusion Matrix:
+[[447  27  35]
+ [202 152  40]
+ [192  23  87]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.53      0.88      0.66       509
+     warning       0.75      0.39      0.51       394
+     seeding       0.54      0.29      0.38       302
+
+    accuracy                           0.57      1205
+   macro avg       0.61      0.52      0.52      1205
+weighted avg       0.61      0.57      0.54      1205
+
+Evaluation on test test
+Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:11<00:00,  6.65it/s]
+Evaluation, Loss: 69.0294, Acc: 0.5750, Precision: 0.6049, Recall: 0.5208, F1: 0.5194
+Confusion Matrix:
+[[903  51  71]
+ [379 316  94]
+ [386  44 168]]
+Classification Report:
+              precision    recall  f1-score   support
+
+       clean       0.54      0.88      0.67      1025
+     warning       0.77      0.40      0.53       789
+     seeding       0.50      0.28      0.36       598
+
+    accuracy                           0.58      2412
+   macro avg       0.60      0.52      0.52      2412
+weighted avg       0.61      0.58      0.55      2412

@@ -90,12 +90,12 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
                 if task_running == 'task-2':
                     running_loss = 0
                     for i in range(4):
-                        print(outputs[i].shape)
-                        print(label.shape)
                         loss = criterion(outputs[i], label[:, i, :])
                         loss.backward()
                         optimizer.step()
                         running_loss += loss.item()
+                    outputs = torch.stack(outputs)
+                    outputs = outputs.transpose(0, 1)
                 elif task_running == 'task-1':
                     loss = criterion(outputs, label)
                     loss.backward()

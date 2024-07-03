@@ -21,6 +21,8 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
+# Change model_name
+
 
 #####################
 console = Console(record=True)
@@ -87,16 +89,16 @@ test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
 test_df.explanation = test_df.explanation.fillna('')
 args['test_shape'] = test_df.shape
 test_dataset = dst.RecruitmentDataset(
-    test_df, tokenizer_name='uitnlp/visobert',
+    test_df, tokenizer_name='distilbert-base-multilingual-cased',
     padding_len=padding_1, target_len=128,
     task='task-1',
 )
 test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 model1 = md.ComplexCLSModel(
-    model_type='cnn',
+    model_type='lstm',
     params=params,
-    pretrained_model_name='uitnlp/visobert',
+    pretrained_model_name='distilbert-base-multilingual-cased',
 )
 
 model1 = model1.to('cuda')

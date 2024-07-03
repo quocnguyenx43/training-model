@@ -40,8 +40,6 @@ class RecruitmentDataset(Dataset):
             # transform to a list
             if isinstance(index, int):
                 x, y  = [x], [y]
-                print(x, y)
-                print()
                 
             x, y = utils.vit5_encode(x, y, self.padding_len, self.target_len, self.tokenizer)
 

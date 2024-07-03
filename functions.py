@@ -92,7 +92,7 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
                     for i in range(4):
                         print(outputs[i].shape)
                         print(label.shape)
-                        loss = criterion(outputs[i], label[i])
+                        loss = criterion(outputs[i], label[:, i, :])
                         loss.backward()
                         optimizer.step()
                         running_loss += loss.item()

@@ -265,8 +265,6 @@ class ComplexAspectModel(nn.Module):
         # Dropout layer
         self.dropout_layer = nn.Dropout(p=0.4)
 
-        # Softmax
-        self.softmax = nn.Softmax(dim=1)
 
     def forward(self, input):
         # Pretrained Model
@@ -306,8 +304,8 @@ class ComplexAspectModel(nn.Module):
         ]
 
         # Apply Softmax to each aspect output
-        aspect_outputs_softmax = [self.softmax(output) for output in outputs_2]
-        aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
-        aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
+        aspect_outputs_softmax = [F.log_softmax(output, dim=1) for output in outputs_2]
+        # aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
+        # aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
 
         return aspect_outputs_softmax

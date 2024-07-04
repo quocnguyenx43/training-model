@@ -136,15 +136,15 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
             show_evaluation_task_2(true_labels, predictions)
 
         # Evaluation on Dev set
-        _, _, val_running_loss = evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running, device=device)
+        _, _, dev_running_loss = evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running, device=device)
 
         # Saving
         if saving_path:
-            if val_running_loss < best_val_loss:
+            if dev_running_loss < best_val_loss:
                 path = saving_path + "_" + str(epoch) + '.pth'
                 torch.save(model.state_dict(), path)
                 print('Saved the best model to path: ' +  path)
-                best_val_loss = val_running_loss
+                best_val_loss = dev_running_loss
                 patience_counter = 0
             else:
                 patience_counter += 1

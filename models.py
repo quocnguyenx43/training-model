@@ -84,9 +84,7 @@ class SimpleAspectModel(nn.Module):
 
         # Dropout layer
         self.dropout_layer = nn.Dropout(p=0.4)
-
-        # Softmax
-        self.softmax = nn.Softmax(dim=1)
+        
 
     def forward(self, input):
         # Pretrained Model
@@ -108,11 +106,12 @@ class SimpleAspectModel(nn.Module):
             self.dropout_layer(F.relu(fc(inp))) \
             for fc, inp in zip(self.fc_layers_3, outputs_2)
         ]
+        # 4 x batch_size x dim
 
         # Apply Softmax to each aspect output
-        aspect_outputs_softmax = [self.softmax(output) for output in outputs_3]
-        aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
-        aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
+        aspect_outputs_softmax = [F.log_softmax(self.fc4(output), dim=1) for output in outputs_3]
+        # aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
+        # aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
 
         return aspect_outputs_softmax
 

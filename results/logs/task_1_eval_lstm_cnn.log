@@ -21,7 +21,7 @@ lstm + vinai/phobert-base
 model_weight_path: ./models/task_1/lstm_phobert-base_15.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 35.5187, Acc: 0.5626, Precision: 0.5640, Recall: 0.5241, F1: 0.5289
 Confusion Matrix:
@@ -39,7 +39,7 @@ Classification Report:
    macro avg       0.56      0.52      0.53      1207
 weighted avg       0.57      0.56      0.55      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 71.1195, Acc: 0.5578, Precision: 0.5640, Recall: 0.5234, F1: 0.5239
 Confusion Matrix:
@@ -80,7 +80,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_1/lstm_visobert_15.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 34.2405, Acc: 0.5973, Precision: 0.6031, Recall: 0.5583, F1: 0.5646
 Confusion Matrix:
@@ -98,7 +98,7 @@ Classification Report:
    macro avg       0.60      0.56      0.56      1207
 weighted avg       0.61      0.60      0.59      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 68.6966, Acc: 0.5877, Precision: 0.5900, Recall: 0.5583, F1: 0.5610
 Confusion Matrix:
@@ -139,7 +139,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_1/lstm_CafeBERT_19.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 37.4139, Acc: 0.5253, Precision: 0.5204, Recall: 0.4546, F1: 0.4309
 Confusion Matrix:
@@ -157,7 +157,7 @@ Classification Report:
    macro avg       0.52      0.45      0.43      1207
 weighted avg       0.53      0.53      0.47      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 73.4774, Acc: 0.5367, Precision: 0.5631, Recall: 0.4773, F1: 0.4582
 Confusion Matrix:
@@ -195,7 +195,7 @@ lstm + xlm-roberta-base
 model_weight_path: ./models/task_1/lstm_xlm-roberta-base_1.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 40.8815, Acc: 0.4300, Precision: 0.1433, Recall: 0.3333, F1: 0.2005
 Confusion Matrix:
@@ -213,7 +213,7 @@ Classification Report:
    macro avg       0.14      0.33      0.20      1207
 weighted avg       0.18      0.43      0.26      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 82.0609, Acc: 0.4140, Precision: 0.1380, Recall: 0.3333, F1: 0.1952
 Confusion Matrix:
@@ -251,7 +251,7 @@ lstm + bert-base-multilingual-cased
 model_weight_path: ./models/task_1/lstm_bert-base-multilingual-cased_4.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 39.9326, Acc: 0.4598, Precision: 0.2948, Recall: 0.3809, F1: 0.3140
 Confusion Matrix:
@@ -269,7 +269,7 @@ Classification Report:
    macro avg       0.29      0.38      0.31      1207
 weighted avg       0.33      0.46      0.37      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 79.3514, Acc: 0.4505, Precision: 0.2956, Recall: 0.3806, F1: 0.3103
 Confusion Matrix:
@@ -307,7 +307,7 @@ lstm + distilbert-base-multilingual-cased
 model_weight_path: ./models/task_1/lstm_distilbert-base-multilingual-cased_12.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 34.4667, Acc: 0.5750, Precision: 0.5712, Recall: 0.5369, F1: 0.5417
 Confusion Matrix:
@@ -325,7 +325,7 @@ Classification Report:
    macro avg       0.57      0.54      0.54      1207
 weighted avg       0.58      0.57      0.56      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 68.6397, Acc: 0.5918, Precision: 0.5915, Recall: 0.5610, F1: 0.5639
 Confusion Matrix:
@@ -368,7 +368,7 @@ cnn + vinai/phobert-base
 model_weight_path: ./models/task_1/cnn_phobert-base_11.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 36.3678, Acc: 0.5476, Precision: 0.5499, Recall: 0.4855, F1: 0.4729
 Confusion Matrix:
@@ -386,7 +386,7 @@ Classification Report:
    macro avg       0.55      0.49      0.47      1207
 weighted avg       0.55      0.55      0.51      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 73.4394, Acc: 0.5213, Precision: 0.5141, Recall: 0.4647, F1: 0.4447
 Confusion Matrix:
@@ -428,7 +428,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_1/cnn_visobert_13.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 34.5105, Acc: 0.5891, Precision: 0.6063, Recall: 0.5649, F1: 0.5677
 Confusion Matrix:
@@ -446,7 +446,7 @@ Classification Report:
    macro avg       0.61      0.56      0.57      1207
 weighted avg       0.62      0.59      0.58      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 68.8337, Acc: 0.5756, Precision: 0.5956, Recall: 0.5620, F1: 0.5585
 Confusion Matrix:
@@ -488,7 +488,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_1/cnn_CafeBERT_0.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 40.6712, Acc: 0.4300, Precision: 0.1433, Recall: 0.3333, F1: 0.2005
 Confusion Matrix:
@@ -506,7 +506,7 @@ Classification Report:
    macro avg       0.14      0.33      0.20      1207
 weighted avg       0.18      0.43      0.26      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 81.6202, Acc: 0.4140, Precision: 0.1380, Recall: 0.3333, F1: 0.1952
 Confusion Matrix:
@@ -545,7 +545,7 @@ cnn + xlm-roberta-base
 model_weight_path: ./models/task_1/cnn_xlm-roberta-base_6.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 40.8991, Acc: 0.4300, Precision: 0.1433, Recall: 0.3333, F1: 0.2005
 Confusion Matrix:
@@ -563,7 +563,7 @@ Classification Report:
    macro avg       0.14      0.33      0.20      1207
 weighted avg       0.18      0.43      0.26      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 82.1675, Acc: 0.4140, Precision: 0.1380, Recall: 0.3333, F1: 0.1952
 Confusion Matrix:
@@ -602,7 +602,7 @@ cnn + bert-base-multilingual-cased
 model_weight_path: ./models/task_1/cnn_bert-base-multilingual-cased_14.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 40.1761, Acc: 0.4474, Precision: 0.3455, Recall: 0.3547, F1: 0.2539
 Confusion Matrix:
@@ -620,7 +620,7 @@ Classification Report:
    macro avg       0.35      0.35      0.25      1207
 weighted avg       0.38      0.45      0.31      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 79.8387, Acc: 0.4393, Precision: 0.3540, Recall: 0.3598, F1: 0.2532
 Confusion Matrix:
@@ -659,7 +659,7 @@ cnn + distilbert-base-multilingual-cased
 model_weight_path: ./models/task_1/cnn_distilbert-base-multilingual-cased_15.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 36.7766, Acc: 0.5261, Precision: 0.5170, Recall: 0.4729, F1: 0.4669
 Confusion Matrix:
@@ -677,7 +677,7 @@ Classification Report:
    macro avg       0.52      0.47      0.47      1207
 weighted avg       0.52      0.53      0.50      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 71.9290, Acc: 0.5557, Precision: 0.5630, Recall: 0.5077, F1: 0.5018
 Confusion Matrix:

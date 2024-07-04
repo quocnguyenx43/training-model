@@ -70,7 +70,7 @@ print('Loading model weight successfully!\n')
 
 
 ### Evaluating on Dev set
-print('Evaluation on dev test')
+print('Evaluation on dev set')
 func.evaluate(
     model, criterion,
     dataloader=imp.dev_dataloader,
@@ -81,7 +81,7 @@ func.evaluate(
 
 
 ### Evaluating on Test set
-print('Evaluation on test test')
+print('Evaluation on test set')
 func.evaluate(
     model, criterion,
     dataloader=imp.test_dataloader, 

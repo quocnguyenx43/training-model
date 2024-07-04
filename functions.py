@@ -32,8 +32,18 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
 
                 outputs = model(inputs)
 
-                loss = criterion(outputs, label)
-                running_loss += loss.item()
+                if task_running == 'task-2':
+                    loss1 = criterion(outputs[1], label[:, 1, :]) # title
+                    loss2 = criterion(outputs[2], label[:, 2, :]) # desc
+                    loss3 = criterion(outputs[3], label[:, 3, :]) # comp
+                    loss4 = criterion(outputs[4], label[:, 4, :]) # other
+                    loss = loss1 + loss2 + loss3 + loss4
+
+                    outputs = torch.stack(outputs)
+                    outputs = outputs.transpose(0, 1)
+
+                elif task_running == 'task-1':
+                    loss = criterion(outputs, label)
 
                 running_loss += loss.item()
 
@@ -88,20 +98,24 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
                 optimizer.zero_grad()
                 outputs = model(inputs)
 
-                # if task_running == 'task-2':
-                #     running_loss = 0
-                #     for i in range(4):
-                #         loss = criterion(outputs[i], label[:, i, :])
-                #         loss.backward()
-                #         optimizer.step()
-                #         running_loss += loss.item()
-                #     outputs = torch.stack(outputs)
-                #     outputs = outputs.transpose(0, 1)
-                # elif task_running == 'task-1':
+                if task_running == 'task-2':
+                    loss1 = criterion(outputs[1], label[:, 1, :]) # title
+                    loss2 = criterion(outputs[2], label[:, 2, :]) # desc
+                    loss3 = criterion(outputs[3], label[:, 3, :]) # comp
+                    loss4 = criterion(outputs[4], label[:, 4, :]) # other
+                    loss = loss1 + loss2 + loss3 + loss4
 
-                loss = criterion(outputs, label)
-                loss.backward()
-                optimizer.step()
+                    loss.backward()
+                    optimizer.step()
+
+                    outputs = torch.stack(outputs)
+                    outputs = outputs.transpose(0, 1)
+
+                elif task_running == 'task-1':
+                    loss = criterion(outputs, label)
+                    loss.backward()
+                    optimizer.step()
+
                 running_loss += loss.item()
 
                 _, pred = torch.max(outputs, dim=dimesion)

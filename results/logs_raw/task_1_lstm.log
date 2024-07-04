@@ -790,7 +790,7 @@ lstm + vinai/phobert-base
 model_weight_path: ./models/task_1/lstm_phobert-base_15.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.03it/s]
 Evaluation, Loss: 35.2904, Acc: 0.5577, Precision: 0.5772, Recall: 0.5166, F1: 0.5204
 Confusion Matrix:
@@ -808,7 +808,7 @@ Classification Report:
    macro avg       0.58      0.52      0.52      1205
 weighted avg       0.57      0.56      0.54      1205
 
-Evaluation on test test
+Evaluation on test set
 Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:11<00:00,  6.88it/s]
 Evaluation, Loss: 69.4002, Acc: 0.5672, Precision: 0.5812, Recall: 0.5205, F1: 0.5226
 Confusion Matrix:
@@ -849,7 +849,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_1/lstm_visobert_11.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.61it/s]
 Evaluation, Loss: 34.1515, Acc: 0.5934, Precision: 0.6006, Recall: 0.5589, F1: 0.5630
 Confusion Matrix:
@@ -867,7 +867,7 @@ Classification Report:
    macro avg       0.60      0.56      0.56      1205
 weighted avg       0.61      0.59      0.58      1205
 
-Evaluation on test test
+Evaluation on test set
 Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.79it/s]
 Evaluation, Loss: 68.1213, Acc: 0.5825, Precision: 0.5816, Recall: 0.5493, F1: 0.5525
 Confusion Matrix:
@@ -908,7 +908,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_1/lstm_CafeBERT_16.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:30<00:00,  1.23it/s]
 Evaluation, Loss: 36.3975, Acc: 0.5353, Precision: 0.5513, Recall: 0.4765, F1: 0.4642
 Confusion Matrix:
@@ -926,7 +926,7 @@ Classification Report:
    macro avg       0.55      0.48      0.46      1205
 weighted avg       0.55      0.54      0.50      1205
 
-Evaluation on test test
+Evaluation on test set
 Evaluation, Batch 76/76: 100%|██████████| 76/76 [01:01<00:00,  1.24it/s]
 Evaluation, Loss: 72.7282, Acc: 0.5319, Precision: 0.5467, Recall: 0.4714, F1: 0.4597
 Confusion Matrix:
@@ -965,7 +965,7 @@ lstm + xlm-roberta-base
 model_weight_path: ./models/task_1/lstm_xlm-roberta-base_19.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.54it/s]
 Evaluation, Loss: 38.8362, Acc: 0.4689, Precision: 0.5282, Recall: 0.3875, F1: 0.3148
 Confusion Matrix:
@@ -983,7 +983,7 @@ Classification Report:
    macro avg       0.53      0.39      0.31      1205
 weighted avg       0.52      0.47      0.36      1205
 
-Evaluation on test test
+Evaluation on test set
 Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:20<00:00,  3.74it/s]
 Evaluation, Loss: 76.7453, Acc: 0.4722, Precision: 0.4812, Recall: 0.3891, F1: 0.3206
 Confusion Matrix:
@@ -1022,7 +1022,7 @@ lstm + bert-base-multilingual-cased
 model_weight_path: ./models/task_1/lstm_bert-base-multilingual-cased_17.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:10<00:00,  3.68it/s]
 Evaluation, Loss: 39.0515, Acc: 0.4639, Precision: 0.3363, Recall: 0.3787, F1: 0.2920
 Confusion Matrix:
@@ -1040,7 +1040,7 @@ Classification Report:
    macro avg       0.34      0.38      0.29      1205
 weighted avg       0.37      0.46      0.35      1205
 
-Evaluation on test test
+Evaluation on test set
 Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:19<00:00,  3.96it/s]
 Evaluation, Loss: 77.9649, Acc: 0.4602, Precision: 0.4995, Recall: 0.3742, F1: 0.2911
 Confusion Matrix:
@@ -1079,7 +1079,7 @@ lstm + distilbert-base-multilingual-cased
 model_weight_path: ./models/task_1/lstm_distilbert-base-multilingual-cased_17.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation, Batch 38/38: 100%|██████████| 38/38 [00:06<00:00,  6.08it/s]
 Evaluation, Loss: 34.5659, Acc: 0.5950, Precision: 0.6199, Recall: 0.5528, F1: 0.5559
 Confusion Matrix:
@@ -1097,7 +1097,7 @@ Classification Report:
    macro avg       0.62      0.55      0.56      1205
 weighted avg       0.62      0.60      0.58      1205
 
-Evaluation on test test
+Evaluation on test set
 Evaluation, Batch 76/76: 100%|██████████| 76/76 [00:11<00:00,  6.66it/s]
 Evaluation, Loss: 68.2798, Acc: 0.5891, Precision: 0.6117, Recall: 0.5433, F1: 0.5450
 Confusion Matrix:

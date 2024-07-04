@@ -20,7 +20,7 @@ lstm + vinai/phobert-base
 model_weight_path: ./models/task_2/lstm_phobert-base_18.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 50.1070, 0/1 Loss: 0.8732, Hamming Loss: 0.4236, EMR: 0.1268, Acc: 0.9412, F1: 0.6687, Precision: 0.6401, Recall: 0.7296
 Confusion Matrix of title aspect
@@ -91,7 +91,7 @@ Classification Report for other aspect
    macro avg       0.21      0.24      0.23      1207
 weighted avg       0.72      0.83      0.77      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 99.6399, 0/1 Loss: 0.8512, Hamming Loss: 0.4067, EMR: 0.1488, Acc: 0.9472, F1: 0.6712, Precision: 0.6416, Recall: 0.7323
 Confusion Matrix of title aspect
@@ -181,7 +181,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_2/lstm_visobert_14.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 50.4541, 0/1 Loss: 0.9809, Hamming Loss: 0.5244, EMR: 0.0191, Acc: 0.9466, F1: 0.6082, Precision: 0.5373, Recall: 0.7372
 Confusion Matrix of title aspect
@@ -250,7 +250,7 @@ Classification Report for other aspect
    macro avg       0.32      0.41      0.30      1207
 weighted avg       0.75      0.61      0.66      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 100.4823, 0/1 Loss: 0.9768, Hamming Loss: 0.5116, EMR: 0.0232, Acc: 0.9528, F1: 0.6108, Precision: 0.5400, Recall: 0.7386
 Confusion Matrix of title aspect
@@ -340,7 +340,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_2/lstm_CafeBERT_17.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 50.6648, 0/1 Loss: 0.9992, Hamming Loss: 0.6959, EMR: 0.0008, Acc: 0.7397, F1: 0.5125, Precision: 0.4909, Recall: 0.5746
 Confusion Matrix of title aspect
@@ -409,7 +409,7 @@ Classification Report for other aspect
    macro avg       0.28      0.27      0.22      1207
 weighted avg       0.69      0.42      0.51      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 100.9625, 0/1 Loss: 0.9996, Hamming Loss: 0.6923, EMR: 0.0004, Acc: 0.7415, F1: 0.5101, Precision: 0.4866, Recall: 0.5741
 Confusion Matrix of title aspect
@@ -496,7 +496,7 @@ lstm + xlm-roberta-base
 model_weight_path: ./models/task_2/lstm_xlm-roberta-base_11.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 51.5465, 0/1 Loss: 0.9843, Hamming Loss: 0.4830, EMR: 0.0157, Acc: 0.9861, F1: 0.6413, Precision: 0.5635, Recall: 0.7683
 Confusion Matrix of title aspect
@@ -565,7 +565,7 @@ Classification Report for other aspect
    macro avg       0.28      0.33      0.31      1207
 weighted avg       0.72      0.85      0.78      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 102.9555, 0/1 Loss: 0.9814, Hamming Loss: 0.4788, EMR: 0.0186, Acc: 0.9867, F1: 0.6412, Precision: 0.5639, Recall: 0.7668
 Confusion Matrix of title aspect
@@ -652,7 +652,7 @@ lstm + bert-base-multilingual-cased
 model_weight_path: ./models/task_2/lstm_bert-base-multilingual-cased_9.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 51.3939, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
 Confusion Matrix of title aspect
@@ -721,7 +721,7 @@ Classification Report for other aspect
    macro avg       0.28      0.33      0.31      1207
 weighted avg       0.72      0.85      0.78      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 102.5815, 0/1 Loss: 0.9992, Hamming Loss: 0.6511, EMR: 0.0008, Acc: 0.7415, F1: 0.5231, Precision: 0.4927, Recall: 0.5741
 Confusion Matrix of title aspect
@@ -808,7 +808,7 @@ lstm + distilbert-base-multilingual-cased
 model_weight_path: ./models/task_2/lstm_distilbert-base-multilingual-cased_19.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 51.0149, 0/1 Loss: 1.0000, Hamming Loss: 0.6433, EMR: 0.0000, Acc: 0.7370, F1: 0.5318, Precision: 0.5184, Recall: 0.5727
 Confusion Matrix of title aspect
@@ -877,7 +877,7 @@ Classification Report for other aspect
    macro avg       0.58      0.48      0.42      1207
 weighted avg       0.85      0.73      0.76      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 101.9222, 0/1 Loss: 1.0000, Hamming Loss: 0.6450, EMR: 0.0000, Acc: 0.7367, F1: 0.5326, Precision: 0.5208, Recall: 0.5716
 Confusion Matrix of title aspect
@@ -997,7 +997,7 @@ cnn + vinai/phobert-base
 model_weight_path: ./models/task_2/cnn_phobert-base_1.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 52.9692, 0/1 Loss: 0.9934, Hamming Loss: 0.5058, EMR: 0.0066, Acc: 0.7592, F1: 0.6474, Precision: 0.7477, Recall: 0.5854
 Confusion Matrix of title aspect
@@ -1066,7 +1066,7 @@ Classification Report for other aspect
    macro avg       0.28      0.33      0.31      1207
 weighted avg       0.72      0.85      0.78      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 105.5996, 0/1 Loss: 0.9892, Hamming Loss: 0.5025, EMR: 0.0108, Acc: 0.7578, F1: 0.6461, Precision: 0.7473, Recall: 0.5829
 Confusion Matrix of title aspect
@@ -1157,7 +1157,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_2/cnn_visobert_0.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 53.4441, 0/1 Loss: 0.9992, Hamming Loss: 0.5294, EMR: 0.0008, Acc: 0.7370, F1: 0.6357, Precision: 0.7365, Recall: 0.5727
 Confusion Matrix of title aspect
@@ -1226,7 +1226,7 @@ Classification Report for other aspect
    macro avg       0.28      0.33      0.31      1207
 weighted avg       0.72      0.85      0.78      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 106.8580, 0/1 Loss: 1.0000, Hamming Loss: 0.5300, EMR: 0.0000, Acc: 0.7367, F1: 0.6352, Precision: 0.7367, Recall: 0.5716
 Confusion Matrix of title aspect
@@ -1319,7 +1319,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 model_weight_path: ./models/task_2/cnn_CafeBERT_0.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 53.1044, 0/1 Loss: 0.9594, Hamming Loss: 0.5860, EMR: 0.0406, Acc: 0.9861, F1: 0.5926, Precision: 0.4931, Recall: 0.7683
 Confusion Matrix of title aspect
@@ -1388,7 +1388,7 @@ Classification Report for other aspect
    macro avg       0.28      0.33      0.31      1207
 weighted avg       0.72      0.85      0.78      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 105.9354, 0/1 Loss: 0.9602, Hamming Loss: 0.5809, EMR: 0.0398, Acc: 0.9867, F1: 0.5926, Precision: 0.4934, Recall: 0.7668
 Confusion Matrix of title aspect
@@ -1476,7 +1476,7 @@ cnn + xlm-roberta-base
 model_weight_path: ./models/task_2/cnn_xlm-roberta-base_0.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 53.6626, 0/1 Loss: 1.0000, Hamming Loss: 0.9151, EMR: 0.0000, Acc: 0.2390, F1: 0.2618, Precision: 0.4768, Recall: 0.1830
 Confusion Matrix of title aspect
@@ -1547,7 +1547,7 @@ Classification Report for other aspect
    macro avg       0.00      0.00      0.00    1207.0
 weighted avg       0.00      0.00      0.00    1207.0
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 107.3684, 0/1 Loss: 1.0000, Hamming Loss: 0.9146, EMR: 0.0000, Acc: 0.2403, F1: 0.2631, Precision: 0.4789, Recall: 0.1839
 Confusion Matrix of title aspect
@@ -1637,7 +1637,7 @@ cnn + bert-base-multilingual-cased
 model_weight_path: ./models/task_2/cnn_bert-base-multilingual-cased_0.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 52.5645, 0/1 Loss: 1.0000, Hamming Loss: 0.6564, EMR: 0.0000, Acc: 0.7397, F1: 0.5227, Precision: 0.4920, Recall: 0.5746
 Confusion Matrix of title aspect
@@ -1706,7 +1706,7 @@ Classification Report for other aspect
    macro avg       0.28      0.33      0.31      1207
 weighted avg       0.72      0.85      0.78      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 104.7621, 0/1 Loss: 0.9992, Hamming Loss: 0.6511, EMR: 0.0008, Acc: 0.7415, F1: 0.5231, Precision: 0.4927, Recall: 0.5741
 Confusion Matrix of title aspect
@@ -1794,7 +1794,7 @@ cnn + distilbert-base-multilingual-cased
 model_weight_path: ./models/task_2/cnn_distilbert-base-multilingual-cased_0.pth
 Loading model weight successfully!
 
-Evaluation on dev test
+Evaluation on dev set
 Evaluation:   0%|          | 0/38 [00:00<?, ?it/s]
 Evaluation, Loss: 53.4269, 0/1 Loss: 1.0000, Hamming Loss: 0.6806, EMR: 0.0000, Acc: 0.7370, F1: 0.5215, Precision: 0.4910, Recall: 0.5727
 Confusion Matrix of title aspect
@@ -1863,7 +1863,7 @@ Classification Report for other aspect
    macro avg       0.28      0.33      0.31      1207
 weighted avg       0.72      0.85      0.78      1207
 
-Evaluation on test test
+Evaluation on test set
 Evaluation:   0%|          | 0/76 [00:00<?, ?it/s]
 Evaluation, Loss: 106.8090, 0/1 Loss: 1.0000, Hamming Loss: 0.6806, EMR: 0.0000, Acc: 0.7367, F1: 0.5212, Precision: 0.4912, Recall: 0.5716
 Confusion Matrix of title aspect

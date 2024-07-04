@@ -49,73 +49,6 @@ class SimpleCLSModel(nn.Module):
         return soft_max_output
     
 
-
-### For task 2
-class SimpleAspectModel(nn.Module):
-
-    def __init__(self, pretrained_model_name, fine_tune=False, num_aspects=4, num_aspect_classes=4):
-        super(SimpleAspectModel, self).__init__()
-
-        self.num_aspects = num_aspects # num_aspects
-        self.num_aspect_classes = num_aspect_classes # num_aspect_classes
-        self.pretrained_model_name = pretrained_model_name
-        self.pretrained_model = AutoModel.from_pretrained(self.pretrained_model_name)
-        self.fine_tune = fine_tune
-
-        if self.fine_tune == True:
-            self.pretrained_model.train()
-            self.pretrained_model.requires_grad_(True)
-        else:
-            self.pretrained_model.requires_grad_(False)
-
-        # FCs
-        self.fc_layers_1 = nn.ModuleList([
-            nn.Linear(self.pretrained_model.config.hidden_size, 512)
-            for _ in range(num_aspects)
-        ])
-        self.fc_layers_2 = nn.ModuleList([
-            nn.Linear(512, 256)
-            for _ in range(num_aspects)
-        ])
-        self.fc_layers_3 = nn.ModuleList([
-            nn.Linear(256, num_aspect_classes)
-            for _ in range(num_aspects)
-        ])
-
-        # Dropout layer
-        self.dropout_layer = nn.Dropout(p=0.4)
-        
-
-    def forward(self, input):
-        # Pretrained Model
-        if self.pretrained_model_name == 'distilbert-base-multilingual-cased':
-            model_output = self.pretrained_model(**input).last_hidden_state.mean(dim=1) # Distil
-        else:
-            model_output = self.pretrained_model(**input).pooler_output # BERT
-
-        # Fully connected layers with Dropout for each aspect
-        outputs_1 = [
-            self.dropout_layer(F.relu(fc(model_output)))
-            for fc in self.fc_layers_1
-        ]
-        outputs_2 = [
-            self.dropout_layer(F.relu(fc(inp))) \
-            for fc, inp in zip(self.fc_layers_2, outputs_1)
-        ]
-        outputs_3 = [
-            self.dropout_layer(F.relu(fc(inp))) \
-            for fc, inp in zip(self.fc_layers_3, outputs_2)
-        ]
-        # 4 x batch_size x dim
-
-        # Apply Softmax to each aspect output
-        aspect_outputs_softmax = [F.log_softmax(output, dim=1) for output in outputs_3]
-        # aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
-        # aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
-
-        return aspect_outputs_softmax
-
-
 ### LSTM & CNN Task 1
 class ComplexCLSModel(nn.Module):
 
@@ -193,7 +126,73 @@ class ComplexCLSModel(nn.Module):
         soft_max_output = F.log_softmax(fc3_output, dim=1)
 
         return soft_max_output
-    
+
+
+### For task 2
+class SimpleAspectModel(nn.Module):
+
+    def __init__(self, pretrained_model_name, fine_tune=False, num_aspects=4, num_aspect_classes=4):
+        super(SimpleAspectModel, self).__init__()
+
+        self.num_aspects = num_aspects # num_aspects
+        self.num_aspect_classes = num_aspect_classes # num_aspect_classes
+        self.pretrained_model_name = pretrained_model_name
+        self.pretrained_model = AutoModel.from_pretrained(self.pretrained_model_name)
+        self.fine_tune = fine_tune
+
+        if self.fine_tune == True:
+            self.pretrained_model.train()
+            self.pretrained_model.requires_grad_(True)
+        else:
+            self.pretrained_model.requires_grad_(False)
+
+        # FCs
+        self.fc_layers_1 = nn.ModuleList([
+            nn.Linear(self.pretrained_model.config.hidden_size, 512)
+            for _ in range(num_aspects)
+        ])
+        self.fc_layers_2 = nn.ModuleList([
+            nn.Linear(512, 256)
+            for _ in range(num_aspects)
+        ])
+        self.fc_layers_3 = nn.ModuleList([
+            nn.Linear(256, num_aspect_classes)
+            for _ in range(num_aspects)
+        ])
+
+        # Dropout layer
+        self.dropout_layer = nn.Dropout(p=0.4)
+        
+
+    def forward(self, input):
+        # Pretrained Model
+        if self.pretrained_model_name == 'distilbert-base-multilingual-cased':
+            model_output = self.pretrained_model(**input).last_hidden_state.mean(dim=1) # Distil
+        else:
+            model_output = self.pretrained_model(**input).pooler_output # BERT
+
+        # Fully connected layers with Dropout for each aspect
+        outputs_1 = [
+            self.dropout_layer(F.relu(fc(model_output)))
+            for fc in self.fc_layers_1
+        ]
+        outputs_2 = [
+            self.dropout_layer(F.relu(fc(inp))) \
+            for fc, inp in zip(self.fc_layers_2, outputs_1)
+        ]
+        outputs_3 = [
+            self.dropout_layer(F.relu(fc(inp))) \
+            for fc, inp in zip(self.fc_layers_3, outputs_2)
+        ]
+        # 4 x batch_size x dim
+
+        # Apply Softmax to each aspect output
+        aspect_outputs_softmax = [F.log_softmax(output, dim=1) for output in outputs_3]
+        # aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
+        # aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
+
+        return aspect_outputs_softmax
+
 
 ### LSTM & CNN Task 2
 class ComplexAspectModel(nn.Module):

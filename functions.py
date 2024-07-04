@@ -99,7 +99,6 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
                 outputs = model(inputs)
 
                 if task_running == 'task-2':
-                    print()
                     loss1 = criterion(outputs[0], label[:, 0, :]) # title
                     loss2 = criterion(outputs[1], label[:, 1, :]) # desc
                     loss3 = criterion(outputs[2], label[:, 2, :]) # comp

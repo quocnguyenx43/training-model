@@ -109,7 +109,7 @@ class SimpleAspectModel(nn.Module):
         # 4 x batch_size x dim
 
         # Apply Softmax to each aspect output
-        aspect_outputs_softmax = [F.log_softmax(self.fc4(output), dim=1) for output in outputs_3]
+        aspect_outputs_softmax = [F.log_softmax(output, dim=1) for output in outputs_3]
         # aspect_outputs_softmax = torch.stack(aspect_outputs_softmax)
         # aspect_outputs_softmax = aspect_outputs_softmax.transpose(0, 1)
 

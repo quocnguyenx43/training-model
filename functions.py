@@ -33,10 +33,10 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
                 outputs = model(inputs)
 
                 if task_running == 'task-2':
-                    loss1 = criterion(outputs[1], label[:, 1, :]) # title
-                    loss2 = criterion(outputs[2], label[:, 2, :]) # desc
-                    loss3 = criterion(outputs[3], label[:, 3, :]) # comp
-                    loss4 = criterion(outputs[4], label[:, 4, :]) # other
+                    loss1 = criterion(outputs[1], label[:, 0, :]) # title
+                    loss2 = criterion(outputs[1], label[:, 1, :]) # title
+                    loss3 = criterion(outputs[2], label[:, 2, :]) # desc
+                    loss4 = criterion(outputs[3], label[:, 3, :]) # comp
                     loss = loss1 + loss2 + loss3 + loss4
 
                     outputs = torch.stack(outputs)
@@ -99,10 +99,10 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
                 outputs = model(inputs)
 
                 if task_running == 'task-2':
-                    loss1 = criterion(outputs[1], label[:, 1, :]) # title
-                    loss2 = criterion(outputs[2], label[:, 2, :]) # desc
-                    loss3 = criterion(outputs[3], label[:, 3, :]) # comp
-                    loss4 = criterion(outputs[4], label[:, 4, :]) # other
+                    loss1 = criterion(outputs[1], label[:, 0, :]) # title
+                    loss2 = criterion(outputs[1], label[:, 1, :]) # title
+                    loss3 = criterion(outputs[2], label[:, 2, :]) # desc
+                    loss4 = criterion(outputs[3], label[:, 3, :]) # comp
                     loss = loss1 + loss2 + loss3 + loss4
 
                     loss.backward()

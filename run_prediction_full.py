@@ -68,12 +68,12 @@ model_name_mapping = {
     'bartpho-word-base': 'vinai/bartpho-word-base',
 }
 
-model_name_1 = model_name_mapping[model_path_1.split('_')[0]]
-model_name_2 = model_name_mapping[model_path_2.split('_')[0]]
-model_name_3 = model_name_mapping[model_path_3.split('_')[0]]
+model_name_1 = model_name_mapping[model_path_1.split('_')[1]]
+model_name_2 = model_name_mapping[model_path_2.split('_')[1]]
+model_name_3 = model_name_mapping[model_path_3.split('_')[1]]
 
-model_type_1 = model_path_1.split('_')[1]
-model_type_2 = model_path_2.split('_')[1]
+model_type_1 = model_path_1.split('_')[0]
+model_type_2 = model_path_2.split('_')[0]
 model_type_3 = model_path_3.split('_')[0]
 
 padding_1 = args['source_len_1']

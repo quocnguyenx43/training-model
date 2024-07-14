@@ -33,8 +33,8 @@ parser.add_argument("--path1", type=str, default="")
 parser.add_argument("--path2", type=str, default="")
 parser.add_argument("--path3", type=str, default="")
 
-parser.add_argument("--source_len_1", type=int, default=200)
-parser.add_argument("--source_len_2", type=int, default=200)
+parser.add_argument("--source_len_1", type=int, default=256)
+parser.add_argument("--source_len_2", type=int, default=256)
 parser.add_argument("--source_len_3", type=int, default=768)
 parser.add_argument("--target_len", type=int, default=128)
 
@@ -67,6 +67,7 @@ model_name_mapping = {
     'vit5-base': 'VietAI/vit5-base',
     'bartpho-syllable-base': 'vinai/bartpho-syllable-base',
     'bartpho-word-base': 'vinai/bartpho-word-base',
+    'None': 'None',
 }
 
 model_name_1 = model_name_mapping[model_path_1.split('_')[1]]
@@ -139,9 +140,7 @@ def load_model(task, model_type, model_name, model_path, params):
         model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
     model = model.to(device)
-    print(f'model_weight_path: {model_path}')
     model.load_state_dict(torch.load(model_path))
-    print('Loading model weight successfully!\n')
         
     return model
 
@@ -160,6 +159,7 @@ predictions_task_1, _, _ = func.evaluate(
     cm=False, cr=False, last_epoch=True,
     device=device,
 )
+print()
 
 
 ### TASK 2
@@ -176,6 +176,7 @@ predictions_task_2, _, _ = func.evaluate(
     cm=False, cr=False, last_epoch=True,
     device=device,
 )
+    
 
 ### TASK 3
 mapping_aspect = {0: 'trung tính', 1: 'tích cực', 2: 'tiêu cực', 3: 'không đề cập'}
@@ -185,6 +186,14 @@ df1 = pd.DataFrame(predictions_task_1, columns=['predicted_label'])
 df2 = pd.DataFrame(predictions_task_2, 
                    columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
 df_predictions = pd.concat([df1, df2], axis=1)
+
+if model_path_3 == 'None':
+    saving_path = 'outputs/' + \
+                model_name_1.replace('/', '-') + \
+                model_name_2.replace('/', '-') + '-None' + '.csv'
+    print(f'saving_path: {saving_path}')
+
+    df_predictions.to_csv(saving_path)
 
 def adding_previous_tasks(df):
     previous_task_outputs = []

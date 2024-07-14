@@ -81,9 +81,9 @@ padding_2 = args['source_len_2']
 padding_3 = args['source_len_3']
 target_padding = args['target_len']
 
-model_path_1 = './models/task_1/' + model_type_1
-model_path_2 = './models/task_2/' + model_type_2
-model_path_3 = './models/task_3/' + model_type_3
+model_path_1 = './models/task_1/' + model_path_1
+model_path_2 = './models/task_2/' + model_path_2
+model_path_3 = './models/task_3/' + model_path_3
 
 batch_size = args['batch_size']
 params = {

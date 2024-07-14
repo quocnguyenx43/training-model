@@ -1,3 +1,4 @@
+import random
 import pandas as pd
 
 import torch
@@ -21,15 +22,16 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
-# Change model_name
-
 
 #####################
 console = Console(record=True)
 warnings.filterwarnings("ignore")
 
-
 parser = arg.ArgumentParser(description="Params")
+
+parser.add_argument("--path1", type=str, default="")
+parser.add_argument("--path2", type=str, default="")
+parser.add_argument("--path3", type=str, default="")
 
 parser.add_argument("--source_len_1", type=int, default=200)
 parser.add_argument("--source_len_2", type=int, default=200)
@@ -47,26 +49,43 @@ parser.add_argument("--num_channels", type=int, default=768)
 parser.add_argument("--kernel_size", type=int, default=256)
 parser.add_argument("--padding", type=int, default=32)
 
-# HA
-parser.add_argument("--path1", type=str, default="")
-parser.add_argument("--path2", type=str, default="")
-parser.add_argument("--path3", type=str, default="")
-
 args = parser.parse_args()
 args = vars(args)
 
-task_1_model_path = args['path1']
-task_2_model_path = args['path2']
-task_3_model_path = args['path3']
+model_path_1 = args['path1']
+model_path_2 = args['path2']
+model_path_3 = args['path3']
+
+model_name_mapping = {
+    'phobert-base': 'vinai/phobert-base',
+    'visobert': 'uitnlp/visobert',
+    'CafeBERT': 'uitnlp/CafeBERT',
+    'xlm-roberta-base': 'xlm-roberta-base',
+    'bert-base-multilingual-cased': 'bert-base-multilingual-cased',
+    'distilbert-base-multilingual-cased': 'distilbert-base-multilingual-cased',
+    'vit5-base': 'VietAI/vit5-base',
+    'bartpho-syllable-base': 'vinai/bartpho-syllable-base',
+    'bartpho-word-base': 'vinai/bartpho-word-base',
+}
+
+model_name_1 = model_name_mapping[model_path_1.split('_')[0]]
+model_name_2 = model_name_mapping[model_path_2.split('_')[0]]
+model_name_3 = model_name_mapping[model_path_3.split('_')[0]]
+
+model_type_1 = model_path_1.split('_')[1]
+model_type_2 = model_path_2.split('_')[1]
+model_type_3 = model_path_3.split('_')[0]
 
 padding_1 = args['source_len_1']
 padding_2 = args['source_len_2']
 padding_3 = args['source_len_3']
+target_padding = args['target_len']
 
-target_len = args['target_len']
+model_path_1 = './models/task_1/' + model_type_1
+model_path_2 = './models/task_2/' + model_type_2
+model_path_3 = './models/task_3/' + model_type_3
 
 batch_size = args['batch_size']
-
 params = {
     'hidden_size': args['hidden_size'],
     'num_layers': args['num_layers'],
@@ -75,170 +94,145 @@ params = {
     'padding': args['padding'],
 }
 
-
-print(f'path1: {task_1_model_path}')
-print(f'path2: {task_2_model_path}')
-print(f'path3: {task_3_model_path}')
+print(f'model_1: {model_type_1}, model_name_1: {model_name_1}, path_1: {model_path_1}')
+print(f'model_2: {model_type_2}, model_name_2: {model_name_2}, path_2: {model_path_2}')
+print(f'model_3: {model_type_3}, model_name_3: {model_name_3}, path_3: {model_path_3}')
 print()
 
+test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
+test_df.explanation = test_df.explanation.fillna('')
+print(f'test shape: {test_df.shape}')
+print()
+
+
+# Create dataloader
+def create_dataloader(df, model_name, source_padding, target_padding, task='task-1'):
+    test_dataset = dst.RecruitmentDataset(
+        df, tokenizer_name=model_name,
+        padding_len=source_padding, target_len=target_padding,
+        task=task,
+    )
+    test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+    return test_dataloader
+
+# Load model
+def load_model(task, model_type, model_name, model_path, params):
+    # if task_1
+    if task == 'task-1':
+        if model_type == 'simple':
+            model = md.SimpleCLSModel(pretrained_model_name=model_name)
+        else:
+            model = md.ComplexCLSModel(model_type=model_type, params=params, pretrained_model_name=model_name)
+    
+    # if task_2
+    elif task == 'task-2':
+        if model_type == 'simple':
+            model = md.SimpleAspectModel(pretrained_model_name=model_name)
+        else:
+            model = md.ComplexAspectModel(model_type=model_type, params=params, pretrained_model_name=model_name)
+
+    elif task == 'task-3':
+        # tokenizer = AutoTokenizer.from_pretrained(model_name)
+        model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+
+    model = model.to('cuda')
+    print(f'model_weight_path: {model_path}')
+    model.load_state_dict(torch.load(model_path))
+    print('Loading model weight successfully!\n')
+        
+    return model
 
 
 ### TASK 1
-print('task 1')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
-test_df.explanation = test_df.explanation.fillna('')
-args['test_shape'] = test_df.shape
-test_dataset = dst.RecruitmentDataset(
-    test_df, tokenizer_name='distilbert-base-multilingual-cased',
-    padding_len=padding_1, target_len=128,
-    task='task-1',
-)
-test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
-model1 = md.ComplexCLSModel(
-    model_type='lstm',
-    params=params,
-    pretrained_model_name='distilbert-base-multilingual-cased',
-)
-
-model1 = model1.to('cuda')
-model1.load_state_dict(torch.load(task_1_model_path))
+print('TASK 1')
+task_1_dataloader = create_dataloader(test_df, padding_1, None, 'task-1')
+model_1 = load_model('task-1', model_type_1, model_name_1, model_path_1, params)
 criterion = nn.CrossEntropyLoss()
-print(f'model_weight_path: {task_1_model_path}')
-print('Loading model weight successfully!\n')
 
-print('Task 1 prediction')
-predictions_1, _, _ = func.evaluate(
-    model1, criterion,
-    dataloader=test_dataloader, 
-    task_running='task-1',
-    cm=True, cr=True, last_epoch=True,
-    device='cuda',
-)
+# print('TASK 1 PREDICTION')
+# predictions_task_1, _, _ = func.evaluate(
+#     model_1, criterion,
+#     dataloader=task_1_dataloader, 
+#     task_running='task-1',
+#     cm=True, cr=True, last_epoch=True,
+#     device='cuda',
+# )
 
 
-## TASK 2
-print('task 2')
-test_df = pd.read_csv('./data/preprocessed/test_preprocessed_old.csv')
-test_df.explanation = test_df.explanation.fillna('')
-args['test_shape'] = test_df.shape
-test_dataset = dst.RecruitmentDataset(
-    test_df, tokenizer_name='vinai/phobert-base',
-    padding_len=padding_2, target_len=128,
-    task='task-2',
-)
-test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
-model2 = md.ComplexAspectModel(
-    model_type='lstm',
-    params=params,
-    pretrained_model_name='vinai/phobert-base',
-)
-
-print(f'model_weight_path: {task_2_model_path}')
-model2 = model2.to('cuda')
-model2.load_state_dict(torch.load(task_2_model_path))
+### TASK 2
+print('TASK 2')
+task_2_dataloader = create_dataloader(test_df, padding_2, None, 'task-2')
+model_2 = load_model('task-2', model_type_2, model_name_2, model_path_2, params)
 criterion = nn.CrossEntropyLoss()
-print('Loading model weight successfully!\n')
 
-print('Task 2 prediction')
-predictions_2, _, _ = func.evaluate(
-    model2, criterion,
-    dataloader=test_dataloader, 
-    task_running='task-2',
-    cm=True, cr=True, last_epoch=True,
-    device='cuda',
-)
-
-
-mapping_aspect = {
-    0      : 'trung tính',
-    1      : 'tích cực',
-    2      : 'tiêu cực',
-    3      : 'không đề cập',
-}
-
-mapping_label = {
-    0         : 'rõ ràng',
-    1         : 'cảnh báo',
-    2         : 'có yếu tố thu hút',
-}
-
-
-df1 = pd.DataFrame(predictions_1, columns=['predicted_label'])
-df2 = pd.DataFrame(predictions_2, columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
-df_merged = pd.concat([df1, df2], axis=1)
-# df_merged.to_csv('results/' + task_1_model_path.replace('.', '_').replace('/', '_') + task_2_model_path.replace('.', '_').replace('/', '_') + '.csv')
-# df_merged.predicted_label = df_merged.predicted_label.map(mapping_label)
-# df_merged.predicted_title = df_merged.predicted_title.map(mapping_aspect)
-# df_merged.predicted_desc = df_merged.predicted_desc.map(mapping_aspect)
-# df_merged.predicted_comp = df_merged.predicted_comp.map(mapping_aspect)
-# df_merged.predicted_other = df_merged.predicted_other.map(mapping_aspect)
-
-def adding_previous_tasks(df):
-    previous_task_outputs = []
-    for index in range(len(df)): 
-        s = "khía cạnh tiêu đề: " + mapping_aspect[df.iloc[index]['predicted_title']] + " [SEP] " \
-            + "khía cạnh mô tả: " + mapping_aspect[df.iloc[index]['predicted_desc']] + " [SEP] " \
-            + "khía cạnh công ty: " + mapping_aspect[df.iloc[index]['predicted_comp']] + " [SEP] " \
-            + "khía cạnh khác: " + mapping_aspect[df.iloc[index]['predicted_other']] + " [SEP] " \
-            + "nhãn chung: " + mapping_label[df.iloc[index]['predicted_label']]  + " [SEP] "
-        
-        previous_task_outputs.append(s[:-1])
-
-    df['pre_tasks'] = previous_task_outputs
-    return df
-
-df_merged = adding_previous_tasks(df_merged)
-test_df.pre_tasks = df_merged.pre_tasks
-test_df.explanation = test_df.explanation.fillna('')
-
-
+# print('TASK 2 PREDICTION')
+# predictions_task_2, _, _ = func.evaluate(
+#     model_2, criterion,
+#     dataloader=task_2_dataloader, 
+#     task_running='task-2',
+#     cm=True, cr=True, last_epoch=True,
+#     device='cuda',
+# )
 
 ### TASK 3
+# mapping_aspect = {0: 'trung tính', 1: 'tích cực', 2: 'tiêu cực', 3: 'không đề cập'}
+# mapping_label = {0: 'rõ ràng', 1: 'cảnh báo', 2: 'có yếu tố thu hút'}
 
-print('task 3')
-args['test_shape'] = test_df.shape
-test_dataset = dst.RecruitmentDataset(
-    test_df, tokenizer_name='VietAI/vit5-base',
-    padding_len=padding_3, target_len=target_len,
-    task='task-3',
-)
-test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+# df1 = pd.DataFrame(predictions_task_1, columns=['predicted_label'])
+# df2 = pd.DataFrame(predictions_task_2, 
+#                    columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
+# df_predictions = pd.concat([df1, df2], axis=1)
+# saving_path = 'outputs/' + model_path_1.replace('.', '_').replace('/', '_') + model_path_2.replace('.', '_').replace('/', '_') + '.csv'
+# df_predictions.to_csv(saving_path)
+# df_predictions.predicted_label = df_predictions.predicted_label.map(mapping_label)
+# df_predictions.predicted_title = df_predictions.predicted_title.map(mapping_aspect)
+# df_predictions.predicted_desc = df_predictions.predicted_desc.map(mapping_aspect)
+# df_predictions.predicted_comp = df_predictions.predicted_comp.map(mapping_aspect)
+# df_predictions.predicted_other = df_predictions.predicted_other.map(mapping_aspect)
 
-tokenizer = AutoTokenizer.from_pretrained('VietAI/vit5-base')
-generation_model = AutoModelForSeq2SeqLM.from_pretrained('VietAI/vit5-base')
+# def adding_previous_tasks(df):
+#     previous_task_outputs = []
+#     for index in range(len(df)): 
+#         s = "khía cạnh tiêu đề: " + mapping_aspect[df.iloc[index]['predicted_title']] + " [SEP] " \
+#             + "khía cạnh mô tả: " + mapping_aspect[df.iloc[index]['predicted_desc']] + " [SEP] " \
+#             + "khía cạnh công ty: " + mapping_aspect[df.iloc[index]['predicted_comp']] + " [SEP] " \
+#             + "khía cạnh khác: " + mapping_aspect[df.iloc[index]['predicted_other']] + " [SEP] " \
+#             + "nhãn chung: " + mapping_label[df.iloc[index]['predicted_label']]  + " [SEP] "
+        
+#         previous_task_outputs.append(s[:-1])
 
-import random
+#     df['pre_tasks'] = previous_task_outputs
+#     return df
 
-###### Loading weights
-generation_model = generation_model.to('cuda')
-print(f'model_weight_path: {task_3_model_path}')
-generation_model.load_state_dict(torch.load(task_3_model_path))
-print('Loading model weight successfully!\n')
+# df_merged = adding_previous_tasks(df_merged)
+# test_df.pre_tasks = df_merged.pre_tasks
+
+print('TASK 3')
+task_3_dataloader = create_dataloader(test_df, padding_3, target_padding, 'task-3')
+model_3 = load_model('task-3', model_type_3, model_name_3, model_path_3, params)
+tokenizer_3 = AutoTokenizer.from_pretrained(model_name_3)
+
+# print('TASK 3 PREDICTION')
+# predictions_3, references_3 = func.generate_task_3(
+#     model_3, tokenizer_3,
+#     task_3_dataloader, target_len=target_padding,
+#     device='cuda'
+# )
+
+# bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3, references_3)
+# random_index = random.randint(0, len(predictions_3) - 1)
+# print(f'BERT score (prec, rec, f1): {bertscore}')
+# print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
+# print(f'Rouge score (1, 2, L): {rougescore}')
+# print()
+# print('*** Random example: ')
+# print(f'Original @ [{random_index}]: {references_3[random_index]}')
+# print(f'Generated @ [{random_index}]: {predictions_3[random_index]}')
+# print()
 
 
-predictions_3, references_3 = func.generate_task_3(
-    generation_model, tokenizer,
-    test_dataloader, target_len=target_len,
-    device='cuda'
-)
+# df_merged['generated_text'] = pd.Series(predictions_3)
+# print(df_merged)
 
-
-
-bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3, references_3)
-random_index = random.randint(0, len(predictions_3) - 1)
-print(f'BERT score (prec, rec, f1): {bertscore}')
-print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
-print(f'Rouge score (1, 2, L): {rougescore}')
-print()
-print('*** Random example: ')
-print(f'Original @ [{random_index}]: {references_3[random_index]}')
-print(f'Generated @ [{random_index}]: {predictions_3[random_index]}')
-print()
-
-
-df_merged['generated_text'] = pd.Series(predictions_3)
-print(df_merged)
-
-df_merged.to_csv('ha_outs/' + task_1_model_path.replace('.', '_').replace('/', '_') + task_2_model_path.replace('.', '_').replace('/', '_') + '.csv')
+# df_merged.to_csv('ha_outs/' + task_1_model_path.replace('.', '_').replace('/', '_') + task_2_model_path.replace('.', '_').replace('/', '_') + '.csv')

@@ -146,7 +146,7 @@ def load_model(task, model_type, model_name, model_path, params):
 
 ### TASK 1
 print('TASK 1')
-task_1_dataloader = create_dataloader(test_df, padding_1, None, 'task-1')
+task_1_dataloader = create_dataloader(test_df, model_name_1, padding_1, None, 'task-1')
 model_1 = load_model('task-1', model_type_1, model_name_1, model_path_1, params)
 criterion = nn.CrossEntropyLoss()
 
@@ -162,7 +162,7 @@ criterion = nn.CrossEntropyLoss()
 
 ### TASK 2
 print('TASK 2')
-task_2_dataloader = create_dataloader(test_df, padding_2, None, 'task-2')
+task_2_dataloader = create_dataloader(test_df, model_name_2, padding_2, None, 'task-2')
 model_2 = load_model('task-2', model_type_2, model_name_2, model_path_2, params)
 criterion = nn.CrossEntropyLoss()
 
@@ -209,7 +209,7 @@ criterion = nn.CrossEntropyLoss()
 # test_df.pre_tasks = df_merged.pre_tasks
 
 print('TASK 3')
-task_3_dataloader = create_dataloader(test_df, padding_3, target_padding, 'task-3')
+task_3_dataloader = create_dataloader(test_df, model_name_3, padding_3, target_padding, 'task-3')
 model_3 = load_model('task-3', model_type_3, model_name_3, model_path_3, params)
 tokenizer_3 = AutoTokenizer.from_pretrained(model_name_3)
 

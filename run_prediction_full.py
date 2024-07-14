@@ -185,11 +185,6 @@ df1 = pd.DataFrame(predictions_task_1, columns=['predicted_label'])
 df2 = pd.DataFrame(predictions_task_2, 
                    columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
 df_predictions = pd.concat([df1, df2], axis=1)
-df_predictions.predicted_label = df_predictions.predicted_label.map(mapping_label)
-df_predictions.predicted_title = df_predictions.predicted_title.map(mapping_aspect)
-df_predictions.predicted_desc = df_predictions.predicted_desc.map(mapping_aspect)
-df_predictions.predicted_comp = df_predictions.predicted_comp.map(mapping_aspect)
-df_predictions.predicted_other = df_predictions.predicted_other.map(mapping_aspect)
 
 def adding_previous_tasks(df):
     previous_task_outputs = []

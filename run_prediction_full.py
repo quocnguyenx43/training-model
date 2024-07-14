@@ -39,6 +39,7 @@ parser.add_argument("--source_len_3", type=int, default=768)
 parser.add_argument("--target_len", type=int, default=128)
 
 parser.add_argument("--batch_size", type=int, default=64)
+parser.add_argument("--device", type=str, default='cuda')
 
 # for LSTM
 parser.add_argument("--hidden_size", type=int, default=128)
@@ -86,6 +87,7 @@ model_path_2 = './models/task_2/' + model_path_2
 model_path_3 = './models/task_3/' + model_path_3
 
 batch_size = args['batch_size']
+device = args['device']
 params = {
     'hidden_size': args['hidden_size'],
     'num_layers': args['num_layers'],
@@ -136,7 +138,7 @@ def load_model(task, model_type, model_name, model_path, params):
         # tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
-    model = model.to('cuda')
+    model = model.to(device)
     print(f'model_weight_path: {model_path}')
     model.load_state_dict(torch.load(model_path))
     print('Loading model weight successfully!\n')
@@ -150,14 +152,14 @@ task_1_dataloader = create_dataloader(test_df, model_name_1, padding_1, None, 't
 model_1 = load_model('task-1', model_type_1, model_name_1, model_path_1, params)
 criterion = nn.CrossEntropyLoss()
 
-# print('TASK 1 PREDICTION')
-# predictions_task_1, _, _ = func.evaluate(
-#     model_1, criterion,
-#     dataloader=task_1_dataloader, 
-#     task_running='task-1',
-#     cm=True, cr=True, last_epoch=True,
-#     device='cuda',
-# )
+print('TASK 1 PREDICTION')
+predictions_task_1, _, _ = func.evaluate(
+    model_1, criterion,
+    dataloader=task_1_dataloader, 
+    task_running='task-1',
+    cm=True, cr=True, last_epoch=True,
+    device=device,
+)
 
 
 ### TASK 2
@@ -166,73 +168,64 @@ task_2_dataloader = create_dataloader(test_df, model_name_2, padding_2, None, 't
 model_2 = load_model('task-2', model_type_2, model_name_2, model_path_2, params)
 criterion = nn.CrossEntropyLoss()
 
-# print('TASK 2 PREDICTION')
-# predictions_task_2, _, _ = func.evaluate(
-#     model_2, criterion,
-#     dataloader=task_2_dataloader, 
-#     task_running='task-2',
-#     cm=True, cr=True, last_epoch=True,
-#     device='cuda',
-# )
+print('TASK 2 PREDICTION')
+predictions_task_2, _, _ = func.evaluate(
+    model_2, criterion,
+    dataloader=task_2_dataloader, 
+    task_running='task-2',
+    cm=True, cr=True, last_epoch=True,
+    device=device,
+)
 
 ### TASK 3
-# mapping_aspect = {0: 'trung tính', 1: 'tích cực', 2: 'tiêu cực', 3: 'không đề cập'}
-# mapping_label = {0: 'rõ ràng', 1: 'cảnh báo', 2: 'có yếu tố thu hút'}
+mapping_aspect = {0: 'trung tính', 1: 'tích cực', 2: 'tiêu cực', 3: 'không đề cập'}
+mapping_label = {0: 'rõ ràng', 1: 'cảnh báo', 2: 'có yếu tố thu hút'}
 
-# df1 = pd.DataFrame(predictions_task_1, columns=['predicted_label'])
-# df2 = pd.DataFrame(predictions_task_2, 
-#                    columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
-# df_predictions = pd.concat([df1, df2], axis=1)
-# saving_path = 'outputs/' + model_path_1.replace('.', '_').replace('/', '_') + model_path_2.replace('.', '_').replace('/', '_') + '.csv'
-# df_predictions.to_csv(saving_path)
-# df_predictions.predicted_label = df_predictions.predicted_label.map(mapping_label)
-# df_predictions.predicted_title = df_predictions.predicted_title.map(mapping_aspect)
-# df_predictions.predicted_desc = df_predictions.predicted_desc.map(mapping_aspect)
-# df_predictions.predicted_comp = df_predictions.predicted_comp.map(mapping_aspect)
-# df_predictions.predicted_other = df_predictions.predicted_other.map(mapping_aspect)
+df1 = pd.DataFrame(predictions_task_1, columns=['predicted_label'])
+df2 = pd.DataFrame(predictions_task_2, 
+                   columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
+df_predictions = pd.concat([df1, df2], axis=1)
+df_predictions.predicted_label = df_predictions.predicted_label.map(mapping_label)
+df_predictions.predicted_title = df_predictions.predicted_title.map(mapping_aspect)
+df_predictions.predicted_desc = df_predictions.predicted_desc.map(mapping_aspect)
+df_predictions.predicted_comp = df_predictions.predicted_comp.map(mapping_aspect)
+df_predictions.predicted_other = df_predictions.predicted_other.map(mapping_aspect)
 
-# def adding_previous_tasks(df):
-#     previous_task_outputs = []
-#     for index in range(len(df)): 
-#         s = "khía cạnh tiêu đề: " + mapping_aspect[df.iloc[index]['predicted_title']] + " [SEP] " \
-#             + "khía cạnh mô tả: " + mapping_aspect[df.iloc[index]['predicted_desc']] + " [SEP] " \
-#             + "khía cạnh công ty: " + mapping_aspect[df.iloc[index]['predicted_comp']] + " [SEP] " \
-#             + "khía cạnh khác: " + mapping_aspect[df.iloc[index]['predicted_other']] + " [SEP] " \
-#             + "nhãn chung: " + mapping_label[df.iloc[index]['predicted_label']]  + " [SEP] "
+def adding_previous_tasks(df):
+    previous_task_outputs = []
+    for index in range(len(df)): 
+        s = "khía cạnh tiêu đề: " + mapping_aspect[df.iloc[index]['predicted_title']] + " [SEP] " \
+            + "khía cạnh mô tả: " + mapping_aspect[df.iloc[index]['predicted_desc']] + " [SEP] " \
+            + "khía cạnh công ty: " + mapping_aspect[df.iloc[index]['predicted_comp']] + " [SEP] " \
+            + "khía cạnh khác: " + mapping_aspect[df.iloc[index]['predicted_other']] + " [SEP] " \
+            + "nhãn chung: " + mapping_label[df.iloc[index]['predicted_label']]  + " [SEP] "
         
-#         previous_task_outputs.append(s[:-1])
+        previous_task_outputs.append(s[:-1])
 
-#     df['pre_tasks'] = previous_task_outputs
-#     return df
+    df['pre_tasks'] = previous_task_outputs
+    return df
 
-# df_merged = adding_previous_tasks(df_merged)
-# test_df.pre_tasks = df_merged.pre_tasks
+df_predictions = adding_previous_tasks(df_predictions)
+test_df.pre_tasks = df_predictions.pre_tasks
 
 print('TASK 3')
 task_3_dataloader = create_dataloader(test_df, model_name_3, padding_3, target_padding, 'task-3')
 model_3 = load_model('task-3', model_type_3, model_name_3, model_path_3, params)
 tokenizer_3 = AutoTokenizer.from_pretrained(model_name_3)
 
-# print('TASK 3 PREDICTION')
-# predictions_3, references_3 = func.generate_task_3(
-#     model_3, tokenizer_3,
-#     task_3_dataloader, target_len=target_padding,
-#     device='cuda'
-# )
+print('TASK 3 PREDICTION')
+predictions_3, _ = func.generate_task_3(
+    model_3, tokenizer_3,
+    task_3_dataloader, target_len=target_padding,
+    device=device
+)
 
-# bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3, references_3)
-# random_index = random.randint(0, len(predictions_3) - 1)
-# print(f'BERT score (prec, rec, f1): {bertscore}')
-# print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
-# print(f'Rouge score (1, 2, L): {rougescore}')
-# print()
-# print('*** Random example: ')
-# print(f'Original @ [{random_index}]: {references_3[random_index]}')
-# print(f'Generated @ [{random_index}]: {predictions_3[random_index]}')
-# print()
+df_predictions['generated_text'] = pd.Series(predictions_3)
 
+saving_path = 'outputs/' + \
+               model_name_1.replace('/', '-') + \
+               model_name_2.replace('/', '-') + \
+               model_name_3.replace('/', '-') + '.csv'
+print(f'saving_path: {saving_path}')
 
-# df_merged['generated_text'] = pd.Series(predictions_3)
-# print(df_merged)
-
-# df_merged.to_csv('ha_outs/' + task_1_model_path.replace('.', '_').replace('/', '_') + task_2_model_path.replace('.', '_').replace('/', '_') + '.csv')
+df_predictions.to_csv(saving_path)

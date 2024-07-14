@@ -157,7 +157,7 @@ predictions_task_1, _, _ = func.evaluate(
     model_1, criterion,
     dataloader=task_1_dataloader, 
     task_running='task-1',
-    cm=True, cr=True, last_epoch=True,
+    cm=False, cr=False, last_epoch=True,
     device=device,
 )
 
@@ -173,7 +173,7 @@ predictions_task_2, _, _ = func.evaluate(
     model_2, criterion,
     dataloader=task_2_dataloader, 
     task_running='task-2',
-    cm=True, cr=True, last_epoch=True,
+    cm=False, cr=False, last_epoch=True,
     device=device,
 )
 
@@ -209,11 +209,22 @@ model_3 = load_model('task-3', model_type_3, model_name_3, model_path_3, params)
 tokenizer_3 = AutoTokenizer.from_pretrained(model_name_3)
 
 print('TASK 3 PREDICTION')
-predictions_3, _ = func.generate_task_3(
+predictions_3, references_3 = func.generate_task_3(
     model_3, tokenizer_3,
     task_3_dataloader, target_len=target_padding,
     device=device
 )
+
+bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3, references_3)
+random_index = random.randint(0, len(predictions_3) - 1)
+print(f'BERT score (prec, rec, f1): {bertscore}')
+print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
+print(f'Rouge score (1, 2, L): {rougescore}')
+print()
+print('*** Random example: ')
+print(f'Original @ [{random_index}]: {references_3[random_index]}')
+print(f'Generated @ [{random_index}]: {predictions_3[random_index]}')
+print()
 
 df_predictions['generated_text'] = pd.Series(predictions_3)
 

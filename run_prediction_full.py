@@ -187,13 +187,12 @@ df2 = pd.DataFrame(predictions_task_2,
                    columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
 df_predictions = pd.concat([df1, df2], axis=1)
 
-if model_path_3 == 'None':
+if model_path_3 == './models/task_3/None':
     saving_path = 'outputs/' + \
                 model_name_1.replace('/', '-') + \
                 model_name_2.replace('/', '-') + '-None' + '.csv'
-    print(f'saving_path: {saving_path}')
-
     df_predictions.to_csv(saving_path)
+    print(f'saving_path: {saving_path}')
 
 def adding_previous_tasks(df):
     previous_task_outputs = []
@@ -241,6 +240,5 @@ saving_path = 'outputs/' + \
                model_name_1.replace('/', '-') + \
                model_name_2.replace('/', '-') + \
                model_name_3.replace('/', '-') + '.csv'
-print(f'saving_path: {saving_path}')
-
 df_predictions.to_csv(saving_path)
+print(f'saving_path: {saving_path}')

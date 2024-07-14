@@ -189,8 +189,8 @@ df_predictions = pd.concat([df1, df2], axis=1)
 
 if model_path_3 == './models/task_3/None':
     saving_path = 'outputs/' + \
-                model_name_1.replace('/', '-') + \
-                model_name_2.replace('/', '-') + '-None' + '.csv'
+                model_name_1.replace('/', '-') + '_' +\
+                model_name_2.replace('/', '-') + '_None' + '.csv'
     df_predictions.to_csv(saving_path)
     print(f'saving_path: {saving_path}')
 
@@ -237,8 +237,8 @@ print()
 df_predictions['generated_text'] = pd.Series(predictions_3)
 
 saving_path = 'outputs/' + \
-               model_name_1.replace('/', '-') + \
-               model_name_2.replace('/', '-') + \
+               model_name_1.replace('/', '-') + '_' + \
+               model_name_2.replace('/', '-') + '_' + \
                model_name_3.replace('/', '-') + '.csv'
 df_predictions.to_csv(saving_path)
 print(f'saving_path: {saving_path}')

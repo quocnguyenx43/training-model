@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "vinai/phobert-base"
-python run_train_cls_task.py --task "task-2" --model_type "cnn" --model_name "vinai/phobert-base" --source_len 256 --batch_size 32
+python run_train_cls_task.py --task "task-2" --model_type "cnn" --model_name "vinai/phobert-base" --source_len 256 --batch_size 32 --epochs 20
 python run_evaluation_cls_task.py --task "task-2" --model_type "cnn" --model_name "vinai/phobert-base" --source_len 256 --batch_size 32
 
 echo "uitnlp/visobert"

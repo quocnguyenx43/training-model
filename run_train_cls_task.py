@@ -33,7 +33,7 @@ elif imp.args['model_type'] == 'lstm' or imp.args['model_type'] == 'cnn':
 
 ###### Change device & setting criterion, optimizer
 model = model.to(imp.args['device'])
-model.load_state_dict(torch.load('models/task_1/lstm_CafeBERT_8.pth'))
+model.load_state_dict(torch.load('models/task_1/simple_CafeBERT_10.pth'))
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=imp.args['learning_rate'])
 

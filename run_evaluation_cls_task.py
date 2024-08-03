@@ -55,15 +55,15 @@ print(f'model_weight_path: {model_weight_path}')
 print('Loading model weight successfully!\n')
 
 
-### Evaluating on Dev set
-print('Evaluation on dev set')
-func.evaluate(
-    model, criterion,
-    dataloader=imp.dev_dataloader,
-    task_running=imp.args['task'],
-    cm=True, cr=True, last_epoch=True,
-    device=imp.args['device'],
-)
+# ### Evaluating on Dev set
+# print('Evaluation on dev set')
+# func.evaluate(
+#     model, criterion,
+#     dataloader=imp.dev_dataloader,
+#     task_running=imp.args['task'],
+#     cm=True, cr=True, last_epoch=True,
+#     device=imp.args['device'],
+# )
 
 
 ### Evaluating on Test set

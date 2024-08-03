@@ -1,12 +1,9 @@
 # !pip install google-api-python-client
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
-from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
-from io import BytesIO
+from googleapiclient.http import MediaFileUpload
 import os
-
-
-
+import argparse as arg
 
 def authenticate():
     SCOPES = ['https://www.googleapis.com/auth/drive']
@@ -51,8 +48,6 @@ def upload_file(local_file_path, dest_file_name):
         print('File uploaded. File ID: ', file_id)
         return file_id
     
-
-import argparse as arg
 parser = arg.ArgumentParser(description="Params")
 parser.add_argument("--folder_name", type=str)
 parser.add_argument("--folder_id", type=str)
@@ -67,4 +62,4 @@ for file in file_list:
     print('path_file: ', path)
     upload_file(path, path)
     
-# python upload_file_to_drive.py --folder_name "results/logs_raw" --folder_id "1cl11_T-lL9rBxwclgdRtXYBX6ciHZpH7"
+# python upload_file_to_drive.py --folder_id "1cl11_T-lL9rBxwclgdRtXYBX6ciHZpH7" --folder_name "data/"

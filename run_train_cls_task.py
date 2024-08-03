@@ -14,36 +14,22 @@ if imp.args['model_type'] == 'simple':
     if imp.args['task'] == 'task-1':
         model = md.SimpleCLSModel(pretrained_model_name=imp.args['model_name'])
     elif imp.args['task'] == 'task-2':
-        model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])    
-# if lstm
-elif imp.args['model_type'] == 'lstm':
+        model = md.SimpleAspectModel(pretrained_model_name=imp.args['model_name'])
+# if lstm or cnn
+elif imp.args['model_type'] == 'lstm' or imp.args['model_type'] == 'cnn':
     if imp.args['task'] == 'task-1':
         model = md.ComplexCLSModel(
-            model_type='lstm',
+            model_type=imp.args['model_type'],
             params=imp.params,
             pretrained_model_name=imp.args['model_name'],
         )
     elif imp.args['task'] == 'task-2':
         model = md.ComplexAspectModel(
-            model_type='lstm',
+            model_type=imp.args['model_type'],
             params=imp.params,
             pretrained_model_name=imp.args['model_name'],
         )
-# if cnn
-elif imp.args['model_type'] == 'cnn':
-    if imp.args['task'] == 'task-1':
-        model = md.ComplexCLSModel(
-            model_type='cnn',
-            params=imp.params,
-            pretrained_model_name=imp.args['model_name'],
-        )
-    elif imp.args['task'] == 'task-2':
-        model = md.ComplexAspectModel(
-            model_type='cnn',
-            params=imp.params,
-            pretrained_model_name=imp.args['model_name'],
-        )
-    
+# if bi-lstm-gru-cnn
 
 ###### Change device & setting criterion, optimizer
 model = model.to(imp.args['device'])

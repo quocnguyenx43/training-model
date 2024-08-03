@@ -17,17 +17,13 @@ class RecruitmentDataset(Dataset):
         self.target_len = target_len
         self.task = task
 
-
-
     def __len__(self):
         return len(self.data_x)
-
 
     def __getitem__(self, index):
         item = {}
         x = self.data_x[index]
         y = self.data_y[index]
-
 
         if self.task != 'task-3':
             x = x.replace('[CLS]', '').replace('[SEP]', '</s>')
@@ -48,8 +44,3 @@ class RecruitmentDataset(Dataset):
 
         return item
     
-
-
-def create_generation_data_no_finetune(df):
-    X_list = utils.create_X(df, 'task-3')
-    y_list = utils.create_y(df, 'task-3')

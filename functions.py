@@ -72,6 +72,7 @@ def evaluate(model, criterion, dataloader, task_running='task-1', cm=False, cr=F
 
 
 def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader, saving_path=None, task_running='task-1', device='cpu'):
+    
     if task_running == 'task-1':
         dimesion = 1
     elif task_running == 'task-2':
@@ -80,6 +81,7 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
     patience = 5
     patience_counter = 0
     best_val_loss = float('inf')
+
     for epoch in range(epochs):
         model.train()
 
@@ -139,17 +141,17 @@ def train(model, criterion, optimizer, epochs, train_dataloader, dev_dataloader,
         _, _, dev_running_loss = evaluate(model, criterion, dev_dataloader, cm=False, cr=False, last_epoch=False, task_running=task_running, device=device)
 
         # Saving
-        if saving_path:
-            if dev_running_loss < best_val_loss:
+        if dev_running_loss < best_val_loss:
+            best_val_loss = dev_running_loss
+            patience_counter = 0
+            if saving_path:
                 path = saving_path + "_" + str(epoch) + '.pth'
                 torch.save(model.state_dict(), path)
                 print('Saved the best model to path: ' +  path)
-                best_val_loss = dev_running_loss
-                patience_counter = 0
-            else:
-                patience_counter += 1
+        else:
+            patience_counter += 1
 
-        # Check if
+        # early stopping
         if patience_counter >= patience:
             print('Early stopping triggered')
             break

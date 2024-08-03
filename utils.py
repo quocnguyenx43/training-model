@@ -8,7 +8,6 @@ def create_X(df, task):
         'tiêu đề', 'ngành nghề',
         'mô tả', 'kinh nghiệm', 'học vấn', 'bằng cấp', 'quyền lợi',
         'tên công ty', 'địa chỉ', 'số điện thoại', 'người liên hệ',
-        # 'tên người đăng', 'số điện thoại người đăng', 'ngày đăng', 'hạn nộp CV', 'tin đăng ẩn danh', 'là nhà tuyển dụng',
         'số lượng tuyển', 'hình thức hợp đồng', 'hình thức trả lương', 'lương tối thiểu', 'lương tối đa', 'giới tính', 'năm sinh', 'tuổi', 'tuổi thấp nhất', 'tuổi cao nhất',
     ]
 

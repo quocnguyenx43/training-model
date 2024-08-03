@@ -10,8 +10,6 @@ import warnings
 
 import my_datasets as dst
 
-import os
-
 import torch
 import torch.nn as nn
 

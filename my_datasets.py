@@ -5,7 +5,6 @@ import utils
     
 
 class RecruitmentDataset(Dataset):
-
     def __init__(self, df, tokenizer_name, padding_len, task='task-1', target_len=None):
 
         self.data_x = utils.create_X(df, task)

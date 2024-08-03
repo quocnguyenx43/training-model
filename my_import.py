@@ -30,12 +30,12 @@ parser.add_argument("--fine_tune", action="store_true", default=True)
 
 # for LSTM
 parser.add_argument("--hidden_size", type=int, default=128)
-parser.add_argument("--num_layers", type=int, default=4)
+parser.add_argument("--num_layers", type=int, default=1)
 
 # for CNN
-parser.add_argument("--num_channels", type=int, default=256)
-parser.add_argument("--kernel_size", type=int, default=12)
-parser.add_argument("--padding", type=int, default=3)
+parser.add_argument("--num_channels", type=int, default=768)
+parser.add_argument("--kernel_size", type=int, default=256)
+parser.add_argument("--padding", type=int, default=32)
 
 args = parser.parse_args()
 args = vars(args)

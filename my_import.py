@@ -125,10 +125,11 @@ else:
         p_args.pop('num_channels')
         p_args.pop('kernel_size')
         p_args.pop('padding') 
+
 print()
 for key, value in p_args.items():
     if p_args['task'] in ['task-1', 'task-2'] and key == 'source_len':
-        console.log(f'padding_len: {value}')
+        print(f'padding_len: {value}')
         continue
-    console.log(f'{key}: {value}')
+    print(f'{key}: {value}')
 print()

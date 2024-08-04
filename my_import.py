@@ -33,9 +33,9 @@ parser.add_argument("--hidden_size", type=int, default=128)
 parser.add_argument("--num_layers", type=int, default=1)
 
 # for CNN
-parser.add_argument("--num_channels", type=int, default=768)
-parser.add_argument("--kernel_size", type=int, default=256)
-parser.add_argument("--padding", type=int, default=32)
+parser.add_argument("--num_channels", type=int, default=64)
+parser.add_argument("--kernel_size", type=int, default=64)
+parser.add_argument("--padding", type=int, default=64)
 
 args = parser.parse_args()
 args = vars(args)

@@ -100,8 +100,13 @@ print(f'model_2: {model_type_2}, model_name_2: {model_name_2}, path_2: {model_pa
 print(f'model_3: {model_type_3}, model_name_3: {model_name_3}, path_3: {model_path_3}')
 print()
 
+dev_df = pd.read_csv('./data/preprocessed/dev_preprocessed.csv')
 test_df = pd.read_csv('./data/preprocessed/test_preprocessed.csv')
+
+dev_df.explanation = dev_df.explanation.fillna('')
 test_df.explanation = test_df.explanation.fillna('')
+
+print(f'dev shape: {dev_df.shape}')
 print(f'test shape: {test_df.shape}')
 print()
 
@@ -145,16 +150,27 @@ def load_model(task, model_type, model_name, model_path, params):
 
 ### TASK 1
 print('TASK 1')
-task_1_dataloader = create_dataloader(test_df, model_name_1, padding_1, None, 'task-1')
+task_1_dev_dataloader = create_dataloader(dev_df, model_name_1, padding_1, None, 'task-1')
+task_1_test_dataloader = create_dataloader(test_df, model_name_1, padding_1, None, 'task-1')
 model_1 = load_model('task-1', model_type_1, model_name_1, model_path_1, params)
 criterion = nn.CrossEntropyLoss()
 
-print('TASK 1 PREDICTION')
-predictions_task_1, _, _ = func.evaluate(
+print('TASK 1 PREDICTION (DEV)')
+predictions_task_1_dev, _, _ = func.evaluate(
     model_1, criterion,
-    dataloader=task_1_dataloader, 
+    dataloader=task_1_dev_dataloader, 
     task_running='task-1',
-    cm=False, cr=False, last_epoch=True,
+    cm=True, cr=True, last_epoch=True,
+    device=device,
+)
+print()
+
+print('TASK 1 PREDICTION (TEST)')
+predictions_task_1_test, _, _ = func.evaluate(
+    model_1, criterion,
+    dataloader=task_1_test_dataloader, 
+    task_running='task-1',
+    cm=True, cr=True, last_epoch=True,
     device=device,
 )
 print()
@@ -162,16 +178,26 @@ print()
 
 ### TASK 2
 print('TASK 2')
-task_2_dataloader = create_dataloader(test_df, model_name_2, padding_2, None, 'task-2')
+task_2_dev_dataloader = create_dataloader(dev_df, model_name_2, padding_2, None, 'task-2')
+task_2_test_dataloader = create_dataloader(test_df, model_name_2, padding_2, None, 'task-2')
 model_2 = load_model('task-2', model_type_2, model_name_2, model_path_2, params)
 criterion = nn.CrossEntropyLoss()
 
-print('TASK 2 PREDICTION')
-predictions_task_2, _, _ = func.evaluate(
+print('TASK 2 PREDICTION (DEV)')
+predictions_task_2_dev, _, _ = func.evaluate(
     model_2, criterion,
-    dataloader=task_2_dataloader, 
+    dataloader=task_2_dev_dataloader, 
     task_running='task-2',
-    cm=False, cr=False, last_epoch=True,
+    cm=True, cr=True, last_epoch=True,
+    device=device,
+)
+    
+print('TASK 2 PREDICTION (TEST)')
+predictions_task_2_test, _, _ = func.evaluate(
+    model_2, criterion,
+    dataloader=task_2_test_dataloader, 
+    task_running='task-2',
+    cm=True, cr=True, last_epoch=True,
     device=device,
 )
     
@@ -180,17 +206,28 @@ predictions_task_2, _, _ = func.evaluate(
 mapping_aspect = {0: 'trung tính', 1: 'tích cực', 2: 'tiêu cực', 3: 'không đề cập'}
 mapping_label = {0: 'rõ ràng', 1: 'cảnh báo', 2: 'có yếu tố thu hút'}
 
-df1 = pd.DataFrame(predictions_task_1, columns=['predicted_label'])
-df2 = pd.DataFrame(predictions_task_2, 
+df1 = pd.DataFrame(predictions_task_1_dev, columns=['predicted_label'])
+df2 = pd.DataFrame(predictions_task_1_test, columns=['predicted_label'])
+
+df3 = pd.DataFrame(predictions_task_2_dev, 
                    columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
-df_predictions = pd.concat([df1, df2], axis=1)
+df4 = pd.DataFrame(predictions_task_2_test, 
+                   columns=['predicted_title', 'predicted_desc', 'predicted_comp', 'predicted_other'])
+
+df_predictions_dev = pd.concat([df1, df3], axis=1)
+df_predictions_test = pd.concat([df2, df4], axis=1)
 
 if model_path_3 == './models/task_3/None':
     saving_path = 'outputs/' + \
                 model_name_1.replace('/', '-') + '_' +\
-                model_name_2.replace('/', '-') + '_None' + '.csv'
-    df_predictions.to_csv(saving_path)
-    print(f'saving_path: {saving_path}')
+                model_name_2.replace('/', '-') + '_None_dev' + '.csv'
+    df_predictions_dev.to_csv(saving_path)
+    print(f'saving_path dev: {saving_path}')
+    saving_path = 'outputs/' + \
+                model_name_1.replace('/', '-') + '_' +\
+                model_name_2.replace('/', '-') + '_None_test' + '.csv'
+    df_predictions_test.to_csv(saving_path)
+    print(f'saving_path test: {saving_path}')
 
 def adding_previous_tasks(df):
     previous_task_outputs = []
@@ -206,37 +243,69 @@ def adding_previous_tasks(df):
     df['pre_tasks'] = previous_task_outputs
     return df
 
-df_predictions = adding_previous_tasks(df_predictions)
-test_df.pre_tasks = df_predictions.pre_tasks
+df_predictions_dev = adding_previous_tasks(df_predictions_dev)
+df_predictions_test = adding_previous_tasks(df_predictions_test)
+
+dev_df.pre_tasks = df_predictions_dev.pre_tasks
+test_df.pre_tasks = df_predictions_test.pre_tasks
 
 print('TASK 3')
-task_3_dataloader = create_dataloader(test_df, model_name_3, padding_3, target_padding, 'task-3')
+task_3_dataloader_dev = create_dataloader(dev_df, model_name_3, padding_3, target_padding, 'task-3')
+task_3_dataloader_test = create_dataloader(test_df, model_name_3, padding_3, target_padding, 'task-3')
 model_3 = load_model('task-3', model_type_3, model_name_3, model_path_3, params)
 tokenizer_3 = AutoTokenizer.from_pretrained(model_name_3)
 
-print('TASK 3 PREDICTION')
-predictions_3, references_3 = func.generate_task_3(
+print('TASK 3 PREDICTION (DEV)')
+predictions_3_dev, references_3_dev = func.generate_task_3(
     model_3, tokenizer_3,
-    task_3_dataloader, target_len=target_padding,
+    task_3_dataloader_dev, target_len=target_padding,
     device=device
 )
 
-bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3, references_3)
-random_index = random.randint(0, len(predictions_3) - 1)
+bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3_dev, references_3_dev)
+random_index = random.randint(0, len(predictions_3_dev) - 1)
 print(f'BERT score (prec, rec, f1): {bertscore}')
 print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
 print(f'Rouge score (1, 2, L): {rougescore}')
 print()
 print('*** Random example: ')
-print(f'Original @ [{random_index}]: {references_3[random_index]}')
-print(f'Generated @ [{random_index}]: {predictions_3[random_index]}')
+print(f'Original @ [{random_index}]: {references_3_dev[random_index]}')
+print(f'Generated @ [{random_index}]: {predictions_3_dev[random_index]}')
 print()
 
-df_predictions['generated_text'] = pd.Series(predictions_3)
+df_predictions_dev['generated_text'] = pd.Series(predictions_3_dev)
 
 saving_path = 'outputs/' + \
                model_name_1.replace('/', '-') + '_' + \
                model_name_2.replace('/', '-') + '_' + \
-               model_name_3.replace('/', '-') + '.csv'
-df_predictions.to_csv(saving_path)
+               model_name_3.replace('/', '-') + '_dev.csv'
+df_predictions_dev.to_csv(saving_path)
+print(f'saving_path: {saving_path}')
+
+
+print('TASK 3 PREDICTION (TEST)')
+predictions_3_test, references_3_test = func.generate_task_3(
+    model_3, tokenizer_3,
+    task_3_dataloader_test, target_len=target_padding,
+    device=device
+)
+
+bertscore, bleuscore, rougescore = func.compute_score_task_3(predictions_3_test, references_3_test)
+random_index = random.randint(0, len(predictions_3_test) - 1)
+print(f'BERT score (prec, rec, f1): {bertscore}')
+print(f'Bleu score (bleu, prec1, prec2, prec3, prec4): {bleuscore}')
+print(f'Rouge score (1, 2, L): {rougescore}')
+print()
+print('*** Random example: ')
+print(f'Original @ [{random_index}]: {references_3_test[random_index]}')
+print(f'Generated @ [{random_index}]: {predictions_3_test[random_index]}')
+print()
+
+df_predictions_test['generated_text'] = pd.Series(predictions_3_test)
+
+saving_path = 'outputs/' + \
+               model_name_1.replace('/', '-') + '_' + \
+               model_name_2.replace('/', '-') + '_' + \
+               model_name_3.replace('/', '-') + '_test.csv'
+df_predictions_test.to_csv(saving_path)
 print(f'saving_path: {saving_path}')
